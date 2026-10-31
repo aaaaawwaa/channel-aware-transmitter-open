@@ -104,7 +104,7 @@
     },
     {
       "path": ".github/workflows/awg-bitstream.yml",
-      "sha256": "0f7b9c63d073533fa8f2fc0ee9fabdeba592604f761ab2aecc9fff3b80b5af7d",
+      "sha256": "3e23ad0050911629d4c6cba7fde69cee5bc6bf8a6b6625ac23ad6f7687a2e54b",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}

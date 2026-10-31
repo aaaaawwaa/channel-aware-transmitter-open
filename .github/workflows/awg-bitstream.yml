@@ -28,14 +28,23 @@ jobs:
           python-version: '3.11'
           cache: pip
           cache-dependency-path: host/requirements.txt
+      - name: Install Qt runtime libraries (off-screen)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libegl1 libgl1
       - name: Install host test dependencies
         run: python -m pip install -r host/requirements.txt
       - name: Run host tests
+        env:
+          QT_QPA_PLATFORM: offscreen
         run: python -m pytest host/tests -q
 
   bitstream:
     name: Vivado 2025.2 / Hog AWG build
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    # Manual/tag-only: the build needs a self-hosted linux x64 runner with the
+    # vivado-2025.2 label. Ordinary pushes (including docs-only updates) must
+    # not queue a 3-hour build; run host regression on every push instead.
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
     needs: host-tests
     runs-on: [self-hosted, linux, x64, vivado-2025.2]
     timeout-minutes: 180
