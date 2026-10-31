@@ -172,6 +172,26 @@ class MaintenanceTests(unittest.TestCase):
         self.assertIn('docs/evidence/README.md', names)
         self.assertNotIn('evidence/raw-receipt.json', names)
 
+    def test_whitelisted_diagram_is_exported_verbatim_but_other_images_are_not(self):
+        figures = self.root / 'docs' / 'figures'
+        figures.mkdir(parents=True)
+        whitelisted = figures / 'rf-system-architecture-poster-4x3.png'
+        payload = b'\x89PNG\r\n\x1a\n' + b'public-diagram-bytes'
+        whitelisted.write_bytes(payload)
+        (figures / 'private-photo.png').write_bytes(b'\x89PNG\r\n\x1a\n' + b'private-photo')
+        result = m.export(self.root)
+        manifest = json.loads(
+            (self.root / result['directory'] / 'SHARE-MANIFEST.json').read_text(encoding='utf-8'))
+        with zipfile.ZipFile(self.root / result['zip']) as bundle:
+            names = bundle.namelist()
+            self.assertIn('docs/figures/rf-system-architecture-poster-4x3.png', names)
+            self.assertNotIn('docs/figures/private-photo.png', names)
+            self.assertEqual(payload, bundle.read('docs/figures/rf-system-architecture-poster-4x3.png'))
+        record = next(r for r in manifest['files']
+                      if r['path'] == 'docs/figures/rf-system-architecture-poster-4x3.png')
+        self.assertEqual(record['source_encoding'], 'verbatim-binary')
+        self.assertEqual(manifest['source_encodings'].get('verbatim-binary'), 1)
+
     def test_license_and_notice_are_exported(self):
         licenses = self.root / 'LICENSES'
         licenses.mkdir()

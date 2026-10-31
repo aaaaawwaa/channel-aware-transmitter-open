@@ -53,12 +53,19 @@ skill/                      指南 `skill/` 入口（映射到 skills/，见 ski
 report/                     指南 `report/` 入口（映射到 docs/engineering/ 报告与协作记录）
 docs/                       需求、设计/规格、报告、审查、工程记忆
 docs/evidence/              脱敏证据摘要（原始报告/位流/收据不在仓库）
+docs/figures/               系统框图/海报图（仅白名单图片公开）
 tools/                      维护、导出与辅助脚本
 ci/                         位流完整性与自托管 runner 检查
 .github/                    CI 工作流（AWG 位流构建）
 ```
 
 完整职责与整理原则见 [工程结构](docs/engineering/PROJECT-STRUCTURE.md)。
+
+## 系统框图
+
+![System architecture: PC with GNU Radio controls PlutoSDR TX over RF coax into the Zynq-7020 + AD9361 board; AD9361 RX1 feeds PL I/Q capture and BRAM buffer over AXI to PS sync/demod/features/inference; touchscreen shows spectrum/constellation/BER; offline model training is dashed. BPSK/QPSK/QAM16 limited validation.](docs/figures/rf-system-architecture-poster-4x3.png)
+
+外部信号源演示路径：PC（GNU Radio）→ PlutoSDR TX → 射频同轴线 → 板卡 AD9361 RX1 → PL I/Q 采集与 BRAM 缓冲 → AXI → PS 同步/解调/频谱/星座/参考 BER/轻量推理 → 五寸触摸屏；虚线为离线训练与部署关系。该图是**系统功能分工与拟采用演示方式**，不代表所有组合已通过完整验收；当前交付范围为 BPSK/QPSK 有限演示与受限 QAM16，QAM64 已移出，真实限制见 [失败与限制](#失败与限制必须保留) 与 [系统结构图说明](docs/engineering/system-architecture.md)。
 
 ## 构建与运行
 
@@ -164,7 +171,11 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 
 面向评审的材料：
 
-- [设计报告](docs/engineering/DESIGN-REPORT.md)：架构、关键设计决定、接收/发射/发布链路与已知限制；配套[系统结构图](docs/engineering/system-architecture.md)。
+- [最终设计报告](docs/engineering/FINAL-DESIGN-REPORT.md)：面向提交评审的简洁版（问题与创新、系统框图、软硬件分工、关键指标、板上结果、复现、真实限制）。
+- [设计报告](docs/engineering/DESIGN-REPORT.md)：架构、关键设计决定、接收/发射/发布链路与已知限制；配套[系统结构图](docs/engineering/system-architecture.md)与[系统框图](#系统框图)。
+- [海报/PPT 文案](docs/engineering/POSTER-AND-PPT.md)：AMD 海报英文短文、PPT 分页短句与讲稿要点（不虚构数据）。
+- [性能证据摘要](docs/engineering/PERFORMANCE-EVIDENCE.md)：交付位流绑定的资源/时钟/时序/功耗（Vivado 估计值）与板上有限结果一页摘要。
+- [演示与提交清单](docs/engineering/DEMO-AND-SUBMISSION.md)：PlutoSDR TX → 板卡 RX1 的拍摄步骤、现场核对表、证据分级与最终提交清单。
 - [综合与实现指标](docs/engineering/SYNTHESIS-METRICS.md)：资源、时钟/时序、功耗、上板与 ARM 性能、优化前后对照（当前为“未取得同口径基线”）与缺口清单。
 - [证据包索引](docs/engineering/EVIDENCE-PACK.md)：当前交付版本的脱敏证据摘要、原件位置与 SHA-256、payload_equal 绑定、功耗估计值口径；配套 [docs/evidence/](docs/evidence/README.md)。
 - [优化对照与从零复现](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)：同口径优化前后核查（当前未取得）、最小补测方案、工具链/依赖/构建/产物/缺失项的复现说明。
@@ -189,7 +200,7 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 | `skill/` 技能包 | [`skill/README.md`](skill/README.md) → [`skills/`](skills/README.md) | 技能内容维护在 `skills/`，入口映射 |
 | `report/` 设计报告与协作记录 | [`report/README.md`](report/README.md) → `docs/engineering/DESIGN-REPORT.md`、`SYNTHESIS-METRICS.md`、`AI-COLLABORATION-RECORD.md` | 报告正文维护在 `docs/engineering/` |
 
-指南 3.3 要求的提交物入口：工程包（源码/仿真/综合实现/上板/构建脚本）见上表、[EVIDENCE-PACK](docs/engineering/EVIDENCE-PACK.md) 与 [README 构建与运行](#构建与运行)；从零复现见 [OPTIMIZATION-AND-REPRODUCTION](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)；技能包见 [skills/README.md](skills/README.md)；设计报告见 [DESIGN-REPORT](docs/engineering/DESIGN-REPORT.md) 与 [report/README.md](report/README.md)；大模型协作记录见 [AI-COLLABORATION-RECORD](docs/engineering/AI-COLLABORATION-RECORD.md)；RF 接口时序边界见 [RF-INTERFACE-TIMING](docs/engineering/RF-INTERFACE-TIMING.md)。
+指南 3.3 要求的提交物入口：工程包（源码/仿真/综合实现/上板/构建脚本）见上表、[EVIDENCE-PACK](docs/engineering/EVIDENCE-PACK.md) 与 [README 构建与运行](#构建与运行)；从零复现见 [OPTIMIZATION-AND-REPRODUCTION](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)；技能包见 [skills/README.md](skills/README.md)；设计报告见 [FINAL-DESIGN-REPORT](docs/engineering/FINAL-DESIGN-REPORT.md) 与 [DESIGN-REPORT](docs/engineering/DESIGN-REPORT.md)；海报/PPT 见 [POSTER-AND-PPT](docs/engineering/POSTER-AND-PPT.md)；演示与提交清单见 [DEMO-AND-SUBMISSION](docs/engineering/DEMO-AND-SUBMISSION.md)；大模型协作记录见 [AI-COLLABORATION-RECORD](docs/engineering/AI-COLLABORATION-RECORD.md)；RF 接口时序边界见 [RF-INTERFACE-TIMING](docs/engineering/RF-INTERFACE-TIMING.md)。
 
 **文件命名规则说明**：指南 3.3.5.4 要求目录/文件名为纯英文小写、数字、下划线或连字符，但指南自身示例使用 `README.md`、`skill/README.md`；本仓库保留 `README.md`、`LICENSE`、`NOTICE`、`SKILL.md`、`Makefile`、`SHA256SUMS` 等惯例名称，未批量改名以免破坏构建引用与既有限制；不符合项清单与例外疑点见 [GUIDE-CONFORMANCE §4](docs/engineering/GUIDE-CONFORMANCE.md) 与 [FILENAME-CONSULTATION](docs/engineering/FILENAME-CONSULTATION.md)（含可直接发送给赛道的咨询文字，**尚未发送**），需向赛道确认例外。中文仅出现在正文内容中。
 

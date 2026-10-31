@@ -35,6 +35,9 @@ SKIP_DIRS = {'.git', '.aws', '.codex', '.agents', '.claude', '.local', 'dist',
 # Third-party source kept byte-for-byte: transcoding would break its SHA256SUMS
 # and the "verbatim copy" claim. No credentials live in these paths.
 VERBATIM_PREFIXES = ('rf_overlay/sw/board_app/vendor/', 'rf_overlay/sw/ref/')
+# Binary files explicitly whitelisted for the public snapshot. Only reviewed,
+# generated diagrams may go here; raw hardware photos/screenshots must not.
+PUBLIC_BINARY_FILES = {'docs/figures/rf-system-architecture-poster-4x3.png'}
 # Internal drafts that must stay in the private workspace (unfilled authorisation
 # templates, personal notes); they are not part of the shareable snapshot.
 PRIVATE_NAMES = {'OPEN-SOURCE-AUTHORIZATION-DRAFT.md'}
@@ -183,7 +186,7 @@ def source_files(root):
                 continue
             if path.suffix.lower() not in TEXT_SUFFIXES and name not in {
                     'Makefile', 'CMakeLists.txt', '.gitignore', '.gitattributes',
-                    'LICENSE', 'NOTICE', 'SHA256SUMS'}:
+                    'LICENSE', 'NOTICE', 'SHA256SUMS'} and rel.as_posix() not in PUBLIC_BINARY_FILES:
                 continue
             checked(root, path)
             yield rel
@@ -329,6 +332,14 @@ def export(root):
         target = destination / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         rel_posix = rel.as_posix()
+        if rel_posix in PUBLIC_BINARY_FILES:
+            raw = (root / rel).read_bytes()
+            target.write_bytes(raw)
+            encodings['verbatim-binary'] += 1
+            records.append({'path': rel_posix, 'sha256': hashlib.sha256(raw).hexdigest(),
+                            'source_encoding': 'verbatim-binary', 'verbatim': True,
+                            'removed_document_nuls': 0, 'redactions': {}})
+            continue
         if rel_posix.startswith(VERBATIM_PREFIXES):
             raw = (root / rel).read_bytes()
             target.write_bytes(raw)
@@ -363,7 +374,8 @@ def export(root):
             raise ValueError('Output privacy verification failed')
     manifest = {'schema': 1, 'kind': 'sanitized-text-source-not-installable-release',
                 'excluded': ['git history', 'credentials', 'raw evidence', 'datasets',
-                             'device binaries', 'images', 'archives', 'generated directories',
+                             'device binaries', 'images except the whitelisted public diagram',
+                             'archives', 'generated directories',
                              'GNU Radio Companion generated flowgraphs and GRC cache',
                              'reference-only third-party constraints (rf_overlay/rtl_ref)',
                              'simulation scratch and dfx runtime files',
@@ -377,9 +389,9 @@ def export(root):
         '# 脱敏源码副本\n\n这是可读源码与技能包，不是可安装发布包或原始验收证据。\n'
         '真实凭据、私网地址、设备序列号、开发机绝对路径、远端账户与授权别名已替换；个人姓名、'
         '手机号与个人邮箱不随本副本导出。使用前配置自己的环境。\n'
-        '文本统一为 UTF-8 + LF；`rf_overlay/sw/board_app/vendor/` 与 `rf_overlay/sw/ref/` 按原始字节透传（清单标记 verbatim-bytes）。\n'
+        '文本统一为 UTF-8 + LF；`rf_overlay/sw/board_app/vendor/` 与 `rf_overlay/sw/ref/` 按原始字节透传（清单标记 verbatim-bytes）；`docs/figures/rf-system-architecture-poster-4x3.png` 是唯一白名单结构图，按原始字节透传（清单标记 verbatim-binary）。\n'
         '第三方版权与许可证见根 `LICENSE`、`NOTICE` 与 `LICENSES/`。\n'
-        '原始IQ、数据集、图片、bit/HWH、发布归档、参考资料、Git历史及临时生成物未打包。\n'
+        '原始IQ、数据集、图片（白名单结构图除外）、bit/HWH、发布归档、参考资料、Git历史及临时生成物未打包。\n'
         '原始实验收据仍保存在开发机；本文本副本不得用于验证旧发布摘要。\n'
         '需要完整仿真/历史回放时，须另行提供相应数据与构建依赖。\n')
     (destination / 'SHARE-README.md').write_bytes(share_readme.encode('utf-8'))

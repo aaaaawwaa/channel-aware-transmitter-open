@@ -34,6 +34,7 @@ flowchart LR
 - PL承担I/Q样点采集及BRAM缓冲；接收同步、解调、特征处理和轻量推理位于PS侧。本图不把PS计算表述为PL实时同步解调。
 - 触摸屏用于参数交互和结果显示；参考BER仅适用于存在明确参考数据及有效同步的情况。
 - 离线训练与板端运行之间的虚线表示模型准备和部署关系，不表示所有模型已经完成真板集成。
-- 本轮范围为BPSK/QPSK与有限条件下QAM16；QAM64已移出。外部SDR的历史统计整体未通过，QAM16有已记录误码；EVM、RRC真实链路和自动档位选择不能由此图推定已验收。
+- 本轮范围为BPSK/QPSK与有限条件下QAM16；QAM64已移出。外部SDR的BPSK历史统计为**23/30帧同步、整体未通过**；QAM16在12帧选用集中记录到**1/256**非零误码（另一ON帧0/256）；EVM、RRC真实链路和自动档位选择不能由此图推定已验收。
+- RF源同步DDR接口（RX 7个输入 / TX 8个输出）**没有**`set_input_delay`/`set_output_delay`约束（全局 `no_input_delay` 章节 10 = 9 HIGH + 1 MEDIUM，`no_output_delay` 章节 48 = 39 HIGH + 9 MEDIUM；旧报告 HIGH 段 9/39），板级时序未测；现有内部WNS/WHS为正只说明已约束内部路径，**不能**作为AD9361外部接口通过依据，也不能据此判定接口失效（见[RF接口时序](RF-INTERFACE-TIMING.md)）。
 
-关联说明：[工程结构](PROJECT-STRUCTURE.md)、[交付材料索引](DELIVERY-INDEX.md)、[外部SDR与接收边界](../../skills/final-prj-rf-development/references/receiver-and-sdr.md)。
+关联说明：[工程结构](PROJECT-STRUCTURE.md)、[交付材料索引](DELIVERY-INDEX.md)、[最终设计报告](FINAL-DESIGN-REPORT.md)、[证据包](EVIDENCE-PACK.md)、[外部SDR与接收边界](../../skills/final-prj-rf-development/references/receiver-and-sdr.md)。

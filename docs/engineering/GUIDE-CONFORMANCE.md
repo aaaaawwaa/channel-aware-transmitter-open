@@ -26,7 +26,7 @@
 | 3.3.5.1 工程包 | 源码、仿真台、构建脚本齐备；证据包索引＋三份实现摘要＋板级结果摘要＋`payload_equal` 绑定已入仓库；原始报告/位流在开发机；RF 接口时序未测 | 部分具备 |
 | 3.3.5.2 技能包 | 3 套技能＋入口 README 已有；跨项目/跨板卡验证未做 | 已有＋部分具备 |
 | 3.3.5.3 设计报告 | 架构、关键决定、协作记录、从零复现说明已有；背景/创新与当前交付版优化对比待补 | 部分具备 |
-| 3.3.5.4 目录与命名 | 推荐目录非强制；README 已补目录对照；公开树含中文/空格/特殊字符路径 **0**，**89 文件＋6 目录含大写**；命名咨询文字已备（4 问，尚未发送） | 已有＋需人工确认 |
+| 3.3.5.4 目录与命名 | 推荐目录非强制；README 已补目录对照；公开树含中文/空格/特殊字符路径 **0**，**94 文件＋6 目录含大写**；命名咨询文字已备（4 问，短版/长版尚未发送） | 已有＋需人工确认 |
 | 3.3.5.5 评分权重 | 五项均有对应材料，但没有一项能自称"完整"；现场与真实数据缺口影响 20/20 两项 | 部分具备 |
 
 ## 2. 逐条映射（3.3 全文）
@@ -106,10 +106,10 @@
 
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
-| 32 | 3.3.5.3 | 选题背景与创新点：为什么选这个题目、解决什么实际问题、前人做过什么 | [DESIGN-REPORT](DESIGN-REPORT.md) §1、[README](../../README.md)；[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) 背景 | 部分具备 | 有目标与边界，但缺"前人工作/同类方案对比"与按当前缩减范围重述的创新点（G04、H11） |
-| 33 | 3.3.5.3 | 设计原理与功能框图 | [DESIGN-REPORT](DESIGN-REPORT.md) §2「总体架构」（文字框图＋三条流水线表）、§4 接收链路、§5 发射链路 | 已有 | 已有原理说明与框图 |
-| 34 | 3.3.5.3 | 软硬件划分依据与接口设计 | [DESIGN-REPORT](DESIGN-REPORT.md) §2–§3、[backend_contract](../rf/backend_contract.md)、[rf-status-object-contract](../requirements/rf-status-object-contract.md) | 部分具备 | 单控制者/有限快照等决定已写明；软硬件划分的量化依据（吞吐/资源/时延预算）未成章（G04） |
-| 35 | 3.3.5.3 | 优化过程，含优化前后的性能与资源对比表 | [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.1–§1.6（当前交付"未取得"＋历史受控配对仅方法示例＋最小补测方案）、[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §5、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 优化过程与判定口径已成文；**当前交付版本仍无同版本同条件前后对比**；历史 `b3cca2ac…` 配对为历史候选、不可移植；补测方案未执行（G01） |
+| 32 | 3.3.5.3 | 选题背景与创新点：为什么选这个题目、解决什么实际问题、前人做过什么 | [FINAL-DESIGN-REPORT](FINAL-DESIGN-REPORT.md) §1（提交版）、[DESIGN-REPORT](DESIGN-REPORT.md) §1、[README](../../README.md)；[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) 背景 | 部分具备 | 有目标与边界，但缺"前人工作/同类方案对比"（G04、H11） |
+| 33 | 3.3.5.3 | 设计原理与功能框图 | [FINAL-DESIGN-REPORT](FINAL-DESIGN-REPORT.md) §2（含[系统框图](../figures/rf-system-architecture-poster-4x3.png)）、[system-architecture](system-architecture.md)、[DESIGN-REPORT](DESIGN-REPORT.md) §2「总体架构」、§4 接收链路、§5 发射链路 | 已有 | 原理说明与框图已入公开仓库；框图声明不代表完整验收 |
+| 34 | 3.3.5.3 | 软硬件划分依据与接口设计 | [FINAL-DESIGN-REPORT](FINAL-DESIGN-REPORT.md) §3、[DESIGN-REPORT](DESIGN-REPORT.md) §2–§3、[backend_contract](../rf/backend_contract.md)、[rf-status-object-contract](../requirements/rf-status-object-contract.md) | 部分具备 | 单控制者/有限快照等决定已写明；软硬件划分的量化依据（吞吐/资源/时延预算）未成章（G04） |
+| 35 | 3.3.5.3 | 优化过程，含优化前后的性能与资源对比表 | [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.1–§1.6（当前交付"未取得"＋历史受控配对仅方法示例＋最小补测方案）、[PERFORMANCE-EVIDENCE.md](PERFORMANCE-EVIDENCE.md)、[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §5、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 优化过程与判定口径已成文；**当前交付版本仍无同版本同条件前后对比**；历史 `b3cca2ac…` 配对为历史候选、不可移植；补测方案未执行（G01） |
 | 36 | 3.3.5.3 | 大模型协作记录：提示词、模型回答、自我纠错轨迹、智能体工作流设计（如有） | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)（K1–K3：提示词→回答→错误→纠正→结果＋§1 智能体工作流，本轮有补充）、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)（7 案例＋协作模型）、[report/README.md](../../report/README.md)（`report/` 入口） | 已有 | 记录为改写摘要，不复制完整私人会话（隐私边界）；原始会话不在仓库（H10） |
 | 37 | 3.3.5.3 | 技能包提炼过程：从哪些失败/观察总结、如何验证有效、边界如何确定 | [skills/README.md](../../skills/README.md)（§3.4/§3.5 等逐套"来源实践/失败→仓库出处→已验证效果/尚未验证"）、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) §11、[AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md) §6、[report/README.md](../../report/README.md) | 已有 | 提炼来源、验证方式与失效边界已在入口 README 成章；跨项目验证见 G10 |
 | 38 | 3.3.5.3 | 复现说明：一份可供他人从零开始完整执行的操作步骤 | [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §2（从零复现：边界/版本/依赖/构建入口/预期产物/运行/缺失项再生成/验证/限制）、[README](../../README.md)「构建与运行」、「测试」、[DELIVERY-INDEX](DELIVERY-INDEX.md) §3 | 已有 | 已有按步骤的复现说明；受仓库不含位流/数据/模型产物限制，历史指标不能在本副本复算（G15） |
@@ -119,17 +119,17 @@
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
 | 39 | 3.3.5.4 | 推荐目录 `src/ sim/ build/ board/ data/ skill/ report/`；**非强制**，采用其他组织方式须在 README 给出目录对照说明 | [README](../../README.md)「赛事指南对照」与「目录对应关系」、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md)「为什么不全量搬迁」、[skill/README.md](../../skill/README.md)、[report/README.md](../../report/README.md)；本文件 §3 逐项对照 | 已有 | README 已补逐项对照与入口映射（G13 已关闭）；**不搬迁源码**：构建/测试/发布清单引用现有路径 |
-| 40 | 3.3.5.4 | 仓库内所有目录名与文件名须纯英文（小写、数字、下划线或连字符），不得出现中文/空格/特殊字符；中文只在正文 | 全部路径均为英文；[FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（命名现状＋4 条咨询问题＋可直接发送的咨询文字，尚未发送）；[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) 等工程文档为大写连字符名 | 部分具备 | 当前公开树（最终导出树，1404 文件/171 目录）中 **89 个文件名＋6 个目录名含大写字母**，含中文/空格/其他特殊字符的路径 **0**；**指南自身示例使用 `README.md`**，大小写例外需确认（G14、H04、H13） |
+| 40 | 3.3.5.4 | 仓库内所有目录名与文件名须纯英文（小写、数字、下划线或连字符），不得出现中文/空格/特殊字符；中文只在正文 | 全部路径均为英文；[FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（命名现状＋4 条咨询问题＋短版/长版可直接发送文字，尚未发送）；[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) 等工程文档为大写连字符名 | 部分具备 | 当前公开树（最终导出树，1410 文件/172 目录）中 **94 个文件名＋6 个目录名含大写字母**，含中文/空格/其他特殊字符的路径 **0**；**指南自身示例使用 `README.md`**，大小写例外需确认（G14、H04、H13） |
 
 ### 2.11 评测指标与权重（3.3.5.5）
 
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
 | 41 | 3.3.5.5 | 创新性与应用价值 30 分（最高权重） | [README](../../README.md) 项目目标、[DESIGN-REPORT](DESIGN-REPORT.md) §1、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4；注意"信道感知自动选档"愿景**未实现** | 部分具备 | 需按当前缩减范围重述创新点，不得把未实现的自动选档当卖点（G04、H11） |
-| 42 | 3.3.5.5 | 性能与资源优化效果 20 分 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（资源/时序/性能汇总）、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md)（当前交付对比"未取得"＋历史受控配对仅方法示例）；[README](../../README.md)「已验证能力」、`build_manifest.json`、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 汇总数据与证据索引已有；**优化前后对比缺失（当前交付）**；历史受控配对不可移植；原始报告不在仓库（G01、G02） |
+| 42 | 3.3.5.5 | 性能与资源优化效果 20 分 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（资源/时序/性能汇总）、[PERFORMANCE-EVIDENCE.md](PERFORMANCE-EVIDENCE.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md)（当前交付对比"未取得"＋历史受控配对仅方法示例）；[README](../../README.md)「已验证能力」、`build_manifest.json`、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 汇总数据与证据索引已有；**优化前后对比缺失（当前交付）**；历史受控配对不可移植；原始报告不在仓库（G01、G02） |
 | 43 | 3.3.5.5 | 功能正确性与设计完整性 20 分（以提交物核查与实测数据为主要依据） | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4–§5、[acceptance-checklists-p1-p6](../requirements/acceptance-checklists-p1-p6.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md) §2、[board-results-2026-10-26.md](../evidence/board-results-2026-10-26.md)、[交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md) | 部分具备 | 证据摘要与索引已入仓库；S2 正式 108 帧＋12 离线负控 `NOT_RUN`；复审 `CHANGES_REQUIRED`；QAM16 有误码；RF 接口时序未测（G15、G17、G19） |
 | 44 | 3.3.5.5 | 大模型协作与技能包 15 分 | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)、`skills/`、[skills/README.md](../../skills/README.md) | 部分具备 | 材料已齐；剩跨项目验证（G10）与现场配套 |
-| 45 | 3.3.5.5 | 文档质量与可复现性 15 分 | [README](../../README.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md)、[DESIGN-REPORT](DESIGN-REPORT.md)、[COMPETITION-MATERIALS](COMPETITION-MATERIALS.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md)、本文件 | 部分具备 | 文档体系与证据索引完整；可复现受限于仓库不含产物/数据（G15） |
+| 45 | 3.3.5.5 | 文档质量与可复现性 15 分 | [README](../../README.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md)、[FINAL-DESIGN-REPORT](FINAL-DESIGN-REPORT.md)、[DESIGN-REPORT](DESIGN-REPORT.md)、[POSTER-AND-PPT](POSTER-AND-PPT.md)、[DEMO-AND-SUBMISSION](DEMO-AND-SUBMISSION.md)、[COMPETITION-MATERIALS](COMPETITION-MATERIALS.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md)、本文件 | 已有＋部分具备 | 提交版报告/海报/演示清单与证据索引齐备；可复现受限于仓库不含产物/数据（G15） |
 | 46 | 3.3.5.5 | 两组同一套评测项与权重，独立排名；各项含评委评定成分 | 报名与评审口径在主办方 | 需人工确认 | H02、H03；现场演示尺度需用户确认（H11） |
 
 ## 3. 推荐目录对照（3.3.5.4，非强制）
@@ -151,7 +151,7 @@
 
 - 规则：目录名与文件名使用纯英文（小写字母、数字、下划线、连字符）；不得出现中文、空格或特殊字符；中文只在正文。
 - 现状（逐路径扫描由本地核查报告完成、不随仓库；当前公开树 = 最终导出树）：
-  - 当前公开树（最终导出树，2026-10-31）：**1404 个文件 / 171 个目录**；含大写字母 **89 个文件 + 6 个目录**（惯例/示例名 32＋非惯例 57；混合大小写测试向量 4 个含在非惯例内）；**中文 0、空格 0、其他特殊字符 0**。
+  - 当前公开树（最终导出树，2026-10-31）：**1410 个文件 / 172 个目录**；含大写字母 **94 个文件 + 6 个目录**（惯例/示例名 33＋非惯例 61；混合大小写测试向量 4 个含在非惯例内）；**中文 0、空格 0、其他特殊字符 0**。
   - 本轮新增的 4 个工程文档（`EVIDENCE-PACK.md`、`OPTIMIZATION-AND-REPRODUCTION.md`、`RF-INTERFACE-TIMING.md`、`FILENAME-CONSULTATION.md`）与 `docs/evidence/README.md` 已计入上述 89 个；数字与 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md) 一致。
   - 工作区开发树另有未跟踪开发原件（参考 PDF/ZIP、照片、`ml_training/` 数据/结果等），不在公开仓库。
 - 判断：**部分具备**。全部路径已是英文；大小写不符合字面规则；中文/空格/特殊字符在公开副本中为 0。
@@ -189,7 +189,7 @@
 | G11 | 5 个第三方参考工程 RTL 的许可未确认 | #17 | 取得许可/替换实现/移出并声明 PL 不可完整重建，三选一 | 需人工确认（H06） |
 | G12 | 开源发布动作未完成（仓库地址/可见性/报名登记） | #16 | 由所有者完成建仓、许可确认与报名后台登记 | 需人工确认（H08） |
 | G13 | 未按推荐目录组织，README 无逐项对照 | #39 | **已关闭**：README 增「赛事指南对照」+ `skill/`、`report/` 入口；本轮新增材料入口已加入 README/材料索引；不搬迁源码 | 已处理（2026-10-31） |
-| G14 | 文件名大小写不符合字面规则（当前公开树 1404 文件/171 目录中 89 文件＋6 目录含大写；中文/空格/特殊字符 0） | #40、#42 | 已备 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（4 条咨询问题＋可直接发送文字，**尚未发送**）；待赛道答复后再决定"仅发布副本改名"或"原仓库改名"；同步 `SHARE-MANIFEST` 与互链，改名须避免破坏硬引用（`SHA256SUMS`、`axi_ctrl_v1_0_S00_AXI.v`、`LICENSES/*`） | 需人工确认（H04、H13） |
+| G14 | 文件名大小写不符合字面规则（当前公开树 1410 文件/172 目录中 94 文件＋6 目录含大写；中文/空格/特殊字符 0） | #40、#42 | 已备 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（短版＋长版咨询文字，**尚未发送**）；待赛道答复后再决定"仅发布副本改名"或"原仓库改名"；同步 `SHARE-MANIFEST` 与互链，改名须避免破坏硬引用（`SHA256SUMS`、`axi_ctrl_v1_0_S00_AXI.v`、`LICENSES/*`） | 需人工确认（H04、H13） |
 | G15 | 工程包不含位流/HWH/数据集/模型产物/原始证据 | #15、#20、#26、#38、#45 | 在 README/报告保持"文档记述"声明；必要时提供受限数据说明 | Lead |
 | G16 | 工具版本证据链不完整（构建清单 vivado 字段为空/记录分散） | #10、#27 | **部分缓解**：[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §1.4 记录 `Vivado v.2025.2 (win64) Build 6299465`（本地报告表头，三处一致）；`build_manifest.json` 的 `toolchain.vivado` 仍为空 | Lead |
 | G17 | 完整物理验收/统一发布清单/真人现场 `NOT_RUN`；复审 `CHANGES_REQUIRED` | #1、#9、#14、#32、#43 | 按验收清单推进；现场由用户确认，AI 不代签 | 需人工/现场 |
@@ -213,6 +213,7 @@
 | H11 | 现场演示范围与对外表述（QAM16 受限、QAM64 移出、外部 SDR 方向） | [README](../../README.md)「失败与限制」、[人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) |
 | H12 | 设计报告/材料版式（语言、PDF、篇幅、是否需中文正文） | 3.3.5.3/3.3.5.4 未规定 |
 | H13 | **赛道对命名例外的答复**：Q1 惯例/示例名是否可保留、Q2 小写规则是否只约束新增/提交副本、Q3 若必须小写能否只在提交副本改名并同步清单、Q4 是否还需按推荐目录实体重组 | [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md) §3（4 问，**尚未发送**）；答复前按 §4 维持现状、不批量改名 |
+| H14 | **现场演示视频**是否必须提交、拍摄/匿名要求与提交渠道；演示前是否需重新只读读回当前 release/安全态 | [DEMO-AND-SUBMISSION.md](DEMO-AND-SUBMISSION.md) §1/§3/§6；报名后台由用户人工完成 |
 
 ## 8. 必须保留的真实限制
 

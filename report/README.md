@@ -4,10 +4,18 @@
 
 ## 1. 设计报告
 
+- 提交版：[`../docs/engineering/FINAL-DESIGN-REPORT.md`](../docs/engineering/FINAL-DESIGN-REPORT.md)
+  - 问题与创新、系统框图、软硬件分工、关键指标、板上结果、复现与真实限制（简洁版）。
 - 主报告：[`../docs/engineering/DESIGN-REPORT.md`](../docs/engineering/DESIGN-REPORT.md)
   - 选题背景与范围、总体架构、关键设计决定、接收/发射/发布链路、质量策略、已知限制与参考。
-- 系统结构图：[`../docs/engineering/system-architecture.md`](../docs/engineering/system-architecture.md)
+- 系统结构图：[`../docs/engineering/system-architecture.md`](../docs/engineering/system-architecture.md) 与 [`../docs/figures/rf-system-architecture-poster-4x3.png`](../docs/figures/rf-system-architecture-poster-4x3.png)
   - 外部 SDR 激励与板卡接收的功能框图（PL/PS 分工与边界）。
+
+## 1A. 海报与演示
+
+- [`../docs/engineering/POSTER-AND-PPT.md`](../docs/engineering/POSTER-AND-PPT.md)：AMD 海报英文短文、PPT 分页短句与讲稿要点。
+- [`../docs/engineering/PERFORMANCE-EVIDENCE.md`](../docs/engineering/PERFORMANCE-EVIDENCE.md)：交付位流绑定的性能证据一页摘要。
+- [`../docs/engineering/DEMO-AND-SUBMISSION.md`](../docs/engineering/DEMO-AND-SUBMISSION.md)：拍摄步骤、现场核对表与最终提交清单。
 
 ## 2. 综合、实现与实测指标
 

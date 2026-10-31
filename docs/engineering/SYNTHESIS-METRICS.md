@@ -286,7 +286,7 @@
 | ID | 缺口 | 影响的指南条目 | 赛前需要做的事 | 现状 |
 |---|---|---|---|---|
 | G1 | 交付 bit 的**同源同次**综合/实现报告未归档为工程包证据（现有报告为 2026-09-24 同次构建，交付 bit 与其载荷相同、文件级 sha 不同） | 3.3.5.1 综合与实现报告 | 把现有 `utilization/timing/power/DRC/route` 报告 + routed DCP + payload 绑定收据（`verification.json`）作为附件列入工程包；或在允许时用交付源码/约束重跑一次并归档 | 报告已有，**归档动作未做**（P1） |
-| G2 | RF 源同步 DDR 接口 **9 输入 / 48 输出无 I/O delay 约束**，7 个 RF 输入 + 8 个 RF 输出未建模 | 3.3.5.1 关键性能指标；3.3.4 判断依据 | 补 `set_input_delay`/`set_output_delay`（需板级走线/器件手册参数来源），重新综合实现并重出报告；再决定是否能宣称接口裕量 | `未取得`（P1） |
+| G2 | RF 源同步 DDR 接口未建模：`check_timing` 全局 `no_input_delay` 10（9 HIGH + 1 MEDIUM false-path `spi_miso`）、`no_output_delay` 48（39 HIGH + 9 MEDIUM false-path `rf_gpio`）；RF 子集 7 个 RX 输入 + 8 个 TX 输出（其中 `tx_clk_out_p` 为转发时钟） | 3.3.5.1 关键性能指标；3.3.4 判断依据 | 补 `set_input_delay`/`set_output_delay`（需板级走线/器件手册参数来源），重新综合实现并重出报告；再决定是否能宣称接口裕量（详见 [RF-INTERFACE-TIMING](RF-INTERFACE-TIMING.md)） | `未取得`（P1） |
 | G3 | **优化前后性能与资源对比表**缺失（无同口径基线） | 3.3.4 + 3.3.5.3 优化过程 | 固定一个设计基线版本，保留同口径 `utilization/timing` + 同一测量路径的性能数据，至少两版可配 | `未取得`（P1） |
 | G4 | 当前交付口径下**没有 ARM P95/RSS 重测**（最后一次记录是历史候选） | 3.3.5.1 关键性能指标、上板实测 | 在板端跑一次 100 次完整计算并保存 timings/RSS（需一次性板卡授权，本轮禁止） | `未取得`（P1） |
 | G5 | 板级 DATA_CLK/data/frame **skew 未表征**；`tx_clk_out` 生成时钟模型未定 | 3.3.5.1 时序指标完整性 | 引脚/示波器测量或引述器件手册+板级仿真；没有来源时明确标注未知，不填假值 | `未取得`（P1） |

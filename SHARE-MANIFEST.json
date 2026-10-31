@@ -7,7 +7,7 @@
     "raw evidence",
     "datasets",
     "device binaries",
-    "images",
+    "images except the whitelisted public diagram",
     "archives",
     "generated directories",
     "GNU Radio Companion generated flowgraphs and GRC cache",
@@ -18,7 +18,8 @@
   ],
   "undecodable_or_binary_text_paths": [],
   "source_encodings": {
-    "utf-8-sig": 1387,
+    "utf-8-sig": 1392,
+    "verbatim-binary": 1,
     "verbatim-bytes": 15
   },
   "text_line_endings": "lf",
@@ -89,7 +90,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "8d8b7cd7b16092c558f5294f2b15c220bad9aab5104a5c8bc0c142cbdd7f38ac",
+      "sha256": "e470b474da6fcdf2526a183afdae93ebdbbdb7b90bdae6b48a37d2963290a75f",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -187,14 +188,21 @@
     },
     {
       "path": "docs/engineering/COMPETITION-MATERIALS.md",
-      "sha256": "2a65fc3c6a5d8a43153d586d29e2887695236599d37b59b6c6ae1e126896b2fd",
+      "sha256": "529667d27893dea35d25688fcff7a831ce8bf40c92236e5ea6c80f7f405e90c7",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "docs/engineering/DELIVERY-INDEX.md",
-      "sha256": "c4264cb2236bf3e1009c28cf23ad60efcde76ae8379e3dc150790869bc0e2c23",
+      "sha256": "f02c54901ba780802e3e173393d9104f29bd69307435af97e51746f7492ffac4",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "docs/engineering/DEMO-AND-SUBMISSION.md",
+      "sha256": "cdabb835e1982f59faf0f353ed66ad74232a21294a53769ff4d728e5d306b74f",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -208,21 +216,28 @@
     },
     {
       "path": "docs/engineering/EVIDENCE-PACK.md",
-      "sha256": "f8536d16302bc3299722606b18842e43202d73630fc60c60b3b149e7ef5b6c0d",
+      "sha256": "b0ef2ed3605060298c7a96a62b38a51d2c413558509b2fe41a1d277b112c88a6",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "docs/engineering/FILENAME-CONSULTATION.md",
-      "sha256": "8e4b65444f5b4e701a70a87d9daca3da535fcf667f87463cc175c4a63b3019ff",
+      "sha256": "f5e28be9e4cd3e15f990e0bbee25ef56fc64aa20f99f47577f3b4f90ef020f62",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "docs/engineering/FINAL-DESIGN-REPORT.md",
+      "sha256": "82e37252e0097e56c32ae8a55db96b39146c3916b64e9cf0ff0c9abfcf9e1569",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "docs/engineering/GUIDE-CONFORMANCE.md",
-      "sha256": "4329a59e07477cb7d706c30ae91dc370a0c707ed2c34999b7ce1da82731baf79",
+      "sha256": "ade9fcd0f3e2bae052c85dabb23acf2e2ee536411898df91e7ba3e3f578f1224",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -230,6 +245,20 @@
     {
       "path": "docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md",
       "sha256": "b1d8a58f7c427e377238b986c463521df0cbba0b9961d15f50eb46e8e8c9cce8",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "docs/engineering/PERFORMANCE-EVIDENCE.md",
+      "sha256": "08b4d9d6c9f36ebf54151340c2703efd3fc1f58b952a5fde6d0c85fade1b17cf",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "docs/engineering/POSTER-AND-PPT.md",
+      "sha256": "5c02a12fad8bc38245feab3d27c071b09b87cd4338d49c4523dc7139a97a191d",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -257,7 +286,7 @@
     },
     {
       "path": "docs/engineering/SYNTHESIS-METRICS.md",
-      "sha256": "cfe0197203f6eae39be1c56a8922a2537326d61e71540eb8e13e6fc3569a0a76",
+      "sha256": "abd7ef40899a738762f1d01b4749976e4135ad5d774c9eb5ea2b8d9cb2e8ef07",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -275,7 +304,7 @@
     },
     {
       "path": "docs/engineering/system-architecture.md",
-      "sha256": "b2146d62b1539703b72b8e003e7b0469dc576d820875b39723590c8127f15ce6",
+      "sha256": "7feb3462da19559e7f47f8075e08f803b466daf06e95af961d31583157844e48",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -319,6 +348,21 @@
       "path": "docs/evidence/rf-overlay-2026-09-19.md",
       "sha256": "289050cbea3231b4717a742d6de45e682b92f883ca154f55b77b622bd88a6f11",
       "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "docs/figures/README.md",
+      "sha256": "45f29e11ca1d82d8ba1d47dbebffa49c4f98606914e289a1093e6f02b5004871",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "docs/figures/rf-system-architecture-poster-4x3.png",
+      "sha256": "3714cbf199d3d115559377b2f21ea106f751449ef7ed10c65713380deef7d0ac",
+      "source_encoding": "verbatim-binary",
+      "verbatim": true,
       "removed_document_nuls": 0,
       "redactions": {}
     },
@@ -6438,7 +6482,7 @@
     },
     {
       "path": "report/README.md",
-      "sha256": "6c6bbf3e855770400af98ad306a5535e4b80748f34241e8325cda3239f11a52a",
+      "sha256": "ab57293111f225f5773e22bb0f3961e862ee644f73f62480d52a886cca6429e5",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -10188,7 +10232,7 @@
     },
     {
       "path": "tools/project_maintenance.py",
-      "sha256": "583ba6cea11f3888be8760e717d445ea0167084b5551a866e31a5b6673a64253",
+      "sha256": "7ab68d4e8cd269bd5a8291913bf5aac18902c6de013968a9bfd8e4feb15e6214",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
@@ -10276,7 +10320,7 @@
     },
     {
       "path": "tools/test_project_maintenance.py",
-      "sha256": "ae617d60549ee34ad9d5f815b9ef55989b5a8c3512d9e748bd2619ff21dde317",
+      "sha256": "ba43388fea89d14bb0583d32f12a79363f5e42da1251879a437ed5934dc55515",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {

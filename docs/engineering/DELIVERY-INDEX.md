@@ -17,9 +17,10 @@
 | 7 | [竞赛提交材料与符合性说明](COMPETITION-MATERIALS.md) | 材料清单、与指南 3.3/作品简介的对应、无法证明的条目、匿名与隐私处理。 |
 | 8 | [指南 3.3 符合性映射](GUIDE-CONFORMANCE.md) | 指南逐条要求 → 材料 → 状态 → 缺口；含目录对照与评分权重对应。 |
 | 9 | [证据包索引](EVIDENCE-PACK.md) | 当前交付版本的脱敏证据摘要、原件位置与 SHA-256、payload_equal 绑定、功耗估计值口径。 |
-| 10 | [优化对照与从零复现](OPTIMIZATION-AND-REPRODUCTION.md) | 优化前后核查（未取得）、最小补测方案、工具链/依赖/构建/产物/缺失项复现说明。 |
-| 11 | [RF 接口时序缺口](RF-INTERFACE-TIMING.md) | 缺失的 input/output delay、参数来源、计算方法与分阶段最小方案。 |
-| 12 | 按目标进入下方分节 | 设计、构建、能力、限制、模型、SDR、技能、证据边界。 |
+| 10 | [最终设计报告](FINAL-DESIGN-REPORT.md) | 面向提交评审的简洁版；含系统框图、软硬件分工、关键指标、板上结果、复现与真实限制。 |
+| 11 | [海报/PPT 文案](POSTER-AND-PPT.md) / [性能证据摘要](PERFORMANCE-EVIDENCE.md) | 英文海报/PPT 文案与一页性能证据（含功耗估计值限定与历史优化案例边界）。 |
+| 12 | [演示与提交清单](DEMO-AND-SUBMISSION.md) | PlutoSDR TX → 板卡 RX1 的拍摄步骤、现场核对表、证据分级与最终提交清单。 |
+| 13 | 按目标进入下方分节 | 设计、构建、能力、限制、模型、SDR、技能、证据边界。 |
 
 ## 2. 设计说明与工程规则
 
@@ -53,6 +54,10 @@
 | [优化对照与从零复现](OPTIMIZATION-AND-REPRODUCTION.md) | 同口径优化前后基线核查与最小补测方案；工具链/依赖/构建/产物/缺失项复现说明。 |
 | [RF 接口时序缺口](RF-INTERFACE-TIMING.md) | AD9361 源同步 DDR 的未约束端口、参数来源、计算方法与板级/离线最小方案；不宣称接口通过。 |
 | [文件名例外咨询文字](FILENAME-CONSULTATION.md) | 命名规则现状、惯例例外与可直接发送给赛道的咨询文字（尚未发送）。 |
+| [最终设计报告](FINAL-DESIGN-REPORT.md) / [系统框图](../figures/rf-system-architecture-poster-4x3.png) | 面向提交评审的简洁版；系统框图已作为白名单图片收入公开仓库。 |
+| [海报/PPT 文案](POSTER-AND-PPT.md) | AMD 海报英文短文、PPT 分页短句与讲稿要点（不虚构数据）。 |
+| [性能证据摘要](PERFORMANCE-EVIDENCE.md) | 交付位流绑定的资源/时钟/时序/功耗估计与板上有限结果一页摘要。 |
+| [演示与提交清单](DEMO-AND-SUBMISSION.md) | 现场演示拍摄步骤、核对表、证据分级与最终提交清单（报名后台由用户完成）。 |
 
 ## 3. 构建、测试与运行入口
 

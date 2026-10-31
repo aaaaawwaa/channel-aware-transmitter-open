@@ -14,7 +14,10 @@
 |---|---|---|---|
 | 项目入口与范围说明（含硬件/工具版本、构建步骤、能力与限制、证据/复现入口） | [README.md](../../README.md) | 3.3.1、3.3.2、3.3.3.1、3.3.3.2、3.3.5.3 | 已有（本轮更新链接） |
 | 指南 3.3 逐条符合性映射（含缺口与人工确认项） | [GUIDE-CONFORMANCE.md](GUIDE-CONFORMANCE.md) | 3.3.1–3.3.5.5 | 已有（本轮更新：46 条映射、19 项缺口、13 项人工确认） |
-| 设计报告 | [DESIGN-REPORT.md](DESIGN-REPORT.md) | 3.3.5.3 | 已有（本轮更新：增加证据包/优化/接口时序入口） |
+| 设计报告 | [FINAL-DESIGN-REPORT.md](FINAL-DESIGN-REPORT.md)（提交版）、[DESIGN-REPORT.md](DESIGN-REPORT.md)（扩展版） | 3.3.5.3 | 已有（本轮新增提交版；真实限制与“不证明什么”已保留） |
+| 海报/PPT 文案（英文为主＋中文对照） | [POSTER-AND-PPT.md](POSTER-AND-PPT.md) | 3.3.5.3、3.3.5.5 | 已有（图片为 [rf-system-architecture-poster-4x3.png](../figures/rf-system-architecture-poster-4x3.png)） |
+| 一页性能证据摘要 | [PERFORMANCE-EVIDENCE.md](PERFORMANCE-EVIDENCE.md) | 3.3.4、3.3.5.1 | 已有（功耗为 Vivado 估计值；当前交付优化前后 `未取得`） |
+| 现场演示拍摄手册与最终提交清单 | [DEMO-AND-SUBMISSION.md](DEMO-AND-SUBMISSION.md) | 3.3.5.1、3.3.5.3 | 已有（演示视频待拍摄，不入仓库；报名后台由用户完成） |
 | AI 协作案例（多代理协作、复审与失败教训） | [AI-COLLABORATION-CASE.md](AI-COLLABORATION-CASE.md) | 3.3.3.1、3.3.5.3 | 已有 |
 | 大模型协作记录（提示词→回答→纠错→结果＋智能体工作流） | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md) | 3.3.3.1、3.3.5.3 | 已有（本轮新增） |
 | 综合/实现/实测指标与优化对照 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) | 3.3.4、3.3.5.1、3.3.5.3 | 已有（内部标注"优化前后对比未取得同口径基线"） |
@@ -101,7 +104,7 @@
 13. **技能包通用性**：通用 PYNQ Skill 是否满足“不与本队题目绑定、换题目换板卡仍可用”的加分口径**未确认**（尚未做跨项目验证）。
 14. **评分为评委评定**：指南权重（30/20/20/15/15）为公开指标，实际评分含评委尺度；本文不预估分数、不声称任何一项已满分。
 15. **本轮并行材料已生成**：`SYNTHESIS-METRICS.md`、`AI-COLLABORATION-RECORD.md`、`skills/README.md`、`EVIDENCE-PACK.md`、`docs/evidence/`（索引＋5 份摘要）、`OPTIMIZATION-AND-REPRODUCTION.md`、`RF-INTERFACE-TIMING.md`、`FILENAME-CONSULTATION.md` 均已存在并按 §1 链接引用；但各自带证据层级（部分指标来自本地原件/文档记述），引用时仍须按 [DELIVERY-INDEX](DELIVERY-INDEX.md) §9 的规则标注，不得因"文件存在"就当作可复算证据。
-16. **命名例外答复未取得**：公开仓库当前 1404 文件/171 目录中有 **89 文件＋6 目录含大写**（中文/空格/其他特殊字符 0）；已准备 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（4 条问题，**尚未发送**）；在答复前不改名、不搬迁，以免破坏构建引用（→ GUIDE-CONFORMANCE §4、§6 G14、§7 H13）。
+16. **命名例外答复未取得**：公开仓库当前 1410 文件/172 目录中有 **94 文件＋6 目录含大写**（中文/空格/其他特殊字符 0）；已准备 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（4 条问题，短版/长版，**尚未发送**）；在答复前不改名、不搬迁，以免破坏构建引用（→ GUIDE-CONFORMANCE §4、§6 G14、§7 H13）。
 17. **RF 接口板级时序未测量**：`rf.xdc` 缺 `set_input_delay`/`set_output_delay`；全局 `no_input_delay` 10=9 HIGH+1 MEDIUM、`no_output_delay` 48=39 HIGH+9 MEDIUM；RF 子集 7 RX 输入＋8 TX 输出；`tx_clk_out_p` 需生成时钟；board skew/TX 生成时钟/runtime IDELAY tap 均未测；**内部 WNS +0.213/WHS +0.018 不覆盖接口，不得宣称接口通过**（见 [RF-INTERFACE-TIMING.md](RF-INTERFACE-TIMING.md)）。
 18. **优化补测未执行**：当前交付版本没有同版本/同条件/同口径的优化前后数据（`未取得`）；历史候选 `b3cca2ac…` 的受控配对（五阶段 median 378.89→292.08 ms、P95 444.52→311.74 ms、modrec4 median 154.58→64.81 ms）**仅作方法示例、不可移植**；最小补测方案见 [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.6。
 19. **证据包为脱敏摘要，功耗为估计值**：[EVIDENCE-PACK.md](EVIDENCE-PACK.md) 与 [docs/evidence/](../../docs/evidence/README.md) 是人工转录摘要，字节与原件不同、不可复算；`2.418 W` 等功耗来自 Vivado `report_power` 估算，**不是板端实测**，也不证明散热/供电余量。
