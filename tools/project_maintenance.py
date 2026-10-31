@@ -16,10 +16,10 @@ import uuid
 import zipfile
 
 SOURCE_ROOTS = {'src', 'scripts', 'sdk', 'host', 'pynq_overlay', 'rf_overlay',
-                'ml_training', 'sdr_testbench', 'tools', 'skills', 'ci', 'docs',
-                'LICENSES'}
+                'ml_training', 'sdr_testbench', 'tools', 'skills', 'skill', 'report',
+                'ci', 'docs', 'LICENSES', '.github'}
 ROOT_FILES = {'README.md', 'AGENTS.md', 'CLAUDE.md', '.gitignore', '.gitattributes',
-              'LICENSE', 'NOTICE'}
+              'LICENSE', 'NOTICE', 'build_manifest.json'}
 TEXT_SUFFIXES = {'.py', '.md', '.rst', '.txt', '.json', '.yaml', '.yml', '.toml',
                  '.tcl', '.xdc', '.v', '.sv', '.vh', '.vhd', '.vhdl', '.c', '.h',
                  '.cpp', '.hpp', '.sh', '.ps1', '.bat', '.cmd', '.ini', '.cfg',
@@ -211,7 +211,8 @@ def device_ids(root, members):
             content = read_text(root / rel)
         except (UnicodeError, ValueError):
             continue
-        if rel.suffix == '.json' and 'sdr_testbench' in rel.parts and any(
+        if rel.suffix == '.json' and any(
+                p in rel.parts for p in ('sdr_testbench', 'skills')) and any(
                 p in rel.parts for p in ('config', 'gui_demo')):
             for match in SERIAL_FIELD.finditer(content):
                 value = match['value']

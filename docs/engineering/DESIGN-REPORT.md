@@ -11,6 +11,8 @@
 
 ## 2. 总体架构
 
+功能框图（外部 SDR 激励与板卡接收，含 PL/PS 分工与边界声明）见 [system-architecture.md](system-architecture.md)。
+
 ```text
                   ┌──────────────────────────────┐
   PC 上位机 ──────│ host/（PySide6，辅助 AWG 用）│
@@ -78,6 +80,7 @@
 
 - **六类门**：离线 → ARM 原生 → 数字回环 → 有线物理回环 → 真人 → 发布；未执行层保持 `NOT_RUN`（见 [验收清单](../requirements/acceptance-checklists-p1-p6.md)）。
 - **测试分层**：PYNQ/脚本/主机 Python 套件、板端 C 原生套件（含假硬件夹具）、RTL 仿真（XSIM）、主机/ARM 判等、离线负例与变异验证；测试数量不能替代物理/真人结果。
+- **综合/实现与实测指标**：合并产品、独立 RF、独立 PYNQ 三个目标的资源/时序/时钟/功耗与上板性能汇总见 [综合与实现指标](SYNTHESIS-METRICS.md)；优化前后同口径对比目前**未取得**（原因与缺口见该文 §5–§6）。
 - **失败保留**：失败帧、失败日志与未通过结论不删除、不改写；新结论以新文件记录（见 [工程记忆](../memory/README.md)）。
 
 ## 8. 已知限制（设计层面）
@@ -93,6 +96,12 @@
 - [工程结构](PROJECT-STRUCTURE.md)
 - [作品简介追踪表](../requirements/brief-traceability.md)
 - [交付材料索引](DELIVERY-INDEX.md)
+- [综合与实现指标](SYNTHESIS-METRICS.md)
+- [指南 3.3 符合性映射](GUIDE-CONFORMANCE.md)
+- [竞赛提交材料与符合性说明](COMPETITION-MATERIALS.md)
+- [技能包入口](../../skills/README.md)（指南 `skill/` 映射见 [skill/README.md](../../skill/README.md)）
+- [大模型协作记录](AI-COLLABORATION-RECORD.md)
 - [AI 协作案例](AI-COLLABORATION-CASE.md)
 - [交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md)
 - [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md)
+- [report/ 入口](../../report/README.md)

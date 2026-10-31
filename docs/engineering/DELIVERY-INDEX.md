@@ -13,14 +13,17 @@
 | 3 | [工程结构](PROJECT-STRUCTURE.md) | 三条流水线（RF / PYNQ / 辅助 AWG）的目录职责与构建入口。 |
 | 4 | [AI 协作案例](AI-COLLABORATION-CASE.md) | 本项目的多代理协作、复审、门禁与失败教训（有出处）。 |
 | 5 | [设计报告](DESIGN-REPORT.md) | 面向评审的架构、关键设计决定、接收/发射/发布链路与已知限制。 |
-| 6 | [竞赛提交材料与符合性说明](COMPETITION-MATERIALS.md) | 材料清单、与作品简介要求的对应、无法证明的条目、匿名与隐私处理。 |
-| 7 | 按目标进入下方分节 | 设计、构建、能力、限制、模型、SDR、技能、证据边界。 |
+| 6 | [综合与实现指标](SYNTHESIS-METRICS.md) | 资源/时序/时钟/功耗、上板与 ARM 性能、优化前后对照与缺口（指标均带证据层级）。 |
+| 7 | [竞赛提交材料与符合性说明](COMPETITION-MATERIALS.md) | 材料清单、与指南 3.3/作品简介的对应、无法证明的条目、匿名与隐私处理。 |
+| 8 | [指南 3.3 符合性映射](GUIDE-CONFORMANCE.md) | 指南逐条要求 → 材料 → 状态 → 缺口；含目录对照与评分权重对应。 |
+| 9 | 按目标进入下方分节 | 设计、构建、能力、限制、模型、SDR、技能、证据边界。 |
 
 ## 2. 设计说明与工程规则
 
 | 材料 | 说明 |
 |---|---|
 | [工程结构](PROJECT-STRUCTURE.md) | 目录职责表、构建路线、为什么不做整体搬迁。 |
+| [系统结构图](system-architecture.md) | 外部 SDR 激励与板卡接收的功能框图（PL/PS 分工、外部信号源与显示边界）。 |
 | [分享、隐私与可恢复清理](SHARING-AND-CLEANUP.md) | 脱敏导出工具的边界、白名单、恢复命令；解释为何脱敏副本不能验证旧摘要。 |
 | [2026-10-30 工程整理记录](2026-10-30-ORGANIZATION-REPORT.md) | 本轮整理的实绩与保留边界。 |
 | [原 AWG 说明归档](awg-legacy-guide.md) | 辅助 AWG 流水线的历史操作说明（与 RF 产品无关，产物不混用）。 |
@@ -37,6 +40,12 @@
 | [人工验收指南（2026-10-26）](../rf/2026-10-26-human-acceptance-guide.md) | H01–H11 现场验收项与对外表述建议。 |
 | [冻结合同与规格](../superpowers/specs/) | 如 [TX 模式合同](../superpowers/specs/2026-10-13-rf-tx-mode-contract.md)、[环境诊断判据冻结](../superpowers/specs/2026-10-14-s2-environment-diagnosis-contract-freeze.md) 等。 |
 | [实施计划与路线](../superpowers/plans/) | 如 [final_prj 实施计划](../superpowers/plans/2026-10-13-final-prj-implementation-plan.md)、[RF 接收路线](../superpowers/plans/2026-10-03-rf-receiver-roadmap.md)。 |
+| [设计报告](DESIGN-REPORT.md) | 面向评审的架构、关键设计决定、接收/发射/发布链路与已知限制。 |
+| [综合与实现指标](SYNTHESIS-METRICS.md) | 合并/RF/PYNQ 三个构建目标的资源、时序、时钟、功耗与实测；优化前后对照为“未取得同口径基线”。 |
+| [指南 3.3 符合性映射](GUIDE-CONFORMANCE.md) | 指南逐条映射、推荐目录对照、文件命名规则与缺口/人工确认清单。 |
+| [技能包入口](../../skills/README.md) | 三套技能的适用范围、使用方法、失效条件、来源与已验证效果；指南 `skill/` 入口见 [skill/README.md](../../skill/README.md)。 |
+| [大模型协作记录](AI-COLLABORATION-RECORD.md) | 3 个真实案例的提示词→回答→纠错→结果、智能体工作流与技能提炼过程。 |
+| [report/ 入口](../../report/README.md) | 指南 `report/` 目录映射（设计报告＋协作记录），正文仍在 `docs/engineering/`。 |
 
 ## 3. 构建、测试与运行入口
 
@@ -46,6 +55,7 @@
 | 独立 PYNQ Overlay | `vivado -mode batch -source pynq_overlay/build.tcl`（[build.tcl](../../pynq_overlay/build.tcl)） |
 | 独立 RF Overlay | `vivado -mode batch -source rf_overlay/build.tcl`（[build.tcl](../../rf_overlay/build.tcl)） |
 | 合并产品打包 | [scripts/package_merged_overlay.py](../../scripts/package_merged_overlay.py)、[pynq_overlay/sw/merged_release.py](../../pynq_overlay/sw/merged_release.py) |
+| 构建清单 / CI | [build_manifest.json](../../build_manifest.json)（2026-09-24 构建记录）、[.github/workflows/awg-bitstream.yml](../../.github/workflows/awg-bitstream.yml)（Vivado 2025.2 自托管 runner） |
 | 板端 C 原生构建与主机测试 | [rf_overlay/sw/board_app/Makefile](../../rf_overlay/sw/board_app/Makefile)（`make` / `make host-test`） |
 | 板载界面与发布安装 | [pynq_overlay/sw/install.sh](../../pynq_overlay/sw/install.sh)、[pynq_overlay/sw/ui_view.py](../../pynq_overlay/sw/ui_view.py) |
 | 主机 C 测试与 Python 测试 | `rf_overlay/sw/board_app/test/`、`pynq_overlay/sw/tests/`、`scripts/tests/`、`host/tests/` |
@@ -119,10 +129,12 @@
 
 ## 8. 技能库（skills/）
 
+完整入口、每项技能的适用范围/使用方法/失效条件/来源/已验证效果见 [skills/README.md](../../skills/README.md)（指南 `skill/` 入口映射见 [skill/README.md](../../skill/README.md)）。
+
 | 技能 | 用途 |
 |---|---|
 | [final-prj-rf-development](../../skills/final-prj-rf-development/SKILL.md) | 本项目 RF 构建、接收、外部 SDR、证据与交付边界。 |
-| [pynq-linux-development](../../skills/pynq-linux-development/SKILL.md) | Overlay/AXI、systemd、触屏界面、部署与回退。 |
+| [pynq-linux-development](../../skills/pynq-linux-development/SKILL.md) | Overlay/AXI、systemd、触屏界面、部署与回退；面向 PYNQ 框架的通用技能（跨项目验证尚未做）。 |
 | [pluto-gnuradio-testbench](../../skills/pluto-gnuradio-testbench/SKILL.md) | 外接 PlutoSDR/GNU Radio 基础测试台与可移植模板。 |
 
 技能只记录方法与边界，不保存个人凭据，不新增硬件操作授权（见 [README](../../README.md)）。
@@ -137,6 +149,8 @@
 ## 10. AI 协作案例
 
 见 [AI-COLLABORATION-CASE.md](AI-COLLABORATION-CASE.md)：7 个有出处的事件（测试通过但原因错误、退出码失真、读取失败被当成无错误、假硬件盲区、结论时效性、交付复审发现的语义漂移、测试有效性工程），以及可复用的硬规则和"本篇不证明什么"。
+
+另见 [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)：按指南 3.3.5.3 组织的 3 个真实案例（提示词/任务 → 模型回答 → 错误或反馈 → 纠正 → 结果与证据），以及智能体工作流与可复用提示词骨架。
 
 ## 11. 许可证与引用
 

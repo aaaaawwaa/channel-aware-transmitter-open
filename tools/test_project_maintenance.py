@@ -127,6 +127,40 @@ class MaintenanceTests(unittest.TestCase):
         (docs / 'other.md').write_text('ok')
         self.assertEqual(list(m.source_files(self.root)), [Path('docs/other.md')])
 
+    def test_skill_and_report_entry_dirs_are_exported(self):
+        for directory in ('skill', 'report'):
+            (self.root / directory).mkdir()
+            (self.root / directory / 'README.md').write_bytes(b'# entry\n')
+        result = m.export(self.root)
+        with zipfile.ZipFile(self.root / result['zip']) as bundle:
+            names = bundle.namelist()
+        self.assertIn('skill/README.md', names)
+        self.assertIn('report/README.md', names)
+
+    def test_ci_workflow_and_build_manifest_are_exported(self):
+        (self.root / '.github' / 'workflows').mkdir(parents=True)
+        (self.root / '.github' / 'workflows' / 'ci.yml').write_bytes(b'name: ci\n')
+        (self.root / 'build_manifest.json').write_bytes(b'{"manifest_version": 2}\n')
+        result = m.export(self.root)
+        with zipfile.ZipFile(self.root / result['zip']) as bundle:
+            names = bundle.namelist()
+        self.assertIn('.github/workflows/ci.yml', names)
+        self.assertIn('build_manifest.json', names)
+
+    def test_skill_testbench_config_serial_is_redacted(self):
+        config = self.root / 'skills' / 'demo' / 'assets' / 'testbench' / 'config'
+        config.mkdir(parents=True)
+        serial = 'a1' * 16
+        (config / 'pluto.json').write_bytes(
+            ('{"serial": "%s", "frequency": 433900000}\n' % serial).encode('utf-8'))
+        (self.root / 'skills' / 'demo' / 'README.md').write_bytes(
+            ('device serial %s used for the demo\n' % serial).encode('utf-8'))
+        result = m.export(self.root)
+        with zipfile.ZipFile(self.root / result['zip']) as bundle:
+            text = bundle.read('skills/demo/README.md')
+            self.assertNotIn(serial.encode('utf-8'), text)
+            self.assertIn(b'<DEVICE_SERIAL>', text)
+
     def test_license_and_notice_are_exported(self):
         licenses = self.root / 'LICENSES'
         licenses.mkdir()

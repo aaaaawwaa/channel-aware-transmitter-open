@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "git_sha": "663cf78ef4d1b60e1dc0123e7bd9bf9645aa8a50",
+  "part": "xc7z020clg484-2",
+  "rtl_hash": "c18b9b4a47a09c5f50bf3fad7ac471febdbdf3d2c2779092205fe131694782af",
+  "built_at": "2026-09-24 10:19:29",
+  "toolchain": {
+    "vivado": null,
+    "python": "3.8.6 (tags/v3.8.6:db45529, Sep 23 2020, 15:52:53) [MSC v.1927 64 bit (AMD64)]"
+  },
+  "bitstream": "awg/awg.runs/impl_1/host_bd_wrapper.bit",
+  "bitstream_sha256": "76e242fe0438e1bec5596ef93be256f0532a53968c991b103bd710c89f08e1bb",
+  "bitstream_mtime": "2026-09-24 10:11:52",
+  "artifacts": {
+    "bitstream": {
+      "path": "awg/awg.runs/impl_1/host_bd_wrapper.bit",
+      "sha256": "76e242fe0438e1bec5596ef93be256f0532a53968c991b103bd710c89f08e1bb",
+      "size": 4045691,
+      "mtime": 1790215912.2098234
+    },
+    "hdf": {
+      "path": "awg/host_bd.hdf",
+      "sha256": "b1f3ff9cc00639e8a42c4fabbddc42ace5002bd5ee9c141b227a3c723d5f036c",
+      "size": 501465,
+      "mtime": 1790210779.352643
+    }
+  },
+  "timing": {
+    "wns_ns": 0.213,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0,
+    "whs_ns": 0.018,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0,
+    "wpws_ns": 0.264,
+    "pw_failing_endpoints": 0
+  },
+  "commands": {
+    "build": "python scripts/build_bitstream.py",
+    "check": "python scripts/check_bitstream.py"
+  }
+}

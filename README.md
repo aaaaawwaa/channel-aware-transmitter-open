@@ -49,9 +49,12 @@ scripts/                    构建、打包、部署、采集、验收与恢复�
 ml_training/                离线调制识别：数据生成、训练、评估、NumPy runtime
 sdr_testbench/              PlutoSDR / GNU Radio / 示波器测试台
 skills/                     可复用技能（本项目 RF、PYNQ、Pluto 测试）
+skill/                      指南 `skill/` 入口（映射到 skills/，见 skill/README.md）
+report/                     指南 `report/` 入口（映射到 docs/engineering/ 报告与协作记录）
 docs/                       需求、设计/规格、报告、审查、工程记忆
 tools/                      维护、导出与辅助脚本
 ci/                         位流完整性与自托管 runner 检查
+.github/                    CI 工作流（AWG 位流构建）
 ```
 
 完整职责与整理原则见 [工程结构](docs/engineering/PROJECT-STRUCTURE.md)。
@@ -155,9 +158,30 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 
 面向评审的材料：
 
-- [设计报告](docs/engineering/DESIGN-REPORT.md)：架构、关键设计决定、接收/发射/发布链路与已知限制。
-- [竞赛提交材料与符合性说明](docs/engineering/COMPETITION-MATERIALS.md)：材料清单、与“作品简介”要求的对应、无法证明的条目与匿名/隐私处理。
-- 注意：仓库内没有赛事官方要求原文，该说明不能作为“已满足官方全部要求”的证明；报名后台登记需单独完成。
+- [设计报告](docs/engineering/DESIGN-REPORT.md)：架构、关键设计决定、接收/发射/发布链路与已知限制；配套[系统结构图](docs/engineering/system-architecture.md)。
+- [综合与实现指标](docs/engineering/SYNTHESIS-METRICS.md)：资源、时钟/时序、功耗、上板与 ARM 性能、优化前后对照（当前为“未取得同口径基线”）与缺口清单。
+- [技能包入口](skills/README.md)（指南 `skill/` 映射见 [skill/README.md](skill/README.md)）：3 套技能的适用范围、使用方法、失效条件、来源与已验证效果。
+- [大模型协作记录](docs/engineering/AI-COLLABORATION-RECORD.md)：3 个真实案例的“提示词 → 回答 → 纠错 → 结果”与智能体工作流；另有 [AI 协作案例](docs/engineering/AI-COLLABORATION-CASE.md) 的方法与教训。
+- [指南 3.3 符合性映射](docs/engineering/GUIDE-CONFORMANCE.md)：逐条要求 → 材料 → 状态 → 缺口；[竞赛提交材料与符合性说明](docs/engineering/COMPETITION-MATERIALS.md)：材料清单、无法证明的条目与匿名/隐私处理。
+- 注意：官方指南由赛方提供，本仓库不包含指南原文；本仓库材料按指南 3.3 整理，但不能作为“已满足官方全部要求”的证明；报名后台登记需单独完成。
+
+## 赛事指南对照（2026 FPGA 赛道 AMD，3.3 自主选题）
+
+依据：全国大学生嵌入式芯片与系统设计竞赛 2026 FPGA 赛道选题指南（AMD）**3.3 自主选题赛道**（PDF 第 22–25 页，PDF 内页码 19–22）。初级组/高级组的资格与器件范围以报名信息为准；本平台使用 Zynq-7020（`xc7z020clg484-2`），两组均允许。指南推荐目录结构**非强制**；本仓库不搬迁既有目录，按下表给出对照（逐条状态与缺口见 [GUIDE-CONFORMANCE](docs/engineering/GUIDE-CONFORMANCE.md)）。
+
+| 指南推荐 | 本仓库实际位置 | 说明 |
+|---|---|---|
+| `src/` 设计源码 | `src/`（AWG RTL/裸机）、`rf_overlay/rtl/`、`rf_overlay/sw/board_app/`、`pynq_overlay/sw/`、`host/`、`sdk/src/` | 三条流水线独立、产物不混用；未搬迁 |
+| `sim/` 仿真/验证 | `src/tb/`、`rf_overlay/tb/`、`pynq_overlay/tb/`；`pynq_overlay/sw/tests/`、`scripts/tests/`、`host/tests/` | RTL 仿真与 Python/C 测试分层 |
+| `build/` 构建与综合/实现报告 | `scripts/build_bitstream.py`、`rf_overlay/build.tcl`、`pynq_overlay/build.tcl`、`scripts/package_merged_overlay.py`、`build_manifest.json`、`.github/workflows/awg-bitstream.yml` | 综合/实现指标整理在 [SYNTHESIS-METRICS](docs/engineering/SYNTHESIS-METRICS.md) |
+| `board/` 上板工程、脚本与实测输出 | `scripts/rf_teaching_install.sh`、`scripts/rf_teaching_trial_install.sh`、`pynq_overlay/sw/install.sh`、`docs/rf/boardtest.md`、`docs/rf/deployment-trial-runbook.md` | 原始实测输出/收据不在仓库 |
+| `data/` 测试数据与参考结果 | `ml_training/fourclass_test_vectors/` 等小型参考向量、`docs/golden/` | 原始 IQ/数据集/模型产物不随仓库 |
+| `skill/` 技能包 | [`skill/README.md`](skill/README.md) → [`skills/`](skills/README.md) | 技能内容维护在 `skills/`，入口映射 |
+| `report/` 设计报告与协作记录 | [`report/README.md`](report/README.md) → `docs/engineering/DESIGN-REPORT.md`、`SYNTHESIS-METRICS.md`、`AI-COLLABORATION-RECORD.md` | 报告正文维护在 `docs/engineering/` |
+
+指南 3.3 要求的提交物入口：工程包（源码/仿真/综合实现/上板/构建脚本）见上表与 [README 构建与运行](#构建与运行)；技能包见 [skills/README.md](skills/README.md)；设计报告见 [DESIGN-REPORT](docs/engineering/DESIGN-REPORT.md) 与 [report/README.md](report/README.md)；大模型协作记录见 [AI-COLLABORATION-RECORD](docs/engineering/AI-COLLABORATION-RECORD.md)。
+
+**文件命名规则说明**：指南 3.3.5.4 要求目录/文件名为纯英文小写、数字、下划线或连字符，但指南自身示例使用 `README.md`、`skill/README.md`；本仓库保留 `README.md`、`LICENSE`、`NOTICE`、`SKILL.md`、`Makefile`、`SHA256SUMS` 等惯例名称，未批量改名以免破坏构建引用与既有限制；不符合项清单与例外疑点见 [GUIDE-CONFORMANCE §4](docs/engineering/GUIDE-CONFORMANCE.md)，需向赛道确认例外。中文仅出现在正文内容中。
 
 ## 许可证
 

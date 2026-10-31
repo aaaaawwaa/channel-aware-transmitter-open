@@ -18,7 +18,7 @@
   ],
   "undecodable_or_binary_text_paths": [],
   "source_encodings": {
-    "utf-8-sig": 1368,
+    "utf-8-sig": 1377,
     "verbatim-bytes": 15
   },
   "text_line_endings": "lf",
@@ -89,7 +89,21 @@
     },
     {
       "path": "README.md",
-      "sha256": "bb4960f6606beb8be5426b2bdd02c7ee9b3d6a76e475cd88d5a49d42f344adff",
+      "sha256": "8b5663be28ec730245daecb17d49d919842d6ca14cbd7f7f3a501caa99dda9a6",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "build_manifest.json",
+      "sha256": "1604daae15f5998f936afb60d09b1877645ae51fa4913d86099afdf7b55dac37",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": ".github/workflows/awg-bitstream.yml",
+      "sha256": "0f7b9c63d073533fa8f2fc0ee9fabdeba592604f761ab2aecc9fff3b80b5af7d",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -165,22 +179,36 @@
       "redactions": {}
     },
     {
+      "path": "docs/engineering/AI-COLLABORATION-RECORD.md",
+      "sha256": "d3ceeab4a6fa4b066a48c5782f18c4e6f729371a6425d0d198bd5aeefa0ce268",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
       "path": "docs/engineering/COMPETITION-MATERIALS.md",
-      "sha256": "81fc825741bfae12e264f12b6ccbc78de2a49b14dd31ec30f5ffba3beea44ddd",
+      "sha256": "bad3ec7d46260098107b25239bbcc0700c6e1c6a2a829db304ba67482eaa9233",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "docs/engineering/DELIVERY-INDEX.md",
-      "sha256": "f2d9a847da453f079f441ebc6862ed19cbba97856b0a2f1c86437c5570a219d6",
+      "sha256": "ed65fd0071324f1428c79f6d62f9d6afa593c0d4b89ca8dadb50fcc8d088924d",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "docs/engineering/DESIGN-REPORT.md",
-      "sha256": "08dba363d80bbbcb0786d3096844b7b0239dd4f3b8c8d8169c3dc9c562f717c9",
+      "sha256": "cf7ff3cbca69b738936fe6a935c61b53c10eecaaf5964bf488c7e48f6b8dafe3",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "docs/engineering/GUIDE-CONFORMANCE.md",
+      "sha256": "2c20bee1186ef001f0c90d07c48e03499ae8a36d010270799957908168d3e3be",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -200,6 +228,13 @@
       "redactions": {}
     },
     {
+      "path": "docs/engineering/SYNTHESIS-METRICS.md",
+      "sha256": "654e8e4d5b2b0fc6a7f92a5dfa14b762639142da801ab03182fe8c9dadb02699",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
       "path": "docs/engineering/awg-legacy-guide.md",
       "sha256": "3aa32f4cb5a617e46f33520393c586a4d56f38b068be1fc272509de884ee0d1e",
       "source_encoding": "utf-8-sig",
@@ -209,6 +244,13 @@
         "local_windows_path": 1,
         "private_address": 8
       }
+    },
+    {
+      "path": "docs/engineering/system-architecture.md",
+      "sha256": "b2146d62b1539703b72b8e003e7b0469dc576d820875b39723590c8127f15ce6",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
     },
     {
       "path": "docs/golden/BASELINE.md",
@@ -6325,6 +6367,13 @@
       "redactions": {}
     },
     {
+      "path": "report/README.md",
+      "sha256": "fc777989e6e1e688c873bc27cf203469c2387bb49a1e1357add237f707e876cb",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
       "path": "rf_overlay/build.tcl",
       "sha256": "3f9afa048f91054096f25c93ace30eae692da8ded8e8915de8f5eeff882b9fdc",
       "source_encoding": "utf-8-sig",
@@ -9076,6 +9125,20 @@
       "redactions": {}
     },
     {
+      "path": "skill/README.md",
+      "sha256": "953dfbc98b9e8daf87647adb869b5c1620b4b6a76b6447fc136db4e93669bf5a",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
+      "path": "skills/README.md",
+      "sha256": "81070c0c1697733c3365ed8d30621fb4df10685052c5f74b415f032150cde29d",
+      "source_encoding": "utf-8-sig",
+      "removed_document_nuls": 0,
+      "redactions": {}
+    },
+    {
       "path": "skills/final-prj-rf-development/SKILL.md",
       "sha256": "19fa810d2b452beeab9a0f6a776a41b8ff19b51e2709d055380edfcc35649121",
       "source_encoding": "utf-8-sig",
@@ -10055,7 +10118,7 @@
     },
     {
       "path": "tools/project_maintenance.py",
-      "sha256": "f7c89842264dc5643df696e1d6370c6457518034bd69bbf8bc55d4572e43441d",
+      "sha256": "eaecacfe4c94460177d1ed1283ccd13d6a8bb284a109b373d815e7f9794cb3eb",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
@@ -10143,7 +10206,7 @@
     },
     {
       "path": "tools/test_project_maintenance.py",
-      "sha256": "c3644588bd9a7cf8c2eab8879853e56d31666e0e0bacad32dbaa3354bcad3193",
+      "sha256": "c5211d123502aee4f9c55e94f2ae7a6333ccf8cb160f97908bbdfa9691fd935a",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {

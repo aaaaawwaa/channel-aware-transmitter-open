@@ -1,0 +1,130 @@
+name: AWG Vivado Bitstream
+
+on:
+  push:
+    branches: [main, master]
+    tags: ['*']
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+concurrency:
+  group: awg-bitstream-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  host-tests:
+    name: Host regression
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: host/requirements.txt
+      - name: Install host test dependencies
+        run: python -m pip install -r host/requirements.txt
+      - name: Run host tests
+        run: python -m pytest host/tests -q
+
+  bitstream:
+    name: Vivado 2025.2 / Hog AWG build
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    needs: host-tests
+    runs-on: [self-hosted, linux, x64, vivado-2025.2]
+    timeout-minutes: 180
+    env:
+      VIVADO_BIN: ${{ vars.VIVADO_BIN || '/opt/Xilinx/2025.2/Vivado/bin/vivado' }}
+      XILINXD_LICENSE_FILE: ${{ secrets.HOG_XIL_LICENSE }}
+      HOG_XIL_LICENSE: ${{ secrets.HOG_XIL_LICENSE }}
+      HOG_NJOBS: '1'
+      CI_MIN_AVAILABLE_GB: '12'
+      CI_MIN_CPU: '2'
+      HOG_PYTHON: python3
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout pinned Hog
+        uses: actions/checkout@v4
+        with:
+          repository: Hog-CERN/Hog
+          ref: Hog2026.2
+          path: Hog
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Add Vivado to PATH
+        shell: bash
+        run: |
+          echo "$(dirname "$VIVADO_BIN")" >> "$GITHUB_PATH"
+          chmod +x Hog/Do
+
+      - name: Validate Vivado runner
+        run: python ci/check_vivado_runner.py
+
+      - name: Run the Hog AWG command
+        shell: bash
+        run: ./Hog/Do awg_ci
+
+      - name: Verify bitstream and gate evidence
+        run: |
+          python scripts/check_bitstream.py
+          python ci/verify_bitstream_ci.py
+
+      - name: Upload build diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: awg-build-diagnostics-${{ github.run_number }}
+          if-no-files-found: warn
+          path: |
+            awg/build_low_memory.log
+            awg/awg.runs/**/runme.log
+            awg/awg.runs/**/vivado.log
+            awg/awg.runs/impl_1/*timing*.rpt
+
+      - name: Upload verified bitstream
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: awg-bitstream-${{ github.run_number }}
+          if-no-files-found: error
+          path: |
+            awg/awg.runs/impl_1/host_bd_wrapper.bit
+            awg/host_bd.hdf
+            awg/awg.runs/impl_1/host_bd_wrapper_timing_summary_routed.rpt
+            build_manifest.json
+
+  release:
+    name: Publish tagged bitstream
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: bitstream
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Download verified artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: awg-bitstream-${{ github.run_number }}
+          path: release-files
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" release-files/* \
+            --title "AWG $GITHUB_REF_NAME" \
+            --generate-notes
