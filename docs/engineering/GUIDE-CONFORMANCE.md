@@ -11,7 +11,7 @@
   - **部分具备**：有相关材料或局部证据，但缺口明确，见 §6。
   - **未完成**：缺少交付物或该项未执行（含 `NOT_RUN`）。
   - **需人工确认**：取决于队伍资格、报名信息、官方解释或权利人授权，仓库不能自证。
-- 统计口径：§2 主映射表共 **46 条**（3.3.1–3.3.5.5）；§3 目录对照 8 行；§5 权重对应 5 行。主映射表状态分布（截至本文维护时点，已计入本轮新增材料：`EVIDENCE-PACK.md`、`docs/evidence/`（索引＋5 份摘要）、`OPTIMIZATION-AND-REPRODUCTION.md`、`RF-INTERFACE-TIMING.md`、`FILENAME-CONSULTATION.md`）：**已有 20 条 / 部分具备 23 条 / 未完成 0 条 / 需人工确认 3 条**；缺口（部分具备＋未完成）**23 条**，归并为 §6 的 **19 项**整改工作（其中 G05–G09、G13 已关闭）与 §7 的 **13 项**人工确认。
+- 统计口径：§2 主映射表共 **46 条**（3.3.1–3.3.5.5）；§3 目录对照 8 行；§5 权重对应 5 行。主映射表状态分布（截至本文维护时点，已计入本轮新增材料：`EVIDENCE-PACK.md`、`docs/evidence/`（索引＋5 份摘要）、`OPTIMIZATION-AND-REPRODUCTION.md`、`RF-INTERFACE-TIMING.md`、`FILENAME-CONSULTATION.md`）：**已有 20 条 / 部分具备 23 条 / 未完成 0 条 / 需人工确认 3 条**；缺口（部分具备＋未完成）**23 条**，归并为 §6 的 **19 项**整改工作（其中 G05–G09、G13 已关闭）与 §7 的 **14 项**人工确认。
 
 ## 1. 一页速览
 
@@ -196,7 +196,7 @@
 | G18 | PYNQ 使用为 Python 脚本，未用 Jupyter Notebook（推荐项，非强制） | #7 | 保留说明即可；如要贴合推荐形式可另加 notebook 入口 | Lead |
 | G19 | **RF 源同步 DDR 接口时序未测量/未约束**：`rf.xdc` 缺 input/output delay；全局 `no_input_delay` 10=9 HIGH+1 MEDIUM（false-path `spi_miso`）、`no_output_delay` 48=39 HIGH+9 MEDIUM（false-path `rf_gpio`）；RF 子集 7 RX 输入＋8 TX 输出（其中 `tx_clk_out_p` 需生成时钟，真正缺 output delay 的是 7 个 TX 数据/帧端口）；board skew/TX 生成时钟/runtime IDELAY 未测 | #19、#25、#42、#43 | 已由 [RF-INTERFACE-TIMING.md](RF-INTERFACE-TIMING.md) 记录缺口、参数来源、计算方法与分阶段最小方案；板级测量 `NOT_RUN`；**不得宣称接口通过**；内部 WNS +0.213/WHS +0.018 只覆盖已约束内部路径 | 赛前测量/授权（需人工确认） |
 
-## 7. 需人工确认清单（13 项）
+## 7. 需人工确认清单（14 项）
 
 | 编号 | 待确认事项 | 依据/位置 |
 |---|---|---|

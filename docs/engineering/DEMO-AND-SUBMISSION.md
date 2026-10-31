@@ -195,6 +195,8 @@
 | V4 | 主机 C 原生套件 | core 98/0、protocol 58/0、sleep 22/0、HEADROOM 148/0、vendor integrity 10 files passed 等（版本相关） | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4、[离线基线](../reports/2026-10-13-final-prj-baseline.md) |
 | V5 | SDR 测试台基础能力 | 设备识别、离线单音、RX 样本流、TX 停止读回成立；**RF 输出未验证**（示波器带宽不足、有线回环未完成） | [SDR 实测报告](../../sdr_testbench/TEST-REPORT.md) |
 | V6 | 屏幕显示与基础触摸 | 用户现场确认五寸屏正常显示；S1 照片复核部分闭合；**触摸 P95 `NOT_MEASURED`** | [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) 开头、[S1 照片复核](../reports/2026-10-04-s1-human-photo-review.md) |
+| V7 | 源码回归测试（Linux CI，公开快照） | **956 passed / 2 skipped / 0 failed**（Ubuntu 24.04、Python 3.11、`QT_QPA_PLATFORM=offscreen`）；skip 为 HWH 构建产物缺失与 SDK fresh workspace 不存在；Vivado/release 作业 skipped，**不代表构建通过** | [GitHub Actions run 41189065903](https://github.com/aaaaawwaa/channel-aware-transmitter-open/actions/runs/41189065903)、[README](../../README.md#构建与运行) |
+| V8 | Linux XSim 最小 RTL 验证（Azure） | Ubuntu 22.04.5 + Vivado/XSim 2025.2；commit `7729ba7` 的 `am_stage_tb` 6 项 PASS，`xvlog/xelab/xsim` 退出码均 0，工具耗时约 9.1 s；**仅一个最小自检测试，不代表完整 `src/tb/` 套件或综合/位流** | [README](../../README.md#构建与运行)「Linux XSim 快速验证」 |
 
 ### 4.2 有限验证（可作演示素材，不得外推）
 
@@ -233,8 +235,8 @@
 | # | 提交物 | 位置/入口 | 状态 | 负责人/说明 |
 |---|---|---|---|---|
 | S1 | 公开仓库（源码+文档） | 仓库根 [README](../../README.md)、[COMPETITION-MATERIALS](COMPETITION-MATERIALS.md)；提交前确认 HEAD/分支与材料一致 | **已有** | Lead；报名后台登记是独立步骤（S9） |
-| S2 | 设计报告 | [DESIGN-REPORT.md](DESIGN-REPORT.md)；指南 `report/` 入口 [report/README.md](../../report/README.md) | **已有** | Lead；引用证据层级与失败限制 |
-| S3 | 海报 / PPT（英文、中文） | **待制作**（本仓库暂无 `POSTER-AND-PPT.md`） | **未完成** | Lead/材料负责人；内容底稿用 DESIGN-REPORT、SYNTHESIS-METRICS、EVIDENCE-PACK 与本文 §4；禁止出现 §4.3 行 |
+| S2 | 设计报告 | [FINAL-DESIGN-REPORT.md](FINAL-DESIGN-REPORT.md)（提交版）、[DESIGN-REPORT.md](DESIGN-REPORT.md)（扩展版）；指南 `report/` 入口 [report/README.md](../../report/README.md) | **已有** | Lead；引用证据层级与失败限制 |
+| S3 | 海报 / PPT（英文、中文） | 文案已有：[POSTER-AND-PPT.md](POSTER-AND-PPT.md)（英文海报/PPT 文案 + 中文讲稿）；**实际海报/PPT 排版文件待制作** | **文案已有 / 排版未完成** | Lead/材料负责人；内容口径按本文 §4，禁止出现 §4.3 行 |
 | S4 | 技能包入口 | [skills/README.md](../../skills/README.md)（25 文件：24 技能文件+入口 README）；指南 `skill/` 映射 [skill/README.md](../../skill/README.md) | **已有** | 已写明适用范围/方法/失效条件/已验证效果；跨项目验证标注“尚未验证” |
 | S5 | AI 协作记录 | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)（K1–K3 + S1–S3 + 智能体工作流）；案例 [AI-COLLABORATION-CASE.md](AI-COLLABORATION-CASE.md) | **已有** | 改写摘要，不发布完整私人会话 |
 | S6 | 综合/实现/证据/优化/接口时序材料 | [SYNTHESIS-METRICS](SYNTHESIS-METRICS.md)、[EVIDENCE-PACK](EVIDENCE-PACK.md)、[docs/evidence](../evidence/README.md)、[OPTIMIZATION-AND-REPRODUCTION](OPTIMIZATION-AND-REPRODUCTION.md)、[RF-INTERFACE-TIMING](RF-INTERFACE-TIMING.md) | **已有（有限）** | 原件不在仓库；当前版本优化前后 `未取得`、接口时序未测，均如实标注 |
@@ -249,6 +251,7 @@
 
 - [ ] README 的交付范围、失败与限制、演示口径与现场一致（[README](../../README.md)）。
 - [ ] 公开仓库 HEAD 与材料索引一致；`skills/`、`skill/`、`report/` 入口链接有效。
+- [ ] 源码回归可复现：`QT_QPA_PLATFORM=offscreen python -m pytest host/tests -q` 通过（当前公开快照 956 passed / 2 skipped / 0 failed）；两项 skip 原因与 Vivado/release `skipped` 状态已说明，未把 `skipped` 写成构建通过。
 - [ ] 设计报告/海报/PPT/视频不出现 §4.3 的“未完成/不可演示”表述被写成已完成。
 - [ ] RF 接口时序表述为“未测/未约束”，**不出现“接口时序通过”**；内部 WNS/WHS 不当作接口证据。
 - [ ] 功耗数字标注为 Vivado 估计值；性能数字带候选/日期/证据层级。

@@ -107,6 +107,28 @@ python -B -m pytest -p no:cacheprovider --basetemp .pytest-work-host host/tests
 python -m unittest discover -s tools -p test_project_maintenance.py -v
 ```
 
+源码测试与 Linux CI 状态（2026-10-31）：
+
+```bash
+# Linux/macOS；Windows PowerShell 使用 $env:QT_QPA_PLATFORM="offscreen"
+QT_QPA_PLATFORM=offscreen python -m pytest host/tests -q
+```
+
+GitHub Actions 的 `Host regression` 在 Ubuntu 24.04 / Python 3.11 上执行同一命令（额外安装 `libegl1 libgl1` 与 CPU 版 `torch`，并创建 `.superpowers/sdd/2026-10-01-rx-smart-implementation` 测试夹具目录）。最新结果：**956 passed / 2 skipped / 0 failed**。两个跳过项分别是：`test_rf_merge` 的 live-overlay 断言缺少 `pynq_overlay/out_merged/awg_merged.hwh`（真实 Vivado 构建产物，不随仓库提交）；`test_udp_ddr_pp_sdk` 缺少新生成的 SDK 工作区。**Vivado 构建/发布作业在无自托管 runner 时为 skipped，不能据此说构建通过。**
+
+复现分三层：**CI 可复现** = `host/tests`；**本机可复现** = `pynq_overlay/sw/tests`、`scripts/tests`、板端 C 主机套件（见上）；**需板卡/授权** = 安装、采集、外部 PlutoSDR 单帧演示（见 [DEMO-AND-SUBMISSION](docs/engineering/DEMO-AND-SUBMISSION.md)）；Vivado 位流重建需开发机许可与长构建，见 [OPTIMIZATION-AND-REPRODUCTION](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)。
+
+Linux XSim 快速验证（2026-10-31，Azure Ubuntu 22.04.5 + Vivado/XSim 2025.2，源码提交 `7729ba7`）：
+
+```bash
+source /opt/Xilinx/2025.2/Vivado/settings64.sh
+xvlog src/rtl/am_stage.v src/tb/am_stage_tb.v   # exit 0, 1865 ms
+xelab -relax -s am_sim am_stage_tb              # exit 0, 2037 ms
+xsim am_sim -runall                             # exit 0, 5186 ms; 6 项 PASS
+```
+
+该验证只使用一个最小自检 testbench（`am_stage_tb`，6 项断言 + `$finish`），**不代表完整 `src/tb/` 套件、综合/实现或位流生成**；临时目录已清理，未改动构建机既有工程与 runner。Vivado 默认未加入 PATH，需先 `source settings64.sh`。
+
 模型训练与 SDR 测试台：
 
 ```powershell
@@ -134,6 +156,7 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 - **离线基线**：迁移受控证据后 `pynq_overlay/sw/tests` 为 `2056 passed / 5 skipped`、`scripts/tests` 为 `496 passed / 1 skipped`（退出码 0）。见[2026-10-14 报告](docs/reports/2026-10-14-deepseek-board-and-p0-followup.md)。
 - **主机 C 原生套件**：core `98/0`、protocol `58/0`、sleep `22/0`、HEADROOM `148/0`、vendor integrity `10 files passed` 等。见[离线基线报告](docs/reports/2026-10-13-final-prj-baseline.md)。
 - **QPSK/RECT 有限板上验证**：5 帧 I/Q 次序显式、`sync=true`、BER `0/128`；离线测试多组通过。见[2026-10-23 QPSK 离线报告](docs/reports/2026-10-23-p3-qpsk-offline.md)。
+- **外部 SDR 单帧 BPSK（Pluto TX → 板卡 RX1）**：2026-10-20 一次 4096@60 MSPS 采集；原样/共轭两路均 `reference_sync`、各 `0/138`。两路是**同一帧一致性检查**，不是两次独立接收、不能合并计数，也不代表连续锁定或统计 BER。见 [板级联调 README](sdr_testbench/board_integration/README.md)。
 - **外部 SDR 测试台**：设备识别、离线单音、RX 样本流、TX 停止读回成立；**RF 输出未验证**（示波器带宽不足，有线 RF 回环未完成）。见 [SDR 测试报告](sdr_testbench/TEST-REPORT.md)。
 - **辅助 AWG 历史基线**：`test_bridge.py COM11` 230 PASS、`scope_verify.py COM11` 61/61 PASS（与 RF 产品无关，产物不混用）。见 [golden/BASELINE.md](docs/golden/BASELINE.md)。
 - **人工/照片**：功能项与实体屏照片部分闭合；触摸时延 `NOT_MEASURED`。见 [S1 真人照片复核](docs/reports/2026-10-04-s1-human-photo-review.md)。

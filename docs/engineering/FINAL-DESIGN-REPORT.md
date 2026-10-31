@@ -55,6 +55,7 @@
 | 结果 | 数值（照抄；含版本/条件） | 边界 |
 |---|---|---|
 | 12 帧选用集冒烟 | BPSK 两 ON 均 **0/138**；QPSK 两 ON 均 **0/128**；QAM16 **1/256** 与 **0/256**；OFF clean；QAM64 移除负例 **9/9** 通过（当前交付口径 2026-10-26） | `部分`：非整体 BER 资格；QAM16 非零误码 |
+| 外部 SDR 单帧 BPSK | 2026-10-20 一次 4096@60 MSPS 采集；原样/共轭两路均 `reference_sync`、各 **0/138**（同一帧一致性检查） | `部分`：单帧一次、两路不独立计数；非统计 BER/连续锁定 |
 | QPSK 5 帧回放 | 均 QI 显式、`sync=true`、BER **0/128**；独立参考一致（2026-10-23 开发版，不重采） | `部分`：非独立 TEST 集 |
 | 双 TX 示波器 | 边带 **78.112 / 81.888 MHz**（目标 78.125/81.875，误差 **±13 kHz**）；12/12 检验通过；削波 0（2026-09-30 历史板级，80 MHz、60 MSPS、2R2T） | `非当前版本`：仪器读数，未去嵌频响 |
 | 独立 RF Overlay L2 Stage 1 | **8 PASS / 0 FAIL / 2 RECORD**；寄存器 0 读失败（2026-09-18，1R1T，非交付 bit） | `非当前版本`：独立目标记录 |
@@ -104,6 +105,10 @@ make -C rf_overlay/sw/board_app host-test         # 主机测试（Git bash 的 
 bash pynq_overlay/sw/install.sh                   # 发布安装（需板卡）
 sh scripts/rf_teaching_trial_install.sh           # 试部署 + 回滚（单次入口）
 ```
+
+**Linux 源码回归（2026-10-31，公开快照）**：GitHub Actions `Host regression` 在 Ubuntu 24.04 / Python 3.11 执行 `QT_QPA_PLATFORM=offscreen python -m pytest host/tests -q`，结果 **956 passed / 2 skipped / 0 failed**。两个跳过项分别是 `test_rf_merge` 的 live-overlay 断言缺少 `pynq_overlay/out_merged/awg_merged.hwh`（真实 Vivado 构建产物，不随仓库提交）与 `test_udp_ddr_pp_sdk` 缺少新生成 SDK 工作区；**Vivado/release 作业因无自托管 runner 为 `skipped`，不是构建通过**。复现分三层：CI 可复现 `host/tests`；本机可复现 `pynq_overlay/sw/tests`、`scripts/tests` 与 C 主机套件；板卡/外部 SDR 演示需现场授权与接线。复现命令与依赖见 [README](../../README.md#构建与运行)。
+
+**Linux XSim 快速验证（2026-10-31，Azure Ubuntu 22.04.5 + Vivado/XSim 2025.2，源码提交 `7729ba7`）**：对最小自检 testbench `src/tb/am_stage_tb.v`（6 项断言）执行 `xvlog` → `xelab -relax` → `xsim -runall`，三条命令退出码均为 0，6 项全部 PASS、`$finish`；工具耗时约 9.1 s（1865/2037/5186 ms），临时目录已清理，现有 runner 未受影响。该结果**只证明该最小 testbench 可在 Linux Vivado 2025.2 上复现仿真，不代表完整 `src/tb/` 套件、综合/实现或位流生成**。命令与依赖见 [README](../../README.md#构建与运行)。
 
 辅助 AWG 与 SDR GUI 演示入口见 [README](../../README.md#构建与运行)。**仓库边界**：本仓库是**脱敏源码副本，不是可安装发布包**：无位流/HWH/ELF、发布归档、原始 IQ/收据/日志、数据集/模型产物、照片；不能「下载即部署/推理」，也**不能用本副本验证旧报告 SHA-256**；交付 bit 与提交源码**不保证同源**（交付 bit 为工作区构建）。从零复现见 [OPTIMIZATION-AND-REPRODUCTION](OPTIMIZATION-AND-REPRODUCTION.md) §2。
 

@@ -90,7 +90,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e470b474da6fcdf2526a183afdae93ebdbbdb7b90bdae6b48a37d2963290a75f",
+      "sha256": "5d99179d344f454f463f3201c0ddeb8cb4c01b16340f5fee30d173ed71e86c69",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -202,7 +202,7 @@
     },
     {
       "path": "docs/engineering/DEMO-AND-SUBMISSION.md",
-      "sha256": "f0349d5360ca856f91c588416b734b13b7f03ae536ee4c6a15e8a95cb17b1bcc",
+      "sha256": "087e26248c0b97ee122e54965ea9c81f2438ba847ccf38865786fb132dd13025",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -230,14 +230,14 @@
     },
     {
       "path": "docs/engineering/FINAL-DESIGN-REPORT.md",
-      "sha256": "82e37252e0097e56c32ae8a55db96b39146c3916b64e9cf0ff0c9abfcf9e1569",
+      "sha256": "b2e416564e6864944ce72db927c2954d1bab2084c8edb0c7ef0588b49ccd5c7b",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "docs/engineering/GUIDE-CONFORMANCE.md",
-      "sha256": "ade9fcd0f3e2bae052c85dabb23acf2e2ee536411898df91e7ba3e3f578f1224",
+      "sha256": "ec4e37cd79fd2175aece421c772b9c698dd545f0c450045dad04d3a50b8672c2",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -251,7 +251,7 @@
     },
     {
       "path": "docs/engineering/PERFORMANCE-EVIDENCE.md",
-      "sha256": "08b4d9d6c9f36ebf54151340c2703efd3fc1f58b952a5fde6d0c85fade1b17cf",
+      "sha256": "ce61caab624e3d637ea0f00d6c9949dca2f23cff76eac49d8b1355b32fe715b2",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
