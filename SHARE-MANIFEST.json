@@ -35,6 +35,7 @@
     "private_term": 8,
     "remote_credentials": 4,
     "device_identifier": 22,
+    "msys_windows_path": 4,
     "credential_literal": 44
   },
   "files": [
@@ -1617,10 +1618,12 @@
     },
     {
       "path": "docs/superpowers/plans/2026-08-23-dual-channel-phase-link.md",
-      "sha256": "d8ebe0be59be0fc1fcb254b862f7224d7a9115c0eff956d6fd830820451beb72",
+      "sha256": "bda6872cb26a5d8c9ac3cab4d4e610397105f28f8cf7feece097a716ddad081d",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
-      "redactions": {}
+      "redactions": {
+        "msys_windows_path": 1
+      }
     },
     {
       "path": "docs/superpowers/plans/2026-08-25-digital-modulation.md",
@@ -1631,11 +1634,12 @@
     },
     {
       "path": "docs/superpowers/plans/2026-08-26-digital-modulation-integration.md",
-      "sha256": "1205a5095de9b699261add4a66ee06e138459eb2b3bcc30f42ba00228ef5ea22",
+      "sha256": "4f21ac9b1fd2916f1fe5195549ca72c13bd1d5dfe23a0c64f3f41bd24c51745a",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
-        "local_windows_path": 18
+        "local_windows_path": 18,
+        "msys_windows_path": 1
       }
     },
     {
@@ -1714,11 +1718,12 @@
     },
     {
       "path": "docs/superpowers/plans/2026-09-10-channel-impairment-tone-impulse.md",
-      "sha256": "9894a2f3572ec8589987782412f086ea8d6996db5e5b2cca87e9a499e78decba",
+      "sha256": "a61bcba1f77ce90fc41776f4af51b5173dfa387331ca1fdbfb039229aef43f91",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
-        "local_windows_path": 18
+        "local_windows_path": 18,
+        "msys_windows_path": 1
       }
     },
     {
@@ -10050,7 +10055,7 @@
     },
     {
       "path": "tools/project_maintenance.py",
-      "sha256": "ea5a9b251bce752901a33a3bc11e7f9eebc87e351adc6eb4725317473ad6c6d1",
+      "sha256": "f7c89842264dc5643df696e1d6370c6457518034bd69bbf8bc55d4572e43441d",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
@@ -10138,12 +10143,13 @@
     },
     {
       "path": "tools/test_project_maintenance.py",
-      "sha256": "d22dc4e7aedebb7fc8ef42e5540fd831e768d2388e0f3caa26ac569eff3b9bfd",
+      "sha256": "c3644588bd9a7cf8c2eab8879853e56d31666e0e0bacad32dbaa3354bcad3193",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
         "personal_windows_path": 1,
         "local_windows_path": 2,
+        "msys_windows_path": 1,
         "remote_credentials": 1,
         "private_address": 1,
         "visa_resource": 3,

@@ -266,6 +266,13 @@ def redact(content, identifiers=(), username='', terms=()):
                r'Modelsim|intelFPGA|Git|Python[0-9.]*|Anaconda[0-9]*|tools)'
                r'(?:[\\/][A-Za-z0-9_\-.\\/(){}&%$#@!~+,=]*)?',
                '<LOCAL_PATH>')
+    substitute('msys_windows_path',
+               r'(?i)(?<![A-Za-z0-9_.-])/[a-z]/'
+               r'(?:Vivado_prj|Vivado|vivado2025\.2|tmp|Users|Program\s+Files(?:\s+\(x86\))?|'
+               r'ProgramData|Windows|radioconda|mingw64|zynq7020src|ZYNQ_7020_AD9361|Xilinx|'
+               r'Modelsim|intelFPGA|Git|Python[0-9.]*|Anaconda[0-9]*|tools)'
+               r'(?:/[A-Za-z0-9_\-.]+)*',
+               '<LOCAL_PATH>')
     substitute('personal_path', r'(?i)([A-Z]:[\\/]+Users[\\/]+)[^\\/\r\n"\'<>]+',
                lambda m: m[1] + '<USER>')
     if username and username.lower() not in {'user', 'admin', 'administrator'}:

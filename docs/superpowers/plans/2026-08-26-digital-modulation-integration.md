@@ -911,7 +911,7 @@ static u32 pack_word_f(const ch_state_t *s1, const ch_state_t *s2)
 - [ ] **Step 2: 重新构建 SDK ELF**
 
 ```bash
-export PATH="/d/Vivado/SDK/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin:$PATH"
+export PATH="<LOCAL_PATH>:$PATH"
 make -C sdk/ws/awg_bridge/Debug clean all
 ```
 

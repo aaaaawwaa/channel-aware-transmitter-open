@@ -2248,7 +2248,7 @@ GET CH1 CHAN -> CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 
 
 ```bash
 SIM="<LOCAL_PATH>2025.2/2025.2/Vivado/bin"
-cd /d/tmp/tbcheck   # 别在仓库根跑, xsim 会写 xsim.dir/
+cd <LOCAL_PATH>   # 别在仓库根跑, xsim 会写 xsim.dir/
 for tb in tone_gen_tb impulse_gen_tb chan_impair_tb chan_cfg_tb reg_bridge_tb fade_fir_tb noise_gen_tb; do
   "$SIM/xvlog.bat" "<LOCAL_PATH>"/src/rtl/*.v \
                    "<LOCAL_PATH>"/src/tb/$tb.v >/dev/null 2>&1

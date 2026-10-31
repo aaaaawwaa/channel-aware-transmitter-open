@@ -123,7 +123,7 @@ MI 映射与 ACLK/ARESETN 循环追加 `M05_AXI axi_gpio_5/S_AXI`、`M05_ACLK`�
 - [ ] **Step 6: 仿真运行(端口接线错误会在此暴露)**
 
 ```bash
-cd /d/Vivado_prj/signal_generator && xvlog -f scripts/filelist.f 2>/dev/null || \
+cd <LOCAL_PATH> && xvlog -f scripts/filelist.f 2>/dev/null || \
   xvlog src/rtl/*.v src/tb/reg_bridge_tb.v src/tb/awg_top_tb.v && \
   xelab reg_bridge_tb -s reg_bridge_tb_sim -timescale 1ns/1ps && \
   xsim reg_bridge_tb_sim -R -runall 2>&1 | grep -E "PASS|FAIL"

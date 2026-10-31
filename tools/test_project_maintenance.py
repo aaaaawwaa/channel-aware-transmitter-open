@@ -91,12 +91,13 @@ class MaintenanceTests(unittest.TestCase):
             'root=<LOCAL_PATH>'
             'tool=<LOCAL_PATH>'
             'home=<LOCAL_PATH>'
+            'bash=<LOCAL_PATH>\n'
             "remote='<REMOTE_USER>@<REMOTE_HOST>'\n"
             'visa="<VISA_RESOURCE>"\n'
         )
         text, counts = m.redact(original, {'<DEVICE_SERIAL>'})
-        for leaked in ('ProgramData', 'Program Files', 'C:/Users', 'exampleuser',
-                       'USB0::'):
+        for leaked in ('ProgramData', 'Program Files', 'C:/Users', 'Vivado_prj',
+                       'exampleuser', 'USB0::'):
             self.assertNotIn(leaked, text)
         self.assertIn('<LOCAL_PATH>', text)
         self.assertIn('<REMOTE_USER>', text)
