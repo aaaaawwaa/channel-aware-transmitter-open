@@ -41,10 +41,10 @@
 
 - 3 MSym/s 的复数基带至少需要大于 3 MSPS 的采样率才能保留主瓣；2.4 MSPS 的 Nyquist 只有 1.2 MSym/s。
 - 2.4 MSPS / 3 MSym/s = 0.8 样点/符号，连一个符号一个样点都不到。
-- sdr_testbench/radio_test.py:20-33 自己也把模板 Fs 限制在 2.084–3 MSPS，幅度 ≤0.25、衰减 ≥40 dB；它没有 6 MSPS 的 BPSK 路径。
+- `sdr_testbench/radio_test.py:20-33` 的**通用 tone/rx 模板**仍把 Fs 限制在 2.084–3 MSPS、幅度 ≤0.25、衰减 ≥40 dB；但同一文件已有**专用 BPSK TX 路径**（`BPSK_TX_MODE='tx-bpsk'`、`BPSK_FS_HZ=6000000`、`validate_bpsk_tx`，见 `radio_test.py:14-61`），不能再用“没有 6 MSPS BPSK 路径”判断。
 - 因此**不能**把 sdr_testbench/config/pluto.json 的 2.4 MSPS 模板直接改成 3 MSym/s，也不能用“把幅度调小”绕过采样率问题。
 
-## 6 MSPS 参数组（纸上可行）
+## 6 MSPS 参数组（专用 BPSK 路径已实现；实机未验证）
 
 | 项 | 值 | 备注 |
 |---|---:|---|

@@ -19,10 +19,11 @@
 - 完整物理采集 S2（108+12）、46 dB HEADROOM 研究、真人现场验收（均 `NOT_RUN`）；
 - RF 源同步 DDR 接口时序“已通过”（**未测**，见 [RF-INTERFACE-TIMING.md](RF-INTERFACE-TIMING.md) §1）；
 - ARM 当前版本性能数字（当前交付口径未重测，历史数字不可移植）。
+- **“无外置衰减器直连安全”**：现有文档只能支持“有条件、单次≤2 s、单帧、受回读门约束”的有限演示，**不是安全保证**；Pluto 实际输出/线损未测，60 dB 在 B/GUI 路径没有流内回读，芯片级 +2.5 dBm 也不是 RX1 插口校准值。
 
 **对外一句话口径**（来自 [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) §四，可按现场实际缩减）：
 
-> “平台已实现基于 Zynq 与 AD9361 的有限快照收发、BPSK/QPSK 及 QAM16 接收分析、频谱/星座/参考误码展示与轻量模型结果显示。QAM16 存在已记录误码，QAM64 移出本次交付；RRC 真实链路、EVM 和自动档位选择未完成全项验收。”
+> “平台已实现基于 Zynq 与 AD9361 的有限快照接收分析（外部 SDR 激励、板卡纯接收、板卡 TX 关闭）、BPSK/QPSK 及受限 QAM16 接收分析、频谱/星座/参考误码展示与轻量模型结果显示。QAM16 存在已记录误码，QAM64 移出本次交付；RRC 真实链路、EVM 和自动档位选择未完成全项验收。”
 
 ## 2. 短演示流程（PlutoSDR TX → 板卡 RX1）
 
@@ -30,7 +31,7 @@
 
 | 项 | 本次取值 | 依据/说明 |
 |---|---|---|
-| 方向 | **Pluto TX → 板卡 RX1**（板卡 TX 全程关闭） | [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) §二.3；[WIRING](../../sdr_testbench/board_integration/WIRING.md) 阶段 B |
+| 方向 | **Pluto TX → 板卡 RX1**（板卡 TX 全程关闭） | [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) §二.3；[WIRING](../../sdr_testbench/board_integration/WIRING.md) 阶段 B（仅接线拓扑；BPSK 单帧参数/流程见[联调 README](../../sdr_testbench/board_integration/README.md)「BPSK 单次会话」） |
 | 波形 | BPSK、3 MSym/s、**RECT**、PRBS7 **seed 1**、**无差分编码**；有限单帧快照 | [BPSK-PARAMETERS](../../sdr_testbench/board_integration/BPSK-PARAMETERS.md) 结论；板卡硬参数同文 |
 | 频点 | 共同频点 **433.9 MHz**（两端 LO 相同） | [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) §二.2；[CAPABILITY](../../sdr_testbench/board_integration/CAPABILITY.md) |
 | 板卡接收 | 60 MSPS、4096 点、D1（ratio 0）、BPSK/RECT、参考 seed 1 | [BPSK-PARAMETERS](../../sdr_testbench/board_integration/BPSK-PARAMETERS.md)、[优化与复现](OPTIMIZATION-AND-REPRODUCTION.md) §2.2 |
@@ -50,7 +51,7 @@
 | 采样率 | **6 MSPS** | 3 MSym/s × sps 2 |
 | 符号率/成形/sps | **3 MSym/s / RECT / sps=2** | 不能用 RRC；板卡只接受 RECT |
 | 数字幅度 | **0.1**（请求值；发生器量化后记录实际值） | 不靠调大数字幅度提亮画面 |
-| Pluto 内部 TX 衰减 | **60 dB**（发射前回读；收尾压到最大衰减并读回） | [ATTENUATION](../../sdr_testbench/board_integration/ATTENUATION.md) |
+| Pluto 内部 TX 衰减 | **60 dB**（由既有脚本顺序保证：建图前 `-89.75 dB` → 开 LO → GR `set_attenuation(60)`；**流内无法回读**，见 [ATTENUATION](../../sdr_testbench/board_integration/ATTENUATION.md) 已知空窗）；收尾压到 `-89.75 dB` + `powerdown=1` 并读回 `powerdown` | [ATTENUATION](../../sdr_testbench/board_integration/ATTENUATION.md) |
 | TX RF 带宽 | 1.5 MHz（沿用历史配置，**不是**新带宽质量验收） | gui_demo README §3 参数表 |
 | PRBS7 | **seed 1**（统计验收才允许 1/37/73；本次单帧只用 1） | 两端 seed 必须一致，否则参考 BER 无意义 |
 | 差分编码 | **无** | 接收机直接用参考相关性定极性 |
@@ -81,9 +82,9 @@
 ### 2.2 外部发射条件（必须在真实接线确认后才可执行）
 
 1. 板卡与 Pluto 两端 TX 均已关，且已做**只读安全回读**（见 §3-D）。
-2. 接线为 **Pluto TX SMA → 50 Ω 同轴线 → 板卡 RX1 SMA**；板卡 TX1 空载、Pluto RX 空载、示波器断开（[WIRING](../../sdr_testbench/board_integration/WIRING.md) 阶段 B）。
+2. 接线为 **Pluto TX SMA → 50 Ω 同轴线 → 板卡 RX1 SMA**；板卡 TX1 空载、Pluto RX 空载、示波器断开（[WIRING](../../sdr_testbench/board_integration/WIRING.md) 阶段 B 仅指接线拓扑；BPSK 单帧参数/流程见[联调 README](../../sdr_testbench/board_integration/README.md)「BPSK 单次会话」）。
 3. 一次只允许**一个**发射源；不得同时把板卡 TX1 与 Pluto TX 接到同一接收端。
-4. 内部衰减路线已按既有流程设置并可回读；无外置衰减器**不是**本次硬阻塞，但所有电平结论只能是**计算界**，不是实测 dBm（[LEVEL-BUDGET](../../sdr_testbench/board_integration/LEVEL-BUDGET.md)）。
+4. 内部衰减路线由既有脚本顺序保证（建图前 `-89.75 dB` → 开 LO → GR 设 **60 dB**；流内不能回读）；无外置衰减器**不是**本次硬阻塞，但所有电平结论只能是**计算界**（对 +2.5 dBm 芯片级损伤边界：最坏约 52.5 dB、按 0.1/60 dB 配置约 72.5 dB 的**计算裕量**，不是实测 dBm/不是安全保证）；若不能确认衰减、现场要求“安全保证”或出现任何回读异常，**不发射**（[LEVEL-BUDGET](../../sdr_testbench/board_integration/LEVEL-BUDGET.md)、[ATTENUATION](../../sdr_testbench/board_integration/ATTENUATION.md)）。
 5. 已确认 433.9 MHz 在**赛事/当地允许的频段与功率范围**内；如不允许，改用允许频段并重新核验两端 LO/滤波/判据，**不为拍摄扩频或改固件**。
 6. 本次授权已写明：发射次数/总时长、窗口、停止条件、失败不重试；拍摄每段 RF 均计入当次预算（[开发纪律](../memory/03-development-discipline.md) §5）。
 
@@ -95,7 +96,7 @@
 2. **确认设备与接收模式**：“接收→解调”选择 **BPSK、3 MSym/s、RECT**，开启 **PRBS7 参考**，种子与 Pluto 端一致（单帧用 **1**）。
 3. **采样设置**：“接收→采样”选择 **D1（不抽取）、4096 点**；板卡输入采样率 **60 MSPS**（只读核对，不在此改判据）。
 4. **外部接收配置**：使用经联调核验的 **433.9 MHz 外部源配置**并核对回读；**不要**使用“填入教学配置”（它会填 80 MHz 且默认关闭 PRBS 参考）；只查看草稿不应用。
-5. **安全读回**：起始与结束均为 `TX source=false`、`RX armed=false`、`io_ok=true`、非 stale；若现场纯接收流程要求布防，只允许布防**接收**、全程不得启用板卡 TX，采集后回到 `armed=false`。**不点击“回环捕获/确认回环”**（会启动板卡自身发射）。
+5. **安全读回**：起始与结束均为 `TX source=false`、`RX armed=false`、`io_ok=true`、非 stale；若现场纯接收流程要求布防，只允许布防**接收**、全程不得启用板卡 TX，采集后回到 `armed=false`。**不点击“回环捕获/确认回环”**（回环捕获只登记待确认；**“确认回环”才真正启动板卡自身发射**）。
 6. **捕获当前帧**：等 Pluto 限时发射窗口开启、操作者口令确认后，点 **“捕获快照”**（或现场已有的纯 RX 入口），只采**一帧**；若纯 RX 入口不可用，记录具体状态并**停止该步骤**，不用回环按钮替代。
 7. **同帧展示**：依次看 **概览 → 解调 → 星座 → 采样/数据**，确认各页对应**同一实际 IQ/本次配置**：解调页记录载波同步/定时同步/参考同步、错误数/比较数/BER；星座页为接收同步符号（工具页的理想星座不作实测）；概览/频谱为当前 IQ 分析（**非校准 dBm**）。
 8. **（可选，仅限现场已确认）** 智能/环境页：只展示**同一帧**的模型输出与理由，标注“模型得分未校准、不作为准确率/可信度”；若现场不确定，不拍。
@@ -104,7 +105,7 @@
 ### 2.4 停止与安全回退（固定顺序）
 
 1. **停止发射**：GUI“请求停止并关闭 TX”（协作取消，等 stop/wait 与 LO 关闭读回）；或脚本入口按其既有收尾逻辑结束。若显示关闭未证实，**不继续发射**。
-2. **Pluto 安全关断读回**：重新打开 IIO，写 `hardwaregain=-89.75 dB` 与 TX LO `powerdown=1`，**各两次读回**一致；记录 `cleanup_required`。
+2. **Pluto 安全关断读回**：重新打开 IIO，写 `hardwaregain=-89.75 dB` 与 TX LO `powerdown=1`；读回 `powerdown=1`（receipt `tx_powerdown_readback`），`hardwaregain` 由 after 快照记录、**无二次断言**；记录收尾状态 `CLEANUP_UNVERIFIED`/`CLEANUP_FAILED`（GUI 路径 `receipt_state`，不使用板卡/示波器包装器的 `cleanup_required`）。
 3. **板卡侧**：不启动板卡 TX；结束时按既有流程 **停止 → 解除/ disarm**，只读读回 `armed=false`、`TX source=false`、`RX armed=false`、`io_ok=true`，并记录 `boot_id`/服务状态。
 4. **异常处置**：出现削顶、FAULT、回读不符、USB/端口转发异常、发射预算超限或收尾失败 → **立即停止、不重试、不补采**；收尾无法确认时由操作者断开 Pluto USB/电源与 RF 线，报告 `CLEANUP_FAILED`/`UNKNOWN`。
 5. **保存证据**：按现有目录约定保存到**本地**——SDR 侧 `sdr_testbench/results/<run-id>/`（`result.json`/`iq.npy`/截图）、联调侧 `sdr_testbench/board_integration/results/<run-id>/`（`session.json`、板端/Pluto 收据、`failure-cleanup.json`）；屏幕照片/视频由现场指定本地目录；**不放入公开仓库**。记录版本/配置/seed/实测流时长/回读原文/IQ 摘要；公开仓库只引用脱敏摘要（[docs/evidence/](../evidence/README.md)）。
@@ -119,6 +120,28 @@
 | F4 | 捕获后无参考同步或 BER 非零 | 如实记录实际值，**不换帧、不重试**；仍可作为“有限验证”素材或停止该段 |
 | F5 | 收尾读回无法确认 | 报 `CLEANUP_FAILED`/`UNKNOWN`，人工断开 RF/USB，不再发射 |
 | F6 | 现场有人质疑未验证能力 | 按 §4 分级表如实回答，不口头补证 |
+
+## 2.6 一页现场操作卡（外部 SDR，可打印）
+
+> 适用：**PlutoSDR TX → 板卡 RX1 纯接收**、BPSK 单帧、板卡 TX 全程关闭、只使用外部源。以下任一“不发射条件”成立即停止，不重试、不补采。
+
+**不发射条件（任一）**：没有现场授权或 433.9 MHz 不在允许频段/功率范围；P18 不是 2.5 V；接线不是单一发射源/单根 50 Ω 同轴；任一 TX 状态未知；示波器、COM11 或其它设备接入本 RF 链；内部衰减无法按脚本顺序确认或启动日志有异常；无法完成只读安全回读。
+
+**器材与接线**：板卡（AC820 + FMCOMMS3/AD9361）、PlutoSDR Rev.B、一根 50 Ω SMA 同轴线、PC；**不接示波器**。Pluto TX SMA → 同轴线 → 板卡 RX1 SMA；板卡 TX1 与 Pluto RX 保持空载；不接 T 型/功分器/DC 偏置；未使用端口保持空载（有 50 Ω 负载可加）。
+
+**顺序（只做一次）**：
+
+1. **不发射预检**：打开 `sdr_testbench/gui_demo/run.ps1` 确认参数并本地预览；另开 GRC 预览 `open_grc.ps1`，确认 Pluto Sink 为 **DISABLED**；跑 `sdr_testbench/run.ps1 probe` 与 `offline`（不发射）。
+2. **板卡只读回读**：`current`/`active-release`、双服务 active、`armed=false`、`TX source=false`、`RX armed=false`、`io_ok=true`、非 stale；记录 `boot_id`。
+3. **接线**：两端 TX 均已关；按上表接线；接好后不再拔插；确认只有 Pluto 一个发射源。
+4. **电平确认**：Pluto 内部衰减由脚本顺序保证（建图前 `-89.75 dB` → 开 LO → GR `set_attenuation(60)`；**无流内回读**）；GUI 参数显示 **60 dB / 幅度 0.1**；无外置衰减器时，电平只是计算界（对 +2.5 dBm 芯片级损伤边界：最坏约 52.5 dB、按配置约 72.5 dB 的**计算裕量**，不是实测 dBm/不是安全保证）；现场要求“安全保证”或任何异常/无法确认→不发射。
+5. **板卡接收设置**：接收→解调选 **BPSK / 3 MSym/s / RECT / PRBS7 参考 seed 1**；采样选 **60 MSPS / 4096 点 / D1**；确认不使用 80 MHz 教学模板。
+6. **一次发射**：GUI 填写实际接线并勾选“已确认板卡 TX 关闭”，点“启动一次限时 Pluto 发射”，确认弹窗；窗口 **≤2 s**，不连续开流、不自动重发。
+7. **一帧采集**：点板卡 **“捕获快照”**（不点“回环捕获/确认回环”）；确认当前帧出现；只在同一帧查看概览/解调/星座/采样。
+8. **停止与读回**：GUI“请求停止并关闭 TX”，等待 stop/wait 与关断；重新打开 IIO 写 `hardwaregain=-89.75 dB`、`powerdown=1` 并读回 `powerdown=1`；板卡解除武装/停止，只读回读 `armed=false`、`TX source=false`、`RX armed=false`、`io_ok=true`。
+9. **证据**：把 GUI/GRC 截图、板卡同帧照片、`result.json`/收据、停止/回读原文保存到**本地**；文件名脱敏；不把历史自回环或历史单帧当作本次结果。
+
+**失败即停**：任一回读不符、无参考同步、削顶/FAULT/USB 错误、发射预算超限或收尾无法确认→立即停止，按 §2.4 收尾，记录实际值，不换帧、不重试、不剪成“成功”。
 
 ## 3. 现场核对表（全部通过后才可进入真实发射；任一项不通过就停）
 
@@ -143,8 +166,8 @@
 | C08 | 单一发射源 | 同一接收端只接一个 TX；不得同时连接板卡 TX1 与 Pluto TX | 立即断开多源 |
 | C09 | 线缆与接头 | 50 Ω 同轴线尽量短、接头拧紧、不过度弯折 | 更换/整理后再开始 |
 | C10 | 板卡内部 RX 设置 | 沿用既有 RX 增益设置，不暗改；回读与配置一致 | 记录差异，按既有流程处理 |
-| C11 | Pluto 内部衰减 | 60 dB 请求值已写入并回读（发射前）；收尾压到 89.75 dB + `powerdown=1` 各两次读回（[ATTENUATION](../../sdr_testbench/board_integration/ATTENUATION.md)） | 不发射 |
-| C12 | 电平预算 | 按 [LEVEL-BUDGET](../../sdr_testbench/board_integration/LEVEL-BUDGET.md) 记录“计算界”，不写实测 dBm；无外置衰减器不阻塞，可选衰减器须记录实际值 | 预算不成立则不发射 |
+| C11 | Pluto 内部衰减 | 60 dB 由脚本顺序保证（建图前 `-89.75 dB` → 开 LO → GR 设 60 dB；**无流内回读**）；收尾 `-89.75 dB` + `powerdown=1` 并读回 `powerdown=1`（[ATTENUATION](../../sdr_testbench/board_integration/ATTENUATION.md)）。无法确认或出现异常即不发射 | 不发射 |
+| C12 | 电平预算 | 按 [LEVEL-BUDGET](../../sdr_testbench/board_integration/LEVEL-BUDGET.md) 记录“计算界”，不写实测 dBm/不写“安全保证”；无外置衰减器不阻塞，但 60 dB 在 B/GUI 路径无流内回读，现场要求安全保证时不发射；可选衰减器须记录实际值 | 预算/回读不成立则不发射 |
 | C13 | 整组结论 | A+B 全部通过；否则不进入发射 | 停止 |
 
 ### C. 频段合法性与参数一致性（C14–C18）
@@ -202,7 +225,7 @@
 
 | ID | 能力/结果 | 状态与范围 | 出处 |
 |---|---|---|---|
-| L1 | 12 帧选用集接收冒烟 | BPSK 两 ON 均 `0/138`；QPSK 两 ON 均 `0/128`；QAM16 分别 `1/256`、`0/256`；QAM64 移除 9 项负例 `9/9`；**有限帧冒烟，不是整体验收** | [交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 |
+| L1 | 12 帧选用集接收冒烟（板端；未标注为外部 SDR） | BPSK 两 ON 均 `0/138`；QPSK 两 ON 均 `0/128`；QAM16 分别 `1/256`、`0/256`；QAM64 移除 9 项负例 `9/9`；**有限帧冒烟，不是整体验收** | [交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 |
 | L2 | 外部 SDR 单帧 BPSK（Pluto TX→板卡 RX1） | 2026-10-20 12:22 真机执行**一次**：1 次 4096@60MSPS 采集；原样/共轭两路 `reference_sync` 且各 `0/138`；两路是一致性检查、**不是**两次独立接收；不代表连续锁定/统计 BER | [board_integration README](../../sdr_testbench/board_integration/README.md) BPSK 单次会话 |
 | L3 | 频谱/星座/参考 BER 展示（BPSK 域） | 展示当前实际 IQ 的分析结果；频谱非校准 dBm；工具页理想/合成星座不充当实测 | [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) H05/H06 |
 | L4 | 同帧模型/环境结果显示（可选） | 只展示**同一帧**的标签/得分/原因与版本；模型得分未校准，**不是准确率/可信度**；不得据场景按钮倒推识别正确 | [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) H08/H09 |

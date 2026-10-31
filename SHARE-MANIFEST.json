@@ -90,7 +90,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "5d99179d344f454f463f3201c0ddeb8cb4c01b16340f5fee30d173ed71e86c69",
+      "sha256": "237742e2d328a23ced85e547d5427ad63312cb928dff823865da889181aef4f8",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -202,7 +202,7 @@
     },
     {
       "path": "docs/engineering/DEMO-AND-SUBMISSION.md",
-      "sha256": "087e26248c0b97ee122e54965ea9c81f2438ba847ccf38865786fb132dd13025",
+      "sha256": "9789353ddeef243f2db898f81b596fb0cf154594753b3216bf29f9febcfd2298",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -230,7 +230,7 @@
     },
     {
       "path": "docs/engineering/FINAL-DESIGN-REPORT.md",
-      "sha256": "b2e416564e6864944ce72db927c2954d1bab2084c8edb0c7ef0588b49ccd5c7b",
+      "sha256": "80936a4637728107abda6fb98bda61edf0eda8080976fb40aef75220ae2876c9",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -251,14 +251,14 @@
     },
     {
       "path": "docs/engineering/PERFORMANCE-EVIDENCE.md",
-      "sha256": "ce61caab624e3d637ea0f00d6c9949dca2f23cff76eac49d8b1355b32fe715b2",
+      "sha256": "ebe49f32aa5b15c7223e3c74392689666b011d4ad953acbcadf5ef86ac4d04ae",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "docs/engineering/POSTER-AND-PPT.md",
-      "sha256": "5c02a12fad8bc38245feab3d27c071b09b87cd4338d49c4523dc7139a97a191d",
+      "sha256": "3d7be8fa5e8f90b9a20a7a3e936a9726d8dbf212de754c2cc36df1b1f63f9627",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -8923,7 +8923,7 @@
     },
     {
       "path": "sdr_testbench/board_integration/BPSK-PARAMETERS.md",
-      "sha256": "24583a92e167eece5862f796efdecbf3c8ff74da4f1bbae0c89acb582119a458",
+      "sha256": "2bda7c6eb27d09a7ab31147f624f4827f35f65d06d221853a959e66be40c6fbd",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}

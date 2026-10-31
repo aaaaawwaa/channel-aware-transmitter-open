@@ -149,14 +149,14 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 
 > 原始收据、原始 IQ 与运行日志不在本仓库，下列指标只能按"文档记载"引用，不能在本仓库内复算。每条都带原文的限定语。
 
-- **有限接收冒烟（12 帧选用集）**：BPSK 两 ON 均 `0/138`，QPSK 两 ON 均 `0/128`；QAM16 分别 `1/256` 与 `0/256`；QAM64 移除相关的 9 项负例 `9/9` 通过。见[交付复审](docs/reviews/2026-10-26-codex-delivery-closeout-review.md)。
+- **有限接收冒烟（12 帧选用集，板端；未标注为外部 SDR）**：BPSK 两 ON 均 `0/138`，QPSK 两 ON 均 `0/128`；QAM16 分别 `1/256` 与 `0/256`；QAM64 移除相关的 9 项负例 `9/9` 通过。见[交付复审](docs/reviews/2026-10-26-codex-delivery-closeout-review.md)。
 - **发布安装**：`4814bbc4…` 已安装，只读读回 `current/active` 一致、双服务 `active`、RF 安全态成立（当时读回，不代表当前板态）。同一复审记录 `4814bbc4` 之前的候选 `b82b141e…` 安装收据为 `INSTALLED_VERIFIED`、`accepted=true`、`new_rf_frames=0`、`real_initializations=0`。见[作品简介追踪表](docs/requirements/brief-traceability.md)。
 - **试部署 + 自动回滚**：修复候选通过非发射验收后注入退出 42，自动恢复父版本；独立读回服务、RF 安全态、`boot_id` 与存储正常。见[回滚收尾报告](docs/reports/2026-10-17-trial-rollback-board-closeout.md)。
 - **ARM 完整计算历史记录**：不同候选的 100 次完整计算 P95 为 `258.6409 ms` / `272.785 ms` / `278.835 ms`（具体 RSS、判等条件与日期见原文）；必须带候选 ID 引用，不能移植到新候选。见[证据索引](docs/memory/05-evidence-index.md)、[作品简介追踪表](docs/requirements/brief-traceability.md)。
 - **离线基线**：迁移受控证据后 `pynq_overlay/sw/tests` 为 `2056 passed / 5 skipped`、`scripts/tests` 为 `496 passed / 1 skipped`（退出码 0）。见[2026-10-14 报告](docs/reports/2026-10-14-deepseek-board-and-p0-followup.md)。
 - **主机 C 原生套件**：core `98/0`、protocol `58/0`、sleep `22/0`、HEADROOM `148/0`、vendor integrity `10 files passed` 等。见[离线基线报告](docs/reports/2026-10-13-final-prj-baseline.md)。
 - **QPSK/RECT 有限板上验证**：5 帧 I/Q 次序显式、`sync=true`、BER `0/128`；离线测试多组通过。见[2026-10-23 QPSK 离线报告](docs/reports/2026-10-23-p3-qpsk-offline.md)。
-- **外部 SDR 单帧 BPSK（Pluto TX → 板卡 RX1）**：2026-10-20 一次 4096@60 MSPS 采集；原样/共轭两路均 `reference_sync`、各 `0/138`。两路是**同一帧一致性检查**，不是两次独立接收、不能合并计数，也不代表连续锁定或统计 BER。见 [板级联调 README](sdr_testbench/board_integration/README.md)。
+- **外部 SDR 单帧 BPSK（有限验证，非统计）**：2026-10-20 一次 4096@60 MSPS 采集；原样/共轭两路均 `reference_sync`、各 `0/138`。两路是**同一帧一致性检查**，不是两次独立接收、不能合并计数，也不代表连续锁定或统计 BER。该演示为内部衰减受控直连（**无外置衰减器**），电平为计算界、不是实测 dBm。见 [板级联调 README](sdr_testbench/board_integration/README.md)。
 - **外部 SDR 测试台**：设备识别、离线单音、RX 样本流、TX 停止读回成立；**RF 输出未验证**（示波器带宽不足，有线 RF 回环未完成）。见 [SDR 测试报告](sdr_testbench/TEST-REPORT.md)。
 - **辅助 AWG 历史基线**：`test_bridge.py COM11` 230 PASS、`scope_verify.py COM11` 61/61 PASS（与 RF 产品无关，产物不混用）。见 [golden/BASELINE.md](docs/golden/BASELINE.md)。
 - **人工/照片**：功能项与实体屏照片部分闭合；触摸时延 `NOT_MEASURED`。见 [S1 真人照片复核](docs/reports/2026-10-04-s1-human-photo-review.md)。

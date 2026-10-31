@@ -30,7 +30,7 @@ The delivered overlay is packaged as one bit/HWH plus a software manifest (deliv
 
 ### Results
 
-In a bounded 12-frame smoke on the installed delivery release, both BPSK ON frames showed 0/138 bit errors and both QPSK ON frames showed 0/128, while QAM16 showed 1/256 on one frame and 0/256 on the other; the non-zero frame is retained as a metric negative and is not reported as clean. Five QPSK development frames replayed with explicit QI ordering at 0/128 errors, and QAM64-removal negative checks passed 9/9. Historical/independent board records — not the delivered bit — include TX sidebands at 78.112/81.888 MHz against 78.125/81.875 MHz targets (±13 kHz, 12/12 checks, no clipping) and an independent RF-overlay L2 stage-1 result of 8 PASS / 0 FAIL / 2 RECORD.
+In a bounded 12-frame board-side smoke on the installed delivery release, both BPSK ON frames showed 0/138 bit errors and both QPSK ON frames showed 0/128, while QAM16 showed 1/256 on one frame and 0/256 on the other; the non-zero frame is retained as a metric negative and is not reported as clean. Five QPSK development frames replayed with explicit QI ordering at 0/128 errors, and QAM64-removal negative checks passed 9/9. One bounded external PlutoSDR single-frame capture (2026-10-20) also exists: two consistency decodes of the same 4096-sample snapshot each gave 0/138; this is not statistical BER and not two independent receptions. Historical/independent board records — not the delivered bit, and on the board's own TX/self-loop path rather than external-SDR validation — include TX sidebands at 78.112/81.888 MHz against 78.125/81.875 MHz targets (±13 kHz, 12/12 checks, no clipping) and an independent RF-overlay L2 stage-1 result of 8 PASS / 0 FAIL / 2 RECORD.
 
 ### Reproducibility
 
@@ -38,7 +38,7 @@ Source, build scripts and test entry points are in the open repository, e.g. `py
 
 ### Limitations
 
-Scope is deliberately narrow: QAM64 is not delivered, QAM16 is not fully clean, and the external-SDR BPSK historical statistics reached only 23/30 synchronised frames, so that path did not pass overall. EVM, real-link RRC reception and channel-aware automatic mode selection are not implemented; formal physical capture (S2, 108 frames + 12 offline negatives) and human acceptance are NOT_RUN. Power is a tool estimate, not measured; the RF source-synchronous DDR interface is not timing-constrained or measured, so we do not claim interface timing closure. Third-party RTL licensing is unresolved and the repository contains neither bitstream/HWH nor raw IQ.
+Scope is deliberately narrow: QAM64 is not delivered, QAM16 is not fully clean, and the external-SDR BPSK historical statistics reached only 23/30 synchronised frames, so that path did not pass overall. The external single-frame demo is a direct connection with internal TX attenuation only (no external attenuator); level figures are calculation bounds, not measured dBm, and do not constitute a damage guarantee. EVM, real-link RRC reception and channel-aware automatic mode selection are not implemented; formal physical capture (S2, 108 frames + 12 offline negatives) and human acceptance are NOT_RUN. Power is a tool estimate, not measured; the RF source-synchronous DDR interface is not timing-constrained or measured, so we do not claim interface timing closure. Third-party RTL licensing is unresolved and the repository contains neither bitstream/HWH nor raw IQ.
 
 ---
 
@@ -54,11 +54,11 @@ Scope is deliberately narrow: QAM64 is not delivered, QAM16 is not fully clean, 
 
 **实现/系统**：交付 Overlay 以一份 bit/HWH + 软件清单打包（交付 release `4814bbc4…`）；其可编程载荷与实现报告所描述的 2026-09-24 构建（`76e242fe…`）逐字节相同。在 `xc7z020clg484-2` 上占用 28745 LUT（54.03%）、22620 寄存器（21.26%）、18.5 个 Block RAM Tile（13.21%）、104 个 DSP48E1（47.27%）；内部时序收敛：WNS +0.213 ns / WHS +0.018 ns，时钟 50/200/239.981 MHz。片上功耗估计 2.418 W，来自 Vivado `report_power`，是估计值而非板上实测。
 
-**结果**：在已安装交付 release 上有界 12 帧冒烟中，BPSK 两个 ON 帧均为 0/138 误码、QPSK 两个 ON 帧均为 0/128 误码，QAM16 一帧 1/256、另一帧 0/256；非零帧作为指标负例保留，不写成干净通过。QPSK 5 帧开发帧以显式 QI 次序回放为 0/128；QAM64 移除负例 9/9 通过。历史/独立板级记录（非交付 bit）包括：TX 边带 78.112/81.888 MHz（目标 78.125/81.875，误差 ±13 kHz，12/12 检验，无削波）、独立 RF Overlay 的 L2 Stage 1 为 8 PASS / 0 FAIL / 2 RECORD。
+**结果**：在已安装交付 release 上有界 12 帧**板端**冒烟中，BPSK 两个 ON 帧均为 0/138 误码、QPSK 两个 ON 帧均为 0/128 误码，QAM16 一帧 1/256、另一帧 0/256；非零帧作为指标负例保留，不写成干净通过。QPSK 5 帧开发帧以显式 QI 次序回放为 0/128；QAM64 移除负例 9/9 通过。另有一次外部 PlutoSDR 单帧（2026-10-20，同一 4096 点快照的原样/共轭两路一致性解码各 0/138；非统计 BER、非两次独立接收）。历史/独立板级记录（非交付 bit，且为**板卡自环/TX 路径，非外部 SDR 验证**）包括：TX 边带 78.112/81.888 MHz（目标 78.125/81.875，误差 ±13 kHz，12/12 检验，无削波）、独立 RF Overlay 的 L2 Stage 1 为 8 PASS / 0 FAIL / 2 RECORD。
 
 **可复现**：源码、构建脚本与测试入口在公开仓库中，例如 `python scripts/build_bitstream.py`、`vivado -mode batch -source pynq_overlay/build.tcl`、`vivado -mode batch -source rf_overlay/build.tcl`、`make -C rf_overlay/sw/board_app`。关键结果被转录为带原件 SHA-256 与来源的脱敏证据摘要；位流/HWH/原始 IQ 有意不入库。交付 bit 不能保证逐字节重建：它由带未提交修改的工作区构建，且 5 个第三方 RTL 许可未决。本仓库是脱敏源码副本，不是可安装发布包。
 
-**限制**：范围有意收窄：QAM64 不交付，QAM16 并非全干净，外部 SDR 的 BPSK 历史统计仅 23/30 帧同步，整体未通过。EVM、真实链路 RRC 接收、信道感知自动选档未实现；正式物理采集（S2 108 帧 + 12 离线负控）与真人验收 `NOT_RUN`。功耗是工具估计而非实测；RF 源同步 DDR 接口未加时序约束、未实测，因此不宣称接口时序通过。第三方 RTL 许可未决，仓库不含位流/HWH 与原始 IQ。
+**限制**：范围有意收窄：QAM64 不交付，QAM16 并非全干净，外部 SDR 的 BPSK 历史统计仅 23/30 帧同步，整体未通过。外部单帧演示为**仅内部 TX 衰减的直连（无外置衰减器）**；电平是计算界、不是实测 dBm，也不构成损伤保证。EVM、真实链路 RRC 接收、信道感知自动选档未实现；正式物理采集（S2 108 帧 + 12 离线负控）与真人验收 `NOT_RUN`。功耗是工具估计而非实测；RF 源同步 DDR 接口未加时序约束、未实测，因此不宣称接口时序通过。第三方 RTL 许可未决，仓库不含位流/HWH 与原始 IQ。
 
 ---
 
