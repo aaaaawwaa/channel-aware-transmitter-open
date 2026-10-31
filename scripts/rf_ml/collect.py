@@ -70,7 +70,9 @@ AMPLITUDE_LADDER = (60, 40, 40, 30)  # low-clip ladder (2026-10-03): TEST clip r
 FIRST_AMPLITUDE = AMPLITUDE_LADDER[0]
 RATES = (2000000, 3000000, 5000000)
 SHAPINGS = ("RECT", "RRC0.35")
-DIGITAL_MODES = ("BPSK", "QPSK", "QAM16", "QAM64")
+DELIVERY_MODES = ("BPSK", "QPSK", "QAM16")
+HISTORICAL_MODES = ("QAM64",)  # legacy ML datasets only; not delivered capability
+DIGITAL_MODES = DELIVERY_MODES + HISTORICAL_MODES
 OTHER_KINDS = ("NOISE", "CHIRP", "SQUARE", "MIXED")
 INIT_KEYS = ("lo_hz", "sample_rate_hz", "attenuation_mdB", "phy_mode_1r1t")
 SPLIT_TX_SEEDS = {"train": (11, 13, 17), "val": (29, 31, 37), "test": (47, 53, 59)}
@@ -169,7 +171,8 @@ def _tx_for_cell(cell, amplitude, tx_seed):
             "mode": cell.mode,
             "filter": "RRC" if cell.shaping == "RRC0.35" else "RECT",
             "rolloff": "0.35", "seed": tx_seed, "symbol_rate_hz": cell.symbol_rate_hz,
-            "sample_rate_hz": SAMPLE_RATE_HZ, "amplitude": amplitude})
+            "sample_rate_hz": SAMPLE_RATE_HZ, "amplitude": amplitude},
+            allow_historical_qam64=cell.mode in HISTORICAL_MODES)
         return dict(metadata), payload, False
     if cell.label == "TONE":
         metadata, payload = rf_tx_waveform.build_sine({"cycles": TONE_CYCLES,

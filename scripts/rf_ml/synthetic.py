@@ -50,7 +50,9 @@ BANDWIDTH_HZ = 30000000
 SPLITS = ("train", "val", "test")
 RATES = (2000000, 3000000, 5000000)
 SHAPINGS = ("RECT", "RRC0.35")
-DIGITAL_MODES = ("BPSK", "QPSK", "QAM16", "QAM64")
+DELIVERY_MODES = ("BPSK", "QPSK", "QAM16")
+HISTORICAL_MODES = ("QAM64",)  # legacy ML datasets only; not delivered capability
+DIGITAL_MODES = DELIVERY_MODES + HISTORICAL_MODES
 OTHER_KINDS = ("NOISE", "CHIRP", "SQUARE", "MIXED")
 SESSIONS_PER_CELL = 3
 FRAMES_PER_SESSION = 10
@@ -284,7 +286,8 @@ def _digital_source(cell, seed, amplitude):
                 "filter": "RRC" if cell.shaping == "RRC0.35" else "RECT",
                 "rolloff": "0.35", "seed": seed, "symbol_rate_hz": cell.symbol_rate_hz,
                 "sample_rate_hz": SAMPLE_RATE_HZ, "amplitude": amplitude}
-        metadata, payload = rf_iq_signal.generate_digital_frame(args)
+        metadata, payload = rf_iq_signal.generate_digital_frame(
+        args, allow_historical_qam64=cell.mode in HISTORICAL_MODES)
         cached = np.frombuffer(payload, dtype="<i2").reshape(-1, 2).astype(float)
         if cached.shape[0] != metadata["samples"]:
             raise RuntimeError("the constellation contract returned an inconsistent frame")

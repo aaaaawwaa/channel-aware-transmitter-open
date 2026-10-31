@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -42,6 +43,19 @@ class MaintenanceTests(unittest.TestCase):
         self.assertNotIn('192.' + '168.2.9', text)
         self.assertIn('weights=[0.125,-0.25]', text)
         self.assertGreater(sum(counts.values()), 0)
+
+    def test_redaction_keeps_documentation_negative_case_distinct(self):
+        """A redacted positive endpoint must not equal the test's (doc-range) negative."""
+        original = (
+            'valid="NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"\n'
+            'invalid="NET GEM0 INIT 0 LINK DOWN IP 192.0.2.11 UDP 40100"\n'
+        )
+        text, _ = m.redact(original, set())
+        self.assertNotIn('192.' + '168.2.2', text)
+        self.assertIn('192.0.2.11', text)
+        endpoints = re.findall(r'IP ([0-9.]+) UDP', text)
+        self.assertEqual(len(endpoints), 2)
+        self.assertEqual(len(set(endpoints)), 2)
 
     def test_archive_restore_preserves_bytes_refuses_overwrite(self):
         scratch = self.root / '.pytest-work-example'

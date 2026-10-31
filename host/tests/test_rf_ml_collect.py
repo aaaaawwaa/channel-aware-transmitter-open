@@ -504,3 +504,24 @@ def test_transport_disarm_failure_refuses_frames_even_when_final_state_is_safe(c
     job = collect.build_jobs("train", [collect.cell_by_key(CELL)], sessions=1, frames=1)[0]
     with pytest.raises(collect.SessionFailure, match="disarm"):
         link.run_session(job)
+
+
+def test_delivery_modes_exclude_qam64_but_historical_collection_can_build_tx(collect):
+    """QAM64 is isolated to historical matrices; product remains 3-mode."""
+    import rf_iq_signal
+
+    assert collect.DELIVERY_MODES == ("BPSK", "QPSK", "QAM16")
+    assert collect.HISTORICAL_MODES == ("QAM64",)
+    assert collect.DIGITAL_MODES == collect.DELIVERY_MODES + collect.HISTORICAL_MODES
+    assert rf_iq_signal.MODES == collect.DELIVERY_MODES
+
+    qam64 = collect.cell_by_key("QAM64-2M-RECT")
+    metadata, payload, tx_control = collect._tx_for_cell(qam64, 60, 11)
+    assert tx_control is False
+    assert metadata["samples"] == 127 * 30
+    assert len(payload) == metadata["bytes"]
+    with pytest.raises(ValueError, match="mode must be one of"):
+        rf_iq_signal.generate_digital_frame({
+            "mode": "QAM64", "filter": "RECT", "rolloff": "0.35", "seed": 11,
+            "symbol_rate_hz": 2000000, "sample_rate_hz": 60000000,
+            "amplitude": 60})

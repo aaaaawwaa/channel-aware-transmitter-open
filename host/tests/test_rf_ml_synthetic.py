@@ -306,3 +306,23 @@ def test_augmentations_are_emitted_only_for_training_split(synth, dataset, tmp_p
     assert {f["split"] for f in augmented} == {"train"}
     assert summary["total_frames"] == 8
     assert dataset.validate_manifest(manifest, output, coverage_origin="synthetic").valid
+
+
+def test_delivery_modes_exclude_qam64_but_historical_ml_path_can_generate(synth):
+    """QAM64 is historical-only: the product default rejects it."""
+    import rf_iq_signal
+
+    assert synth.DELIVERY_MODES == ("BPSK", "QPSK", "QAM16")
+    assert synth.HISTORICAL_MODES == ("QAM64",)
+    assert synth.DIGITAL_MODES == synth.DELIVERY_MODES + synth.HISTORICAL_MODES
+    assert rf_iq_signal.MODES == synth.DELIVERY_MODES
+
+    args = {"mode": "QAM64", "filter": "RECT", "rolloff": "0.35", "seed": 11,
+            "symbol_rate_hz": 2000000, "sample_rate_hz": 60000000,
+            "amplitude": 150}
+    with pytest.raises(ValueError, match="mode must be one of"):
+        rf_iq_signal.generate_digital_frame(args)
+    metadata, payload = rf_iq_signal.generate_digital_frame(
+        args, allow_historical_qam64=True)
+    assert metadata["samples"] == 127 * 30
+    assert len(payload) == metadata["bytes"]

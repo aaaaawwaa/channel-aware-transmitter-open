@@ -148,8 +148,10 @@ def test_net_status_parser_exposes_fixed_endpoint():
         "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
     )
     assert parsed == {"init": 1, "link": "UP", "ip": "192.0.2.10", "port": 40100}
+    # Documentation-range IP, deliberately distinct from the redacted endpoint
+    # (192.0.2.10) so the negative case survives the public export.
     with pytest.raises(ValueError):
-        parse_net_status("NET GEM0 INIT 0 LINK DOWN IP 192.0.2.10 UDP 40100")
+        parse_net_status("NET GEM0 INIT 0 LINK DOWN IP 192.0.2.11 UDP 40100")
 
 
 # ---- M3 dual-bank upload -> playback gate (Task 8) -------------------------

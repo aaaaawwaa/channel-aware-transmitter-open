@@ -26,6 +26,8 @@ import struct
 import sys
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).parents[2]
 BD_SCRIPT = ROOT / "scripts" / "create_bd.tcl"
 AWG_XDC = ROOT / "src" / "constraints" / "awg.xdc"
@@ -217,7 +219,17 @@ def test_the_live_staging_overlay_agrees_with_the_pinned_map():
     staged, they are present and correct, and an assertion of absence would have
     to be deleted at exactly the moment it became load-bearing.  Checking
     agreement holds on both sides of the deployment.
+
+    This is an integration check against an actual merged Vivado build artifact.
+    The public/source snapshot intentionally does not commit ``awg_merged.hwh``;
+    when it is absent this single test is skipped (not silently passed), while
+    the source-contract assertions above remain active.
     """
+    if not DEPLOYED_HWH.exists():
+        pytest.skip(
+            "requires pynq_overlay/out_merged/awg_merged.hwh from an actual merged "
+            "Vivado build; the build artifact is not committed"
+        )
     pinned = _pinned_addresses(_bd_text())
     staged = _hwh_addresses()
     assert staged, "staging .hwh did not parse"

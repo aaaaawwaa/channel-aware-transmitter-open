@@ -12,11 +12,14 @@ import struct
 
 import numpy as np
 
-# QAM64 已移出本次交付支持范围（源码/历史证据保留，仅从交付模式列表移除）。
+# QAM64 已移出本次交付支持范围。默认 API 拒绝 QAM64；仅历史 ML 数据集生成
+# 通过 `allow_historical_qam64=True` 显式进入，不构成交付能力。
 MODES = ("BPSK", "QPSK", "QAM16")
+HISTORICAL_MODES = ("QAM64",)
 FILTERS = ("RECT", "RRC")
 ROLLOFFS = ("0.2", "0.35", "0.5")
 BITS_PER_SYMBOL = {"BPSK": 1, "QPSK": 2, "QAM16": 4}
+HISTORICAL_BITS_PER_SYMBOL = {"QAM64": 6}
 PRBS_SYMBOLS = 127
 SPS_MIN, SPS_MAX = 2, 32
 AMPLITUDE_MIN, AMPLITUDE_MAX = 0, 2047
@@ -41,9 +44,11 @@ def _check_rolloff(rolloff):
     return value
 
 
-def bits_per_symbol(mode):
-    if mode == "QAM64":
-        raise ValueError("QAM64超出本次交付支持范围，请重新选择 BPSK/QPSK/QAM16")
+def bits_per_symbol(mode, allow_historical_qam64=False):
+    if mode in HISTORICAL_MODES:
+        if not allow_historical_qam64:
+            raise ValueError("QAM64超出本次交付支持范围，请重新选择 BPSK/QPSK/QAM16")
+        return HISTORICAL_BITS_PER_SYMBOL[mode]
     try:
         return BITS_PER_SYMBOL[mode]
     except KeyError:
@@ -76,14 +81,16 @@ def _map_axis(value, levels):
     return table[value]
 
 
-def map_bits_to_symbol(mode, bits):
+def map_bits_to_symbol(mode, bits, allow_historical_qam64=False):
     """Map an MSB-first tuple of serial bits to a (I, Q) constellation point.
 
     The bit ordering follows `iq_constellation_mapper.v`: first transmitted bit is
-    the MSB of the packed symbol and maps to I, later bits to Q.
+    the MSB of the packed symbol and maps to I, later bits to Q.  QAM64 is only
+    reachable with ``allow_historical_qam64=True`` (historical ML datasets); the
+    delivered product always rejects it.
     """
     bits = tuple(bits)
-    bps = bits_per_symbol(mode)
+    bps = bits_per_symbol(mode, allow_historical_qam64=allow_historical_qam64)
     if len(bits) != bps:
         raise ValueError("%s expects %d bits, got %d" % (mode, bps, len(bits)))
     if any(b not in (0, 1) for b in bits):
@@ -97,8 +104,9 @@ def map_bits_to_symbol(mode, bits):
         q_val = (bits[2] << 1) | bits[3]
         return (_map_axis(i_val, 4), _map_axis(q_val, 4))
     if mode == "QAM64":
-        # QAM64 超出本次交付支持范围：参数入口明确拒绝，不做静默映射。
-        raise ValueError("QAM64超出本次交付支持范围，请重新选择 BPSK/QPSK/QAM16")
+        i_val = (bits[0] << 2) | (bits[1] << 1) | bits[2]
+        q_val = (bits[3] << 2) | (bits[4] << 1) | bits[5]
+        return (_map_axis(i_val, 8), _map_axis(q_val, 8))
     raise ValueError("unknown constellation mode: %r" % (mode,))
 
 
@@ -160,10 +168,11 @@ def _pulse_shape(symbols, sps, filter_name, rolloff):
     raise ValueError("filter must be RECT or RRC")
 
 
-def _validate_digital_args(args):
+def _validate_digital_args(args, allow_historical_qam64=False):
     mode = args.get("mode")
-    if mode not in MODES:
-        return "mode must be one of %s" % (", ".join(MODES))
+    allowed = MODES + (HISTORICAL_MODES if allow_historical_qam64 else ())
+    if mode not in allowed:
+        return "mode must be one of %s" % (", ".join(allowed))
     filt = args.get("filter")
     if filt not in FILTERS:
         return "filter must be RECT or RRC"
@@ -192,11 +201,11 @@ def _validate_digital_args(args):
     return None
 
 
-def validate_digital_args(args):
+def validate_digital_args(args, allow_historical_qam64=False):
     """Return None if valid, otherwise a human-readable error string."""
     if not isinstance(args, dict):
         return "digital args must be a dict"
-    return _validate_digital_args(args)
+    return _validate_digital_args(args, allow_historical_qam64=allow_historical_qam64)
 
 
 def _validate_impairment(imp):
@@ -281,13 +290,15 @@ def _pack_iq(iq):
 def pack_iq(iq):
     """Quantize and pack an (N, 2) float IQ array to little-endian s16_iq_le."""
     return _pack_iq(iq)
-def generate_digital_frame(args):
+def generate_digital_frame(args, allow_historical_qam64=False):
     """Return (metadata, little-endian s16_iq_le payload) for a digital frame.
 
     Args are explicit: mode, filter, rolloff, seed, symbol_rate_hz,
-    sample_rate_hz, amplitude, and optional impairment.
+    sample_rate_hz, amplitude, and optional impairment.  The default delivery
+    path rejects QAM64; ``allow_historical_qam64=True`` is reserved for the
+    historical ML dataset generator and is never used by the delivered UI/API.
     """
-    why = _validate_digital_args(args)
+    why = _validate_digital_args(args, allow_historical_qam64=allow_historical_qam64)
     if why is not None:
         raise ValueError(why)
     mode = args["mode"]
@@ -298,10 +309,11 @@ def generate_digital_frame(args):
     symbol_rate_hz = args["symbol_rate_hz"]
     amplitude = args.get("amplitude", 2047)
     sps = sample_rate_hz // symbol_rate_hz
-    bps = bits_per_symbol(mode)
+    bps = bits_per_symbol(mode, allow_historical_qam64=allow_historical_qam64)
     bits = prbs7_bits(seed, PRBS_SYMBOLS * bps)
     symbols = np.array(
-        [map_bits_to_symbol(mode, tuple(bits[i * bps:(i + 1) * bps]))
+        [map_bits_to_symbol(mode, tuple(bits[i * bps:(i + 1) * bps]),
+                            allow_historical_qam64=allow_historical_qam64)
          for i in range(PRBS_SYMBOLS)], dtype=float)
     iq = _pulse_shape(symbols, sps, filt, rolloff)
     peak = float(np.max(np.abs(iq))) if iq.size else 0.0

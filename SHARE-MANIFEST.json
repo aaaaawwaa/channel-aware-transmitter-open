@@ -2660,14 +2660,14 @@
     },
     {
       "path": "host/tests/test_rf_merge.py",
-      "sha256": "0c3dd7999bcc669cbec97287952d057855ba3b77f204f5478b2bca679449ead4",
+      "sha256": "644c0a62034ff138b651f5a1a086399006dc1a82cac726f2c7af3eea751e0a42",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
     },
     {
       "path": "host/tests/test_rf_ml_collect.py",
-      "sha256": "117da42e4af00e0ed5d8b9adeb43491aca179a30a3ba57250d2fda8668ba3c7a",
+      "sha256": "c698251bf46972fee63ad8bbac18f3e2cb0903dcaed304c1fdba6a12c82f84db",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -2697,7 +2697,7 @@
     },
     {
       "path": "host/tests/test_rf_ml_synthetic.py",
-      "sha256": "6709e1edebe490236404271c4faa7e99ddb445786c6fef14b1ee1029548e3418",
+      "sha256": "c6738ff3e1070a9bd72117a65174cb508c642bbf93514d2d1f6228008f365646",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -2876,11 +2876,11 @@
     },
     {
       "path": "host/tests/test_udp_ddr_pp_gate.py",
-      "sha256": "d8a4a951bae68ee95779c2f5b135b6eb8da053009e67c6af7f987bff261e6428",
+      "sha256": "bc4afc9e2ed0ac4e97802564d5e92c61c4c5e73767f95a9acdff5f09880c88d8",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
-        "private_address": 5
+        "private_address": 4
       }
     },
     {
@@ -2892,7 +2892,7 @@
     },
     {
       "path": "host/tests/test_widgets.py",
-      "sha256": "b6d745873a6ff670a564d0fe1adb5a62c59518a30c163a65518c939dd162db89",
+      "sha256": "96363720731045d7c7648cdfa121b12ddccf2488b17ce0957a60980b21dba84d",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -5420,7 +5420,7 @@
     },
     {
       "path": "pynq_overlay/sw/rf_iq_signal.py",
-      "sha256": "db87df7630e0c5fda2ccd79e520a7959d2c0b264b3257bafa969b3c427eb30f8",
+      "sha256": "c2eeb7f37a27fd2312b8a90371c3b96c87d2e5a18d892499cd56f2b97c6f6139",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -8139,7 +8139,7 @@
     },
     {
       "path": "scripts/rf_ml/collect.py",
-      "sha256": "43307a4e51d2c65dea61b7d7312b25d449cfe8bbbc6f4f40c397317cfac02612",
+      "sha256": "69aedfd5c81678329db9043961fc5763a6e4aa557023b71c20d3eff217ffac84",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
@@ -8183,7 +8183,7 @@
     },
     {
       "path": "scripts/rf_ml/synthetic.py",
-      "sha256": "62038b672970105ae52c3a8f7d4fe5fad4042c9b45ad9ee2e7ef6e1da692a1cd",
+      "sha256": "01ccd3892ea986415f2ff20aeac73cae472da6a2a92159d953651f8cc44cb5ba",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {}
@@ -10320,7 +10320,7 @@
     },
     {
       "path": "tools/test_project_maintenance.py",
-      "sha256": "ba43388fea89d14bb0583d32f12a79363f5e42da1251879a437ed5934dc55515",
+      "sha256": "12b91c70012834df862e1c79ed8e8de9c37e433c467e681a256fb0d80d2db514",
       "source_encoding": "utf-8-sig",
       "removed_document_nuls": 0,
       "redactions": {
@@ -10328,7 +10328,7 @@
         "local_windows_path": 2,
         "msys_windows_path": 1,
         "remote_credentials": 1,
-        "private_address": 1,
+        "private_address": 2,
         "visa_resource": 3,
         "device_identifier": 1,
         "credential_literal": 2,

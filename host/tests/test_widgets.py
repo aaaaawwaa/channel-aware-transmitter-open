@@ -20,14 +20,20 @@ app = QApplication.instance() or QApplication([])
 def panel():
     p = ChannelPanel("CH1")
     p._updating = False          # 模拟用户可交互状态
-    return p
+    yield p
+    p.close()
+    p.deleteLater()
+    QApplication.processEvents()
 
 
 @pytest.fixture
 def ch2_panel():
     p = ChannelPanel("CH2", phase_link_enabled=True)
     p._updating = False          # 模拟用户可交互状态
-    return p
+    yield p
+    p.close()
+    p.deleteLater()
+    QApplication.processEvents()
 
 
 def test_ch2_phase_controls_emit_and_show_endpoints(ch2_panel):
@@ -328,7 +334,11 @@ def test_preview_vpp_rms_measurement():
 
 @pytest.fixture
 def dig_panel():
-    return DigitalModPanel()
+    p = DigitalModPanel()
+    yield p
+    p.close()
+    p.deleteLater()
+    QApplication.processEvents()
 
 
 def test_digital_panel_defaults(dig_panel):
@@ -352,7 +362,11 @@ def test_digital_panel_seed_defaults_and_emits(dig_panel):
 
 @pytest.fixture
 def imp_panel():
-    return ChannelImpairPanel()
+    p = ChannelImpairPanel()
+    yield p
+    p.close()
+    p.deleteLater()
+    QApplication.processEvents()
 
 
 def test_channel_impair_panel_default_unity_tap(imp_panel):
@@ -504,7 +518,13 @@ def test_main_window_routes_user_progress_and_status(monkeypatch):
 
     assert w.dig.user_progress.value() == 75
     assert w.dig.user_status.text() == "就绪"
+    # Drop the bound-signal references before the temporary QObject dies, so Qt
+    # never deletes a shared QObject that the window still references.
+    w.ctrl.user_progress = None
+    w.ctrl.user_status = None
     w.close()
+    signals.deleteLater()
+    QApplication.processEvents()
 
 
 def test_digital_panel_mode_selection_emits_request(dig_panel):
