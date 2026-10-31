@@ -16,7 +16,10 @@
 | 6 | [综合与实现指标](SYNTHESIS-METRICS.md) | 资源/时序/时钟/功耗、上板与 ARM 性能、优化前后对照与缺口（指标均带证据层级）。 |
 | 7 | [竞赛提交材料与符合性说明](COMPETITION-MATERIALS.md) | 材料清单、与指南 3.3/作品简介的对应、无法证明的条目、匿名与隐私处理。 |
 | 8 | [指南 3.3 符合性映射](GUIDE-CONFORMANCE.md) | 指南逐条要求 → 材料 → 状态 → 缺口；含目录对照与评分权重对应。 |
-| 9 | 按目标进入下方分节 | 设计、构建、能力、限制、模型、SDR、技能、证据边界。 |
+| 9 | [证据包索引](EVIDENCE-PACK.md) | 当前交付版本的脱敏证据摘要、原件位置与 SHA-256、payload_equal 绑定、功耗估计值口径。 |
+| 10 | [优化对照与从零复现](OPTIMIZATION-AND-REPRODUCTION.md) | 优化前后核查（未取得）、最小补测方案、工具链/依赖/构建/产物/缺失项复现说明。 |
+| 11 | [RF 接口时序缺口](RF-INTERFACE-TIMING.md) | 缺失的 input/output delay、参数来源、计算方法与分阶段最小方案。 |
+| 12 | 按目标进入下方分节 | 设计、构建、能力、限制、模型、SDR、技能、证据边界。 |
 
 ## 2. 设计说明与工程规则
 
@@ -46,6 +49,10 @@
 | [技能包入口](../../skills/README.md) | 三套技能的适用范围、使用方法、失效条件、来源与已验证效果；指南 `skill/` 入口见 [skill/README.md](../../skill/README.md)。 |
 | [大模型协作记录](AI-COLLABORATION-RECORD.md) | 3 个真实案例的提示词→回答→纠错→结果、智能体工作流与技能提炼过程。 |
 | [report/ 入口](../../report/README.md) | 指南 `report/` 目录映射（设计报告＋协作记录），正文仍在 `docs/engineering/`。 |
+| [证据包索引](EVIDENCE-PACK.md) / [docs/evidence/](../evidence/README.md) | 交付版本证据身份（bit/DCP/payload_equal）与三份实现摘要；原件不在仓库，摘要不可复算。 |
+| [优化对照与从零复现](OPTIMIZATION-AND-REPRODUCTION.md) | 同口径优化前后基线核查与最小补测方案；工具链/依赖/构建/产物/缺失项复现说明。 |
+| [RF 接口时序缺口](RF-INTERFACE-TIMING.md) | AD9361 源同步 DDR 的未约束端口、参数来源、计算方法与板级/离线最小方案；不宣称接口通过。 |
+| [文件名例外咨询文字](FILENAME-CONSULTATION.md) | 命名规则现状、惯例例外与可直接发送给赛道的咨询文字（尚未发送）。 |
 
 ## 3. 构建、测试与运行入口
 
@@ -59,7 +66,7 @@
 | 板端 C 原生构建与主机测试 | [rf_overlay/sw/board_app/Makefile](../../rf_overlay/sw/board_app/Makefile)（`make` / `make host-test`） |
 | 板载界面与发布安装 | [pynq_overlay/sw/install.sh](../../pynq_overlay/sw/install.sh)、[pynq_overlay/sw/ui_view.py](../../pynq_overlay/sw/ui_view.py) |
 | 主机 C 测试与 Python 测试 | `rf_overlay/sw/board_app/test/`、`pynq_overlay/sw/tests/`、`scripts/tests/`、`host/tests/` |
-| 维护与脱敏导出 | [tools/project_maintenance.py](../../tools/project_maintenance.py)（`plan` / `archive` / `export` / `restore`） |
+| 维护与脱敏导出 | [tools/project_maintenance.py](../../tools/project_maintenance.py)（`plan` / `archive` / `export` / `restore`）；[从零复现说明](OPTIMIZATION-AND-REPRODUCTION.md) |
 | 模型训练全流程 | [ml_training/run.py](../../ml_training/run.py)、[ml_training/README.md](../../ml_training/README.md) |
 | 外接 SDR 测试台 | [sdr_testbench/README.md](../../sdr_testbench/README.md)、[run.ps1](../../sdr_testbench/run.ps1) |
 | SDR + 板卡联调准备 | [sdr_testbench/board_integration/README.md](../../sdr_testbench/board_integration/README.md) |
@@ -99,6 +106,9 @@
 | 触摸时延 | `NOT_MEASURED`（用户已取消专门计时，不作为阻塞项） | [作品简介追踪表](../requirements/brief-traceability.md) |
 | 真人现场验收 | 未完成；由用户现场确认，AI 不代签 | [人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) |
 | 存储健康/MMC 根因 | `NOT_ESTABLISHED`；完整 FS 检查 `NOT_RUN` | [存储审计报告](../reports/2026-10-12-storage-audit-and-deploy-recovery.md) |
+| RF 源同步 DDR 接口时序未覆盖 | `rf.xdc` 缺 input/output delay；内部 WNS/WHS 只覆盖已约束路径；板级未测，不得宣称接口通过 | [RF-INTERFACE-TIMING](RF-INTERFACE-TIMING.md) |
+| 功耗为工具估计 | `2.418 W` 等来自 Vivado `report_power` 估算；无板级功耗/电流实测 | [EVIDENCE-PACK](EVIDENCE-PACK.md)、[merged-overlay 摘要](../evidence/merged-overlay-2026-09-24.md) |
+| 优化前后对比 | `未取得` 同版本同条件基线；最小补测方案见文档，本轮未执行 | [OPTIMIZATION-AND-REPRODUCTION](OPTIMIZATION-AND-REPRODUCTION.md) |
 
 ## 6. 模型与训练说明
 
@@ -145,6 +155,7 @@
 - **为什么**：体积与可复现性之外，更重要的原因是隐私与完整性：图片未做 OCR 脱敏、收据是原始字节、旧摘要只能对应旧原件。见 [SHARE-README.md](../../SHARE-README.md)、[SHARING-AND-CLEANUP.md](SHARING-AND-CLEANUP.md)、[SHARE-MANIFEST.json](../../SHARE-MANIFEST.json)。
 - **因此**：本仓库内所有指标只能作为"文档记述"引用；旧报告里的 SHA-256 摘要不能用本仓库文件验证；本仓库不是可安装发布包，不能直接部署到板卡。
 - **原始证据在哪**：开发机 `evidence/` 目录（未公开）。需要复核具体结论时，应回到原始收据与对应源码摘要；本索引不替代它们。
+- **公开脱敏摘要**：`docs/evidence/` 下是按原件人工转录的脱敏摘要（含原件 SHA-256 与差异声明），可在不接触开发机的情况下核对证据身份；[EVIDENCE-PACK](EVIDENCE-PACK.md) 是索引。摘要字节 ≠ 原件，不能用于复算原件哈希。
 
 ## 10. AI 协作案例
 

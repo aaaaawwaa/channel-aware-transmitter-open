@@ -13,6 +13,12 @@
 
 - [`../docs/engineering/SYNTHESIS-METRICS.md`](../docs/engineering/SYNTHESIS-METRICS.md)
   - 资源占用、时钟/时序、功耗与实现状态、上板与 ARM 性能、主机/ARM 判等、优化前后对照（当前为 `未取得` 同口径基线）、缺口清单。
+- [`../docs/engineering/EVIDENCE-PACK.md`](../docs/engineering/EVIDENCE-PACK.md) 与 [`../docs/evidence/`](../docs/evidence/README.md)
+  - 交付版本证据身份（bit/DCP/payload_equal 绑定）、三份实现摘要、原件 SHA-256；功耗明确为 Vivado 估计值；摘要不可复算。
+- [`../docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md`](../docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)
+  - 优化前后基线核查与最小补测方案；工具链/依赖/构建/产物/缺失项的从零复现说明。
+- [`../docs/engineering/RF-INTERFACE-TIMING.md`](../docs/engineering/RF-INTERFACE-TIMING.md)
+  - AD9361 源同步 DDR 接口的未约束端口、参数来源、计算方法与分阶段最小方案（板级未测，不宣称通过）。
 
 ## 3. 大模型协作记录
 
@@ -29,5 +35,6 @@
 
 ## 5. 复现与证据边界
 
-- 复现步骤：根 [README](../README.md)「构建与运行」与 [`../docs/engineering/DESIGN-REPORT.md`](../docs/engineering/DESIGN-REPORT.md) §9。
+- 复现步骤：根 [README](../README.md)「构建与运行」、[OPTIMIZATION-AND-REPRODUCTION](../docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md) 与 [`../docs/engineering/DESIGN-REPORT.md`](../docs/engineering/DESIGN-REPORT.md) §9。
 - 原始 IQ、收据、位流/HWH、数据集与模型产物不在本仓库；`SYNTHESIS-METRICS.md` 中的指标按“文档记载/本地原件”分级标注，不能在本仓库内复算。
+- 公开证据摘要见 [`../docs/evidence/`](../docs/evidence/README.md)；原件仍留在开发机，摘要与原件的 SHA-256 不同。

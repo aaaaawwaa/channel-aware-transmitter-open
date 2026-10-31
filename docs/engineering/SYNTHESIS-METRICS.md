@@ -246,7 +246,7 @@
 | EVM | `NOT_IMPLEMENTED` | [作品简介追踪表](../requirements/brief-traceability.md) |
 | PL 实时多制式处理 | PL 未做实时同步解调/RRC/多制式处理；PS 侧只测过完整计算路径 | [README](../../README.md) |
 | 触摸时延 | `NOT_MEASURED` | [作品简介追踪表](../requirements/brief-traceability.md) |
-| 优化前后对比 | `未取得`（无同口径基线，见 §5） | 本文 |
+| 优化前后对比 | `未取得`（无同口径基线，见 §5；历史候选受控 A/B 见 [OPTIMIZATION-AND-REPRODUCTION](OPTIMIZATION-AND-REPRODUCTION.md) §1.4，非当前版本） | 本文 |
 
 ## 5. 优化前后对照（3.3.4）
 
@@ -261,6 +261,8 @@
 3. ARM P95/RSS 有多个候选记录，但这是**不同候选、不同软件版本、不同日期**的合格性测量，不是受控 A/B；把它们排成"优化前后"会把版本差异冒充优化收益。
 4. 独立 RF Overlay 的 2026-09-17 板级记录（WNS 12.359 ns，位流 sha `4bc8ba11…`）与 2026-09-19 重建报告（WNS 0.193 ns，位流 sha `b6a73e4d…`）之间**位流文件、报告与构建均不同源**（09-19 构建日志为 `build_samplepath*`），两版不是同一 RTL/约束的前后对照。
 5. 因此，按指南 3.3.4 要求"优化前后的性能与资源对比表"这一项：**现有材料不足以填写**；赛前需按 §6 生成同口径基线。
+
+> **补充（2026-10-31，不改上述结论）**：按 [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.4，历史候选 `b3cca2ac…` 存在 **1 组同版本受控 A/B**（modrec4 单次共享计算：ARM 五阶段 median 378.89→292.08 ms、P95 444.52→311.74 ms、modrec4 阶段 median 154.58→64.81 ms；80 samples；0 mismatch 为容差一致非逐字节）。该组**属于历史候选，不是当前交付版本**，不得移植为当前交付结果；当前交付版本仍为 `未取得`。当前版本的最小补测方案（指标/条件/验收/会话与构建次数）见该文 §1.6。
 
 ### 5.2 可引用但**不得**当作优化结论的近似数据（仅用于说明现状）
 

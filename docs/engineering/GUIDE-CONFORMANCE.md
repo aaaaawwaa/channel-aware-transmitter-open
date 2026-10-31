@@ -11,7 +11,7 @@
   - **部分具备**：有相关材料或局部证据，但缺口明确，见 §6。
   - **未完成**：缺少交付物或该项未执行（含 `NOT_RUN`）。
   - **需人工确认**：取决于队伍资格、报名信息、官方解释或权利人授权，仓库不能自证。
-- 统计口径：§2 主映射表共 **46 条**（3.3.1–3.3.5.5）；§3 目录对照 8 行；§5 权重对应 5 行。主映射表状态分布（截至本文维护时点，已计入本轮并行任务 A/B 生成的材料：`SYNTHESIS-METRICS.md`、`AI-COLLABORATION-RECORD.md`、`skills/README.md`，并计入 README 目录对照补齐后的 G13）：**已有 18 条 / 部分具备 24 条 / 未完成 1 条 / 需人工确认 3 条**；缺口（部分具备＋未完成）**25 条**，归并为 §6 的 **18 项**整改工作（其中 G06–G09、G13 已关闭）与 §7 的 **12 项**人工确认。
+- 统计口径：§2 主映射表共 **46 条**（3.3.1–3.3.5.5）；§3 目录对照 8 行；§5 权重对应 5 行。主映射表状态分布（截至本文维护时点，已计入本轮新增材料：`EVIDENCE-PACK.md`、`docs/evidence/`（索引＋5 份摘要）、`OPTIMIZATION-AND-REPRODUCTION.md`、`RF-INTERFACE-TIMING.md`、`FILENAME-CONSULTATION.md`）：**已有 20 条 / 部分具备 23 条 / 未完成 0 条 / 需人工确认 3 条**；缺口（部分具备＋未完成）**23 条**，归并为 §6 的 **19 项**整改工作（其中 G05–G09、G13 已关闭）与 §7 的 **13 项**人工确认。
 
 ## 1. 一页速览
 
@@ -22,11 +22,11 @@
 | 3.3.3.1 工具与协作 | Vivado/Vitis 2025.2（指南允许）；大模型协作记录已有（案例＋改写摘要＋智能体工作流） | 已有＋部分具备 |
 | 3.3.3.2 板卡与器件 | 具体型号已声明；板级验证为有限工况，完整物理验收未完成 | 部分具备 |
 | 3.3.3.3 开源 | MIT 为主体的混合许可已整理；实际开源发布与 5 个第三方 RTL 许可待人工处理 | 部分具备＋需人工确认 |
-| 3.3.4 优化目标 | 已有指标汇总文档（SYNTHESIS-METRICS）；"优化前后对比表"仍缺同口径基线（原文已如实记录"未取得"）；从零复现受限于仓库不含位流/数据/模型 | 部分具备 |
-| 3.3.5.1 工程包 | 源码、仿真台、构建脚本齐备；综合/实现指标已由 SYNTHESIS-METRICS 汇总，原始报告与实测原始输出不在仓库 | 部分具备 |
+| 3.3.4 优化目标 | 指标汇总、证据包与优化对照说明已齐；**当前交付版本优化前后对比仍"未取得"**（历史受控配对只作方法示例）；从零复现说明已写但受限于仓库不含位流/数据/模型 | 部分具备 |
+| 3.3.5.1 工程包 | 源码、仿真台、构建脚本齐备；证据包索引＋三份实现摘要＋板级结果摘要＋`payload_equal` 绑定已入仓库；原始报告/位流在开发机；RF 接口时序未测 | 部分具备 |
 | 3.3.5.2 技能包 | 3 套技能＋入口 README 已有；跨项目/跨板卡验证未做 | 已有＋部分具备 |
-| 3.3.5.3 设计报告 | 架构与关键决定已有，协作记录已有；背景/创新、优化前后对比、复现说明待补 | 部分具备 |
-| 3.3.5.4 目录与命名 | 推荐目录非强制；README 已补目录对照；不搬迁源码；导出树含中文/空格/特殊字符路径 **0**，大小写例外待确认 | 已有＋需人工确认 |
+| 3.3.5.3 设计报告 | 架构、关键决定、协作记录、从零复现说明已有；背景/创新与当前交付版优化对比待补 | 部分具备 |
+| 3.3.5.4 目录与命名 | 推荐目录非强制；README 已补目录对照；公开树含中文/空格/特殊字符路径 **0**，**89 文件＋6 目录含大写**；命名咨询文字已备（4 问，尚未发送） | 已有＋需人工确认 |
 | 3.3.5.5 评分权重 | 五项均有对应材料，但没有一项能自称"完整"；现场与真实数据缺口影响 20/20 两项 | 部分具备 |
 
 ## 2. 逐条映射（3.3 全文）
@@ -63,23 +63,23 @@
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
 | 13 | 3.3.3.2 | 两组均须在提交物中声明具体型号 | [README](../../README.md)「硬件与工具版本」：`xc7z020clg484-2`、AD9361 FMCOMMS3、五寸 800×480＋GT911；[DESIGN-REPORT](DESIGN-REPORT.md) §1 | 已有 | 精确到器件型号与非 PL 外设 |
-| 14 | 3.3.3.2 | 应选择自身可实际获取并完成板级验证的器件 | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4（板级有限验证）、[l2_stage1_record](../rf/l2_stage1_record.md)、[boardtest](../rf/boardtest.md) | 部分具备 | 有限工况板级验证有记录；完整物理采集 `NOT_RUN`（G17） |
-| 15 | 3.3.3.2 | 作品须在板上跑通并提供实测输出 | [README](../../README.md)「已验证能力」、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4、[2026-10-26 交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md) | 部分具备 | 实测输出为"文档记述"级（原始 IQ/收据不在仓库）；复审结论含 `CHANGES_REQUIRED`（G15、G17） |
+| 14 | 3.3.3.2 | 应选择自身可实际获取并完成板级验证的器件 | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4（板级有限验证）、[l2_stage1_record](../rf/l2_stage1_record.md)、[boardtest](../rf/boardtest.md)、[board-results-2026-10-26.md](../evidence/board-results-2026-10-26.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md) §2 | 部分具备 | 有限工况板级验证有记录（含板级结果摘要）；完整物理采集 `NOT_RUN`，原始输出/收据不在仓库（G17） |
+| 15 | 3.3.3.2 | 作品须在板上跑通并提供实测输出 | [README](../../README.md)「已验证能力」、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4、[2026-10-26 交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md)、[board-results-2026-10-26.md](../evidence/board-results-2026-10-26.md) | 部分具备 | 实测输出以**脱敏摘要**提供（原始 IQ/收据/日志不在仓库）；复审结论含 `CHANGES_REQUIRED`（G15、G17） |
 
 ### 2.5 开源要求（3.3.3.3）
 
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
 | 16 | 3.3.3.3 | 强烈要求在 GitHub 或 Gitee 开源，采用允许再分发的协议，推荐 MIT 或 Apache-2.0 | [LICENSE](../../LICENSE)（自有代码 MIT）、[NOTICE](../../NOTICE)、[LICENSES/README.md](../../LICENSES/README.md)、[SHARING-AND-CLEANUP](SHARING-AND-CLEANUP.md) | 部分具备 | 混合许可（MIT＋ADI BSD 风格＋GPL-3.0 测试台脚本＋未知来源 RTL）已如实披露；实际开源仓库/可见性/报名登记未完成（G12、H05、H08） |
-| 17 | 3.3.3.3 | 开源须为"允许再分发"：第三方与未知来源材料不得被默认 MIT | [LICENSES/UNKNOWN-PROVENANCE.md](../../LICENSES/UNKNOWN-PROVENANCE.md)、[NOTICE](../../NOTICE)、[LICENSES/README.md](../../LICENSES/README.md)、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) §1 | 部分具备 | 混合许可边界已披露；5 个 RTL 许可未确认（H05/H06） |
+| 17 | 3.3.3.3 | 开源须为"允许再分发"：第三方与未知来源材料不得被默认 MIT | [LICENSES/UNKNOWN-PROVENANCE.md](../../LICENSES/UNKNOWN-PROVENANCE.md)、[NOTICE](../../NOTICE)、[LICENSES/README.md](../../LICENSES/README.md)、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) §1 | 需人工确认 | 混合许可边界已披露；5 个 RTL 许可未确认，再分发依据须权利人/授权确认（H05、H06）；许可状态本轮不变 |
 
 ### 2.6 优化目标（3.3.4）
 
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
-| 18 | 3.3.4 | 在目标器件上取得可测量性能表现，并给出与基线的对比 | [README](../../README.md)「已验证能力」（ARM 100 次完整计算 P95 等）、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4、[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（指标简表＋证据路径）、`build_manifest.json` | 部分具备 | 有单点评测与历史候选指标；[SYNTHESIS-METRICS §5](SYNTHESIS-METRICS.md) 已如实记录"优化前后对比未取得同口径基线"（G01） |
-| 19 | 3.3.4 | 合理使用片上资源，不以显著资源代价换有限性能收益 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（资源/时序/时钟/功耗表）、[build_manifest.json](../../build_manifest.json)（`timing` 字段）、[l2_stage1_record](../rf/l2_stage1_record.md) | 部分具备 | 资源数据已汇总（交付 bit 资源 LUT 54.03%/DSP 47.27% 等）；原始利用率/时序报告在本地 `evidence/`，不在仓库；"合理"判断缺基线（G02） |
-| 20 | 3.3.4 | 保证工程可由他人从零复现 | [README](../../README.md)「构建与运行」、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md) §3、CI 工作流 | 部分具备 | 仓库不含位流/HWH/数据集/模型产物；`ml_training` 需自建环境重训（G15、G05） |
+| 18 | 3.3.4 | 在目标器件上取得可测量性能表现，并给出与基线的对比 | [README](../../README.md)「已验证能力」、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4、[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md) §2、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.3–§1.6、`build_manifest.json` | 部分具备 | **当前交付版本优化前后对比为"未取得"**（无同版本/同条件/同口径基线）；历史候选 `b3cca2ac…` 的受控配对（五阶段 median 378.89→292.08 ms、P95 444.52→311.74 ms、modrec4 median 154.58→64.81 ms）**仅作方法示例、不可移植**；最小补测方案见 OPTIMIZATION §1.6（G01） |
+| 19 | 3.3.4 | 合理使用片上资源，不以显著资源代价换有限性能收益 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（资源/时序/时钟/功耗表）、[EVIDENCE-PACK.md](EVIDENCE-PACK.md) §2–§3、[docs/evidence/](../evidence/README.md)、[build_manifest.json](../../build_manifest.json)、[l2_stage1_record](../rf/l2_stage1_record.md) | 部分具备 | 资源/时序摘要已入仓库（LUT 54.03%、DSP 47.27% 等）；**功耗 2.418 W 为 `report_power` 工具估计值，非板端实测**；"是否合理"缺优化前后基线（G02）；外部 RF 接口时序另见 [RF-INTERFACE-TIMING](RF-INTERFACE-TIMING.md)（未测） |
+| 20 | 3.3.4 | 保证工程可由他人从零复现 | [README](../../README.md)「构建与运行」、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §2（从零复现说明）、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md) §3、CI 工作流 | 部分具备 | 从零步骤已写（工具链/依赖/构建/预期产物/缺失项/验证）；仓库不含位流/HWH/数据集/模型产物，`ml_training` 需自建环境重训（G15） |
 | 21 | 3.3.4 | 把设计过程中的判断依据写进报告，而不只是结果 | [DESIGN-REPORT](DESIGN-REPORT.md) §3「关键设计决定」、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) §11「可复用硬规则」、[reviews/](../reviews/) | 已有 | 判据先于测量、单控制者、建议而非自动等均已成文 |
 | 22 | 3.3.4 | 将与大模型协作的经验提炼为他人可复用的技能包 | `skills/` 三套、[skills/README.md](../../skills/README.md)（提炼来源与已验证效果）、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) §1 协作模型、[AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md) §6 | 已有 | 技能包与"提炼过程"已有面向评审的入口说明；跨项目复用验证见 G10 |
 
@@ -89,8 +89,8 @@
 |---|---|---|---|---|---|
 | 23 | 3.3.5.1 | 完整工程文件与源码（RTL、HLS、PS 软件等按实际方式提交） | `rf_overlay/`（RTL/bd/constraints/sw）、`pynq_overlay/`（sw/rtl/bd/tb/constraints）、`src/`（AWG RTL+tb）、`sdk/src/main.c`、`host/`、`ml_training/`、`sdr_testbench/` | 已有 | 三条流水线源码齐备；第三方 RTL 来源/许可另见 G11 |
 | 24 | 3.3.5.1 | 仿真或验证结果，说明功能正确性如何确认 | [src/tb/awg_top_tb.v](../../src/tb/awg_top_tb.v)（37 个 tb 文件）、[rf_overlay/tb/rf_sample_capture_tb.v](../../rf_overlay/tb/rf_sample_capture_tb.v)、[pynq_overlay/tb/lcd_fb_tb.v](../../pynq_overlay/tb/lcd_fb_tb.v)、Python/C 测试套件（README「测试」） | 部分具备 | 测试台与套件存在，但**缺统一仿真运行脚本与结果记录**（G03）；仿真原始日志不在仓库 |
-| 25 | 3.3.5.1 | 综合与实现报告，含资源占用、时钟频率与关键性能指标 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（按合并/RF/PYNQ 三个目标分列资源、时序、时钟、功耗与实测）、[build_manifest.json](../../build_manifest.json)、[l2_stage1_record](../rf/l2_stage1_record.md)、[boardtest](../rf/boardtest.md) | 部分具备 | 已有汇总报告（含本地原件路径）；原始 `.rpt`/DCP 未入仓库，外部 RF 接口时序覆盖缺口已如实记录（G02） |
-| 26 | 3.3.5.1 | 上板工程、运行脚本、实测输出与参考结果的比对数据 | [rf_overlay/bd/create_bd.tcl](../../rf_overlay/bd/create_bd.tcl)、[rf.xdc](../../rf_overlay/constraints/rf.xdc)、[build.tcl](../../rf_overlay/build.tcl)、[program_board.sh](../../scripts/program_board.sh)、[boardtest](../rf/boardtest.md)、[golden/BASELINE.md](../golden/BASELINE.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 上板工程与判据齐备；实测原始输出/比对数据为文档记述，原始收据不在仓库（G15） |
+| 25 | 3.3.5.1 | 综合与实现报告，含资源占用、时钟频率与关键性能指标 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)（证据清单与原件 SHA-256）、[docs/evidence/](../evidence/README.md)（合并/RF/PYNQ 三份实现摘要＋板级结果摘要）、[bitstream-binding-2026-10-26.md](../evidence/bitstream-binding-2026-10-26.md)（`payload_equal` 绑定）、[build_manifest.json](../../build_manifest.json) | 已有 | 仓库内提供**脱敏摘要/索引**（含报告头、资源、时序、时钟、功耗估计值、原件 SHA-256 与绑定链）；原始 `.rpt`/bit/HWH/DCP 在开发机，摘要不可复算；外部 RF 接口时序缺口另见 [RF-INTERFACE-TIMING](RF-INTERFACE-TIMING.md)（**不得宣称接口通过**） |
+| 26 | 3.3.5.1 | 上板工程、运行脚本、实测输出与参考结果的比对数据 | [rf_overlay/bd/create_bd.tcl](../../rf_overlay/bd/create_bd.tcl)、[rf.xdc](../../rf_overlay/constraints/rf.xdc)、[build.tcl](../../rf_overlay/build.tcl)、[program_board.sh](../../scripts/program_board.sh)、[boardtest](../rf/boardtest.md)、[golden/BASELINE.md](../golden/BASELINE.md)、[board-results-2026-10-26.md](../evidence/board-results-2026-10-26.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 上板工程/运行脚本齐备；实测输出与参考比对以**脱敏摘要**提供，原始输出/收据不在仓库（G15） |
 | 27 | 3.3.5.1 | 可复现的构建脚本 | [build_bitstream.py](../../scripts/build_bitstream.py)、[rf_overlay/build.tcl](../../rf_overlay/build.tcl)、[pynq_overlay/build.tcl](../../pynq_overlay/build.tcl)、[rf_overlay/sw/board_app/Makefile](../../rf_overlay/sw/board_app/Makefile)、[package_merged_overlay.py](../../scripts/package_merged_overlay.py)、[release_manifest.py](../../scripts/release_manifest.py)、[ml_training/run.py](../../ml_training/run.py)、[.github/workflows/awg-bitstream.yml](../../.github/workflows/awg-bitstream.yml)、[ci/verify_bitstream_ci.py](../../ci/verify_bitstream_ci.py) | 已有 | 构建脚本与 CI 存在；需 Vivado/Vitis 2025.2 与外部依赖（G15、G16） |
 
 ### 2.8 提交内容 · 技能包（3.3.5.2）
@@ -109,27 +109,27 @@
 | 32 | 3.3.5.3 | 选题背景与创新点：为什么选这个题目、解决什么实际问题、前人做过什么 | [DESIGN-REPORT](DESIGN-REPORT.md) §1、[README](../../README.md)；[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) 背景 | 部分具备 | 有目标与边界，但缺"前人工作/同类方案对比"与按当前缩减范围重述的创新点（G04、H11） |
 | 33 | 3.3.5.3 | 设计原理与功能框图 | [DESIGN-REPORT](DESIGN-REPORT.md) §2「总体架构」（文字框图＋三条流水线表）、§4 接收链路、§5 发射链路 | 已有 | 已有原理说明与框图 |
 | 34 | 3.3.5.3 | 软硬件划分依据与接口设计 | [DESIGN-REPORT](DESIGN-REPORT.md) §2–§3、[backend_contract](../rf/backend_contract.md)、[rf-status-object-contract](../requirements/rf-status-object-contract.md) | 部分具备 | 单控制者/有限快照等决定已写明；软硬件划分的量化依据（吞吐/资源/时延预算）未成章（G04） |
-| 35 | 3.3.5.3 | 优化过程，含优化前后的性能与资源对比表 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §5（结论：**未取得同口径优化前后基线**）；历史报告与 [DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 未完成 | [SYNTHESIS-METRICS §5](SYNTHESIS-METRICS.md) 与 [§6 缺口清单](SYNTHESIS-METRICS.md) 已如实记录"现有材料不足以填写对比表"；历史 QAM64/旧候选数据不得冒充当前版本（G01、G14） |
-| 36 | 3.3.5.3 | 大模型协作记录：提示词、模型回答、自我纠错轨迹、智能体工作流设计（如有） | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)（K1–K3：提示词→回答→错误→纠正→结果＋§1 智能体工作流）、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)（7 案例＋协作模型） | 已有 | 记录为改写摘要，不复制完整私人会话（隐私边界）；原始会话不在仓库（H10） |
-| 37 | 3.3.5.3 | 技能包提炼过程：从哪些失败/观察总结、如何验证有效、边界如何确定 | [skills/README.md](../../skills/README.md)（§3.4/§3.5 等逐套"来源实践/失败→仓库出处→已验证效果/尚未验证"）、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) §11、[AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md) §6 | 已有 | 提炼来源、验证方式与失效边界已在入口 README 成章；跨项目验证见 G10 |
-| 38 | 3.3.5.3 | 复现说明：一份可供他人从零开始完整执行的操作步骤 | [README](../../README.md)「构建与运行」「测试」、[DELIVERY-INDEX](DELIVERY-INDEX.md) §3、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md)、[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §7（构建与回查说明） | 部分具备 | 缺"从零安装工具链/准备依赖/重训模型/重建位流"的完整步骤与预期产物清单（G05、G15） |
+| 35 | 3.3.5.3 | 优化过程，含优化前后的性能与资源对比表 | [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.1–§1.6（当前交付"未取得"＋历史受控配对仅方法示例＋最小补测方案）、[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §5、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 优化过程与判定口径已成文；**当前交付版本仍无同版本同条件前后对比**；历史 `b3cca2ac…` 配对为历史候选、不可移植；补测方案未执行（G01） |
+| 36 | 3.3.5.3 | 大模型协作记录：提示词、模型回答、自我纠错轨迹、智能体工作流设计（如有） | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)（K1–K3：提示词→回答→错误→纠正→结果＋§1 智能体工作流，本轮有补充）、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)（7 案例＋协作模型）、[report/README.md](../../report/README.md)（`report/` 入口） | 已有 | 记录为改写摘要，不复制完整私人会话（隐私边界）；原始会话不在仓库（H10） |
+| 37 | 3.3.5.3 | 技能包提炼过程：从哪些失败/观察总结、如何验证有效、边界如何确定 | [skills/README.md](../../skills/README.md)（§3.4/§3.5 等逐套"来源实践/失败→仓库出处→已验证效果/尚未验证"）、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) §11、[AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md) §6、[report/README.md](../../report/README.md) | 已有 | 提炼来源、验证方式与失效边界已在入口 README 成章；跨项目验证见 G10 |
+| 38 | 3.3.5.3 | 复现说明：一份可供他人从零开始完整执行的操作步骤 | [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §2（从零复现：边界/版本/依赖/构建入口/预期产物/运行/缺失项再生成/验证/限制）、[README](../../README.md)「构建与运行」、「测试」、[DELIVERY-INDEX](DELIVERY-INDEX.md) §3 | 已有 | 已有按步骤的复现说明；受仓库不含位流/数据/模型产物限制，历史指标不能在本副本复算（G15） |
 
 ### 2.10 提交内容 · 推荐目录与命名（3.3.5.4）
 
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
-| 39 | 3.3.5.4 | 推荐目录 `src/ sim/ build/ board/ data/ skill/ report/`；**非强制**，采用其他组织方式须在 README 给出目录对照说明 | [README](../../README.md)「赛事指南对照」与「目录对应关系」、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md)「为什么不全量搬迁」、[skill/README.md](../../skill/README.md)、[report/README.md](../../report/README.md)；本文件 §3 逐项对照 | 已有 | 现有目录保持不搬迁；README 已补逐项对照（G13 已处理）。**不搬迁源码**：构建/测试/发布清单引用现有路径 |
-| 40 | 3.3.5.4 | 仓库内所有目录名与文件名须纯英文（小写、数字、下划线或连字符），不得出现中文/空格/特殊字符；中文只在正文 | 全部路径均为英文；[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) 等本轮新增文档为大写连字符名；导出树核查见本行说明 | 部分具备 | 最终发布导出树（1394 文件）中 **84 个文件名＋6 个目录名含大写字母**，含中文/空格/其他特殊字符的路径 **0**；**指南自身示例使用 `README.md`**，大小写例外需确认（G14、H04） |
+| 39 | 3.3.5.4 | 推荐目录 `src/ sim/ build/ board/ data/ skill/ report/`；**非强制**，采用其他组织方式须在 README 给出目录对照说明 | [README](../../README.md)「赛事指南对照」与「目录对应关系」、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md)「为什么不全量搬迁」、[skill/README.md](../../skill/README.md)、[report/README.md](../../report/README.md)；本文件 §3 逐项对照 | 已有 | README 已补逐项对照与入口映射（G13 已关闭）；**不搬迁源码**：构建/测试/发布清单引用现有路径 |
+| 40 | 3.3.5.4 | 仓库内所有目录名与文件名须纯英文（小写、数字、下划线或连字符），不得出现中文/空格/特殊字符；中文只在正文 | 全部路径均为英文；[FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（命名现状＋4 条咨询问题＋可直接发送的咨询文字，尚未发送）；[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) 等工程文档为大写连字符名 | 部分具备 | 当前公开树（最终导出树，1404 文件/171 目录）中 **89 个文件名＋6 个目录名含大写字母**，含中文/空格/其他特殊字符的路径 **0**；**指南自身示例使用 `README.md`**，大小写例外需确认（G14、H04、H13） |
 
 ### 2.11 评测指标与权重（3.3.5.5）
 
 | # | 指南条款 | 要求（摘要） | 现有 / 计划材料 | 状态 | 说明与缺口 |
 |---|---|---|---|---|---|
 | 41 | 3.3.5.5 | 创新性与应用价值 30 分（最高权重） | [README](../../README.md) 项目目标、[DESIGN-REPORT](DESIGN-REPORT.md) §1、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4；注意"信道感知自动选档"愿景**未实现** | 部分具备 | 需按当前缩减范围重述创新点，不得把未实现的自动选档当卖点（G04、H11） |
-| 42 | 3.3.5.5 | 性能与资源优化效果 20 分 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（资源/时序/性能汇总）；[README](../../README.md)「已验证能力」、`build_manifest.json`、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 汇总数据已有；优化前后对比与同口径基线未取得，原始报告不在仓库（G01、G02） |
-| 43 | 3.3.5.5 | 功能正确性与设计完整性 20 分（以提交物核查与实测数据为主要依据） | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4–§5、[acceptance-checklists-p1-p6](../requirements/acceptance-checklists-p1-p6.md)、[交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md) | 部分具备 | S2 正式 108 帧＋12 离线负控 `NOT_RUN`；复审 `CHANGES_REQUIRED`；QAM16 有误码（G15、G17） |
+| 42 | 3.3.5.5 | 性能与资源优化效果 20 分 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（资源/时序/性能汇总）、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md)（当前交付对比"未取得"＋历史受控配对仅方法示例）；[README](../../README.md)「已验证能力」、`build_manifest.json`、[DELIVERY-INDEX](DELIVERY-INDEX.md) §4 | 部分具备 | 汇总数据与证据索引已有；**优化前后对比缺失（当前交付）**；历史受控配对不可移植；原始报告不在仓库（G01、G02） |
+| 43 | 3.3.5.5 | 功能正确性与设计完整性 20 分（以提交物核查与实测数据为主要依据） | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4–§5、[acceptance-checklists-p1-p6](../requirements/acceptance-checklists-p1-p6.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md) §2、[board-results-2026-10-26.md](../evidence/board-results-2026-10-26.md)、[交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md) | 部分具备 | 证据摘要与索引已入仓库；S2 正式 108 帧＋12 离线负控 `NOT_RUN`；复审 `CHANGES_REQUIRED`；QAM16 有误码；RF 接口时序未测（G15、G17、G19） |
 | 44 | 3.3.5.5 | 大模型协作与技能包 15 分 | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)、`skills/`、[skills/README.md](../../skills/README.md) | 部分具备 | 材料已齐；剩跨项目验证（G10）与现场配套 |
-| 45 | 3.3.5.5 | 文档质量与可复现性 15 分 | [README](../../README.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md)、[DESIGN-REPORT](DESIGN-REPORT.md)、[COMPETITION-MATERIALS](COMPETITION-MATERIALS.md)、本文件 | 部分具备 | 文档体系完整；可复现受限于仓库不含产物/数据（G05、G15） |
+| 45 | 3.3.5.5 | 文档质量与可复现性 15 分 | [README](../../README.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md)、[DESIGN-REPORT](DESIGN-REPORT.md)、[COMPETITION-MATERIALS](COMPETITION-MATERIALS.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md)、本文件 | 部分具备 | 文档体系与证据索引完整；可复现受限于仓库不含产物/数据（G15） |
 | 46 | 3.3.5.5 | 两组同一套评测项与权重，独立排名；各项含评委评定成分 | 报名与评审口径在主办方 | 需人工确认 | H02、H03；现场演示尺度需用户确认（H11） |
 
 ## 3. 推荐目录对照（3.3.5.4，非强制）
@@ -138,49 +138,49 @@
 
 | 推荐目录 | 现有对应位置 | 内容 | 状态 |
 |---|---|---|---|
-| `README.md` | [README.md](../../README.md) | 项目简介、硬件/工具版本、目录、构建运行、能力与限制 | 已有（有目录说明，未逐项对照本表） |
+| `README.md` | [README.md](../../README.md) | 项目简介、硬件/工具版本、目录、构建运行、能力与限制、赛事指南对照、材料索引 | 已有（README 已含逐项目录对照与新增材料入口） |
 | `src/` | `rf_overlay/rtl/`、`rf_overlay/sw/board_app/`、`pynq_overlay/sw/`、`pynq_overlay/rtl/`、`src/rtl/`、`sdk/src/`、`host/`、`ml_training/` | RF 主项目 PL/PS 源码、PYNQ 应用、辅助 AWG、上位机、模型训练 | 已有（分散在三条流水线） |
 | `sim/` | `src/tb/`、`rf_overlay/tb/`、`pynq_overlay/tb/`、`pynq_overlay/sw/tests/`、`scripts/tests/`、`host/tests/`、`rf_overlay/sw/board_app/test/` | RTL 测试台与离线/主机测试 | 部分具备（缺统一仿真入口，G03） |
 | `build/` | [build_bitstream.py](../../scripts/build_bitstream.py)、[rf_overlay/build.tcl](../../rf_overlay/build.tcl)、[pynq_overlay/build.tcl](../../pynq_overlay/build.tcl)、[Makefile](../../rf_overlay/sw/board_app/Makefile)、[package_merged_overlay.py](../../scripts/package_merged_overlay.py)、[.github/workflows](../../.github/workflows/awg-bitstream.yml) | 构建脚本、打包、CI | 已有 |
 | `board/` | [rf_overlay/bd/create_bd.tcl](../../rf_overlay/bd/create_bd.tcl)、[rf.xdc](../../rf_overlay/constraints/rf.xdc)、[program_board.sh](../../scripts/program_board.sh)、[boardtest](../rf/boardtest.md)、[l2_stage1_record](../rf/l2_stage1_record.md) | 上板工程、约束、运行脚本、实测记录 | 部分具备（原始实测输出不在仓库） |
-| `data/` | [golden/BASELINE.md](../golden/BASELINE.md)、`ml_training/fourclass_test_vectors/`、`ml_training/data/`、`sdr_testbench/config/`、`sdr_testbench/results/` | 黄金参考、测试向量、配置与采集结果 | 部分具备（大数据不在仓库或为受限副本） |
+| `data/` | [golden/BASELINE.md](../golden/BASELINE.md)、[docs/evidence/](../evidence/README.md)（脱敏证据摘要，非原始数据）、`ml_training/fourclass_test_vectors/`、`ml_training/data/`、`sdr_testbench/config/`、`sdr_testbench/results/` | 黄金参考、测试向量、配置、采集结果与证据摘要 | 部分具备（大数据与原报告不在仓库或为受限副本） |
 | `skill/` | `skills/`（`final-prj-rf-development`、`pynq-linux-development`、`pluto-gnuradio-testbench`＋入口 [README](../../skills/README.md)）；指南入口：[skill/README.md](../../skill/README.md) | 三套可复用技能＋入口说明 | 已有（跨项目验证见 G10） |
-| `report/` | [report/README.md](../../report/README.md)（入口）→ [DESIGN-REPORT](DESIGN-REPORT.md)、[SYNTHESIS-METRICS](SYNTHESIS-METRICS.md)、[AI-COLLABORATION-RECORD](AI-COLLABORATION-RECORD.md)、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)、`docs/reports/`、`docs/reviews/` | 设计报告、综合指标、协作记录、实验/审查报告 | 部分具备（报告要素缺口见 §2.9） |
+| `report/` | [report/README.md](../../report/README.md)（入口）→ [DESIGN-REPORT](DESIGN-REPORT.md)、[SYNTHESIS-METRICS](SYNTHESIS-METRICS.md)、[EVIDENCE-PACK](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION](OPTIMIZATION-AND-REPRODUCTION.md)、[RF-INTERFACE-TIMING](RF-INTERFACE-TIMING.md)、[AI-COLLABORATION-RECORD](AI-COLLABORATION-RECORD.md)、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)、`docs/reports/`、`docs/reviews/` | 设计报告、综合指标、证据包、优化/复现、接口时序、协作记录、实验/审查报告 | 部分具备（报告要素与当前交付优化对比仍有缺口，见 §2.9） |
 
 ## 4. 文件命名规则（3.3.5.4 第 1 段）
 
 - 规则：目录名与文件名使用纯英文（小写字母、数字、下划线、连字符）；不得出现中文、空格或特殊字符；中文只在正文。
-- 现状（详见本地核查报告，不随仓库；最终导出后重扫的数字见本轮最终简报）：
-  - 工作区 git 跟踪范围（997 文件/78 目录，排除 `evidence/` 等）：不符合 34 个文件＋3 个目录——大写 31 文件＋3 目录，中文图片名 3 个，空格 0，其他特殊字符 0。
-  - 待发布暂存导出树（1383 文件/166 目录）：不符合 **76 个文件＋6 个目录**，全部是大写/混合大小写；中文/空格/其他特殊字符 **0**。
-  - 工作区磁盘另有未跟踪开发原件（`docs/reference/` 的 PDF/ZIP 与 3 张中文图片、`ml_training/` 数据/结果、`pynq_overlay/NA/` 等），不在发布候选内。
-- 判断：**部分具备**。全部路径已是英文；大小写不符合字面规则；中文/空格只出现在不随发布的开发原件中。
-- 例外疑点：指南自身示例使用 `README.md`；3.3.5.2 又要求 `skill/README.md`；`LICENSE`/`NOTICE`（开源惯例）、`Makefile`（构建工具约定名称）、`SHA256SUMS`（第三方完整性清单约定）、`SKILL.md`（技能工具约定）均难改成全小写。**是否允许这些"示例/惯例例外"须向赛道确认**（H04）。`LICENSES/` 目录大写亦属常见开源惯例。
-- 处置：本轮**只报告、不批量改名**；改名会牵动文档互链、`SHARE-MANIFEST`、CI 与构建引用，须由 Lead 统一决策后在发布副本执行（G14）。
+- 现状（逐路径扫描由本地核查报告完成、不随仓库；当前公开树 = 最终导出树）：
+  - 当前公开树（最终导出树，2026-10-31）：**1404 个文件 / 171 个目录**；含大写字母 **89 个文件 + 6 个目录**（惯例/示例名 32＋非惯例 57；混合大小写测试向量 4 个含在非惯例内）；**中文 0、空格 0、其他特殊字符 0**。
+  - 本轮新增的 4 个工程文档（`EVIDENCE-PACK.md`、`OPTIMIZATION-AND-REPRODUCTION.md`、`RF-INTERFACE-TIMING.md`、`FILENAME-CONSULTATION.md`）与 `docs/evidence/README.md` 已计入上述 89 个；数字与 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md) 一致。
+  - 工作区开发树另有未跟踪开发原件（参考 PDF/ZIP、照片、`ml_training/` 数据/结果等），不在公开仓库。
+- 判断：**部分具备**。全部路径已是英文；大小写不符合字面规则；中文/空格/特殊字符在公开副本中为 0。
+- 例外疑点：指南自身示例使用 `README.md`；3.3.5.2 又要求 `skill/README.md`；`LICENSE`/`NOTICE`（开源惯例）、`Makefile`（构建工具约定名称）、`SHA256SUMS`（第三方完整性清单约定）、`SKILL.md`（技能工具约定）均难改成全小写。**是否允许这些"示例/惯例例外"须向赛道确认**（H04）。
+- 处置：咨询文字已备于 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（4 条问题，**尚未发送**；本行与 §6 G14、§7 H13 联动）。本轮**不批量改名**；改名会牵动文档互链、`SHARE-MANIFEST`、CI 与构建引用（如 `SHA256SUMS`、`axi_ctrl_v1_0_S00_AXI.v`），须在赛道答复后由 Lead 统一决策并在发布副本执行。
 
 ## 5. 评分权重与对应材料（3.3.5.5）
 
 | 评测项 | 权重 | 首选对应材料 | 辅助材料 | 状态 / 最大风险 |
 |---|---:|---|---|---|
 | 创新性与应用价值 | 30 | [README](../../README.md) 项目目标、[DESIGN-REPORT](DESIGN-REPORT.md) §1 | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md) 背景 | 部分具备：自动选档愿景未实现，须按 BPSK/QPSK/受限 QAM16 重述创新点 |
-| 性能与资源优化效果 | 20 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)（资源/时序/性能汇总） | [README](../../README.md)「已验证能力」、`build_manifest.json`、[l2_stage1_record](../rf/l2_stage1_record.md) | 部分具备：汇总数据已有；优化前后对比与同口径基线未取得；原始报告不在仓库 |
-| 功能正确性与设计完整性 | 20 | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4–§5、[acceptance-checklists-p1-p6](../requirements/acceptance-checklists-p1-p6.md) | [交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md)、[人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) | 部分具备：完整物理闭环/真人 `NOT_RUN`，复审 `CHANGES_REQUIRED` |
+| 性能与资源优化效果 | 20 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) | [README](../../README.md)「已验证能力」、`build_manifest.json`、[l2_stage1_record](../rf/l2_stage1_record.md) | 部分具备：汇总与证据索引已有；**当前交付版本优化前后对比未取得**，历史受控配对不可移植；原始报告不在仓库 |
+| 功能正确性与设计完整性 | 20 | [DELIVERY-INDEX](DELIVERY-INDEX.md) §4–§5、[acceptance-checklists-p1-p6](../requirements/acceptance-checklists-p1-p6.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md) §2、[board-results-2026-10-26.md](../evidence/board-results-2026-10-26.md) | [交付复审](../reviews/2026-10-26-codex-delivery-closeout-review.md)、[人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) | 部分具备：完整物理闭环/真人 `NOT_RUN`，复审 `CHANGES_REQUIRED`；RF 接口时序未测 |
 | 大模型协作与技能包 | 15 | [AI-COLLABORATION-RECORD.md](AI-COLLABORATION-RECORD.md)、[AI-COLLABORATION-CASE](AI-COLLABORATION-CASE.md)、`skills/`、[skills/README.md](../../skills/README.md) | [DELIVERY-INDEX](DELIVERY-INDEX.md) §10 | 部分具备：材料已齐；跨项目验证与陌生队伍试用未做 |
-| 文档质量与可复现性 | 15 | [README](../../README.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md)、[DESIGN-REPORT](DESIGN-REPORT.md)、[COMPETITION-MATERIALS](COMPETITION-MATERIALS.md) | 本文件、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md) | 部分具备：仓库不含产物/数据，复现需自建环境 |
+| 文档质量与可复现性 | 15 | [README](../../README.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md)、[DESIGN-REPORT](DESIGN-REPORT.md)、[COMPETITION-MATERIALS](COMPETITION-MATERIALS.md)、[EVIDENCE-PACK.md](EVIDENCE-PACK.md)、[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) | 本文件、[PROJECT-STRUCTURE](PROJECT-STRUCTURE.md) | 部分具备：证据与复现文档已补；仓库不含产物/数据，复现需自建环境 |
 
 > 说明：指南写明"两组采用同一套评测项与权重，但分组独立排名、独立评奖，评分时结合各自组别的考察侧重把握尺度。各项均含评委评定成分；功能正确性与可复现性两项以提交物核查与实测数据为主要依据。"因此上表只做材料对应，不预估分数。
 
-## 6. 缺口清单（归并 18 项）
+## 6. 缺口清单（归并 19 项）
 
-> 与 §2 的 26 条"部分具备/未完成"对应；编号供后续任务引用。**本轮不修复代码/布局**，只登记；G06–G09 已随本轮并行任务 B 关闭（保留编号备查）。
+> 与 §2 的 23 条"部分具备"对应；编号供后续任务引用。**本轮不修复代码/布局**，只登记；G05–G09、G13 已关闭（保留编号备查）。
 
 | 编号 | 缺口 | 对应映射行 | 建议动作 | 责任 |
 |---|---|---|---|---|
-| G01 | 缺"优化前后性能与资源对比表"（当前交付版） | #35、#41、#42 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §5 已如实记录"未取得同口径基线"；赛前需固定两版可比设计并补测 | 任务 A（已整理）＋赛前补测 |
-| G02 | 综合/实现原始报告（利用率、时序、Fmax）未入仓库 | #18、#25、#42 | [SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) 已汇总数值与本地原件路径；是否把脱敏摘要/截图放进 `build/` 待 Lead 决定并标证据层级 | 任务 A（已整理）＋Lead |
+| G01 | 缺"优化前后性能与资源对比表"（**当前交付版**） | #35、#41、#42 | [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.3 已确认"当前交付未取得"；§1.4 历史候选 `b3cca2ac…` 受控配对（五阶段 median 378.89→292.08 ms、P95 444.52→311.74 ms、modrec4 median 154.58→64.81 ms）**仅作方法示例、不可移植**；§1.6 给出最小补测方案（A/B/C/D，本轮未执行） | 赛前补测（需板卡授权） |
+| G02 | 综合/实现原始报告（`.rpt`/DCP/位流）未入仓库 | #18、#25、#42 | **部分缓解**：[EVIDENCE-PACK.md](EVIDENCE-PACK.md) 与 [docs/evidence/](../evidence/README.md) 已入仓库（三份实现摘要＋板级结果摘要＋原件 SHA-256）；原始报告仍在开发机，摘要不可复算 | 任务 A（已整理）＋Lead |
 | G03 | RTL/模块仿真缺统一运行入口与结果记录 | #24 | 增加仿真运行说明/脚本（或报告写明手工 xsim 步骤） | Lead |
 | G04 | 设计报告缺"选题背景/前人工作/创新点"与软硬件划分量化依据专章 | #32、#34、#41 | 在 DESIGN-REPORT 增补章节（Lead 统一整合） | Lead |
-| G05 | 设计报告缺"从零复现"完整步骤与预期产物清单 | #20、#38、#45 | 在 DESIGN-REPORT/README 增补复现章节 | Lead |
+| G05 | 设计报告缺"从零复现"完整步骤与预期产物清单 | #20、#38、#45 | **已关闭**：[OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §2 提供从零复现说明（边界/版本/依赖/构建/预期产物/缺失项再生成/验证/限制） | 已处理（2026-10-31） |
 | G06 | 大模型协作缺"提示词→回答→纠错"逐步记录与智能体工作流章节 | #11、#36 | **已关闭**：`AI-COLLABORATION-RECORD.md` 已生成（K1–K3＋§1 工作流） | 任务 B |
 | G07 | 技能包"提炼过程"未独立成章 | #22、#37 | **已关闭**：`skills/README.md` 逐套写明来源失败/观察、验证方式与边界 | 任务 B |
 | G08 | 技能包缺入口 `skills/README.md`（适用范围/方法/失效条件/已验证效果） | #28、#30、#37 | **已关闭**：本轮任务 B 已产出 | 任务 B |
@@ -188,21 +188,22 @@
 | G10 | 通用 PYNQ Skill 未做跨项目/跨板验证 | #8、#30、#31 | 如实写"尚未跨项目验证"，或补一次最小验证 | 需人工确认（H07） |
 | G11 | 5 个第三方参考工程 RTL 的许可未确认 | #17 | 取得许可/替换实现/移出并声明 PL 不可完整重建，三选一 | 需人工确认（H06） |
 | G12 | 开源发布动作未完成（仓库地址/可见性/报名登记） | #16 | 由所有者完成建仓、许可确认与报名后台登记 | 需人工确认（H08） |
-| G13 | 未按推荐目录组织，README 无逐项对照 | #39 | **已在本轮补齐**：README 增「赛事指南对照」+ `skill/`、`report/` 入口；不搬迁源码 | 已处理（2026-10-31） |
-| G14 | 文件名大小写不符合字面规则（最终发布导出树 84 文件＋6 目录含大写；中文/空格/特殊字符 0） | #40、#42 | 发布副本统一小写化或向赛道确认例外；同步 `SHARE-MANIFEST` 与互链；改名须避免破坏构建引用 | 需人工确认（H04） |
+| G13 | 未按推荐目录组织，README 无逐项对照 | #39 | **已关闭**：README 增「赛事指南对照」+ `skill/`、`report/` 入口；本轮新增材料入口已加入 README/材料索引；不搬迁源码 | 已处理（2026-10-31） |
+| G14 | 文件名大小写不符合字面规则（当前公开树 1404 文件/171 目录中 89 文件＋6 目录含大写；中文/空格/特殊字符 0） | #40、#42 | 已备 [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md)（4 条咨询问题＋可直接发送文字，**尚未发送**）；待赛道答复后再决定"仅发布副本改名"或"原仓库改名"；同步 `SHARE-MANIFEST` 与互链，改名须避免破坏硬引用（`SHA256SUMS`、`axi_ctrl_v1_0_S00_AXI.v`、`LICENSES/*`） | 需人工确认（H04、H13） |
 | G15 | 工程包不含位流/HWH/数据集/模型产物/原始证据 | #15、#20、#26、#38、#45 | 在 README/报告保持"文档记述"声明；必要时提供受限数据说明 | Lead |
 | G16 | 工具版本证据链不完整（构建清单 vivado 字段为空/记录分散） | #10、#27 | **部分缓解**：[SYNTHESIS-METRICS.md](SYNTHESIS-METRICS.md) §1.4 记录 `Vivado v.2025.2 (win64) Build 6299465`（本地报告表头，三处一致）；`build_manifest.json` 的 `toolchain.vivado` 仍为空 | Lead |
 | G17 | 完整物理验收/统一发布清单/真人现场 `NOT_RUN`；复审 `CHANGES_REQUIRED` | #1、#9、#14、#32、#43 | 按验收清单推进；现场由用户确认，AI 不代签 | 需人工/现场 |
 | G18 | PYNQ 使用为 Python 脚本，未用 Jupyter Notebook（推荐项，非强制） | #7 | 保留说明即可；如要贴合推荐形式可另加 notebook 入口 | Lead |
+| G19 | **RF 源同步 DDR 接口时序未测量/未约束**：`rf.xdc` 缺 input/output delay；全局 `no_input_delay` 10=9 HIGH+1 MEDIUM（false-path `spi_miso`）、`no_output_delay` 48=39 HIGH+9 MEDIUM（false-path `rf_gpio`）；RF 子集 7 RX 输入＋8 TX 输出（其中 `tx_clk_out_p` 需生成时钟，真正缺 output delay 的是 7 个 TX 数据/帧端口）；board skew/TX 生成时钟/runtime IDELAY 未测 | #19、#25、#42、#43 | 已由 [RF-INTERFACE-TIMING.md](RF-INTERFACE-TIMING.md) 记录缺口、参数来源、计算方法与分阶段最小方案；板级测量 `NOT_RUN`；**不得宣称接口通过**；内部 WNS +0.213/WHS +0.018 只覆盖已约束内部路径 | 赛前测量/授权（需人工确认） |
 
-## 7. 需人工确认清单（12 项）
+## 7. 需人工确认清单（13 项）
 
 | 编号 | 待确认事项 | 依据/位置 |
 |---|---|---|
 | H01 | 组别归属（初级组/高级组）与学籍审核 | 3.3.1.1；报名后台 |
 | H02 | 赛道、器材与组别信息以报名信息与官方公告为准 | 3.3.1/3.3.6 |
 | H03 | 官方解释权、赛程与提交节点 | 3.3.6；<http://www.fpgachina.cn/> |
-| H04 | `README.md`/`LICENSE`/`NOTICE`/`Makefile`/`SKILL.md` 等大小写"示例/惯例例外"是否允许 | 3.3.5.4；§4 |
+| H04 | `README.md`/`LICENSE`/`NOTICE`/`Makefile`/`SKILL.md` 等大小写"示例/惯例例外"是否允许 | 3.3.5.4；§4；[FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md) Q1 |
 | H05 | 混合许可（MIT＋ADI BSD＋GPL-3.0＋未知来源 RTL）是否满足"允许再分发" | 3.3.3.3；[NOTICE](../../NOTICE)、[LICENSES/README.md](../../LICENSES/README.md) |
 | H06 | 5 个第三方 RTL 的最终处理方式（取得许可/替换/移出并声明不可复现） | [UNKNOWN-PROVENANCE.md](../../LICENSES/UNKNOWN-PROVENANCE.md)、[NOTICE](../../NOTICE) |
 | H07 | 通用 PYNQ Skill 的"不与题目绑定"认定与加分口径 | 3.3.2/3.3.5.2 |
@@ -211,6 +212,7 @@
 | H10 | 是否接受"脱敏发布副本＋原始证据留本地"的提交形态 | [SHARING-AND-CLEANUP](SHARING-AND-CLEANUP.md) |
 | H11 | 现场演示范围与对外表述（QAM16 受限、QAM64 移出、外部 SDR 方向） | [README](../../README.md)「失败与限制」、[人工验收指南](../rf/2026-10-26-human-acceptance-guide.md) |
 | H12 | 设计报告/材料版式（语言、PDF、篇幅、是否需中文正文） | 3.3.5.3/3.3.5.4 未规定 |
+| H13 | **赛道对命名例外的答复**：Q1 惯例/示例名是否可保留、Q2 小写规则是否只约束新增/提交副本、Q3 若必须小写能否只在提交副本改名并同步清单、Q4 是否还需按推荐目录实体重组 | [FILENAME-CONSULTATION.md](FILENAME-CONSULTATION.md) §3（4 问，**尚未发送**）；答复前按 §4 维持现状、不批量改名 |
 
 ## 8. 必须保留的真实限制
 
@@ -228,13 +230,18 @@
 10. **档位注册表/信道感知自动选档 `NOT_IMPLEMENTED`**：自动执行永久关闭，建议只填草稿。
 11. **PL 未实现实时同步解调/RRC/多制式处理**；PS 侧只验证过有限快照分析与轻量推理。
 12. **板卡存储健康**：MMC 根因 `NOT_ESTABLISHED`，完整 FS 检查 `NOT_RUN`。
+13. **RF 源同步 DDR 接口时序未测量**：`rf.xdc` 缺 input/output delay；板级 skew、TX 生成时钟、runtime IDELAY tap 均未测；**内部 WNS +0.213/WHS +0.018 只覆盖已约束内部路径，不得据此宣称接口时序通过**（见 [RF-INTERFACE-TIMING.md](RF-INTERFACE-TIMING.md)）。
+14. **功耗为工具估计值**：`2.418 W` 等来自 Vivado `report_power` 估算，无板级电压/电流/温度实测或功耗预算；不得写成"实测功耗"（见 [EVIDENCE-PACK.md](EVIDENCE-PACK.md) §3）。
+15. **当前交付版本优化前后对比"未取得"**：历史候选 `b3cca2ac…` 的受控配对只说明方法，**不是当前交付版本**，不能移植；最小补测方案未执行（见 [OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) §1.3–§1.6）。
+16. **公开证据是脱敏摘要**：`docs/evidence/*` 与 [EVIDENCE-PACK.md](EVIDENCE-PACK.md) 为人工转录摘要，字节与原件不同、**不能在本副本内复算**；原件仍在开发机（见 [docs/evidence/README.md](../evidence/README.md) §3–§4）。
 
 ## 9. 本文件不证明什么
 
 - 不证明作品"符合官方全部条款"：官方解释权归主办方，报名后台与现场审核另有流程。
 - 不把"仓库里有材料"当成"该条已通过"：§2 的"已有"只表示可指向材料存在。
 - 不新增指标、不换算数字、不把 `NOT_RUN`/`UNKNOWN`/`NOT_ESTABLISHED` 改写为通过。
-- 不替代 [DESIGN-REPORT](DESIGN-REPORT.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md) 与原始收据；引用本文时请连带引用原始出处与证据层级。
+- 不证明 RF 接口时序通过、不证明功耗实测、不证明当前交付版本有优化前后数据（三者均见 §8 第 13–15 条）。
+- 不替代 [DESIGN-REPORT](DESIGN-REPORT.md)、[DELIVERY-INDEX](DELIVERY-INDEX.md)、[EVIDENCE-PACK](EVIDENCE-PACK.md) 与原始收据；引用本文时请连带引用原始出处与证据层级。
 
 ## 10. 维护
 
@@ -248,6 +255,11 @@
 - [交付材料索引](DELIVERY-INDEX.md)
 - [设计报告](DESIGN-REPORT.md)
 - [综合与实现指标整理](SYNTHESIS-METRICS.md)
+- [交付证据包索引](EVIDENCE-PACK.md)
+- [脱敏证据摘要](../evidence/README.md)
+- [优化对照与从零复现](OPTIMIZATION-AND-REPRODUCTION.md)
+- [RF 接口时序缺口](RF-INTERFACE-TIMING.md)
+- [文件名例外咨询文字](FILENAME-CONSULTATION.md)
 - [AI 协作案例](AI-COLLABORATION-CASE.md)
 - [大模型协作记录](AI-COLLABORATION-RECORD.md)
 - [技能包入口](../../skills/README.md)

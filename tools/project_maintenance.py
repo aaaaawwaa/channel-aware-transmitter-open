@@ -150,10 +150,22 @@ def restore(root, manifest_path):
     return {'restored_entries': len(pairs)}
 
 
+def skip_dir(name, rel_base):
+    """Directory skip rule.
+
+    Raw evidence directories are excluded everywhere except the curated public
+    summary tree ``docs/evidence/`` (human-written sanitized digests; the raw
+    originals stay in the private workspace).
+    """
+    if name not in SKIP_DIRS:
+        return False
+    return not (name == 'evidence' and rel_base.parts == ('docs',))
+
+
 def source_files(root):
     for base, dirs, names in os.walk(root):
         rel_base = Path(base).relative_to(root)
-        dirs[:] = sorted(d for d in dirs if d not in SKIP_DIRS and
+        dirs[:] = sorted(d for d in dirs if not skip_dir(d, rel_base) and
                          not d.startswith(('.pytest-work-', 'ws', 'sim_')) and
                          not (Path(base) / d).is_symlink() and
                          not getattr((Path(base) / d).lstat(), 'st_file_attributes', 0) & 0x400 and

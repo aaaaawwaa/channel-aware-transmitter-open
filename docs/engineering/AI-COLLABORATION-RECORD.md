@@ -18,6 +18,8 @@
 | K2 | 退出码与"成功"读数失真 | 管道/包装器换掉了被观测对象 | 独立复核与真实接口核对 |
 | K3 | 读取失败被当成"没有错误" | fail-open：未知被折叠成通过 | 独立复审两轮反例（F1 → N1） |
 
+另在 **§7** 补充 3 个"优化与性能"主题的典型提示词/模型回答/纠错片段（S1–S3），用于说明性能类结论的**口径限定**与**引用 vs 重测**边界。
+
 ## 1. 协作模型与智能体工作流
 
 ### 1.1 角色、写范围与共享单例
@@ -251,7 +253,54 @@ runner 交付：门禁顺序、一次性授权与消费账本、接线新鲜度�
 7. **实现者不自签**：关键结论交独立复审；复审者自修时要声明独立性弱环并安排第三方复验。
 8. **结论带时间戳与证据等级**：不覆盖历史，不引用自己当证据（[AI 协作案例](AI-COLLABORATION-CASE.md) §7、§11）。
 
-## 7. 本文不证明什么
+## 7. 典型提示词/模型回答/纠错片段（补充）
+
+本节补充 3 个**优化与性能**主题的真实片段，与 K1–K3 同样只做改写摘要，不复制完整会话原文，不写个人信息。出处为公开文档或开发机 `<LOCAL_EVIDENCE>` 报告（后者不在本仓库，已注明）；引用时保留"引用/重测"与"逐字节/容差"等口径限定语。
+
+### S1：受控 A/B 的提示词与"0 mismatch"口径澄清
+
+**提示词/任务要点**（改写自 `<LOCAL_EVIDENCE>/rf-teaching/s2-46db-modrec4-perf-arm-2026-10-21/result/PERF-ARM-RESULT.md` §1）：
+
+> 同一候选 `b3cca2ac…`；同候选 release 副本、同 4 帧、同顺序；baseline 与 optimized 只替换 `ModRec4Adapter.evaluate_iq` 为单次共享计算；batch=1、warmup 5、repeats 20；固定顺序（不交替，热漂移风险如实记录）；两实现逐帧六类/环境/解调/modrec4/身份在**预声明容差**内一致才算通过；不安装、不改 `current`、零 RF；不一致/异常/超时即停、不重试。
+
+**模型回答/产出要点**：ARM 五阶段合计 median `378.89 → 292.08 ms`（−22.9%）、P95 `444.52 → 311.74 ms`（−29.9%），modrec4 阶段 median `154.58 → 64.81 ms`（−58.1%），RSS 约 32 MiB 无实质变化；ARM 4/4 帧、host 70/70 case 输出 0 mismatch；结论表述为"建议纳入的证据，决定权在 Lead/A"。
+
+**错误/反馈**：后续产品决策文件纠正了两处**口径过度**：
+
+1. `0 mismatch` 是**语义/字段容差比较**，**不是逐字节相等**；原始严格比较存在最后一位浮点/passthrough repr 差异（最大浮点差 `2.84e-14`、six margin `1.48e-8`），均在声明容差内；
+2. 这组 ARM 数字是 **`b3cca2ac` 的历史受控配对数据，不是新候选的实测**；合入产品后"本任务未重测 ARM"，不能写成新候选性能。
+
+**纠正动作**：在 `PERFORMANCE-DECISION.md` 增加"口径限制"与"Boundary"节：引用历史 ARM 数据只作参考、不称新候选实测；合入后只做受影响验证（43/43、70/70、hook 10/10、221 tests 等），不重测性能；`b3cca2ac` 历史证据保留不改写。
+
+**结果与证据**：优化按该证据合入产品（最终候选 `4776ba0b…`），但性能声明保持"历史受控配对"口径；[优化与复现说明](OPTIMIZATION-AND-REPRODUCTION.md) §1.4 按同一口径引用。出处：`<LOCAL_EVIDENCE>/rf-teaching/s2-46db-modrec4-perf-arm-2026-10-21/result/PERF-ARM-RESULT.md`、`<LOCAL_EVIDENCE>/rf-teaching/s2-46db-modrec4-product-2026-10-21/PERFORMANCE-DECISION.md`。
+
+### S2：RRC 优化两轮纠偏与"内存换时延"的如实记录
+
+**提示词/任务要点**（改写自 `<LOCAL_EVIDENCE>/rf-teaching/s2-46db-p3-rrc-perf-2026-10-24/PERF-REPORT.md` §0、§3、§5）：
+
+> 先冻结旧基线（候选 `90ac6b12…`）与热点，准备测量/停止检查工具；**新候选未冻结前，旧/新差分与 ARM 21/21 一律 NOT_RUN**；不得用旧基线数字宣称新候选性能；停止/取消超预算必须如实记录，不改预算、不隐藏。
+
+**模型回答/产出要点**：旧基线 cold 首次 legal `17.136 s`、hot median `16.751 s`、max legal `17.373 s`、21 输入总 `269.264 s`、max RSS `22,668 KiB`（≤3 s 目标**未达**）；热点为 matched filter/norm/FFT；ARM stop 实测 `5.7516 s` 抛 `RuntimeError: RF capture worker did not stop`，**如实记录为阻塞**。
+
+**错误/反馈**：中间版本报告记录 host `0.1154 s`、ARM hot `2.29–2.47 s`，但 **cold 为 `2.61–3.28 s`，未稳定 ≤3 s**——不能用快照里的最好值宣称达标；该版本继续被优化。
+
+**纠正动作**：两轮优化到 v3：先缓存/复数 FFT，按 ARM 实测"FFT 主导"改为**符号级直接卷积**；以 `v1→v3 21/21 MATCH_WITH_ALLOWED_TOLERANCES` 证明等价（版本单列、RECT 11/112 保持）；最终 ARM cold `1.5599 s`、hot median `0.5377 s`、max legal `1.5599 s`、21 输入总 `11.110 s`，`legal ≤3 s` 满足；**但同时记录 max RSS `89,016 KiB`（超过 64 MiB 记录预算）**，按"以内存换时延的权衡"保留，不删不利数据。
+
+**结果与证据**：产品候选 `bedf98c7…` 经无 RF 试部署 `TRIAL_ACCEPTED`；该结果只证明计算路径与交互性能，不证明真实 RRC 接收或当前交付版本达标。出处：`<LOCAL_EVIDENCE>/rf-teaching/s2-46db-p3-rrc-perf-2026-10-24/PERF-REPORT.md`、`<LOCAL_EVIDENCE>/rf-teaching/s2-46db-p3-rrc-candidate-2026-10-24/CANDIDATE-REPORT-FINAL.md`；仓库内记录：[2026-10-23 QPSK 离线报告](../reports/2026-10-23-p3-qpsk-offline.md) §"RRC 优化产品候选"；对照结论见 [优化与复现说明](OPTIMIZATION-AND-REPRODUCTION.md) §1.5。
+
+### S3：首次 ARM 预算失败后的单变量优化（跨候选，不作配对）
+
+**提示词/任务要点**（改写自 [HEADROOM 合同收尾报告](../reports/2026-10-11-headroom-contract-final.md) §"验证与资源"）：ARM 100 次完整计算首次未通过预算时，定位并修复；**不得提高预算或重复运行取优**；修复后必须证明计算等价（标量参考逐项相等、保存窗口分析严格相等），失败记录保留。
+
+**模型回答/产出要点**：首次候选 `ebad0de…` 的 ARM P95 `314.963 ms` 未通过（≤300 ms），失败证据完整保留；定位到 BPSK 参考计算的 127 次逐相位平均后，改为一次 `127×63` 批量整数计算；重测新候选 `b67a8aa…` P95 `270.793 ms`、RSS `31524 KiB`、原生 CNN，通过。
+
+**错误/反馈**：首次超预算即失败；报告明确"这是保存 IQ 的计算时间，不是触摸或实采时延"，且"未提高预算或重复运行取优"。
+
+**纠正动作**：只改 BPSK 参考平均的实现方式（算法单变量）；用 127 种子标量参考逐项相等、四个保存窗口完整五类分析严格相等（仅规范发布 ID 差异）证明输出等价；失败帧与失败收据不替换。
+
+**结果与证据**：新候选资格通过；但这是**跨候选**数据（失败候选 → 修正候选），按 [优化与复现说明](OPTIMIZATION-AND-REPRODUCTION.md) §1.1 的判定**只作背景，不作优化前后配对**。出处：[HEADROOM 合同收尾报告](../reports/2026-10-11-headroom-contract-final.md) §"验证与资源"；配对判定见 [优化与复现说明](OPTIMIZATION-AND-REPRODUCTION.md) §1.5 第 1 行。
+
+## 8. 本文不证明什么
 
 - 不证明"AI 能一次写对"：三个案例都是**发现错误 → 纠正 → 保留限制**的过程，不是成功叙事。
 - 不证明项目整体验收通过：完整物理采集、正式环境诊断、真人现场验收等仍有未完成项（[交付材料索引](DELIVERY-INDEX.md) §5）。
@@ -259,7 +308,7 @@ runner 交付：门禁顺序、一次性授权与消费账本、接线新鲜度�
 - 不证明本文引用的历史指标可在本仓库复算：原始收据、原始 IQ、原始会话与日志不在本仓库（[交付材料索引](DELIVERY-INDEX.md) §9）。
 - 不发布完整私人会话：本文只做改写摘要与方法归纳，未附带会话原文、截图或附件。
 
-## 8. 出处清单
+## 9. 出处清单
 
 | 主题 | 文件 |
 |---|---|
@@ -276,6 +325,10 @@ runner 交付：门禁顺序、一次性授权与消费账本、接线新鲜度�
 | 案例 K2：包装器退出码死代码 | [docs/superpowers/plans/2026-09-17-ad9361-tx-bringup.md](../superpowers/plans/2026-09-17-ad9361-tx-bringup.md) 事件表 E17 |
 | 案例 K3：runner 任务与实现 | [docs/reports/2026-10-12-deepseek-harness-progress-check.md](../reports/2026-10-12-deepseek-harness-progress-check.md) §结论与后续；[docs/reports/2026-10-12-headroom-runner-implementation.md](../reports/2026-10-12-headroom-runner-implementation.md) §12 |
 | 案例 K3：两轮独立复审与 N1 | [docs/reports/2026-10-13-headroom-runner-independent-review.md](../reports/2026-10-13-headroom-runner-independent-review.md) §0、§5 |
+| 片段 S1：受控 A/B 与口径澄清 | `<LOCAL_EVIDENCE>/rf-teaching/s2-46db-modrec4-perf-arm-2026-10-21/result/PERF-ARM-RESULT.md`、`<LOCAL_EVIDENCE>/rf-teaching/s2-46db-modrec4-product-2026-10-21/PERFORMANCE-DECISION.md`（本地原件，不在仓库） |
+| 片段 S2：RRC 优化与内存权衡 | `<LOCAL_EVIDENCE>/rf-teaching/s2-46db-p3-rrc-perf-2026-10-24/PERF-REPORT.md`、`<LOCAL_EVIDENCE>/rf-teaching/s2-46db-p3-rrc-candidate-2026-10-24/CANDIDATE-REPORT-FINAL.md`（本地原件，不在仓库）；仓库内记录：[2026-10-23 QPSK 离线报告](../reports/2026-10-23-p3-qpsk-offline.md) §"RRC 优化产品候选" |
+| 片段 S3：首次 ARM 预算失败与单变量优化 | [docs/reports/2026-10-11-headroom-contract-final.md](../reports/2026-10-11-headroom-contract-final.md) §"验证与资源" |
+| 优化配对判定与从零复现 | [docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md](OPTIMIZATION-AND-REPRODUCTION.md) |
 | 案例摘编与硬规则 | [docs/engineering/AI-COLLABORATION-CASE.md](AI-COLLABORATION-CASE.md) |
 | 技能包入口与已验证/未验证 | [skills/README.md](../../skills/README.md) |
 | 交付索引与证据边界 | [docs/engineering/DELIVERY-INDEX.md](DELIVERY-INDEX.md) §5、§9 |

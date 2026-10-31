@@ -80,7 +80,9 @@
 
 - **六类门**：离线 → ARM 原生 → 数字回环 → 有线物理回环 → 真人 → 发布；未执行层保持 `NOT_RUN`（见 [验收清单](../requirements/acceptance-checklists-p1-p6.md)）。
 - **测试分层**：PYNQ/脚本/主机 Python 套件、板端 C 原生套件（含假硬件夹具）、RTL 仿真（XSIM）、主机/ARM 判等、离线负例与变异验证；测试数量不能替代物理/真人结果。
-- **综合/实现与实测指标**：合并产品、独立 RF、独立 PYNQ 三个目标的资源/时序/时钟/功耗与上板性能汇总见 [综合与实现指标](SYNTHESIS-METRICS.md)；优化前后同口径对比目前**未取得**（原因与缺口见该文 §5–§6）。
+- **综合/实现与实测指标**：合并产品、独立 RF、独立 PYNQ 三个目标的资源/时序/时钟/功耗与上板性能汇总见 [综合与实现指标](SYNTHESIS-METRICS.md)；证据身份（交付 bit 与同次构建报告的 payload_equal 绑定、报告原件 SHA-256、功耗为工具估计）见 [证据包索引](EVIDENCE-PACK.md) 与 [docs/evidence/](../evidence/README.md)。
+- **RF 接口时序边界**：内部实现时序通过**不**覆盖 AD9361 源同步 DDR 接口；`rf.xdc` 缺 input/output delay，板级时序未测。缺口、参数来源与分阶段方案见 [RF 接口时序](RF-INTERFACE-TIMING.md)，不得据此宣称接口通过。
+- **优化前后对比**：当前无同版本同条件基线（`未取得`）；最小补测方案见 [优化对照与从零复现](OPTIMIZATION-AND-REPRODUCTION.md)。
 - **失败保留**：失败帧、失败日志与未通过结论不删除、不改写；新结论以新文件记录（见 [工程记忆](../memory/README.md)）。
 
 ## 8. 已知限制（设计层面）
@@ -90,6 +92,8 @@
 - 完整物理采集、真实环境闭环、正式发布清单与真人验收未完成。
 - 第三方参考工程 RTL 的许可未确认（见 [LICENSES/UNKNOWN-PROVENANCE.md](../../LICENSES/UNKNOWN-PROVENANCE.md)）；公开仓库不代表这些文件已获再分发许可。
 - 本仓库不是可安装发布包：位流/HWH、原始 IQ、数据集与模型产物不在仓库内。
+- RF 源同步 DDR 接口的板级时序未测（board skew / AD9361 配置读回 / runtime IDELAY tap 未闭合），现有内部 WNS/WHS 不能作为接口通过依据（见 [RF-INTERFACE-TIMING](RF-INTERFACE-TIMING.md)）。
+- 功耗只有 Vivado `report_power` 估计值，没有板级实测。
 
 ## 9. 参考
 
@@ -97,6 +101,10 @@
 - [作品简介追踪表](../requirements/brief-traceability.md)
 - [交付材料索引](DELIVERY-INDEX.md)
 - [综合与实现指标](SYNTHESIS-METRICS.md)
+- [证据包索引](EVIDENCE-PACK.md)
+- [优化对照与从零复现](OPTIMIZATION-AND-REPRODUCTION.md)
+- [RF 接口时序缺口](RF-INTERFACE-TIMING.md)
+- [文件名例外咨询文字](FILENAME-CONSULTATION.md)
 - [指南 3.3 符合性映射](GUIDE-CONFORMANCE.md)
 - [竞赛提交材料与符合性说明](COMPETITION-MATERIALS.md)
 - [技能包入口](../../skills/README.md)（指南 `skill/` 映射见 [skill/README.md](../../skill/README.md)）

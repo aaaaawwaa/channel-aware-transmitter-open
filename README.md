@@ -52,6 +52,7 @@ skills/                     可复用技能（本项目 RF、PYNQ、Pluto 测试
 skill/                      指南 `skill/` 入口（映射到 skills/，见 skill/README.md）
 report/                     指南 `report/` 入口（映射到 docs/engineering/ 报告与协作记录）
 docs/                       需求、设计/规格、报告、审查、工程记忆
+docs/evidence/              脱敏证据摘要（原始报告/位流/收据不在仓库）
 tools/                      维护、导出与辅助脚本
 ci/                         位流完整性与自托管 runner 检查
 .github/                    CI 工作流（AWG 位流构建）
@@ -113,6 +114,8 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 
 部署、采集与审查规则见 [开发审查规则](docs/requirements/development-review-policy.md)、[试部署 runbook](docs/rf/deployment-trial-runbook.md)、[上板测试流程](docs/rf/boardtest.md)。
 
+从零复现说明（工具链版本、依赖、构建入口、预期产物、缺失数据/模型/位流与再生成路径、验证步骤与限制）见 [OPTIMIZATION-AND-REPRODUCTION](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)；综合/实现证据的原始报告位置与脱敏摘要见 [EVIDENCE-PACK](docs/engineering/EVIDENCE-PACK.md)。
+
 ## 已验证能力（据文档记载）
 
 > 原始收据、原始 IQ 与运行日志不在本仓库，下列指标只能按"文档记载"引用，不能在本仓库内复算。每条都带原文的限定语。
@@ -143,6 +146,9 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 - **真人现场验收**：未完成；由用户现场确认，AI 不代签。
 - **板卡存储健康**：MMC 根因 `NOT_ESTABLISHED`，完整 FS 检查 `NOT_RUN`。
 - **第三方 RTL 出处未决**：`rf_overlay/rtl/` 中 5 个第三方参考工程文件没有可证明的许可证，公开再分发前必须取得作者许可或替换实现（见 [LICENSES/UNKNOWN-PROVENANCE.md](LICENSES/UNKNOWN-PROVENANCE.md)）。
+- **RF 源同步 DDR 接口时序未覆盖**：`rf_overlay/constraints/rf.xdc` 只有时钟/引脚/电平约束，缺 `set_input_delay`/`set_output_delay`；内部 WNS/WHS 为正不等于外部 AD9361 接口时序通过。现状、端口清单、参数来源与分阶段最小方案见 [RF-INTERFACE-TIMING](docs/engineering/RF-INTERFACE-TIMING.md)（板级测量 `NOT_RUN`）。
+- **功耗是工具估计**：`2.418 W` 等数值来自 Vivado `report_power` 估算，**没有**板级功耗/电流实测，不得写成“实测功耗”。
+- **优化前后对照未取得**：没有同版本、同测试条件、同指标口径的前后基线；最小补测方案见 [OPTIMIZATION-AND-REPRODUCTION](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)。
 - **本仓库不是可安装包**：缺位流/HWH、发布归档、证据与数据集，不能直接部署；旧报告里的 SHA-256 摘要不能用本仓库文件验证。
 
 ## 材料索引
@@ -160,6 +166,10 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 
 - [设计报告](docs/engineering/DESIGN-REPORT.md)：架构、关键设计决定、接收/发射/发布链路与已知限制；配套[系统结构图](docs/engineering/system-architecture.md)。
 - [综合与实现指标](docs/engineering/SYNTHESIS-METRICS.md)：资源、时钟/时序、功耗、上板与 ARM 性能、优化前后对照（当前为“未取得同口径基线”）与缺口清单。
+- [证据包索引](docs/engineering/EVIDENCE-PACK.md)：当前交付版本的脱敏证据摘要、原件位置与 SHA-256、payload_equal 绑定、功耗估计值口径；配套 [docs/evidence/](docs/evidence/README.md)。
+- [优化对照与从零复现](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)：同口径优化前后核查（当前未取得）、最小补测方案、工具链/依赖/构建/产物/缺失项的复现说明。
+- [RF 接口时序缺口](docs/engineering/RF-INTERFACE-TIMING.md)：缺失的 input/output delay 端口、AD9361 参数来源、计算方法、板级测量与离线实现的最小方案；**不是接口时序通过声明**。
+- [文件名例外咨询文字](docs/engineering/FILENAME-CONSULTATION.md)：命名规则现状、惯例例外疑点与可直接发送给赛道的咨询文字（**尚未发送**）。
 - [技能包入口](skills/README.md)（指南 `skill/` 映射见 [skill/README.md](skill/README.md)）：3 套技能的适用范围、使用方法、失效条件、来源与已验证效果。
 - [大模型协作记录](docs/engineering/AI-COLLABORATION-RECORD.md)：3 个真实案例的“提示词 → 回答 → 纠错 → 结果”与智能体工作流；另有 [AI 协作案例](docs/engineering/AI-COLLABORATION-CASE.md) 的方法与教训。
 - [指南 3.3 符合性映射](docs/engineering/GUIDE-CONFORMANCE.md)：逐条要求 → 材料 → 状态 → 缺口；[竞赛提交材料与符合性说明](docs/engineering/COMPETITION-MATERIALS.md)：材料清单、无法证明的条目与匿名/隐私处理。
@@ -179,9 +189,9 @@ ml_training\.venv\Scripts\python.exe ml_training\run.py all
 | `skill/` 技能包 | [`skill/README.md`](skill/README.md) → [`skills/`](skills/README.md) | 技能内容维护在 `skills/`，入口映射 |
 | `report/` 设计报告与协作记录 | [`report/README.md`](report/README.md) → `docs/engineering/DESIGN-REPORT.md`、`SYNTHESIS-METRICS.md`、`AI-COLLABORATION-RECORD.md` | 报告正文维护在 `docs/engineering/` |
 
-指南 3.3 要求的提交物入口：工程包（源码/仿真/综合实现/上板/构建脚本）见上表与 [README 构建与运行](#构建与运行)；技能包见 [skills/README.md](skills/README.md)；设计报告见 [DESIGN-REPORT](docs/engineering/DESIGN-REPORT.md) 与 [report/README.md](report/README.md)；大模型协作记录见 [AI-COLLABORATION-RECORD](docs/engineering/AI-COLLABORATION-RECORD.md)。
+指南 3.3 要求的提交物入口：工程包（源码/仿真/综合实现/上板/构建脚本）见上表、[EVIDENCE-PACK](docs/engineering/EVIDENCE-PACK.md) 与 [README 构建与运行](#构建与运行)；从零复现见 [OPTIMIZATION-AND-REPRODUCTION](docs/engineering/OPTIMIZATION-AND-REPRODUCTION.md)；技能包见 [skills/README.md](skills/README.md)；设计报告见 [DESIGN-REPORT](docs/engineering/DESIGN-REPORT.md) 与 [report/README.md](report/README.md)；大模型协作记录见 [AI-COLLABORATION-RECORD](docs/engineering/AI-COLLABORATION-RECORD.md)；RF 接口时序边界见 [RF-INTERFACE-TIMING](docs/engineering/RF-INTERFACE-TIMING.md)。
 
-**文件命名规则说明**：指南 3.3.5.4 要求目录/文件名为纯英文小写、数字、下划线或连字符，但指南自身示例使用 `README.md`、`skill/README.md`；本仓库保留 `README.md`、`LICENSE`、`NOTICE`、`SKILL.md`、`Makefile`、`SHA256SUMS` 等惯例名称，未批量改名以免破坏构建引用与既有限制；不符合项清单与例外疑点见 [GUIDE-CONFORMANCE §4](docs/engineering/GUIDE-CONFORMANCE.md)，需向赛道确认例外。中文仅出现在正文内容中。
+**文件命名规则说明**：指南 3.3.5.4 要求目录/文件名为纯英文小写、数字、下划线或连字符，但指南自身示例使用 `README.md`、`skill/README.md`；本仓库保留 `README.md`、`LICENSE`、`NOTICE`、`SKILL.md`、`Makefile`、`SHA256SUMS` 等惯例名称，未批量改名以免破坏构建引用与既有限制；不符合项清单与例外疑点见 [GUIDE-CONFORMANCE §4](docs/engineering/GUIDE-CONFORMANCE.md) 与 [FILENAME-CONSULTATION](docs/engineering/FILENAME-CONSULTATION.md)（含可直接发送给赛道的咨询文字，**尚未发送**），需向赛道确认例外。中文仅出现在正文内容中。
 
 ## 许可证
 

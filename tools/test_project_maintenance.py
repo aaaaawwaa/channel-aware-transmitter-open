@@ -161,6 +161,17 @@ class MaintenanceTests(unittest.TestCase):
             self.assertNotIn(serial.encode('utf-8'), text)
             self.assertIn(b'<DEVICE_SERIAL>', text)
 
+    def test_curated_docs_evidence_is_exported_but_raw_evidence_is_not(self):
+        (self.root / 'docs' / 'evidence').mkdir(parents=True)
+        (self.root / 'docs' / 'evidence' / 'README.md').write_bytes(b'# public digest\n')
+        (self.root / 'evidence').mkdir()
+        (self.root / 'evidence' / 'raw-receipt.json').write_bytes(b'{"raw": true}\n')
+        result = m.export(self.root)
+        with zipfile.ZipFile(self.root / result['zip']) as bundle:
+            names = bundle.namelist()
+        self.assertIn('docs/evidence/README.md', names)
+        self.assertNotIn('evidence/raw-receipt.json', names)
+
     def test_license_and_notice_are_exported(self):
         licenses = self.root / 'LICENSES'
         licenses.mkdir()
