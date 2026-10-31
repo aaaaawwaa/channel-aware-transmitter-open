@@ -34,6 +34,10 @@ jobs:
           sudo apt-get install -y --no-install-recommends libegl1 libgl1
       - name: Install host test dependencies
         run: python -m pip install -r host/requirements.txt
+      - name: Install optional ML test dependency (CPU torch)
+        run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+      - name: Prepare test fixture directories
+        run: mkdir -p .superpowers/sdd/2026-10-01-rx-smart-implementation
       - name: Run host tests
         env:
           QT_QPA_PLATFORM: offscreen
