@@ -1,0 +1,71 @@
+{
+  "dataset_id": "synthetic_integration_fixture",
+  "order": [
+    {
+      "expected_load": {
+        "amplitude": 60,
+        "filter": "RECT",
+        "mode": "BPSK",
+        "rolloff": "0.35",
+        "sample_rate_hz": 60000000,
+        "seed": 1,
+        "symbol_rate_hz": 3000000,
+        "waveform": "digital"
+      },
+      "frame_index": 1,
+      "label": "01-off-first",
+      "physical": false,
+      "truth_class": "OFF"
+    },
+    {
+      "expected_load": {
+        "amplitude": 60,
+        "filter": "RECT",
+        "mode": "BPSK",
+        "rolloff": "0.35",
+        "sample_rate_hz": 60000000,
+        "seed": 2,
+        "symbol_rate_hz": 3000000,
+        "waveform": "digital"
+      },
+      "frame_index": 2,
+      "label": "02-bpsk-valid",
+      "physical": true,
+      "truth_class": "BPSK"
+    },
+    {
+      "expected_load": {
+        "amplitude": 60,
+        "filter": "RECT",
+        "mode": "BPSK",
+        "rolloff": "0.35",
+        "sample_rate_hz": 60000000,
+        "seed": 2,
+        "symbol_rate_hz": 3000000,
+        "waveform": "digital"
+      },
+      "frame_index": 3,
+      "label": "03-bpsk-payload-mismatch",
+      "physical": true,
+      "truth_class": "BPSK"
+    },
+    {
+      "expected_load": {
+        "amplitude": 60,
+        "filter": "RECT",
+        "mode": "BPSK",
+        "rolloff": "0.35",
+        "sample_rate_hz": 60000000,
+        "seed": 1,
+        "symbol_rate_hz": 3000000,
+        "waveform": "digital"
+      },
+      "frame_index": 4,
+      "label": "04-bpsk-worker-mismatch",
+      "physical": true,
+      "truth_class": "BPSK"
+    }
+  ],
+  "release": "4776ba0bf6cabac383934f0437358595",
+  "schema": "SYNTHETIC_FIXTURE_integration_plan"
+}

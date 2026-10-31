@@ -1,0 +1,66 @@
+{
+ "byte_equality_with_amp1800_vectors_claimed": false,
+ "frozen_model": {
+  "out": "<LOCAL_PATH>",
+  "summary": {
+   "accepted": 3,
+   "correct": 3,
+   "model_evaluated": 4,
+   "note": "Amplitude-60 offline payload check; results are reported without tuning. This is not a real-RF accuracy or statistical BER result.",
+   "reasons": {
+    "": 3,
+    "below_energy_floor": 1
+   },
+   "rejected": 1,
+   "synthetic_payloads": 4,
+   "wrong": 0
+  }
+ },
+ "generated": {
+  "manifest": "<LOCAL_PATH>",
+  "manifest_sha256": "b34e9955ac4a2b44c2cbdcc278c2c054e6fd306f66ede9d60613e7c1da52ce6c",
+  "modes": [
+   "BPSK",
+   "QPSK",
+   "QAM16",
+   "QAM64"
+  ]
+ },
+ "note": "Amplitude fixed at 60; frozen-model rejections/misclassifications are reported as-is and were not tuned. Not a real-RF accuracy or BER result.",
+ "offline_generated_tx_payload": true,
+ "real_capture": false,
+ "real_rf_iq_byte_equality_required": false,
+ "schema": "ml-fourclass-hardware-amp60-summary-v1",
+ "status": "COMPLETED",
+ "training_use": false,
+ "verification": {
+  "modes": [
+   {
+    "mode": "BPSK",
+    "ref_exact": true,
+    "status": "PASS",
+    "tx_exact": true
+   },
+   {
+    "mode": "QPSK",
+    "ref_exact": true,
+    "status": "PASS",
+    "tx_exact": true
+   },
+   {
+    "mode": "QAM16",
+    "ref_exact": true,
+    "status": "PASS",
+    "tx_exact": true
+   },
+   {
+    "mode": "QAM64",
+    "ref_exact": true,
+    "status": "PASS",
+    "tx_exact": true
+   }
+  ],
+  "out": "<LOCAL_PATH>",
+  "status": "PASS"
+ }
+}

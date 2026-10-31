@@ -1,0 +1,103 @@
+{
+  "package": "candidate_a_replay_package",
+  "frame_id": "01_syn_val_BPSK_to_QPSK",
+  "category": "A_BPSK_to_QPSK",
+  "synthetic": true,
+  "real_capture": false,
+  "source": {
+    "dataset": "sim-v1",
+    "split": "val",
+    "index": 24,
+    "session_id": "val-BPSK-val-a",
+    "seed_family": "val-a"
+  },
+  "conditions": {
+    "snr_db": -2.6115224361419678,
+    "cfo_hz": 12862.36328125,
+    "amplitude_codes": 327,
+    "window_offset": 8,
+    "phase_rad": 1.1263258457183838,
+    "session_id": "val-BPSK-val-a",
+    "seed_family": "val-a"
+  },
+  "truth_class": "BPSK",
+  "iq_sha256": "08280945722af1213e099536beec9c7b265f19078ec956b6d9f93c791013d412",
+  "iq_bytes": 16384,
+  "iq_file": "frame.iq",
+  "original": {
+    "label": "BPSK",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      0.5276116078859373,
+      0.4704275606599454,
+      0.0011971806765186496,
+      0.0007636507775986471
+    ],
+    "path": {
+      "stage": "cnn_top1",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 547.6324388433721
+      },
+      "scores": [
+        0.5276116078859373,
+        0.4704275606599454,
+        0.0011971806765186496,
+        0.0007636507775986471
+      ],
+      "baseline_scores": [
+        0.3714316116268758,
+        0.09136411326120593,
+        0.2886730126654625,
+        0.24853126244645576
+      ],
+      "cnn_label": "BPSK",
+      "baseline_label": "BPSK",
+      "arbitration_margin_bpsk_minus_qpsk": 0.2800674983656699,
+      "arbitration_applied": false,
+      "final": "BPSK"
+    }
+  },
+  "A": {
+    "label": "QPSK",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      0.13303059265369868,
+      0.8660343873185912,
+      0.0008580261184711128,
+      7.699390923914124e-05
+    ],
+    "path": {
+      "stage": "cnn_top1",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 547.6324388433721
+      },
+      "scores": [
+        0.13303059265369868,
+        0.8660343873185912,
+        0.0008580261184711128,
+        7.699390923914124e-05
+      ],
+      "baseline_scores": [
+        0.3714316116268758,
+        0.09136411326120593,
+        0.2886730126654625,
+        0.24853126244645576
+      ],
+      "cnn_label": "QPSK",
+      "baseline_label": "BPSK",
+      "arbitration_margin_bpsk_minus_qpsk": 0.2800674983656699,
+      "arbitration_applied": false,
+      "final": "QPSK"
+    }
+  },
+  "error_outputs_preserved": true,
+  "note": "existing synthetic frame; not generated here; not performance acceptance"
+}

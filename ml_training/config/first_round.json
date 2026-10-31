@@ -1,0 +1,114 @@
+{
+  "schema": "ml-modrec-first-round-config-v1",
+  "note": "First offline round: 4-class modulation recognition at the current board-receive condition. All units are Hz unless stated otherwise.",
+  "dataset": {
+    "formal": {
+      "dataset_id": "sim-v1",
+      "splits": {
+        "train": {
+          "sessions_per_label": 4,
+          "frames_per_session": 300,
+          "seed_families": ["train-a", "train-b", "train-c", "train-d"],
+          "snr": {"kind": "uniform", "low": -6.0, "high": 18.0}
+        },
+        "val": {
+          "sessions_per_label": 2,
+          "frames_per_session": 150,
+          "seed_families": ["val-a", "val-b"],
+          "snr": {"kind": "uniform", "low": -6.0, "high": 18.0}
+        },
+        "test": {
+          "frames_per_class_per_snr": 50,
+          "snr_db_grid": [-6.0, -3.0, 0.0, 2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 15.0, 18.0, 20.0],
+          "seed_families": ["test-a", "test-b", "test-c"]
+        },
+        "gate_cal": {
+          "families": ["gate-cal-a", "gate-cal-b"],
+          "frames_per_kind": 100
+        },
+        "gate_test": {
+          "families": ["gate-test-a", "gate-test-b"],
+          "frames_per_kind": 100
+        }
+      }
+    },
+    "smoke": {
+      "dataset_id": "sim-smoke",
+      "splits": {
+        "train": {
+          "sessions_per_label": 1,
+          "frames_per_session": 20,
+          "seed_families": ["train-a"],
+          "snr": {"kind": "uniform", "low": -6.0, "high": 18.0}
+        },
+        "val": {
+          "sessions_per_label": 1,
+          "frames_per_session": 10,
+          "seed_families": ["val-a"],
+          "snr": {"kind": "uniform", "low": -6.0, "high": 18.0}
+        },
+        "test": {
+          "frames_per_class_per_snr": 10,
+          "snr_db_grid": [0.0, 10.0],
+          "seed_families": ["test-a"]
+        },
+        "gate_cal": {"families": ["gate-cal-a"], "frames_per_kind": 10},
+        "gate_test": {"families": ["gate-test-a"], "frames_per_kind": 10}
+      }
+    },
+    "waveform": {
+      "fs_hz": 60000000,
+      "symbol_rate_hz": 3000000,
+      "sps": 20,
+      "shaping": "RECT",
+      "samples": 4096,
+      "n_symbols": 207,
+      "classes": ["BPSK", "QPSK", "QAM16", "QAM64"],
+      "gate_kinds": ["OFF", "NOISE", "TONE", "CLIP"]
+    },
+    "impairment": {
+      "amplitude_codes_uniform": [150, 1200],
+      "clipping_headroom_sigma": 5.5,
+      "initial_phase_rad_uniform": [0.0, 6.283185307179586],
+      "cfo_hz_uniform": [-20000.0, 20000.0],
+      "window_offset_samples_uniform_int": [0, 19],
+      "gate_off_sigma_codes_uniform": [0.5, 30.0],
+      "gate_noise_sigma_codes_uniform": [50.0, 600.0],
+      "gate_tone": {"amplitude_codes_uniform": [200, 1200], "freq_hz_uniform": [-5000000.0, 5000000.0]},
+      "gate_clip_amplitude_codes_uniform": [2200, 3500],
+      "unmodeled": ["iq_imbalance", "dc_offset", "receive_filter", "multipath",
+                    "phase_noise", "agc_transient", "hardware_frequency_response",
+                    "rf_chain_nonlinearity"]
+    }
+  },
+  "preprocessing": "dc-complex-rms-v1",
+  "model": {
+    "arch": "tiny-iq-cnn-v1",
+    "variant": "modrec4",
+    "input_shape": [2, 4096],
+    "classes": ["BPSK", "QPSK", "QAM16", "QAM64"],
+    "seed": 20261020,
+    "threads": 4,
+    "max_epochs": 80,
+    "patience": 8,
+    "batch_size": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "best_checkpoint_metric": "val_macro_f1",
+    "smoke": {"max_epochs": 2, "patience": 1, "batch_size": 16}
+  },
+  "baseline": {
+    "classifier": "multinomial-logistic-regression",
+    "feature_set": "modrec-features-v1",
+    "l2_grid": [0.0001, 0.001, 0.01, 0.1],
+    "epochs": 300,
+    "lr": 0.5,
+    "smoke": {"epochs": 20}
+  },
+  "gate": {
+    "energy_floor_quantile_on_off_cal": 0.95,
+    "max_softmax_grid": [0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 0.98],
+    "margin_grid": [0.0, 0.02, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.40],
+    "objective": "known_val_accuracy + mean_rejection_on_gate_cal(NON_CLIP kinds) + clip_rejection, equally weighted"
+  }
+}

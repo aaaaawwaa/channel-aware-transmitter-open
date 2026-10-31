@@ -1,0 +1,100 @@
+{
+  "package": "candidate_a_replay_package",
+  "frame_id": "06_real_task80_off_last",
+  "category": "task80_OFF_last",
+  "synthetic": false,
+  "real_capture": true,
+  "source": {
+    "real_path": "evidence/rf-teaching/s2-46db-fourclass-seed-validation-2026-10-22/raw/10-off-last/s00-off-00.iq",
+    "metadata_path": "evidence/rf-teaching/s2-46db-fourclass-seed-validation-2026-10-22/raw/10-off-last/s00-off-00.json",
+    "label": "10-off-last",
+    "capture_id": "rx-4776ba0b-g8-c2-1",
+    "request_id": 21
+  },
+  "conditions": {
+    "tx_amplitude": 60,
+    "off_tx_ok": true,
+    "pre_tx_source_selected": false,
+    "post_tx_source_selected": false,
+    "demod_cfo_hz": 12434.792997971157,
+    "demod_carrier_sync": false,
+    "demod_carrier_coherence": 0.037623949541063316,
+    "environment": "INVALID",
+    "environment_reason": "RF_DOMAIN_MISMATCH",
+    "snr_db": null,
+    "missing_fields": [
+      "snr_db"
+    ]
+  },
+  "truth_class": "OFF",
+  "iq_sha256": "ce19198bbba2af0eb4059edda01b633fb2da29e74ab463ea80a539579a9c84b3",
+  "iq_bytes": 16384,
+  "iq_file": "frame.iq",
+  "original": {
+    "label": "QAM64",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      2.9728266084530505e-05,
+      0.05988943264425377,
+      0.2973835040712974,
+      0.6426973350183643
+    ],
+    "path": {
+      "stage": "cnn_top1",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 104.4820003097049
+      },
+      "scores": [
+        2.9728266084530505e-05,
+        0.05988943264425377,
+        0.2973835040712974,
+        0.6426973350183643
+      ],
+      "baseline_scores": [
+        0.26361992230110326,
+        0.07714337160101466,
+        0.23744198089355636,
+        0.42179472520432565
+      ],
+      "cnn_label": "QAM64",
+      "baseline_label": "QAM64",
+      "arbitration_margin_bpsk_minus_qpsk": 0.18647655070008862,
+      "arbitration_applied": false,
+      "final": "QAM64"
+    }
+  },
+  "A": {
+    "label": "UNKNOWN",
+    "reason": "confidence",
+    "accepted": false,
+    "scores": [
+      0.362718470771881,
+      0.14652820647007386,
+      0.31918068871444366,
+      0.17157263404360143
+    ],
+    "path": {
+      "stage": "confidence",
+      "reason": "confidence",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 104.4820003097049
+      },
+      "scores": [
+        0.362718470771881,
+        0.14652820647007386,
+        0.31918068871444366,
+        0.17157263404360143
+      ],
+      "score": 0.362718470771881,
+      "margin": 0.04353778205743736
+    }
+  },
+  "error_outputs_preserved": true,
+  "note": "existing task80 real OFF frame; independent diagnostic, not training/acceptance"
+}

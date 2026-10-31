@@ -1,0 +1,21 @@
+电脑死机后在新恢复会话中继续旧主线 task-84。旧会话 session-d29b4dea-b551-427e-8d44-79c9d6537a55 无法被当前headless入口加载（不识别job/registered事件），不要修改历史日志绕过；以下是已核实断点。用户明确要求检查进度并重新派发。本轮只恢复离线任务；不允许任何板卡/SDR连接、发射、采集、初始化、安装、回滚或自动签发物理授权。实际RF仍等待用户带真实时间的接线确认。
+
+已核实进度，不要重复：
+1. task-83已TRIAL_ACCEPTED，已安装A=da97347ab29d0b31513460e40bcce99f；父版本4776ba0bf6cabac383934f0437358595。Codex在本次用户明确授权只读连接后确认current/active仍A、双服务active/running、NRestarts=0，没有匹配的采集runner进程/研究unit。新boot_id=6ea264be-7475-439a-be9e-93b1a3997c6e，旧boot收据不得当成本次RF预检。不重新安装。
+2. 主会话中断于turn73等待旧A代理；旧A代理在task-84的load_args fake反例修正/重跑处中断。不要等待旧进程自己返回，也不要盲目重放旧tool call。
+3. ml_training/candidate_a_bpsk_repair 已完成唯一R1训练，NEGATIVE_NO_ELIGIBLE_CHECKPOINT，20epoch无合格模型、无模型导出。模型任务正常结束，不恢复训练、不改阈值、不重复模型诊断。
+
+剩余工作由Lead直接接续（单个局部修复不需要另开多个agent）：
+目录 evidence/rf-teaching/s2-46db-candidate-a-real-rx-2026-10-23/ 已有plan/truth/runner/check_frame/fake/selfcheck，保留现有成果和旧日志。
+SELFCHECK已有通过：新A身份、10帧、seed=[3,4,5,39,76,78,123,124]、8ON+2OFF、2540 TX samples/10160bytes、4096 reference，预算10init/10load/8TX/10capture。
+fake-tests.log停在20passed/1failed；失败load_args：新矩阵前三个ON均BPSK，夹具把worker_args.mode错误设为BPSK，直到第5帧QPSK才触发，但测试预期第2帧失败。这是负例构造与矩阵不匹配，不能降低真实check_frame的要求。
+
+执行：
+- 先读当前fake_runner.py/fake_test.py及日志，确认死机前修正是否实际落盘。若load_args仍填BPSK，将该负例改为与首个ON BPSK明确不同的mode（如QAM64）；不得放宽检查器或把失败伪装通过。
+- 用新唯一输出位置保存恢复运行日志；若既有fake_test有清理目录操作，先核对目标只在该新实验目录的fake临时树内，不删原始RF证据/其他目录。
+- 只运行受影响fake全链一次与selfcheck/bash -n/LF检查；确认全部通过，旧20/1日志作为中断历史保留。失败则定位这一个实质问题，不新增整套审查/变异战役。
+- 检查shell入口不会因默认参数直接派发真实RF；本任务仅执行fake，不执行真实runner入口。确认plan/truth/实际生成器绑定、OFF状态检查、当前A身份检查及取消收尾仍存在；旧release负例应被拒绝。
+- 一次Lead增量核对后补齐PREP-REPORT.md、必要操作说明、文件摘要与下一步命令。旧报告用引用，不复制层层审查。不commit、不改模型/产品代码/RTL。
+- 最终给出：已完成/未完成、测试结果、真实RF尚未启动、预算和需用户补充的当前接线确认。不要在headless里调用ask_user后无限等待；把问题写在最终输出并结束。
+
+审查入口 docs/requirements/development-review-policy.md；复用 docs/reviews/2026-10-23-dsh-task83-deployed-next.md。完成剩余离线准备后结束本轮，不自动启动下一阶段，不重训R1。

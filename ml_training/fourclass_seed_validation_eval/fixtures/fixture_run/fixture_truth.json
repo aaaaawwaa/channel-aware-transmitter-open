@@ -1,0 +1,38 @@
+{
+  "dataset_id": "synthetic_fixture",
+  "real_capture": false,
+  "rows": [
+    {
+      "amplitude": 60,
+      "filter": "RECT",
+      "frame_index": 2,
+      "mode": "BPSK",
+      "rolloff": "0.35",
+      "sample_rate_hz": 60000000,
+      "seed": 1,
+      "symbol_rate_hz": 3000000,
+      "truth_class": "BPSK",
+      "truth_source": "SYNTHETIC_FIXTURE independent truth; model is not truth",
+      "tx_bytes": 10160,
+      "tx_payload_sha256": "38b3f36ae20b6fe232d68d677b9e5e00c0b246c3617d0ff27239e89d0c3ef7f6",
+      "tx_samples": 2540
+    },
+    {
+      "amplitude": 60,
+      "filter": "RECT",
+      "frame_index": 3,
+      "mode": "BPSK",
+      "rolloff": "0.35",
+      "sample_rate_hz": 60000000,
+      "seed": 2,
+      "symbol_rate_hz": 3000000,
+      "truth_class": "BPSK",
+      "truth_source": "SYNTHETIC_FIXTURE invalid-frame truth",
+      "tx_bytes": 10160,
+      "tx_payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "tx_samples": 2540
+    }
+  ],
+  "schema": "SYNTHETIC_FIXTURE_truth",
+  "training_use": false
+}

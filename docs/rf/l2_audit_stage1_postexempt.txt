@@ -1,0 +1,296 @@
+CONFIRMED          0x3DF  wrote 01, read 01
+CONFIRMED          0x2A6  wrote 0E, read 0E
+CONFIRMED          0x2A8  wrote 0E, read 0E
+CONFIRMED          0x292  wrote 08, read 08
+DECLARED-WEAK      0x294  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x293  wrote B9, read B9
+CONFIRMED          0x2AB  wrote 07, read 07
+CONFIRMED          0x2AC  wrote FF, read FF
+CONFIRMED          0x009  wrote 07, read 07
+CONFIRMED          0x046  wrote 03, read 03
+CONFIRMED          0x04A  wrote 35, read 35
+CONFIRMED          0x049  wrote 5B, read 5B
+CONFIRMED          0x048  wrote E8, read E8
+CONFIRMED          0x04B  REG_VCO_CTRL -- only F0 defines a field: FREQ_CAL_ENABLE (1<<7), FREQ_CAL_COUNT_LENGTH (bits 6:5), FREQ_CAL_RESET (1<<4) (vendor/ad9361.h:929-933).  Bits 3:0 are not defined anywhere in the vendor tree and nothing writes them: the driver's sole write is FREQ_CAL_ENABLE | FREQ_CAL_COUNT_LENGTH(3) = 0xE0 (vendor/ad9361.c:6571; trace `W 04B E0`).  The read-back's bit 0 is therefore outside every field the driver owns, so only F0 is compared: wrote E0, read E1, in-mask bits agree (mask F0)
+CONFIRMED          0x04E  wrote 10, read 10
+CONFIRMED          0x044  wrote 18, read 18
+DECLARED-WEAK      0x043  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x042  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x041  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x03F  wrote 01, read 01
+CONFIRMED          0x04C  wrote 86, read 86
+CONFIRMED          0x04D  wrote 05, read 05
+CONFIRMED          0x00A  wrote 09, read 09
+CONFIRMED          0x002  wrote 52, read 52
+CONFIRMED          0x003  wrote 5C, read 5C
+CONFIRMED          0x022  wrote 02, read 02
+CONFIRMED          0x0FE  wrote 27, read 27
+CONFIRMED          0x111  wrote CD, read CD
+CONFIRMED          0x15C  wrote 79, read 79
+CONFIRMED          0x128  wrote 03, read 03
+CONFIRMED          0x124  wrote 22, read 22
+CONFIRMED          0x125  wrote 75, read 75
+CONFIRMED          0x117  wrote 10, read 10
+CONFIRMED          0x150  wrote EE, read EE
+CONFIRMED          0x151  wrote DE, read DE
+CONFIRMED          0x152  wrote 49, read 49
+CONFIRMED          0x153  wrote 49, read 49
+CONFIRMED          0x154  wrote 49, read 49
+CONFIRMED          0x155  wrote 24, read 24
+CONFIRMED          0x156  wrote 07, read 07
+CONFIRMED          0x157  wrote 0F, read 0F
+CONFIRMED          0x158  wrote 0C, read 0C
+CONFIRMED          0x00B  wrote CE, read CE
+DECLARED-WEAK      0x00C  REG_START_TEMP_READING -- the only defined bit is START_TEMP_READING (1<<0) (vendor/ad9361.h:663-665); bits 3:1 have no field in the vendor source.  The driver's sole write is 0x00 (vendor/ad9361.c:4143; trace `W 00C 00`), and the read-back has bit 0 = 0, so the one documented field agrees -- but a zero write inside the mask proves nothing: read 02
+CONFIRMED          0x00D  wrote 05, read 05
+DECLARED-WEAK      0x00F  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x01C  wrote 18, read 18
+DECLARED-WEAK      0x01D  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x004  wrote 03, read 03
+CONFIRMED          0x010  wrote C8, read C8
+DECLARED-WEAK      0x011  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x012  wrote 10, read 10
+CONFIRMED          0x006  wrote 04, read 04
+CONFIRMED          0x007  wrote 70, read 70
+CONFIRMED          0x03C  wrote 21, read 21
+CONFIRMED          0x03D  wrote FF, read FF
+CONFIRMED          0x03E  wrote 0F, read 0F
+CONFIRMED          0x023  wrote FF, read FF
+DECLARED-WEAK      0x018  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x01A  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x019  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x01B  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x026  wrote 80, read 80
+DECLARED-WEAK      0x030  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x031  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x032  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x033  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x035  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x036  wrote FF, read FF
+DECLARED-WEAK      0x020  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x027  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x028  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02C  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x029  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02D  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02A  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02E  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02B  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02F  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x03A  wrote 27, read 27
+DECLARED-WEAK      0x12C  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x12D  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x24B  wrote 17, read 17
+DECLARED-WEAK      0x24D  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x261  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x248  wrote 0B, read 0B
+CONFIRMED          0x246  wrote 02, read 02
+CONFIRMED          0x23B  wrote 9E, read 9E
+CONFIRMED          0x23D  wrote 14, read 14
+CONFIRMED          0x249  wrote 8E, read 8E
+CONFIRMED          0x015  wrote 04, read 04
+CONFIRMED          0x014  wrote 29, read 29
+CONFIRMED          0x013  wrote 01, read 01
+CONFIRMED          0x28B  wrote 17, read 17
+DECLARED-WEAK      0x28D  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x2A1  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x288  wrote 0B, read 0B
+CONFIRMED          0x286  wrote 02, read 02
+CONFIRMED          0x27B  wrote 9E, read 9E
+CONFIRMED          0x27D  wrote 14, read 14
+CONFIRMED          0x289  wrote 8E, read 8E
+CONFIRMED          0x23A  wrote 4D, read 4D
+CONFIRMED          0x239  wrote 81, read 81
+CONFIRMED          0x242  wrote 16, read 16
+CONFIRMED          0x238  wrote 78, read 78
+CONFIRMED          0x251  wrote 0C, read 0C
+DECLARED-WEAK      0x245  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x250  wrote 70, read 70
+CONFIRMED          0x23E  wrote CF, read CF
+CONFIRMED          0x23F  wrote B4, read B4
+CONFIRMED          0x240  wrote 0C, read 0C
+DECLARED-WEAK      0x235  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x234  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x233  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x232  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x231  wrote 80, read 80
+CONFIRMED          0x005  wrote 66, read 66
+CONFIRMED          0x0FB  wrote 08, read 08
+CONFIRMED          0x0FD  wrote 4C, read 4C
+DECLARED-WEAK      0x137  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x130  wrote 4C, read 4C
+CONFIRMED          0x131  wrote 6F, read 6F
+CONFIRMED          0x132  wrote 38, read 38
+CONFIRMED          0x133  wrote 20, read 20
+DECLARED-INERT     0x134  REG_GAIN_TABLE_READ_DATA1 -- a gain-table READ-data port (vendor/ad9361.h:272), not writable configuration.  The driver's only writes are the two `Dummy Write to delay` calls per gain-table index (vendor/ad9361.c:1479-1493; trace `W 134 00`); its real use is a read (vendor/ad9361.c:1812).  The live 0x6F is the value latched on the WRITE port 0x131 (trace `W 131 6F`), which this same audit confirms as `0x131 wrote 6F, read 6F` -- the read port answered the write port, as a read port does: read 6F
+DECLARED-VOLATILE  0x109  REG_RX1_MANUAL_LMT_FULL_GAIN -- the one entry justified by a BOARD MEASUREMENT rather than a vendor citation, and as of 2026-09-18 it is a PROOF rather than an inference.  The first wording claimed 'the gain index is AGC state', which a source review could not find stated anywhere in the vendor tree: the driver only WRITES this register (vendor/ad9361.c:1503, :3728, :4008) and nothing calls the read-back AGC-owned.  The proof has three legs.  (1) The trace is complete for this register's lifetime: rf_main.c:700 opens it after RESETB is asserted and before RESETB is released (rf_main.c:697/702), so every SPI transfer of the entire init is recorded, and platform_rf.c:177 can only drop records at its 262,144-record cap -- the traces hold 5,033 (frozen) and 5,048/5,058 (live) records, so that guard cannot have fired.  (2) The driver's last write in every trace is 0x4C -- `SIZE_FULL_TABLE - 1` = 77-1 (vendor/ad9361.c:397, :3723-3731) -- and no trace anywhere carries 0x45, 0x44 or 0x3F for this address.  (3) `board_app audit` only READS (see this module's docstring), so nothing writes between init and the read-back, yet the read-back was 0x45 (frozen run), 0x44 (run 2) and 0x3F (run 3).  Values that no write ever carried, arriving with no write in between, can only have been written by the PART.  Corroboration: the values drift DOWNWARD over the session (0x4C at init, 0x45/0x44/0x3F afterwards) as a gain index falling, and a hardware reset (RESETB toggled by `board_app selftest`, vendor/ad9361.c:1002-1015 -- the GPIO path writes no register, so a reset is invisible in the trace) brings it back to exactly 0x4C, the silicon default, which happens to equal the table maximum the driver writes.  CONTROL: RX2 is the disabled channel and its twin 0x10C read 0x4C in all three runs.  That control is weaker than it looks and is not the load-bearing part: 0x10C's reset baseline is ALSO 0x4C, so a static RX2 register is expected regardless.  What the control does carry is the contrast -- RX1's index moves, RX2's does not, and the only difference between the two channels here is enablement.  RESIDUAL UNCERTAINTY, disclosed: leg (1) proves the trace is complete for SPI, not that the part has no other input; EN_AGC is a GPIO outside the trace.  So 'the AGC moved it' is still a mechanism read off the register's name and its drift direction, not a citation: read 3F
+CONFIRMED          0x10C  wrote 4C, read 4C
+CONFIRMED          0x27A  wrote 4D, read 4D
+CONFIRMED          0x279  wrote 81, read 81
+CONFIRMED          0x282  wrote 16, read 16
+CONFIRMED          0x278  wrote 78, read 78
+CONFIRMED          0x291  wrote 0C, read 0C
+DECLARED-WEAK      0x285  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x290  wrote 70, read 70
+CONFIRMED          0x27E  wrote CF, read CF
+CONFIRMED          0x27F  wrote B4, read B4
+CONFIRMED          0x280  wrote 0C, read 0C
+DECLARED-WEAK      0x275  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x274  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x273  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x272  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x271  wrote 80, read 80
+DECLARED-WEAK      0x050  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x057  wrote 3C, read 3C
+DECLARED-WEAK      0x051  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x13F  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x138  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x13A  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x139  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x13B  wrote 3E, read 3E
+DECLARED-WEAK      0x13C  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0FA  wrote EA, read EA
+CONFIRMED          0x0FC  wrote 23, read 23
+CONFIRMED          0x104  wrote 2F, read 2F
+CONFIRMED          0x105  wrote 3A, read 3A
+CONFIRMED          0x108  wrote 31, read 31
+CONFIRMED          0x107  wrote 2B, read 2B
+DECLARED-WEAK      0x10B  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x10E  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x114  wrote 30, read 30
+DECLARED-WEAK      0x081  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x101  wrote 0A, read 0A
+CONFIRMED          0x120  wrote 0C, read 0C
+CONFIRMED          0x129  wrote 56, read 56
+CONFIRMED          0x12A  wrote 22, read 22
+CONFIRMED          0x123  wrote 11, read 11
+CONFIRMED          0x122  wrote AA, read AA
+CONFIRMED          0x106  wrote 22, read 22
+CONFIRMED          0x121  wrote AA, read AA
+CONFIRMED          0x103  wrote 08, read 08
+CONFIRMED          0x110  wrote 40, read 40
+CONFIRMED          0x11B  wrote 05, read 05
+CONFIRMED          0x118  wrote 05, read 05
+CONFIRMED          0x112  wrote 4A, read 4A
+CONFIRMED          0x113  wrote 4A, read 4A
+CONFIRMED          0x116  wrote 65, read 65
+DECLARED-WEAK      0x115  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x119  wrote 08, read 08
+CONFIRMED          0x10A  REG_RX1_MANUAL_LPF_GAIN -- same story as 0x109 one register over, and the same board evidence, but excusing LESS of the byte.  THE DRIVER DOES NOT OWN THE LOW FIVE BITS.  Its only covering write in all three traces is a read-modify-write at vendor/ad9361.c:4006-4007, which sets POWER_MEAS_IN_STATE_5 (bits 7:5, mask 0xE0; vendor/ad9361.h:1435) and leaves bits 4:0 -- RX_LPF_IDX_MASK, the LPF gain index (vendor/ad9361.h:1436-1437) -- untouched: `R 10A 58` then `W 10A 58`, a write that carried exactly the byte it had just read.  So the 0x18 in those five bits is not the driver's work.  Who put it there is settled by the reset baseline, measured rather than assumed: after a hardware reset (RESETB toggled by `board_app selftest`) 0x10A reads 0x40, i.e. the index starts at 0, and the trace -- complete over the whole init, since rf_main.c:700 opens it before RESETB is released -- contains no write of 0x18 to any byte covering this address.  The part is the only remaining writer.  Consistent with that: post-init reads were 0x58 in the frozen run and run 2 and 0x56 in run 3 (the index moving 24 -> 22, again the part), and a reset returns it to 0x40.  Because bits 7:5 ARE the driver's, this entry masks on 0xE0 instead of excusing the byte: the power-measurement field is still compared (written 0x40 == read 0x40 in every run) and only the part-owned gain index is left unchecked.  DELIBERATELY NOT EXEMPTED: the RX2 twins 0x10C/0x10D.  RX2 is disabled, so they are this entry's control -- if they ever move, that is a real finding and the audit must still say UNEXPLAINED.  DISCLOSED: this is the only entry added on LIVE-run evidence alone.  The frozen run scored it CONFIRMED (docs/rf/l2_audit_stage1.txt:224, `wrote 58, read 58`); it diverged in the third live run, and the entry was added then, not earlier.  Same residual uncertainty as 0x109: wrote 58, read 56, in-mask bits agree (mask E0)
+CONFIRMED          0x1F8  wrote 06, read 06
+CONFIRMED          0x1F9  wrote 1E, read 1E
+CONFIRMED          0x1FB  wrote 0F, read 0F
+DECLARED-WEAK      0x1FC  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x1D5  wrote 3F, read 3F
+CONFIRMED          0x1C0  wrote 03, read 03
+CONFIRMED          0x1E2  wrote 03, read 03
+CONFIRMED          0x1E3  wrote 03, read 03
+DECLARED-VOLATILE  0x016  REG_CALIBRATION_CTRL -- the cal bits self-clear when calibration completes; the driver polls this register back to 0 (vendor/ad9361.c:1305), so a non-zero write reading 0 is correct: read 00
+CONFIRMED          0x0D6  wrote 05, read 05
+CONFIRMED          0x0D7  wrote 1E, read 1E
+CONFIRMED          0x0CA  wrote 26, read 26
+CONFIRMED          0x1DB  wrote 20, read 20
+CONFIRMED          0x1DC  wrote 58, read 58
+DECLARED-WEAK      0x1DD  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x1DE  wrote 58, read 58
+DECLARED-WEAK      0x1DF  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0D0  wrote 57, read 57
+CONFIRMED          0x0D1  wrote 0C, read 0C
+CONFIRMED          0x0D2  wrote 09, read 09
+DECLARED-WEAK      0x200  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x201  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x202  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x203  wrote 24, read 24
+CONFIRMED          0x204  wrote 24, read 24
+DECLARED-WEAK      0x205  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x206  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x207  wrote 7B, read 7B
+CONFIRMED          0x208  wrote 2B, read 2B
+CONFIRMED          0x209  wrote 3B, read 3B
+CONFIRMED          0x20A  wrote 4A, read 4A
+CONFIRMED          0x20B  wrote 1A, read 1A
+CONFIRMED          0x20C  wrote 4D, read 4D
+CONFIRMED          0x20D  wrote 19, read 19
+DECLARED-WEAK      0x20E  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x20F  wrote 7E, read 7E
+CONFIRMED          0x210  wrote 7E, read 7E
+CONFIRMED          0x211  wrote 7E, read 7E
+CONFIRMED          0x212  wrote 48, read 48
+CONFIRMED          0x213  wrote 48, read 48
+CONFIRMED          0x214  wrote 48, read 48
+CONFIRMED          0x215  wrote 4B, read 4B
+CONFIRMED          0x216  wrote 4B, read 4B
+CONFIRMED          0x217  wrote 4B, read 4B
+CONFIRMED          0x218  wrote 2E, read 2E
+CONFIRMED          0x219  wrote AF, read AF
+CONFIRMED          0x21A  wrote 30, read 30
+CONFIRMED          0x21B  wrote 1B, read 1B
+CONFIRMED          0x21C  wrote AF, read AF
+CONFIRMED          0x21D  wrote 30, read 30
+CONFIRMED          0x21E  wrote 1B, read 1B
+CONFIRMED          0x21F  wrote AF, read AF
+CONFIRMED          0x220  wrote 30, read 30
+CONFIRMED          0x221  wrote 36, read 36
+CONFIRMED          0x222  wrote 37, read 37
+CONFIRMED          0x223  wrote 40, read 40
+CONFIRMED          0x224  wrote 40, read 40
+CONFIRMED          0x225  wrote 2C, read 2C
+DECLARED-WEAK      0x226  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x227  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x193  wrote 3F, read 3F
+CONFIRMED          0x190  wrote 0F, read 0F
+CONFIRMED          0x194  wrote 01, read 01
+CONFIRMED          0x185  wrote 20, read 20
+CONFIRMED          0x186  wrote 32, read 32
+CONFIRMED          0x187  wrote 24, read 24
+CONFIRMED          0x188  wrote 05, read 05
+CONFIRMED          0x18B  wrote AD, read AD
+CONFIRMED          0x189  wrote 30, read 30
+DECLARED-WEAK      0x0A3  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0A9  wrote FF, read FF
+CONFIRMED          0x0A2  wrote 7F, read 7F
+CONFIRMED          0x0A5  wrote 01, read 01
+CONFIRMED          0x0A6  wrote 01, read 01
+CONFIRMED          0x0AA  wrote 24, read 24
+CONFIRMED          0x0A4  wrote F0, read F0
+DECLARED-WEAK      0x0AE  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x0A0  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0A1  wrote 7B, read 7B
+CONFIRMED          0x16A  wrote 75, read 75
+CONFIRMED          0x16B  wrote 95, read 95
+CONFIRMED          0x16F  wrote 18, read 18
+CONFIRMED          0x169  wrote CD, read CD
+DECLARED-WEAK      0x077  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-VOLATILE  0x07C  REG_TX2_DIG_ATTEN -- TWO mechanisms, and both are needed.  (1) Bit 6 IMMEDIATELY_UPDATE_TPC_ATTEN is a self-clearing trigger: every trace shows the driver reading the register, writing it back with bit 6 set, and the next read coming back WITHOUT bit 6 (`R 07C 17` -> `W 07C 57` -> `R 07C 17`; a run whose attenuation is 0 shows the same shape as 0x00/0x40/0x00).  (2) CRUCIALLY, bits 5:0 are NOT driver-owned data: ad9361_spi_writef is a read-modify-write (vendor/ad9361.c:822-839), so every `W 07C XX` carries exactly the bits 5:0 that the preceding `R 07C XX` returned -- the driver never authors that data.  What the part puts there, as observed: 0x00 in every trace's own reads, 0x17 on a live read about ten minutes after an init, and 0x00 again on a live read immediately after a fresh init (the three live reads on record are 0x17, 0x17, 0x00).  An earlier version of this string claimed a third value, 0x01 'after the 10 dB rerun'; NO artifact contains it, so it was deleted on 2026-09-18 rather than left standing -- an unsourced number inside a justification is precisely what a reader cannot check.  So this is not merely 'bit 6 self-clears': bits 5:0 are maintained by the part, and a reason keyed on bit 6 alone would launder whatever explains them.  The exact encoding of bits 5:0 is not documented in the vendor tree: read 17
+DECLARED-WEAK      0x074  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x073  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x076  wrote 01, read 01
+CONFIRMED          0x075  wrote 67, read 67
+CONFIRMED          0x06E  wrote 09, read 09
+CONFIRMED          0x069  wrote FF, read FF
+CONFIRMED          0x06A  wrote 01, read 01
+CONFIRMED          0x070  wrote C2, read C2
+CONFIRMED          0x071  wrote C2, read C2
+CONFIRMED          0x078  wrote 94, read 94
+CONFIRMED          0x068  wrote 18, read 18
+DECLARED-WEAK      0x067  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x065  wrote F8, read F8
+CONFIRMED          0x060  wrote 7F, read 7F
+CONFIRMED          0x061  wrote E9, read E9
+CONFIRMED          0x062  wrote FF, read FF
+DECLARED-INERT     0x064  REG_TX_FILTER_COEF_READ_DATA_2 -- 0x061/0x062 are the WRITE_DATA_1/2 ports and 0x063/0x064 the READ_DATA_1/2 ports (vendor/ad9361.h:130-139), so this is a coefficient READ port.  Its only writes are the dummy delay writes in the coefficient download loop (vendor/ad9361.c:5786-5787; every trace shows `W 064 00`).  The live 0xFF is the coefficient latched by tap select: every trace has a `W 060 <tap>` / `W 062 FF` pair immediately before those dummy writes, and this same audit confirms the identical mechanism on the gain-table port (`0x131 wrote 6F, read 6F`).  No line numbers are cited for those writes on purpose -- they move between runs (the pair sits at trace lines 2593/2595 in the frozen run and 2608/2592 in the live run, so a bare `trace:NNNN` citation is valid for exactly one trace and silently wrong for the next; both pairings were checked on 2026-09-18): read FF
+CONFIRMED          0x0F6  wrote 02, read 02
+CONFIRMED          0x0F5  wrote F8, read F8
+CONFIRMED          0x0F0  wrote 7F, read 7F
+DECLARED-WEAK      0x0F1  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x0F2  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-INERT     0x0F4  REG_RX_FILTER_COEF_READ_DATA_2 -- the RX twin of 0x064: same READ-port pair 0x0F3/0x0F4 (vendor/ad9361.h:221-222).  The RX mapping is the load-bearing step, so it is cited rather than assumed: the coefficient loop walks the SAME code for both paths, the two bases differing by `offs = REG_RX_FILTER_COEF_ADDR - REG_TX_FILTER_COEF_ADDR` = 0x90 (vendor/ad9361.c:5754), which carries 0x064 -> 0x0F4.  Its only writes are the same dummy-delay writes (trace `W 0F4 00`).  It avoided being reported as a mismatch only by luck -- it happened to read 0x00, which the write-0 rule turned into DECLARED-WEAK (docs/rf/l2_audit_stage1.txt:332); had the part latched a non-zero coefficient the same inert port would have been a false UNEXPLAINED: read 00
+
+=== audit summary ===
+  confirmed          : 206
+  declared volatile  : 3
+  declared inert     : 3
+  declared weak      : 75
+  UNEXPLAINED        : 0
+  read failed        : 0
+  not read (offline) : 0

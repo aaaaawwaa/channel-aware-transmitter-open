@@ -1,0 +1,18 @@
+{
+  "schema": "pluto-stage0-selfloop-v1",
+  "serial": "<DEVICE_SERIAL>",
+  "center_hz": 433900000,
+  "sample_rate": 2400000,
+  "bandwidth_hz": 1500000,
+  "tone_hz": 100000,
+  "amplitude": 0.1,
+  "tx_attenuation_db": 60,
+  "tx_attenuation_ceiling_db": 89.75,
+  "rx_gain_db": 0,
+  "gain_mode": "manual",
+  "duration_s": 2,
+  "capture_samples": 262144,
+  "tx_budget_s": 2.0,
+  "tx_guard_s": 0.05,
+  "windows": ["OFF_PRE", "TONE", "OFF_POST"]
+}

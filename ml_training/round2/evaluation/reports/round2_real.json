@@ -1,0 +1,387 @@
+{
+ "sessions": {
+  "train-01": {
+   "n_normal": 10,
+   "n_off": 1,
+   "plain_bpsk": 10,
+   "proposed_bpsk": 10,
+   "plain_bpsk_rate": 1.0,
+   "proposed_bpsk_rate": 1.0,
+   "arbitration_applied": 0,
+   "off_plain_rejected": 1,
+   "off_proposed_rejected": 1,
+   "off_proposed_reasons": [
+    "noise_like"
+   ]
+  },
+  "train-02": {
+   "n_normal": 10,
+   "n_off": 1,
+   "plain_bpsk": 0,
+   "proposed_bpsk": 10,
+   "plain_bpsk_rate": 0.0,
+   "proposed_bpsk_rate": 1.0,
+   "arbitration_applied": 10,
+   "off_plain_rejected": 1,
+   "off_proposed_rejected": 1,
+   "off_proposed_reasons": [
+    "noise_like"
+   ]
+  },
+  "val-01": {
+   "n_normal": 10,
+   "n_off": 1,
+   "plain_bpsk": 10,
+   "proposed_bpsk": 10,
+   "plain_bpsk_rate": 1.0,
+   "proposed_bpsk_rate": 1.0,
+   "arbitration_applied": 0,
+   "off_plain_rejected": 1,
+   "off_proposed_rejected": 1,
+   "off_proposed_reasons": [
+    "noise_like"
+   ]
+  }
+ },
+ "totals": {
+  "n_normal": 30,
+  "plain_bpsk": 20,
+  "proposed_bpsk": 30,
+  "n_off": 3,
+  "off_plain_rejected": 3,
+  "off_proposed_rejected": 3
+ },
+ "rows": [
+  {
+   "session": "train-01",
+   "frame": "normal-01",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-02",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-03",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-04",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-05",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-06",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-07",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-08",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-09",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "normal-10",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-01",
+   "frame": "off-01",
+   "truth": "off",
+   "plain_label": "UNKNOWN",
+   "plain_reason": "confidence",
+   "proposed_label": "UNKNOWN",
+   "proposed_reason": "noise_like",
+   "arbitration_applied": false
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-01",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-02",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-03",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-04",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-05",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-06",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-07",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-08",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-09",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "normal-10",
+   "truth": "normal",
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true
+  },
+  {
+   "session": "train-02",
+   "frame": "off-01",
+   "truth": "off",
+   "plain_label": "UNKNOWN",
+   "plain_reason": "confidence",
+   "proposed_label": "UNKNOWN",
+   "proposed_reason": "noise_like",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-01",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-02",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-03",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-04",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-05",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-06",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-07",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-08",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-09",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "normal-10",
+   "truth": "normal",
+   "plain_label": "BPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": false
+  },
+  {
+   "session": "val-01",
+   "frame": "off-01",
+   "truth": "off",
+   "plain_label": "UNKNOWN",
+   "plain_reason": "confidence",
+   "proposed_label": "UNKNOWN",
+   "proposed_reason": "noise_like",
+   "arbitration_applied": false
+  }
+ ],
+ "scope": "development replay only; the three real sessions were used for round-1 analysis and round-2 design. An independent unseen real session is still required for generalisation claims."
+}

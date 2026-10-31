@@ -1,0 +1,1646 @@
+{
+  "schema": "ml-modrec-eval-real-failures-v1",
+  "generated_utc": "2026-10-20T13:19:00Z",
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "backend": "host CPU numpy runtime (NOT ARM, NOT board)"
+  },
+  "definition": "CNN failure = (a) a counted normal-truth BPSK frame whose predicted label is not BPSK (misclassified or rejected UNKNOWN), or (b) a counted OFF-truth frame whose predicted label is a known class (false accept). The feature baseline has no gate, so its OFF behaviour is descriptive only.",
+  "sessions": [
+    "train-01",
+    "train-02",
+    "val-01"
+  ],
+  "independent_session": "val-01",
+  "cnn": {
+    "n_frames_eligible": 33,
+    "failure_count": 10,
+    "failures": [
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-01.iq",
+        "session": "train-02",
+        "tag": "normal-01",
+        "frame_id": "train-02-normal-01",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.8246143430564032,
+        "margin": 0.6504097864459982,
+        "scores": [
+          0.174204556610405,
+          0.8246143430564032,
+          0.0011808788309006933,
+          2.2150229117157988e-07
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 322.5734087316783
+        },
+        "kind": "misclassified",
+        "phase_deg": 63.06037125208607,
+        "complex_rms": 325.267144938083,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 322.5734087316783,
+          "dc_i": 31.480712890625,
+          "dc_q": -27.46044921875,
+          "amplitude_mean": 314.24665929848425,
+          "amplitude_p95": 426.8857558831342,
+          "amplitude_peak": 591.4919486560478,
+          "saturated_count": 0,
+          "c40_abs": 0.8778191663392944,
+          "spectral_peak_hz": 161132.8125,
+          "peak_to_median_db": 30.303278742285134,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 325.267144938083,
+          "i_rms": 158.88227065262623,
+          "q_rms": 283.8223734106202,
+          "complex_dbfs": -18.992095049879676,
+          "i_dbfs": -22.205090288500493,
+          "q_dbfs": -17.16566649737564,
+          "peak_hz": 161132.8125,
+          "occupied_bandwidth_hz": 30278320.3125,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 63.06037125208607,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -18.875725287287892,
+          "carrier_coherence": 0.9159032518061632,
+          "timing_quality": 0.9063562722996455,
+          "snr_est_db_from_coherence": 10.752207969342686,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 322.5734087316783,
+            "crest_ratio": 1.8645249967492004,
+            "q999_ratio": 1.674386004062447,
+            "q99_ratio": 1.5037503805024075,
+            "sign_balance": 0.484375,
+            "tone_concentration": 0.04241283661774313,
+            "tone_excess": 0.00582890637212749,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "UNKNOWN",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-02.iq",
+        "session": "train-02",
+        "tag": "normal-02",
+        "frame_id": "train-02-normal-02",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.6790064868083286,
+        "margin": 0.3586958562612696,
+        "scores": [
+          0.32031063054705905,
+          0.6790064868083286,
+          0.0006828057514915006,
+          7.689312079072098e-08
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 318.36109159107446
+        },
+        "kind": "misclassified",
+        "phase_deg": 63.10377778163629,
+        "complex_rms": 321.289545307388,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 318.36109159107446,
+          "dc_i": 36.972412109375,
+          "dc_q": 22.49951171875,
+          "amplitude_mean": 309.9098387643945,
+          "amplitude_p95": 423.86299045318884,
+          "amplitude_peak": 546.1681586284681,
+          "saturated_count": 0,
+          "c40_abs": 0.8721898986872757,
+          "spectral_peak_hz": 175781.25,
+          "peak_to_median_db": 29.525608088004446,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 321.289545307388,
+          "i_rms": 157.1790854171703,
+          "q_rms": 280.2172497032436,
+          "complex_dbfs": -19.098967124065187,
+          "i_dbfs": -22.298703898037967,
+          "q_dbfs": -17.276701721845352,
+          "peak_hz": 175781.25,
+          "occupied_bandwidth_hz": 30688476.5625,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 63.10377778163629,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -2.5520895279392253,
+          "carrier_coherence": 0.9146119740531264,
+          "timing_quality": 0.9024418717232051,
+          "snr_est_db_from_coherence": 10.686030266154578,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 318.36109159107446,
+            "crest_ratio": 1.7458532972724274,
+            "q999_ratio": 1.6747929263672294,
+            "q99_ratio": 1.4908206002071598,
+            "sign_balance": 0.484375,
+            "tone_concentration": 0.03823174439678511,
+            "tone_excess": 0.0037010181428870706,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "BPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-03.iq",
+        "session": "train-02",
+        "tag": "normal-03",
+        "frame_id": "train-02-normal-03",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.6066491549390236,
+        "margin": 0.21372453845588335,
+        "scores": [
+          0.39292461648314025,
+          0.6066491549390236,
+          0.00042618365829011427,
+          4.491954595661777e-08
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 317.34742372115295
+        },
+        "kind": "misclassified",
+        "phase_deg": 63.30066616000183,
+        "complex_rms": 319.4441514849955,
+        "env_label": "UNKNOWN",
+        "env_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 317.34742372115295,
+          "dc_i": -16.3876953125,
+          "dc_q": -32.6591796875,
+          "amplitude_mean": 309.16821908794685,
+          "amplitude_p95": 419.12152339624174,
+          "amplitude_peak": 519.009899936182,
+          "saturated_count": 0,
+          "c40_abs": 0.8576453732030714,
+          "spectral_peak_hz": 190429.6875,
+          "peak_to_median_db": 29.39830931788833,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 319.4441514849955,
+          "i_rms": 154.82276125409905,
+          "q_rms": 279.41810699313135,
+          "complex_dbfs": -19.149000176739264,
+          "i_dbfs": -22.429902869991977,
+          "q_dbfs": -17.301508124871987,
+          "peak_hz": 190429.6875,
+          "occupied_bandwidth_hz": 31406250.0,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 63.30066616000183,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -38.95849297043674,
+          "carrier_coherence": 0.9083163782570285,
+          "timing_quality": 0.8989792987778378,
+          "snr_est_db_from_coherence": 10.377082392693545,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "UNKNOWN",
+          "reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT",
+          "features": {
+            "rms_codes": 317.34742372115295,
+            "crest_ratio": 1.6614898277716845,
+            "q999_ratio": 1.5971872851474676,
+            "q99_ratio": 1.4679095366221928,
+            "sign_balance": 0.5,
+            "tone_concentration": 0.03844016086869082,
+            "tone_excess": 0.004383118102556417,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "UNKNOWN",
+          "trainval.reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT",
+          "model_result.label": "UNKNOWN",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-04.iq",
+        "session": "train-02",
+        "tag": "normal-04",
+        "frame_id": "train-02-normal-04",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.8139245182735483,
+        "margin": 0.6289167155423756,
+        "scores": [
+          0.18500780273117262,
+          0.8139245182735483,
+          0.0010674660918347338,
+          2.1290344437069543e-07
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 317.26243092860176
+        },
+        "kind": "misclassified",
+        "phase_deg": 62.990222902275995,
+        "complex_rms": 318.9060915298479,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 317.26243092860176,
+          "dc_i": -11.6484375,
+          "dc_q": 30.16552734375,
+          "amplitude_mean": 308.43377476567105,
+          "amplitude_p95": 421.44422630637723,
+          "amplitude_peak": 569.8209659375964,
+          "saturated_count": 0,
+          "c40_abs": 0.8515396397372604,
+          "spectral_peak_hz": -175781.25,
+          "peak_to_median_db": 29.73397647902525,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 318.9060915298479,
+          "i_rms": 153.63638618555257,
+          "q_rms": 279.4583261502285,
+          "complex_dbfs": -19.16364270424516,
+          "i_dbfs": -22.496717382140105,
+          "q_dbfs": -17.3002579767542,
+          "peak_hz": -175781.25,
+          "occupied_bandwidth_hz": 32358398.4375,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 62.990222902275995,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": 2.674431849263588,
+          "carrier_coherence": 0.906956115015792,
+          "timing_quality": 0.9016422422362363,
+          "snr_est_db_from_coherence": 10.313121642299647,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 317.26243092860176,
+            "crest_ratio": 1.8239176757485347,
+            "q999_ratio": 1.6349948634258156,
+            "q99_ratio": 1.5104566893392732,
+            "sign_balance": 0.5,
+            "tone_concentration": 0.041409806639309724,
+            "tone_excess": 0.00715313650404565,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "BPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-05.iq",
+        "session": "train-02",
+        "tag": "normal-05",
+        "frame_id": "train-02-normal-05",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.7733467839542294,
+        "margin": 0.5475071023967135,
+        "scores": [
+          0.2258396815575159,
+          0.7733467839542294,
+          0.0008133756498421994,
+          1.5883841239407572e-07
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 317.987552951597
+        },
+        "kind": "misclassified",
+        "phase_deg": 63.577401525584044,
+        "complex_rms": 320.0281230012743,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 317.987552951597,
+          "dc_i": 34.094970703125,
+          "dc_q": -11.808837890625,
+          "amplitude_mean": 309.38896070557007,
+          "amplitude_p95": 421.93276469364537,
+          "amplitude_peak": 595.1751429922322,
+          "saturated_count": 0,
+          "c40_abs": 0.8858640271008487,
+          "spectral_peak_hz": -527343.75,
+          "peak_to_median_db": 29.34286967095065,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 320.0281230012743,
+          "i_rms": 156.1568401967534,
+          "q_rms": 279.34394708223834,
+          "complex_dbfs": -19.133136115842287,
+          "i_dbfs": -22.35537879513042,
+          "q_dbfs": -17.303813738865166,
+          "peak_hz": -527343.75,
+          "occupied_bandwidth_hz": 30307617.1875,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 63.577401525584044,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -42.9077614124497,
+          "carrier_coherence": 0.9177412677997417,
+          "timing_quality": 0.9044140124395785,
+          "snr_est_db_from_coherence": 10.848179882704978,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 317.987552951597,
+            "crest_ratio": 1.8973488930182683,
+            "q999_ratio": 1.756212829296185,
+            "q99_ratio": 1.4965869185094223,
+            "sign_balance": 0.5,
+            "tone_concentration": 0.03757656167685839,
+            "tone_excess": 0.009108042367605443,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "BPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-06.iq",
+        "session": "train-02",
+        "tag": "normal-06",
+        "frame_id": "train-02-normal-06",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.7687620278735369,
+        "margin": 0.5385603789310253,
+        "scores": [
+          0.2302016489425116,
+          0.7687620278735369,
+          0.0010361850639778398,
+          1.3811997353816546e-07
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 315.03868392316156
+        },
+        "kind": "misclassified",
+        "phase_deg": 63.12063853123785,
+        "complex_rms": 317.6100783432956,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 315.03868392316156,
+          "dc_i": 35.958251953125,
+          "dc_q": 18.27001953125,
+          "amplitude_mean": 306.76266238346903,
+          "amplitude_p95": 418.7999549927212,
+          "amplitude_peak": 562.173022104719,
+          "saturated_count": 0,
+          "c40_abs": 0.8773869729981799,
+          "spectral_peak_hz": 175781.25,
+          "peak_to_median_db": 29.49854973717375,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 317.6100783432956,
+          "i_rms": 155.43485261743302,
+          "q_rms": 276.9768374016702,
+          "complex_dbfs": -19.19901350422441,
+          "i_dbfs": -22.395630931510997,
+          "q_dbfs": -17.377730004804587,
+          "peak_hz": 175781.25,
+          "occupied_bandwidth_hz": 30395507.8125,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 63.12063853123785,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -2.9123332683633922,
+          "carrier_coherence": 0.9136336671929336,
+          "timing_quality": 0.903845689441739,
+          "snr_est_db_from_coherence": 10.63655520548917,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 315.03868392316156,
+            "crest_ratio": 1.8181822207375478,
+            "q999_ratio": 1.6796526527836049,
+            "q99_ratio": 1.5101105457268782,
+            "sign_balance": 0.484375,
+            "tone_concentration": 0.03801654420218455,
+            "tone_excess": 0.007577100846745524,
+            "tone_frequency_hz": 688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "BPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-07.iq",
+        "session": "train-02",
+        "tag": "normal-07",
+        "frame_id": "train-02-normal-07",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.8761858417385969,
+        "margin": 0.7542058481622451,
+        "scores": [
+          0.12197999357635185,
+          0.8761858417385969,
+          0.0018337919051808378,
+          3.7277987037169594e-07
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 316.3972285432753
+        },
+        "kind": "misclassified",
+        "phase_deg": 64.31835435270311,
+        "complex_rms": 318.5407014288706,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 316.3972285432753,
+          "dc_i": 6.363525390625,
+          "dc_q": 36.33837890625,
+          "amplitude_mean": 308.26748021455523,
+          "amplitude_p95": 415.7440409829976,
+          "amplitude_peak": 538.8748491962733,
+          "saturated_count": 0,
+          "c40_abs": 0.8481441809321052,
+          "spectral_peak_hz": 131835.9375,
+          "peak_to_median_db": 30.1014957855282,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 318.5407014288706,
+          "i_rms": 151.6407988793439,
+          "q_rms": 280.1307669322155,
+          "complex_dbfs": -19.173600361808376,
+          "i_dbfs": -22.610277771560746,
+          "q_dbfs": -17.279382840680103,
+          "peak_hz": 131835.9375,
+          "occupied_bandwidth_hz": 31010742.1875,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 64.31835435270311,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -83.48151056383614,
+          "carrier_coherence": 0.9082378260873009,
+          "timing_quality": 0.9025764801580186,
+          "snr_est_db_from_coherence": 10.373363062324877,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 316.3972285432753,
+            "crest_ratio": 1.7182152814913279,
+            "q999_ratio": 1.6518860312090393,
+            "q99_ratio": 1.4773648742705419,
+            "sign_balance": 0.484375,
+            "tone_concentration": 0.03910821647529442,
+            "tone_excess": 0.004523024509965643,
+            "tone_frequency_hz": -1420898.4375,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "BPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-08.iq",
+        "session": "train-02",
+        "tag": "normal-08",
+        "frame_id": "train-02-normal-08",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.7155626290537318,
+        "margin": 0.4318361244613186,
+        "scores": [
+          0.2837265045924132,
+          0.7155626290537318,
+          0.00071078145007433,
+          8.490378066629263e-08
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 314.67646704447185
+        },
+        "kind": "misclassified",
+        "phase_deg": 63.058390248592374,
+        "complex_rms": 316.29496808507326,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 314.67646704447185,
+          "dc_i": -31.498046875,
+          "dc_q": -5.39453125,
+          "amplitude_mean": 306.4425950286827,
+          "amplitude_p95": 414.5330955753181,
+          "amplitude_peak": 503.62786728456257,
+          "saturated_count": 0,
+          "c40_abs": 0.8632010091486815,
+          "spectral_peak_hz": -131835.9375,
+          "peak_to_median_db": 30.07411788918935,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 316.29496808507326,
+          "i_rms": 155.11708499902178,
+          "q_rms": 275.6468697035099,
+          "complex_dbfs": -19.235053346523834,
+          "i_dbfs": -22.413406350647243,
+          "q_dbfs": -17.419537747768405,
+          "peak_hz": -131835.9375,
+          "occupied_bandwidth_hz": 31098632.8125,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 63.058390248592374,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -12.098658632429306,
+          "carrier_coherence": 0.9125414459821446,
+          "timing_quality": 0.9016975745628111,
+          "snr_est_db_from_coherence": 10.581977072708053,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 314.67646704447185,
+            "crest_ratio": 1.629107400894998,
+            "q999_ratio": 1.5881012597490602,
+            "q99_ratio": 1.467852349316225,
+            "sign_balance": 0.484375,
+            "tone_concentration": 0.03953816081816015,
+            "tone_excess": 0.003466444339345974,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "BPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-09.iq",
+        "session": "train-02",
+        "tag": "normal-09",
+        "frame_id": "train-02-normal-09",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.7577774209497495,
+        "margin": 0.5164151388084465,
+        "scores": [
+          0.24136228214130306,
+          0.7577774209497495,
+          0.0008601796032085157,
+          1.1730573892035963e-07
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 312.9979219964665
+        },
+        "kind": "misclassified",
+        "phase_deg": 62.94964673559457,
+        "complex_rms": 314.7740993833167,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 312.9979219964665,
+          "dc_i": -26.37451171875,
+          "dc_q": -20.479736328125,
+          "amplitude_mean": 304.98022830185573,
+          "amplitude_p95": 413.61766039866575,
+          "amplitude_peak": 587.4122863342584,
+          "saturated_count": 0,
+          "c40_abs": 0.8517893594150152,
+          "spectral_peak_hz": 175781.25,
+          "peak_to_median_db": 29.79115426779423,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 314.7740993833167,
+          "i_rms": 154.47703959397575,
+          "q_rms": 274.26187828580805,
+          "complex_dbfs": -19.276919202270676,
+          "i_dbfs": -22.449320285895077,
+          "q_dbfs": -17.463290126991886,
+          "peak_hz": 175781.25,
+          "occupied_bandwidth_hz": 32167968.75,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 62.94964673559457,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": -18.93802047400553,
+          "carrier_coherence": 0.9090719949252196,
+          "timing_quality": 0.9017080509417538,
+          "snr_est_db_from_coherence": 10.41302337060947,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 312.9979219964665,
+            "crest_ratio": 1.9010145218306413,
+            "q999_ratio": 1.623392733380297,
+            "q99_ratio": 1.4644518425374118,
+            "sign_balance": 0.484375,
+            "tone_concentration": 0.03989589075537974,
+            "tone_excess": 0.0036171505321697765,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "BPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-10.iq",
+        "session": "train-02",
+        "tag": "normal-10",
+        "frame_id": "train-02-normal-10",
+        "truth": "normal",
+        "config": {
+          "mode": "BPSK",
+          "symbol_rate_hz": 3000000,
+          "shaping": "RECT",
+          "reference_prbs7_seed": 37
+        },
+        "predicted_label": "QPSK",
+        "score": 0.5276828202898632,
+        "margin": 0.055629062625190795,
+        "scores": [
+          0.47205375766467245,
+          0.5276828202898632,
+          0.0002633882350539685,
+          3.3810410288602066e-08
+        ],
+        "reason": "",
+        "gate": {
+          "ok": true,
+          "reason": "",
+          "rms": 312.8274708878163
+        },
+        "kind": "misclassified",
+        "phase_deg": 62.51578497573606,
+        "complex_rms": 315.0046339874919,
+        "env_label": "PULSE",
+        "env_reason": "SPARSE_AMPLITUDE_OUTLIERS",
+        "iq_diagnostics": {
+          "input_fs_hz": 60000000.0,
+          "complex_rms_codes": 312.8274708878163,
+          "dc_i": -15.937255859375,
+          "dc_q": 33.360107421875,
+          "amplitude_mean": 304.83942917386594,
+          "amplitude_p95": 413.76665677463075,
+          "amplitude_peak": 525.039198518901,
+          "saturated_count": 0,
+          "c40_abs": 0.8396881706521987,
+          "spectral_peak_hz": -410156.25,
+          "peak_to_median_db": 29.360124911059195,
+          "estimator_note": "input statistics only (not a label); c40 = |mean(x^4)| / (mean|x|^2)^2 without CFO de-rotation; the board demodulator CFO on these captures is of order 10 Hz"
+        },
+        "analysis": {
+          "valid": true,
+          "samples": 4096,
+          "complex_rms": 315.0046339874919,
+          "i_rms": 151.45247859141946,
+          "q_rms": 276.20656429945575,
+          "complex_dbfs": -19.270560149120875,
+          "i_dbfs": -22.621071342844544,
+          "q_dbfs": -17.401919130727265,
+          "peak_hz": -410156.25,
+          "occupied_bandwidth_hz": 31699218.75,
+          "clipping_count": 0,
+          "output_clipped": false,
+          "no_energy": false,
+          "input_fs_hz": 60000000,
+          "decimation": 1,
+          "analysis_fs_hz": 60000000.0
+        },
+        "demod_diagnostics": {
+          "phase_deg": 62.51578497573606,
+          "phase_source": "demod_result.result.phase_mod_pi",
+          "cfo_hz": 53.66258922463408,
+          "carrier_coherence": 0.9052650703310231,
+          "timing_quality": 0.899232297491354,
+          "snr_est_db_from_coherence": 10.23489862965789,
+          "ber": 0.0,
+          "reference_sync": true,
+          "carrier_sync": true,
+          "timing_sync": true,
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "demodulator diagnostics only; never used as a label"
+        },
+        "environment": {
+          "label": "PULSE",
+          "reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "features": {
+            "rms_codes": 312.8274708878163,
+            "crest_ratio": 1.715195855583251,
+            "q999_ratio": 1.6730456355830967,
+            "q99_ratio": 1.5012868603965885,
+            "sign_balance": 0.484375,
+            "tone_concentration": 0.0383067068519041,
+            "tone_excess": 0.004251306243179091,
+            "tone_frequency_hz": -688476.5625,
+            "window_us": 68.26666666666667
+          },
+          "environment_version": "rf-window-environment-v4",
+          "algorithm_version": "bpsk-rect-snapshot-v2",
+          "note": "board environment rule output: diagnostic evidence only, never a label"
+        },
+        "requested_rf": {
+          "lo_hz": 80000000,
+          "sample_rate_hz": 60000000,
+          "rx_bandwidth_hz": 30000000,
+          "tx_bandwidth_hz": 30000000,
+          "attenuation_mdB": 46000,
+          "phy_mode_1r1t": 0,
+          "idelay_en": 1,
+          "idelay_tap": 29
+        },
+        "board_algorithm_labels_ignored": {
+          "trainval.label": "PULSE",
+          "trainval.reason": "SPARSE_AMPLITUDE_OUTLIERS",
+          "model_result.label": "QPSK",
+          "demod_result.result.label": null,
+          "environment.label": null
+        }
+      }
+    ]
+  },
+  "baseline": {
+    "n_frames_eligible": 33,
+    "failure_count": 0,
+    "failures": []
+  },
+  "off_false_accepts": {
+    "cnn": [],
+    "baseline": [
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/off-01.iq",
+        "session": "train-01",
+        "tag": "off-01",
+        "truth": "off",
+        "predicted_label": "QAM64",
+        "score": 0.9051658107280741,
+        "margin": 0.83100390416647,
+        "reason": ""
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/off-01.iq",
+        "session": "train-02",
+        "tag": "off-01",
+        "truth": "off",
+        "predicted_label": "BPSK",
+        "score": 0.38748847110525353,
+        "margin": 0.03367215566725512,
+        "reason": ""
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/off-01.iq",
+        "session": "val-01",
+        "tag": "off-01",
+        "truth": "off",
+        "predicted_label": "BPSK",
+        "score": 0.5043235166071757,
+        "margin": 0.2191932615720637,
+        "reason": ""
+      }
+    ]
+  },
+  "session_diagnostics": {
+    "train-01": {
+      "n_normal": 10,
+      "iq_diagnostics": {
+        "complex_rms_codes": {
+          "n": 10,
+          "mean": 564.4816449940033,
+          "min": 559.0878854460747,
+          "max": 569.5446833451443
+        },
+        "c40_abs": {
+          "n": 10,
+          "mean": 0.993445077919539,
+          "min": 0.9876776369006784,
+          "max": 1.0024360356544226
+        },
+        "spectral_peak_hz": {
+          "n": 10,
+          "mean": -71777.34375,
+          "min": -410156.25,
+          "max": 175781.25
+        },
+        "peak_to_median_db": {
+          "n": 10,
+          "mean": 33.80729087711951,
+          "min": 33.591428010452226,
+          "max": 34.02052777816097
+        },
+        "amplitude_mean": {
+          "n": 10,
+          "mean": 555.08786449256,
+          "min": 549.6402202568028,
+          "max": 560.2195187765717
+        },
+        "saturated_count": {
+          "n": 10,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "board_analysis_diagnostics": {
+        "complex_rms": {
+          "n": 10,
+          "mean": 565.9536426984716,
+          "min": 560.1440614957069,
+          "max": 571.72288512272
+        },
+        "peak_hz": {
+          "n": 10,
+          "mean": -71777.34375,
+          "min": -410156.25,
+          "max": 175781.25
+        },
+        "occupied_bandwidth_hz": {
+          "n": 10,
+          "mean": 22907226.5625,
+          "min": 22573242.1875,
+          "max": 23349609.375
+        }
+      },
+      "demod_diagnostics": {
+        "phase_deg": {
+          "n": 10,
+          "mean": -4.946073427518774,
+          "min": -5.3632367488325485,
+          "max": -4.515706893337324
+        },
+        "cfo_hz": {
+          "n": 10,
+          "mean": 0.8905834851480389,
+          "min": -25.481601889644303,
+          "max": 32.695411903111925
+        },
+        "carrier_coherence": {
+          "n": 10,
+          "mean": 0.9743004010218144,
+          "min": 0.9729797378005369,
+          "max": 0.9760971070962678
+        },
+        "snr_est_db_from_coherence": {
+          "n": 10,
+          "mean": 15.903841231714543,
+          "min": 15.683104409828456,
+          "max": 16.2154953436162
+        }
+      },
+      "environment_rule_labels_ignored": {
+        "CLEAR": 7,
+        "UNKNOWN": 3
+      },
+      "environment_rule_reasons_ignored": {
+        "AMPLITUDE_OUTSIDE_RULE_SUPPORT": 3,
+        "NO_COVERED_ANOMALY_IN_WINDOW": 7
+      },
+      "requested_rf": {
+        "lo_hz": 80000000,
+        "sample_rate_hz": 60000000,
+        "rx_bandwidth_hz": 30000000,
+        "tx_bandwidth_hz": 30000000,
+        "attenuation_mdB": 46000,
+        "phy_mode_1r1t": 0,
+        "idelay_en": 1,
+        "idelay_tap": 29
+      },
+      "rx_gain_observation": {
+        "available": true,
+        "source": "hardware",
+        "scope": "sequential_reads_not_atomic",
+        "started_at_monotonic_ns": 263186572638,
+        "finished_at_monotonic_ns": 263186703432,
+        "rx_enable_raw": 220,
+        "agc_config1_raw": 234,
+        "agc_config2_raw": 8,
+        "mode_rx1": 2,
+        "gain_index_before": 76,
+        "gain_index_after": 76,
+        "digital_gain_code": 0,
+        "index_stable": true
+      },
+      "board_reference_labels_ignored": {
+        "CLEAR": 7,
+        "UNKNOWN": 3
+      },
+      "note": "Input/demod/environment diagnostics only. The board algorithm labels and environment-rule labels are recorded as ignored reference diagnostics, never used as truth."
+    },
+    "train-02": {
+      "n_normal": 10,
+      "iq_diagnostics": {
+        "complex_rms_codes": {
+          "n": 10,
+          "mean": 316.5469680319296,
+          "min": 312.8274708878163,
+          "max": 322.5734087316783
+        },
+        "c40_abs": {
+          "n": 10,
+          "mean": 0.8625267798213931,
+          "min": 0.8396881706521987,
+          "max": 0.8858640271008487
+        },
+        "spectral_peak_hz": {
+          "n": 10,
+          "mean": -23437.5,
+          "min": -527343.75,
+          "max": 190429.6875
+        },
+        "peak_to_median_db": {
+          "n": 10,
+          "mean": 29.712948488889857,
+          "min": 29.34286967095065,
+          "max": 30.303278742285134
+        },
+        "amplitude_mean": {
+          "n": 10,
+          "mean": 308.24398477244955,
+          "min": 304.83942917386594,
+          "max": 314.24665929848425
+        },
+        "saturated_count": {
+          "n": 10,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "board_analysis_diagnostics": {
+        "complex_rms": {
+          "n": 10,
+          "mean": 318.71595374896367,
+          "min": 314.7740993833167,
+          "max": 325.267144938083
+        },
+        "peak_hz": {
+          "n": 10,
+          "mean": -23437.5,
+          "min": -527343.75,
+          "max": 190429.6875
+        },
+        "occupied_bandwidth_hz": {
+          "n": 10,
+          "mean": 31141113.28125,
+          "min": 30278320.3125,
+          "max": 32358398.4375
+        }
+      },
+      "demod_diagnostics": {
+        "phase_deg": {
+          "n": 10,
+          "mean": 63.19952544654482,
+          "min": 62.51578497573606,
+          "max": 64.31835435270311
+        },
+        "cfo_hz": {
+          "n": 10,
+          "mean": -16.438757106285024,
+          "min": -83.48151056383614,
+          "max": 53.66258922463408
+        },
+        "carrier_coherence": {
+          "n": 10,
+          "mean": 0.9112278991450473,
+          "min": 0.9052650703310231,
+          "max": 0.9177412677997417
+        },
+        "snr_est_db_from_coherence": {
+          "n": 10,
+          "mean": 10.52164394939849,
+          "min": 10.23489862965789,
+          "max": 10.848179882704978
+        }
+      },
+      "environment_rule_labels_ignored": {
+        "PULSE": 9,
+        "UNKNOWN": 1
+      },
+      "environment_rule_reasons_ignored": {
+        "AMPLITUDE_OUTSIDE_RULE_SUPPORT": 1,
+        "SPARSE_AMPLITUDE_OUTLIERS": 9
+      },
+      "requested_rf": {
+        "lo_hz": 80000000,
+        "sample_rate_hz": 60000000,
+        "rx_bandwidth_hz": 30000000,
+        "tx_bandwidth_hz": 30000000,
+        "attenuation_mdB": 46000,
+        "phy_mode_1r1t": 0,
+        "idelay_en": 1,
+        "idelay_tap": 29
+      },
+      "rx_gain_observation": {
+        "available": true,
+        "source": "hardware",
+        "scope": "sequential_reads_not_atomic",
+        "started_at_monotonic_ns": 322716629026,
+        "finished_at_monotonic_ns": 322716760606,
+        "rx_enable_raw": 220,
+        "agc_config1_raw": 234,
+        "agc_config2_raw": 8,
+        "mode_rx1": 2,
+        "gain_index_before": 76,
+        "gain_index_after": 76,
+        "digital_gain_code": 0,
+        "index_stable": true
+      },
+      "board_reference_labels_ignored": {
+        "PULSE": 9,
+        "UNKNOWN": 1
+      },
+      "note": "Input/demod/environment diagnostics only. The board algorithm labels and environment-rule labels are recorded as ignored reference diagnostics, never used as truth."
+    },
+    "val-01": {
+      "n_normal": 10,
+      "iq_diagnostics": {
+        "complex_rms_codes": {
+          "n": 10,
+          "mean": 613.0422685210755,
+          "min": 609.3330469414201,
+          "max": 620.4079537477072
+        },
+        "c40_abs": {
+          "n": 10,
+          "mean": 0.9984638555077329,
+          "min": 0.9949300276726929,
+          "max": 1.0048600667308247
+        },
+        "spectral_peak_hz": {
+          "n": 10,
+          "mean": 70312.5,
+          "min": -527343.75,
+          "max": 175781.25
+        },
+        "peak_to_median_db": {
+          "n": 10,
+          "mean": 34.58830925675763,
+          "min": 34.26848028935855,
+          "max": 34.95541887973863
+        },
+        "amplitude_mean": {
+          "n": 10,
+          "mean": 603.9022231188286,
+          "min": 600.4502043083903,
+          "max": 611.6298602189484
+        },
+        "saturated_count": {
+          "n": 10,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "board_analysis_diagnostics": {
+        "complex_rms": {
+          "n": 10,
+          "mean": 614.362888423745,
+          "min": 610.7555425566533,
+          "max": 621.8582981032913
+        },
+        "peak_hz": {
+          "n": 10,
+          "mean": 70312.5,
+          "min": -527343.75,
+          "max": 175781.25
+        },
+        "occupied_bandwidth_hz": {
+          "n": 10,
+          "mean": 21073242.1875,
+          "min": 20493164.0625,
+          "max": 21445312.5
+        }
+      },
+      "demod_diagnostics": {
+        "phase_deg": {
+          "n": 10,
+          "mean": 1.7473003881106748,
+          "min": 1.5081484046427387,
+          "max": 2.029675497326499
+        },
+        "cfo_hz": {
+          "n": 10,
+          "mean": -1.4847388186625314,
+          "min": -23.496672186755568,
+          "max": 18.52836322592092
+        },
+        "carrier_coherence": {
+          "n": 10,
+          "mean": 0.9777191649522218,
+          "min": 0.9755897998154411,
+          "max": 0.9788790026457381
+        },
+        "snr_est_db_from_coherence": {
+          "n": 10,
+          "mean": 16.524397189975204,
+          "min": 16.124286589813043,
+          "max": 16.752855778415636
+        }
+      },
+      "environment_rule_labels_ignored": {
+        "CLEAR": 9,
+        "UNKNOWN": 1
+      },
+      "environment_rule_reasons_ignored": {
+        "AMPLITUDE_OUTSIDE_RULE_SUPPORT": 1,
+        "NO_COVERED_ANOMALY_IN_WINDOW": 9
+      },
+      "requested_rf": {
+        "lo_hz": 80000000,
+        "sample_rate_hz": 60000000,
+        "rx_bandwidth_hz": 30000000,
+        "tx_bandwidth_hz": 30000000,
+        "attenuation_mdB": 46000,
+        "phy_mode_1r1t": 0,
+        "idelay_en": 1,
+        "idelay_tap": 29
+      },
+      "rx_gain_observation": {
+        "available": true,
+        "source": "hardware",
+        "scope": "sequential_reads_not_atomic",
+        "started_at_monotonic_ns": 870530645746,
+        "finished_at_monotonic_ns": 870530777380,
+        "rx_enable_raw": 220,
+        "agc_config1_raw": 234,
+        "agc_config2_raw": 8,
+        "mode_rx1": 2,
+        "gain_index_before": 76,
+        "gain_index_after": 76,
+        "digital_gain_code": 0,
+        "index_stable": true
+      },
+      "board_reference_labels_ignored": {
+        "CLEAR": 9,
+        "UNKNOWN": 1
+      },
+      "note": "Input/demod/environment diagnostics only. The board algorithm labels and environment-rule labels are recorded as ignored reference diagnostics, never used as truth."
+    }
+  },
+  "lead_diagnostics": {
+    "attribution": "Lead diagnostic (host numpy, not ARM); merged read-only into this report. It is diagnostic evidence, not a label and not an acceptance result.",
+    "prediction_distribution": {
+      "train-01": "10/10 BPSK",
+      "train-02": "0/10 BPSK - all 10 predicted QPSK (scores 0.53-0.88, margin 0.06-0.75)",
+      "val-01": "10/10 BPSK",
+      "baseline_all_sessions": "30/30 BPSK"
+    },
+    "session_physical_differences_read_only": [
+      {
+        "session": "train-01",
+        "complex_rms": 570.0,
+        "phase_deg": -5.2,
+        "snr_est_db": 16.1,
+        "environment_rule": "7 CLEAR + 3 UNKNOWN(AMPLITUDE_OUTSIDE_RULE_SUPPORT)"
+      },
+      {
+        "session": "train-02",
+        "complex_rms": 322.0,
+        "phase_deg": 62.8,
+        "snr_est_db": 10.4,
+        "environment_rule": "9/10 PULSE/SPARSE_AMPLITUDE_OUTLIERS + 1 UNKNOWN(AMPLITUDE_OUTSIDE_RULE_SUPPORT)"
+      },
+      {
+        "session": "val-01",
+        "complex_rms": 620.0,
+        "phase_deg": 1.7,
+        "snr_est_db": 16.6,
+        "environment_rule": "9 CLEAR + 1 UNKNOWN"
+      }
+    ],
+    "controlled_diagnostics": [
+      "Rotating a correctly classified train-01 frame about the origin by +60 deg makes the CNN predict QPSK; +68 deg and +90 deg flip back to BPSK.",
+      "Scaling the amplitude to the train-02 RMS (322) does not change the prediction.",
+      "train-01 + AWGN matched to 10.4 dB / 63 deg does NOT reproduce the QPSK prediction, so phase alone plus AWGN does not explain the failure; additional unmodeled distortion is implicated (consistent with the environment PULSE rule label)."
+    ],
+    "interpretation": "Root cause NOT_ESTABLISHED. Evidence supports a session-correlated carrier phase (the 10 train-02 frames share roughly the same phase) interacting with a phase-dependent decision-boundary pit near 55-65 deg in the small CNN; the feature baseline's cumulative-moment features are more robust to this distortion. The gate accepts these misclassifications with high confidence, so they are not caught by rejection.",
+    "truth_unchanged": "Truth is unchanged: TX config BPSK/3 MSym/s/RECT and demod BER=0 from demod_result.submitted.config/result (diagnostics, not labels)."
+  },
+  "not_run": [
+    "arm_inference: NOT_RUN - all inference in this report ran on the host CPU with the numpy runtime; these numbers are NOT ARM numbers and NOT board numbers.",
+    "board_hardware_accuracy: NOT_RUN - no board/hardware execution was performed by the evaluation tools.",
+    "azure_vm: NOT_RUN - no Azure connection information is available in this round.",
+    "four_class_real_overall_accuracy: NOT_RUN - not computed and prohibited by CONTRACTS §11; real truth exists only for the single BPSK-normal configuration and OFF scenes.",
+    "real_qpsk_qam16_qam64_frames: NOT_RUN - the canonical real sessions contain no QPSK/QAM16/QAM64 ground-truth frames.",
+    "real_quality_gate_population: NOT_RUN - no real gate_test population with OFF/NOISE/TONE/CLIP was collected; only OFF frames exist and are reported as OFF gate behaviour.",
+    "interference_physical_scenarios: NOT_RUN - no canonical per-frame manifest/receipt covering an interference physical scenario was included; such scenarios are absent from the canonical session set and are NOT_RUN, not silently folded into the BPSK transfer numbers.",
+    "gate_threshold_selection_on_real_data: NOT_RUN - forbidden by CONTRACTS §11; thresholds are selected on simulation val + gate_cal only, and val-01 is untouched by any selection.",
+    "demod_ber_derived_accuracy: NOT_RUN - demod BER exists on the board path but is not a model metric and is not used as a label or accuracy here.",
+    "train_02_root_cause: NOT_RUN - NOT_ESTABLISHED; only read-only diagnostics plus the Lead controlled rotation/amplitude/AWGN probes exist, no causal proof.",
+    "arm_inference: NOT_RUN - see host-vs-ARM statement.",
+    "board_hardware_accuracy: NOT_RUN - see host-vs-ARM statement."
+  ],
+  "limitations": [
+    "Small real sample: 3 sessions x (10 normal BPSK + 1 off) = 30 normal + 3 OFF counted frames; one frame per listed file, no augmentation and no reuse.",
+    "Real BPSK has exactly ONE configuration in scope: fs=60 MSPS, BPSK 3 MSym/s RECT, LO=80 MHz, attenuation 46000 mdB, 4096-sample snapshot. Other symbol rates/shapings are NOT_RUN (no data).",
+    "OFF frames carry trainval.physical=false (no-signal scene); they are real board captures used only for OFF gate behaviour, never as class truth and never with a fake class label.",
+    "Board algorithm labels differ from the contract truth (several normal frames are labelled UNKNOWN/PULSE/CLEAR by the board algorithm); those outputs are ignored here, not converted into labels.",
+    "No clipped real frames were present in the canonical sessions, so real clipping rejection is NOT_RUN (simulation covers the CLIP gate kind).",
+    "Zero-shot transfer only: no real frame was used for training, validation or threshold selection (CONTRACTS §11); val-01 is the untouched independent real session.",
+    "Inference ran on the host CPU with the numpy runtime; these are NOT ARM numbers and NOT board numbers.",
+    "campaign4 and campaign5 duplicate frames were deduplicated by iq_sha256; the one unique campaign4 val-01 frame lies outside the canonical campaign5 session set and is excluded (listed with its reason), not counted.",
+    "train-02 failure-mode root cause is NOT_ESTABLISHED: the session was captured under the same requested RF domain as train-01/val-01, but its input diagnostics differ (lower RMS, different carrier phase, lower coherence-derived SNR, environment rule flags it as PULSE/SPARSE_AMPLITUDE_OUTLIERS). Read-only diagnostics plus the Lead controlled rotation/amplitude/AWGN probes are correlational evidence, not a proven cause.",
+    "The quality gate does NOT reject the train-02 high-confidence QPSK misclassifications (all 10 are accepted as QPSK above max_softmax); rejecting unknown/distorted input is future work."
+  ]
+}

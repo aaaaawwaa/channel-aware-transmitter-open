@@ -1,0 +1,70 @@
+{
+ "schema": "ml-real-campaign-fixtures-v1",
+ "synthetic": true,
+ "not_a_real_capture": true,
+ "source_dataset": {
+  "dataset_id": "sim-smoke",
+  "manifest_path": "ml_training/datasets/sim-smoke/manifest.json",
+  "manifest_sha256": "d932e887e18a8c68e2f58d4231b54785588350cdb675d20b83fc60a7ee88a6b7",
+  "generator": {
+   "name": "ml_training-data-generator-v1",
+   "variant": "smoke",
+   "started_utc": "2026-10-20T12:58:18Z",
+   "elapsed_sec": 1.111,
+   "safety_coefficients": {
+    "BPSK": 1.0,
+    "QPSK": 1.0,
+    "QAM16": 0.5555555555555556,
+    "QAM64": 0.42857142857142855
+   },
+   "clipping_headroom_sigma": 5.5,
+   "peak_normalisation": "complex",
+   "quantization": "np.rint ties-to-even, saturate to [-2048,2047], clipped flag kept"
+  },
+  "config_sha256": "c34ba443065ffc6a8ba2bd0ed6285eac68f5a5d81030b0482d934e518848cc78",
+  "reference_check_path": "ml_training/data/reports/reference-check-smoke.json",
+  "reference_check_sha256": "8d064de329adf04914d6ea4762b64e32ca82383fd4f2360adce39df0348b1001",
+  "reference_check_passed": true,
+  "reference_check_checks": "22/22",
+  "bit_mapping_vs_contract_and_product_passed": true
+ },
+ "valid": [
+  "valid/BPSK.json",
+  "valid/QAM16.json",
+  "valid/QAM64.json",
+  "valid/QPSK.json"
+ ],
+ "invalid": [
+  "invalid/truth_from_environment.json",
+  "invalid/truth_from_model.json",
+  "invalid/wrong_length.json",
+  "invalid/wrong_sample_rate.json"
+ ],
+ "duplicates": [
+  "duplicates/dup-session-b.json",
+  "duplicates/leak-train.json",
+  "duplicates/leak-val.json"
+ ],
+ "selected_frames": {
+  "BPSK": {
+   "frame_id": "test-BPSK-snr+10-test-a-0000",
+   "snr_db": 10.0,
+   "npz_sha256": "f3c70d3d7a0e751b69ce4faab6ddab911623f5cc8ec8d3d6578611819a059282"
+  },
+  "QPSK": {
+   "frame_id": "test-QPSK-snr+10-test-a-0000",
+   "snr_db": 10.0,
+   "npz_sha256": "591c429f3c51246d0f3b9d1e3ea925be82d6fde1fe4448135b6c015a2340ae42"
+  },
+  "QAM16": {
+   "frame_id": "test-QAM16-snr+10-test-a-0000",
+   "snr_db": 10.0,
+   "npz_sha256": "cae6b8276b4263fa39d92e9f733f0201276a1a099981024579b170826f07c3bc"
+  },
+  "QAM64": {
+   "frame_id": "test-QAM64-snr+10-test-a-0000",
+   "snr_db": 10.0,
+   "npz_sha256": "a75fe2e6861f98732c63aa9a875fc3610f15fa7009e24fb9569cf4a3edb5acbf"
+  }
+ }
+}

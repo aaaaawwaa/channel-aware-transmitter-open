@@ -1,0 +1,113 @@
+# scope_boundary.py live run -- raw output, board chatter stripped
+# source: rf_overlay/out/boundary_run5.log
+# instrument: Keysight DSOX1102A  <VISA_RESOURCE>
+# source: AD9361 only (rf_overlay/sw/board_app), Q hardwired to zero
+# date: 2026-09-18
+
+==============================================================================
+Phase 0 -- timebase ladder (the sample rate is what defines 'alias')
+==============================================================================
+  ask   6.250 us/div -> set   6.250 us/div | 1.000 GSa/s |  62500 pts |   62.5 us | Nyquist   500.0 MHz
+  ask   3.125 us/div -> set   3.125 us/div | 2.000 GSa/s |  62500 pts |   31.2 us | Nyquist  1000.0 MHz
+  ask   2.000 us/div -> set   2.000 us/div | 2.000 GSa/s |  40000 pts |   20.0 us | Nyquist  1000.0 MHz
+  ask   1.000 us/div -> set   1.000 us/div | 2.000 GSa/s |  20000 pts |   10.0 us | Nyquist  1000.0 MHz
+  ask   0.500 us/div -> set   0.500 us/div | 2.000 GSa/s |  10000 pts |    5.0 us | Nyquist  1000.0 MHz
+
+  fastest available: 2.000 GSa/s -> Nyquist 1000.0 MHz
+  NOTE: the record length is fixed at 62500 points, so the shortest
+  timebases were paid for by the instrument silently SHORTENING THE
+  RECORD, not by a slower sample rate.  No error is raised either way.
+
+  sweep timebase 3.125 us/div -> 2.000 GSa/s, 62500 pts, 32.0 kHz bins, Nyquist 1000.0 MHz
+
+==============================================================================
+Phase 1 -- reference at LO = 80 MHz, source attenuation 0 mdB
+==============================================================================
+
+  PL after plcfg: phy_mode=1 phase_inc=128 -> 1R1T confirmed
+  vertical scale settled on 0.2 V/div; raw record span 42/255 codes
+  C_REF PASS: line at 81.8880 MHz (+1.8880 MHz from LO, tol 3.0 MHz), SNR 67.9 dB
+  line amplitude from the FFT: 0.0841 Vpp
+  display :MEAS:VPP? reading:  0.3400 V
+
+  >>> HONEST LIMIT, stated up front: the source CANNOT be taken to 1 Vpp.  At 0 mdB
+      (its own ceiling -- a negative attenuation is not accepted) the line measures
+      about 0.83 Vpp here.  So 'source fixed at 1 Vpp' is realised as 'source fixed at
+      its maximum', held at that ONE setting for the whole sweep.  The drop column
+      below is therefore relative to THIS level, not to 1.000 V.
+
+==============================================================================
+Phase 2 -- LO sweep, source held at 0 mdB (its maximum)
+==============================================================================
+  LO MHz   what the scope's own acquisition holds Vpp read   FFT amp     drop      V/div
+  80.0     81.8880 MHz  67.6 dB  [TRUE]     0.3500     0.08204     +0.22 dB  0.2
+  100.0    101.8880 MHz  83.5 dB  [TRUE]    1.4600     0.51675     -15.77 dB 0.2
+  125.0    123.1360 MHz  72.6 dB  [TRUE]    0.4700     0.14579     -4.78 dB  0.2
+  150.0    151.8720 MHz  71.1 dB  [TRUE]    0.4100     0.12313     -3.31 dB  0.2
+  200.0    201.8880 MHz  44.1 dB  [TRUE]    0.1410     0.00278     +29.61 dB 0.1
+  250.0    251.8720 MHz  66.4 dB  [TRUE]    0.2130     0.03688     +7.16 dB  0.1
+  300.0    298.1120 MHz  68.5 dB  [TRUE]    0.2490     0.04746     +4.97 dB  0.1
+  400.0    398.1120 MHz  29.1 dB  [TRUE]    0.1650     0.00045     +45.53 dB 0.1
+  500.0    498.1120 MHz  37.5 dB  [TRUE]    0.1610     0.00130     +36.22 dB 0.1
+  600.0    [no line over the gate]          0.3000     n/a         n/a       2
+  700.0    [no line over the gate]          0.3000     n/a         n/a       2
+  800.0    [no line over the gate]          0.4000     n/a         n/a       2
+  900.0    [no line over the gate]          0.3000     n/a         n/a       2
+  1000.0   [no line over the gate]          0.4000     n/a         n/a       2
+
+==============================================================================
+Phase 3 -- C_ATT: does the scope still read a KNOWN 20000 mdB step as 20 dB?
+==============================================================================
+  This is the phase that decides HOW TO READ Phase 2.  A drop in the
+  Phase 2 column has two possible authors -- the TX chain rolling off,
+  or the scope losing amplitude accuracy -- and they are only
+  separable by injecting a step whose size is known independently.
+  Where C_ATT holds, the scope's amplitude reading is sound and the
+  Phase 2 drop is the SOURCE.  Where C_ATT cannot be measured at all,
+  the Phase 2 number there is not evidence of anything.
+  Pair is 10000 -> 30000 mdB, not 0 -> 20000: 0 mdB is this chain's ceiling, so the
+  first attempt's 14.8 dB at 80 MHz was read on the attenuator's own
+  compression shoulder.  10000 -> 30000 is the pair the RF suite already validated
+  at 19.85 dB.
+  LO    80.0 MHz | 10000 mdB -> 0.03218 Vpp   | 30000 mdB -> 0.00358 Vpp   | step +19.09 dB  OK
+  LO   100.0 MHz | 10000 mdB -> 0.13177 Vpp   | 30000 mdB -> 0.01777 Vpp   | step +17.40 dB  OK
+  LO   200.0 MHz | 10000 mdB -> 0.00092 Vpp   | 30000 mdB -> no line       | step NOT RUN    unmeasurable
+  LO   300.0 MHz | 10000 mdB -> 0.01806 Vpp   | 30000 mdB -> 0.00196 Vpp   | step +19.31 dB  OK
+  LO   500.0 MHz | 10000 mdB -> 0.00048 Vpp   | 30000 mdB -> 0.00016 Vpp   | step +9.35 dB   OFF
+  LO   700.0 MHz | 10000 mdB -> no line       | 30000 mdB -> no line       | step NOT RUN    unmeasurable
+
+==============================================================================
+Phase 4 -- C_NEG: the SIDEBANDS must vanish at 70000 mdB
+==============================================================================
+  A criterion with no negative case is not a criterion.  But the
+  negative case has to be about the SOURCE: at maximum attenuation
+  the sidebands must be gone.  It is not a claim that the RF
+  environment is empty -- this fixture picks up ambient shortwave
+  broadcast, and a +-5 MHz window holds ~300 bins of Rayleigh noise
+  whose maximum sits ~25 dB over the median by itself.
+  A survivor therefore has to REPEAT at one frequency to count; the
+  capture-to-capture frequency spread is reported alongside it.
+  strongest line within 5.0 MHz of LO (NOT the criterion, context): 76.0960 MHz @ 25.9 dB
+  LO-f at 78.1250 MHz over 3 captures: 75.2000 MHz @ 24.7 dB; 73.8240 MHz @ 26.4 dB; 77.8560 MHz @ 24.7 dB
+       frequency spread 4032 kHz over the captures that cleared the gate -> wanders, so it is noise
+  LO+f at 81.8750 MHz over 3 captures: 78.3680 MHz @ 22.9 dB; 79.0080 MHz @ 25.0 dB; 77.8560 MHz @ 26.2 dB
+       frequency spread 1152 kHz over the captures that cleared the gate -> wanders, so it is noise
+  C_NEG PASS (both sidebands gone at maximum attenuation)
+
+==============================================================================
+VERDICT -- 'can the scope measure this normally?'
+==============================================================================
+  1. frequency identity (the criterion that matters most):
+       the scope read the TRUE frequency up to 500 MHz
+       no line findable from 600 MHz upward
+  2. amplitude accuracy, judged by the known 20000 mdB step:
+       held (20 +/- 3 dB) at 80, 100, 300 MHz -> the drop column there is the SOURCE
+       read wrong at: 500 MHz (9.4 dB)
+       NOT RUN (no line to step): 200, 700
+  3. negative case: PASS
+
+  Reading the Phase 2 drop column: it is 20*log10(reference FFT amplitude / this
+  one), so it contains BOTH the source's rolloff and the scope's.  Only at the
+  frequencies where line 2 above says 'held' is it attributable to the source.  At
+  500 MHz and above the drop is confounded: the scope's 100 MHz front end and
+  the TX chain both roll off, and this fixture cannot yet tell them apart.

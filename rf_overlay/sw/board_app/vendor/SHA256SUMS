@@ -1,0 +1,13 @@
+# Verbatim copies from docs/reference/ps_ctrl_AD9361_FM_test_final_copy.zip
+#   path inside zip: ps_ctrl_AD9361_FM_test_final_copy/ZYNQ_AD9361.sdk/ad9361/src/
+# Not one byte is modified; all adaptation lives in ../platform_rf.c.
+f974f22cf799510f002b053f1a716c313afe051f7fd19c5066977ea6c705ad4a *ad9361.c
+2840d2a85c3cf7777a19f636d7252563e3e6f8a64d68be62b62b8641f61f525f *ad9361.h
+d8405ab5786a44d8c3a14529d5439976e7b6c71a6e19bbe3194a2f29136ae1e6 *ad9361_api.c
+7833965502596f7ea34298f2b3212c7daff2328a27d82d66589cb2c37e3dbb7a *ad9361_api.h
+afb7c757ebae158c33eb319db9172ac6ca9a3c0e94232c06e618ac989fd68ee7 *ad9361_conv.c
+47d8d1d1d44f1dc40e7c8e39f1a407a0a9e3379625f5d389396e57c8bdfe0c7e *common.h
+42dd8b76ede44f57b4a87d37382dad3690fef2a1df40ced3f615a3b1f8bde972 *config.h
+1760775c6cff0160a3eddf26ef41f9540e48b6446ad8093e83bd9cd0f9b1d4b3 *util.c
+f713488b81dff8e8fb298f109fdb049ba8cf4787fec5f4605993b88be7cc16db *util.h
+c96b65ecacacda1564e140d742d54179302e3b87fbf5c0fe454cec191d6df197 *platform.h

@@ -1,0 +1,5 @@
+{
+  "schema": "ml-modrec-artifact-fixture-v1",
+  "note": "evaluation test fixture - random untrained weights",
+  "model_json_sha256": "9aa034d4ea92e7177d064adc0fcf779f580315d1fe0a04c8ea5f3a41995df70f"
+}

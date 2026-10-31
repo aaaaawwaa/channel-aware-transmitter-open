@@ -1,0 +1,43 @@
+[Unit]
+Description=AC820 PYNQ status LEDs and shutdown button
+After=network-online.target
+Wants=network-online.target
+# ttyPS0 is the AWG protocol UART.  The bridge must own it; a serial-getty
+# started after the daemon would consume commands and make clients observe a
+# silent bridge even though the daemon itself is active.
+Conflicts=serial-getty@ttyPS0.service
+Before=serial-getty@ttyPS0.service getty.target
+
+[Service]
+# This service is the ONLY Overlay() owner.  READY is sent only after the
+# immutable release that `current` resolves to verifies and its bit loads, and
+# rf-daemon.service is ordered After=/Requires= this unit -- so the sidecar can
+# never map a PL this process did not load.
+Type=notify
+NotifyAccess=main
+RuntimeDirectory=pynq-status
+User=root
+# This image ships PYNQ as the source tree at /home/xilinx/pynq, which is only
+# importable when /home/xilinx is on sys.path -- systemd's default cwd is /.
+WorkingDirectory=/home/xilinx
+Environment=PYTHONPATH=/home/xilinx
+Environment=XILINX_XRT=/usr
+# Still consumed by board tools that self-hold the overlay (touch_demo);
+# pynq_status.py takes its bit from the verified release, not from here.
+Environment=LEDBTN_OVERLAY=/home/xilinx/overlays/awg_merged/current/awg_merged.bit
+ExecStartPre=/bin/sh -c 'i=0; while [ ! -f /home/xilinx/overlays/awg_merged/current/pynq_status.py ] && [ $i -lt 60 ]; do sleep 2; i=$((i+1)); done'
+# `-B`: the release directory is installed read-only and is the unit of identity, but
+# this service runs as root, and root ignores the mode bits -- a plain start writes
+# __pycache__ INTO the release (observed on the board: one appeared 7 minutes after a
+# 22:22 install).  That changes the tree after activation and would execute on the next
+# start, so bytecode writing is disabled instead of merely discouraged by permissions.
+ExecStart=/usr/bin/python3 -B -u /home/xilinx/overlays/awg_merged/current/pynq_status.py
+# Start the sidecar only now: with Type=notify this unit is "active" only once
+# the READY datagram above has arrived, i.e. after the bit really loaded.
+ExecStartPost=/bin/systemctl --no-block start rf-daemon.service
+Restart=always
+RestartSec=2
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,417 @@
+{
+  "schema": "ml-modrec-eval-real-failures-v1",
+  "generated_utc": "2026-10-20T12:32:07Z",
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "backend": "host CPU numpy runtime (NOT ARM, NOT board)"
+  },
+  "definition": "CNN failure = (a) a counted normal-truth BPSK frame whose predicted label is not BPSK (misclassified or rejected UNKNOWN), or (b) a counted OFF-truth frame whose predicted label is a known class (false accept). The feature baseline has no gate, so its OFF behaviour is descriptive only.",
+  "sessions": [
+    "train-01",
+    "train-02",
+    "val-01"
+  ],
+  "independent_session": "val-01",
+  "cnn": {
+    "n_frames_eligible": 33,
+    "failure_count": 30,
+    "failures": [
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-01.iq",
+        "session": "train-01",
+        "tag": "normal-01",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2734876377688291,
+        "margin": 0.0006652701525610705,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-02.iq",
+        "session": "train-01",
+        "tag": "normal-02",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27348520988568836,
+        "margin": 0.0005819833346841219,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-03.iq",
+        "session": "train-01",
+        "tag": "normal-03",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27348527973750003,
+        "margin": 0.0006319469617799833,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-04.iq",
+        "session": "train-01",
+        "tag": "normal-04",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2734098275579901,
+        "margin": 0.0005383129933690944,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-05.iq",
+        "session": "train-01",
+        "tag": "normal-05",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2734171745658331,
+        "margin": 0.0005418406430778289,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-06.iq",
+        "session": "train-01",
+        "tag": "normal-06",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2735056673749002,
+        "margin": 0.0006277449280999159,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-07.iq",
+        "session": "train-01",
+        "tag": "normal-07",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2734708036204456,
+        "margin": 0.0006563772607295348,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-08.iq",
+        "session": "train-01",
+        "tag": "normal-08",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.273509010143807,
+        "margin": 0.000691156331598497,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-09.iq",
+        "session": "train-01",
+        "tag": "normal-09",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2736634980610994,
+        "margin": 0.0008432077159239437,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-10.iq",
+        "session": "train-01",
+        "tag": "normal-10",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27345465284251586,
+        "margin": 0.0005947018922574654,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-01.iq",
+        "session": "train-02",
+        "tag": "normal-01",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2752925032258904,
+        "margin": 0.005060950281417453,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-02.iq",
+        "session": "train-02",
+        "tag": "normal-02",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.275391396703336,
+        "margin": 0.00519013047336947,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-03.iq",
+        "session": "train-02",
+        "tag": "normal-03",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27553348720224985,
+        "margin": 0.005497199271033315,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-04.iq",
+        "session": "train-02",
+        "tag": "normal-04",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27552904546924656,
+        "margin": 0.005321614420695231,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-05.iq",
+        "session": "train-02",
+        "tag": "normal-05",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27541878994433766,
+        "margin": 0.005181954936702038,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-06.iq",
+        "session": "train-02",
+        "tag": "normal-06",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2753870744161854,
+        "margin": 0.00517827197767412,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-07.iq",
+        "session": "train-02",
+        "tag": "normal-07",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2754172286541361,
+        "margin": 0.005149419116854681,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-08.iq",
+        "session": "train-02",
+        "tag": "normal-08",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27528856045773437,
+        "margin": 0.005184286277072292,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-09.iq",
+        "session": "train-02",
+        "tag": "normal-09",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2750762147127979,
+        "margin": 0.004988222093461059,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-10.iq",
+        "session": "train-02",
+        "tag": "normal-10",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27584104844831564,
+        "margin": 0.005485815615954848,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-01.iq",
+        "session": "val-01",
+        "tag": "normal-01",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2728369815473778,
+        "margin": 0.00010683898707286588,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-02.iq",
+        "session": "val-01",
+        "tag": "normal-02",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27278812947032505,
+        "margin": 9.429048212750146e-05,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-03.iq",
+        "session": "val-01",
+        "tag": "normal-03",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2727651982776891,
+        "margin": 3.670235230457397e-06,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-04.iq",
+        "session": "val-01",
+        "tag": "normal-04",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2727458021925382,
+        "margin": 1.409438255628448e-05,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-05.iq",
+        "session": "val-01",
+        "tag": "normal-05",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27278875328531965,
+        "margin": 6.704990534700528e-05,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-06.iq",
+        "session": "val-01",
+        "tag": "normal-06",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27281671489815146,
+        "margin": 0.00016299770749073073,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-07.iq",
+        "session": "val-01",
+        "tag": "normal-07",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.2728733647660768,
+        "margin": 0.0002418640770850966,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-08.iq",
+        "session": "val-01",
+        "tag": "normal-08",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.272783415229424,
+        "margin": 7.035446685033087e-05,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-09.iq",
+        "session": "val-01",
+        "tag": "normal-09",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27274009745747224,
+        "margin": 2.862023347000031e-05,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-10.iq",
+        "session": "val-01",
+        "tag": "normal-10",
+        "truth": "normal",
+        "predicted_label": "UNKNOWN",
+        "score": 0.27281743928869806,
+        "margin": 0.00013490602537824525,
+        "reason": "confidence",
+        "kind": "rejected_unknown"
+      }
+    ]
+  },
+  "baseline": {
+    "n_frames_eligible": 33,
+    "failure_count": 0,
+    "failures": []
+  },
+  "off_false_accepts": {
+    "cnn": [],
+    "baseline": [
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/off-01.iq",
+        "session": "train-01",
+        "tag": "off-01",
+        "truth": "off",
+        "predicted_label": "BPSK",
+        "score": 0.9982153073336799,
+        "margin": 0.9968373091939735,
+        "reason": ""
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/off-01.iq",
+        "session": "train-02",
+        "tag": "off-01",
+        "truth": "off",
+        "predicted_label": "BPSK",
+        "score": 0.9155681445882414,
+        "margin": 0.8543315679982127,
+        "reason": ""
+      },
+      {
+        "path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/off-01.iq",
+        "session": "val-01",
+        "tag": "off-01",
+        "truth": "off",
+        "predicted_label": "BPSK",
+        "score": 0.9084141618416252,
+        "margin": 0.8485559319452584,
+        "reason": ""
+      }
+    ]
+  },
+  "not_run": [
+    "arm_inference: NOT_RUN - all inference in this report ran on the host CPU with the numpy runtime; these numbers are NOT ARM numbers and NOT board numbers.",
+    "board_hardware_accuracy: NOT_RUN - no board/hardware execution was performed by the evaluation tools.",
+    "azure_vm: NOT_RUN - no Azure connection information is available in this round.",
+    "four_class_real_overall_accuracy: NOT_RUN - not computed and prohibited by CONTRACTS §11; real truth exists only for the single BPSK-normal configuration and OFF scenes.",
+    "real_qpsk_qam16_qam64_frames: NOT_RUN - the canonical real sessions contain no QPSK/QAM16/QAM64 ground-truth frames.",
+    "real_quality_gate_population: NOT_RUN - no real gate_test population with OFF/NOISE/TONE/CLIP was collected; only OFF frames exist and are reported as OFF gate behaviour.",
+    "interference_physical_scenarios: NOT_RUN - no canonical per-frame manifest/receipt covering an interference physical scenario was included; such scenarios are absent from the canonical session set and are NOT_RUN, not silently folded into the BPSK transfer numbers.",
+    "gate_threshold_selection_on_real_data: NOT_RUN - forbidden by CONTRACTS §11; thresholds are selected on simulation val + gate_cal only, and val-01 is untouched by any selection.",
+    "demod_ber_derived_accuracy: NOT_RUN - demod BER exists on the board path but is not a model metric and is not used as a label or accuracy here.",
+    "arm_inference: NOT_RUN - see host-vs-ARM statement.",
+    "board_hardware_accuracy: NOT_RUN - see host-vs-ARM statement."
+  ],
+  "limitations": [
+    "Small real sample: 3 sessions x (10 normal BPSK + 1 off) = 30 normal + 3 OFF counted frames; one frame per listed file, no augmentation and no reuse.",
+    "Real BPSK has exactly ONE configuration in scope: fs=60 MSPS, BPSK 3 MSym/s RECT, LO=80 MHz, attenuation 46000 mdB, 4096-sample snapshot. Other symbol rates/shapings are NOT_RUN (no data).",
+    "OFF frames carry trainval.physical=false (no-signal scene); they are real board captures used only for OFF gate behaviour, never as class truth and never with a fake class label.",
+    "Board algorithm labels differ from the contract truth (several normal frames are labelled UNKNOWN/PULSE/CLEAR by the board algorithm); those outputs are ignored here, not converted into labels.",
+    "No clipped real frames were present in the canonical sessions, so real clipping rejection is NOT_RUN (simulation covers the CLIP gate kind).",
+    "Zero-shot transfer only: no real frame was used for training, validation or threshold selection (CONTRACTS §11); val-01 is the untouched independent real session.",
+    "Inference ran on the host CPU with the numpy runtime; these are NOT ARM numbers and NOT board numbers.",
+    "campaign4 and campaign5 duplicate frames were deduplicated by iq_sha256; the one unique campaign4 val-01 frame lies outside the canonical campaign5 session set and is excluded (listed with its reason), not counted."
+  ]
+}

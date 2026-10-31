@@ -1,0 +1,281 @@
+{
+ "byte_equality_with_amp1800_vectors_claimed": false,
+ "config_path": "config/hardware_amp60.json",
+ "config_sha256": "868b2a8d86af0d8d0f892a442c2f3037af9b4deb7bfcd2c88fb2ad1d47231c01",
+ "counts_as_real_capture": false,
+ "mapping": {
+  "BPSK": "I=axis2[b0], Q=0",
+  "QAM16": "I=axis4[(b0<<1)|b1], Q=axis4[(b2<<1)|b3]",
+  "QAM64": "I=axis8[(b0<<2)|(b1<<1)|b2], Q=axis8[(b3<<2)|(b4<<1)|b5]",
+  "QPSK": "I=axis2[b0], Q=axis2[b1]",
+  "axis2": [
+   1,
+   -1
+  ],
+  "axis4": [
+   3,
+   1,
+   -3,
+   -1
+  ],
+  "axis8": [
+   7,
+   5,
+   1,
+   3,
+   -7,
+   -5,
+   -1,
+   -3
+  ],
+  "bit_order": "MSB-first; first serial bit maps to I, later bits to Q"
+ },
+ "offline_generated_tx_payload": true,
+ "real_capture": false,
+ "real_rf_iq_byte_equality_required": false,
+ "reference_window": {
+  "bytes": 16384,
+  "construction": "tile(tx_payload_period, 2)[:4096]",
+  "duration_us": 68.266666667,
+  "note": "4096-sample software/model reference window: one full 2540-sample period plus the first 1556 samples of the next period; no resampling.",
+  "periods_in_window": 1.6125984252,
+  "prefix_samples": 1556,
+  "samples": 4096
+ },
+ "runner_config_evidence": {
+  "profile": "pynq_overlay/sw/rf_teaching_profile.py:53",
+  "rolloff": "0.35",
+  "runner": "scripts/rf_bpsk_ui_board_session.py:310",
+  "shaping": "RECT",
+  "tx_amplitude": 60
+ },
+ "schema": "ml-fourclass-hardware-amp60-manifest-v1",
+ "signal": {
+  "amplitude": 60,
+  "amplitude_normalisation": "component_peak",
+  "amplitude_note": "max(max|I|, max|Q|) == 60, matching the product TX generator's component peak semantics; this is the same amplitude used by the final board runner (rf_teaching_profile tx_amplitude=60)",
+  "complex_sample_bytes": 4,
+  "differential_encoding": false,
+  "format": "s16_iq_le",
+  "iq_order": "I,Q",
+  "prbs_seed_range": [
+   1,
+   127
+  ],
+  "prbs_symbols_per_period": 127,
+  "rolloff": "0.35",
+  "rolloff_note": "RECT ignores rolloff for waveform generation, but 0.35 is the final runner/UI setting and is recorded so the config matches scripts/rf_bpsk_ui_board_session.py:310 and pynq_overlay/sw/rf_teaching_profile.py:53",
+  "sample_rate_hz": 60000000,
+  "samples_per_symbol": 20,
+  "shaping": "RECT",
+  "symbol_rate_hz": 3000000
+ },
+ "source_generator_path": "pynq_overlay/sw/rf_iq_signal.py",
+ "source_generator_sha256": "17a5b3dc6c9b7fd4da8e76ffeab4038c2d9479aa908a875ccf47a339f0a5b8c3",
+ "training_use": false,
+ "truth_source": {
+  "model_predictions_are_not_truth": true,
+  "source": "independent PRBS7 + frozen constellation mapping reconstruction; configuration seeds, not model predictions"
+ },
+ "tx_payload": {
+  "bytes": 10160,
+  "duration_us": 42.333333333,
+  "note": "127 PRBS symbols x 20 samples/symbol = 2540 complex samples at 60 MSPS; this is the finite TX payload/period.",
+  "samples": 2540
+ },
+ "vectors": [
+  {
+   "independent_truth": {
+    "bits_count": 127,
+    "exact_reference_match": true,
+    "exact_tx_payload_match": true,
+    "path": "outputs/truth/BPSK.symbols.json",
+    "sha256": "079e521092e7b4551f4a89f7758122a5a9910f8820273f83b47ec92135b24d8a",
+    "symbol_count": 127
+   },
+   "old_amp1800_60msps": {
+    "amplitude": 1800,
+    "byte_equality_claimed": false,
+    "path": "data/synthetic_60msps/BPSK.iq",
+    "same_sha256": false,
+    "samples": 4096,
+    "sha256": "f2157f13a9279f9b5442b68f4804a5d29c4b4db2df7fadae2251fe780293b5b2"
+   },
+   "reference_4096": {
+    "bytes": 16384,
+    "construction": "tile(tx_payload_period, 2)[:4096]",
+    "derived_from_tx_payload_sha256": "38b3f36ae20b6fe232d68d677b9e5e00c0b246c3617d0ff27239e89d0c3ef7f6",
+    "duration_us": 68.266666667,
+    "format": "s16_iq_le",
+    "path": "outputs/reference_4096/BPSK.iq",
+    "periods_in_window": 1.6125984252,
+    "prefix_samples": 1556,
+    "sample_rate_hz": 60000000,
+    "samples": 4096,
+    "sha256": "e20369e47f38e351b20aef91aeae91dae8c30ab0ed79a5f45a97bfcd973a24df"
+   },
+   "seed": 1,
+   "truth_class": "BPSK",
+   "tx_payload": {
+    "bytes": 10160,
+    "duration_us": 42.333333333,
+    "format": "s16_iq_le",
+    "max_abs_code": 60,
+    "max_code": 60,
+    "min_code": -60,
+    "path": "outputs/tx_payload/BPSK.iq",
+    "sample_rate_hz": 60000000,
+    "samples": 2540,
+    "samples_per_symbol": 20,
+    "sha256": "38b3f36ae20b6fe232d68d677b9e5e00c0b246c3617d0ff27239e89d0c3ef7f6",
+    "tx_period_symbols": 127,
+    "wrap": true
+   }
+  },
+  {
+   "independent_truth": {
+    "bits_count": 254,
+    "exact_reference_match": true,
+    "exact_tx_payload_match": true,
+    "path": "outputs/truth/QPSK.symbols.json",
+    "sha256": "b273afcfd918bd751c3b4eb3e5f374beab26d6ba64f932bbae2ba93c46cdc764",
+    "symbol_count": 127
+   },
+   "old_amp1800_60msps": {
+    "amplitude": 1800,
+    "byte_equality_claimed": false,
+    "path": "data/synthetic_60msps/QPSK.iq",
+    "same_sha256": false,
+    "samples": 4096,
+    "sha256": "80ad31dd8cd4802f411f8043648635059a0b6e47f443033b1e4000056499b5af"
+   },
+   "reference_4096": {
+    "bytes": 16384,
+    "construction": "tile(tx_payload_period, 2)[:4096]",
+    "derived_from_tx_payload_sha256": "d33a0e0e97a9c7d1ad8ee20ba52b8d5e0b6c3c123fa31fd8163770176c3adcc2",
+    "duration_us": 68.266666667,
+    "format": "s16_iq_le",
+    "path": "outputs/reference_4096/QPSK.iq",
+    "periods_in_window": 1.6125984252,
+    "prefix_samples": 1556,
+    "sample_rate_hz": 60000000,
+    "samples": 4096,
+    "sha256": "90730f9c856b9c6bf9379e0087a875dcb219eeb8af4bfaa5259530ca192907c9"
+   },
+   "seed": 37,
+   "truth_class": "QPSK",
+   "tx_payload": {
+    "bytes": 10160,
+    "duration_us": 42.333333333,
+    "format": "s16_iq_le",
+    "max_abs_code": 60,
+    "max_code": 60,
+    "min_code": -60,
+    "path": "outputs/tx_payload/QPSK.iq",
+    "sample_rate_hz": 60000000,
+    "samples": 2540,
+    "samples_per_symbol": 20,
+    "sha256": "d33a0e0e97a9c7d1ad8ee20ba52b8d5e0b6c3c123fa31fd8163770176c3adcc2",
+    "tx_period_symbols": 127,
+    "wrap": true
+   }
+  },
+  {
+   "independent_truth": {
+    "bits_count": 508,
+    "exact_reference_match": true,
+    "exact_tx_payload_match": true,
+    "path": "outputs/truth/QAM16.symbols.json",
+    "sha256": "6cca5547d75f866e8d3b8eb659ea7e7769acf635425836fc399eb7fe9c4473dc",
+    "symbol_count": 127
+   },
+   "old_amp1800_60msps": {
+    "amplitude": 1800,
+    "byte_equality_claimed": false,
+    "path": "data/synthetic_60msps/QAM16.iq",
+    "same_sha256": false,
+    "samples": 4096,
+    "sha256": "5aea8e201d4f20833ccd9f3d94997014307857649e132b6f5b3d57c871aad8d8"
+   },
+   "reference_4096": {
+    "bytes": 16384,
+    "construction": "tile(tx_payload_period, 2)[:4096]",
+    "derived_from_tx_payload_sha256": "ef7aaa422fe35406d8bf3390fc7fae19a46a21811c379dc8c0b03dd5d39e4a3c",
+    "duration_us": 68.266666667,
+    "format": "s16_iq_le",
+    "path": "outputs/reference_4096/QAM16.iq",
+    "periods_in_window": 1.6125984252,
+    "prefix_samples": 1556,
+    "sample_rate_hz": 60000000,
+    "samples": 4096,
+    "sha256": "b90469002df9edceaa82bb143dd6d01fa903648e70051f442423ca708e6023fc"
+   },
+   "seed": 73,
+   "truth_class": "QAM16",
+   "tx_payload": {
+    "bytes": 10160,
+    "duration_us": 42.333333333,
+    "format": "s16_iq_le",
+    "max_abs_code": 60,
+    "max_code": 60,
+    "min_code": -60,
+    "path": "outputs/tx_payload/QAM16.iq",
+    "sample_rate_hz": 60000000,
+    "samples": 2540,
+    "samples_per_symbol": 20,
+    "sha256": "ef7aaa422fe35406d8bf3390fc7fae19a46a21811c379dc8c0b03dd5d39e4a3c",
+    "tx_period_symbols": 127,
+    "wrap": true
+   }
+  },
+  {
+   "independent_truth": {
+    "bits_count": 762,
+    "exact_reference_match": true,
+    "exact_tx_payload_match": true,
+    "path": "outputs/truth/QAM64.symbols.json",
+    "sha256": "33b72f9496beeb6f74a2a73da65266f262ca01e526039a4ac872aba7607fffd3",
+    "symbol_count": 127
+   },
+   "old_amp1800_60msps": {
+    "amplitude": 1800,
+    "byte_equality_claimed": false,
+    "path": "data/synthetic_60msps/QAM64.iq",
+    "same_sha256": false,
+    "samples": 4096,
+    "sha256": "8ba766d32fa421b87521f7c323a845392b20f01751faa6015e335ba69f1cff57"
+   },
+   "reference_4096": {
+    "bytes": 16384,
+    "construction": "tile(tx_payload_period, 2)[:4096]",
+    "derived_from_tx_payload_sha256": "a32068f5abc9892a92fdd3d601c7f84522d48a23ec4902410bd9bc4bd3adb152",
+    "duration_us": 68.266666667,
+    "format": "s16_iq_le",
+    "path": "outputs/reference_4096/QAM64.iq",
+    "periods_in_window": 1.6125984252,
+    "prefix_samples": 1556,
+    "sample_rate_hz": 60000000,
+    "samples": 4096,
+    "sha256": "322c973903e751edc92fd7ab728917b288a7fa5470ac8d64f62e4cd5dabc56a4"
+   },
+   "seed": 127,
+   "truth_class": "QAM64",
+   "tx_payload": {
+    "bytes": 10160,
+    "duration_us": 42.333333333,
+    "format": "s16_iq_le",
+    "max_abs_code": 60,
+    "max_code": 60,
+    "min_code": -60,
+    "path": "outputs/tx_payload/QAM64.iq",
+    "sample_rate_hz": 60000000,
+    "samples": 2540,
+    "samples_per_symbol": 20,
+    "sha256": "a32068f5abc9892a92fdd3d601c7f84522d48a23ec4902410bd9bc4bd3adb152",
+    "tx_period_symbols": 127,
+    "wrap": true
+   }
+  }
+ ],
+ "warning": "Offline-generated actual-TX payload candidates only. Amplitude-60 payloads are not byte-identical to the existing amplitude-1800 vectors; real RF received IQ is not expected to be byte-identical to the ideal payload."
+}

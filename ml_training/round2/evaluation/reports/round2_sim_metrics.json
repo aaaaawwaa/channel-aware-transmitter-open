@@ -1,0 +1,1191 @@
+{
+ "schema": "ml-modrec-round2-eval-v1",
+ "generated_utc": "2026-10-20T14:53:21Z",
+ "dataset": {
+  "path": "ml_training/round2/datasets/sim-r2",
+  "manifest_sha256": "83afaf8a9fe604114d3d1f260a4e1e445aaf7575ae9f26bff3d7bfbdd62e88e9",
+  "note": "test/gate_test were never used for calibration or design"
+ },
+ "model": {
+  "cnn_model_json": 48971,
+  "baseline_model_json": 2187,
+  "rule_config_json": 7513,
+  "total_bytes": 58671,
+  "cnn_parameters": 1628,
+  "baseline_parameters": 36,
+  "total_parameters": 1664,
+  "note": "round-1 CNN is unchanged; the 36-parameter baseline and the rule JSON are the only additions (no retraining, no new learned parameters)"
+ },
+ "timing_host": {
+  "before_frozen_cnn": {
+   "median_ms": 1.391050001984695,
+   "mean_ms": 1.505639999959385,
+   "p95_ms": 2.1764549976069247,
+   "repeats": 200
+  },
+  "after_round2_predictor": {
+   "median_ms": 3.390049998415634,
+   "mean_ms": 3.7515455001266673,
+   "p95_ms": 6.283010001061484,
+   "repeats": 200
+  },
+  "host_only": true,
+  "note": "host CPU, batch=1; NOT ARM and NOT board numbers"
+ },
+ "sim_test": {
+  "protocol": {
+   "test_used_for_tuning": false,
+   "test_frames": 2400,
+   "clipped_dropped": 0,
+   "four_class_metric": "pure class decision, gate rejection reported separately"
+  },
+  "before": {
+   "accuracy": 0.8470833333333333,
+   "macro_f1": 0.8469259579347426,
+   "recall": [
+    0.9116666666666666,
+    0.91,
+    0.7883333333333333,
+    0.7783333333333333
+   ],
+   "precision": [
+    0.9271186440677966,
+    0.8820678513731826,
+    0.7936241610738255,
+    0.7848739495798319
+   ],
+   "f1": [
+    0.919327731092437,
+    0.8958162428219854,
+    0.7909698996655519,
+    0.7815899581589958
+   ],
+   "matrix": [
+    [
+     547,
+     46,
+     0,
+     7
+    ],
+    [
+     40,
+     546,
+     1,
+     13
+    ],
+    [
+     3,
+     16,
+     473,
+     108
+    ],
+    [
+     0,
+     11,
+     122,
+     467
+    ]
+   ]
+  },
+  "after": {
+   "accuracy": 0.8654166666666666,
+   "macro_f1": 0.8651507310040176,
+   "recall": [
+    0.9566666666666667,
+    0.9383333333333334,
+    0.7883333333333333,
+    0.7783333333333333
+   ],
+   "precision": [
+    0.9582637729549248,
+    0.9229508196721311,
+    0.7936241610738255,
+    0.7848739495798319
+   ],
+   "f1": [
+    0.9574645537948289,
+    0.9305785123966942,
+    0.7909698996655519,
+    0.7815899581589958
+   ],
+   "matrix": [
+    [
+     574,
+     19,
+     0,
+     7
+    ],
+    [
+     23,
+     563,
+     1,
+     13
+    ],
+    [
+     2,
+     17,
+     473,
+     108
+    ],
+    [
+     0,
+     11,
+     122,
+     467
+    ]
+   ]
+  },
+  "before_accuracy": 0.8470833333333333,
+  "after_accuracy": 0.8654166666666666,
+  "arbitration_changed": 53,
+  "arbitration_changed_to_correct": 47,
+  "arbitration_changed_from_correct": 3,
+  "gate_test": {
+   "before": {
+    "OFF": {
+     "n": 100,
+     "rejected": 100,
+     "rejection_rate": 1.0,
+     "reasons": {
+      "below_energy_floor": 100
+     }
+    },
+    "NOISE": {
+     "n": 100,
+     "rejected": 20,
+     "rejection_rate": 0.2,
+     "reasons": {
+      "clipping": 13,
+      "confidence": 7
+     }
+    },
+    "TONE": {
+     "n": 100,
+     "rejected": 0,
+     "rejection_rate": 0.0,
+     "reasons": {}
+    },
+    "CLIP": {
+     "n": 100,
+     "rejected": 100,
+     "rejection_rate": 1.0,
+     "reasons": {
+      "clipping": 100
+     }
+    }
+   },
+   "after": {
+    "OFF": {
+     "n": 100,
+     "rejected": 100,
+     "rejection_rate": 1.0,
+     "reasons": {
+      "below_energy_floor": 100
+     }
+    },
+    "NOISE": {
+     "n": 100,
+     "rejected": 100,
+     "rejection_rate": 1.0,
+     "reasons": {
+      "noise_like": 87,
+      "clipping": 13
+     }
+    },
+    "TONE": {
+     "n": 100,
+     "rejected": 100,
+     "rejection_rate": 1.0,
+     "reasons": {
+      "tone_like": 100
+     }
+    },
+    "CLIP": {
+     "n": 100,
+     "rejected": 100,
+     "rejection_rate": 1.0,
+     "reasons": {
+      "clipping": 100
+     }
+    }
+   },
+   "known_test": {
+    "frames": 2400,
+    "before_rejected": 84,
+    "after_rejected": 98,
+    "before_accuracy_with_gate": 0.83375,
+    "after_accuracy_with_gate": 0.8475,
+    "reasons_before": {
+     "confidence": 84
+    },
+    "reasons_after": {
+     "confidence": 79,
+     "noise_like": 19
+    },
+    "per_snr": {
+     "-6.0": {
+      "n": 200,
+      "before_rejected": 74,
+      "after_rejected": 88
+     },
+     "-3.0": {
+      "n": 200,
+      "before_rejected": 9,
+      "after_rejected": 9
+     },
+     "0.0": {
+      "n": 200,
+      "before_rejected": 1,
+      "after_rejected": 1
+     },
+     "2.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "4.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "6.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "8.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "10.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "12.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "15.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "18.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     },
+     "20.0": {
+      "n": 200,
+      "before_rejected": 0,
+      "after_rejected": 0
+     }
+    },
+    "per_class": {
+     "BPSK": {
+      "n": 600,
+      "before_rejected": 19,
+      "after_rejected": 21
+     },
+     "QPSK": {
+      "n": 600,
+      "before_rejected": 27,
+      "after_rejected": 30
+     },
+     "QAM16": {
+      "n": 600,
+      "before_rejected": 25,
+      "after_rejected": 29
+     },
+     "QAM64": {
+      "n": 600,
+      "before_rejected": 13,
+      "after_rejected": 18
+     }
+    },
+    "accepted_after": 2302,
+    "accepted_after_accuracy": 0.8835794960903562
+   }
+  },
+  "per_snr": {
+   "-6.0": {
+    "n": 200,
+    "before_accuracy": 0.455,
+    "before_macro_f1": 0.41506287506481404,
+    "after_accuracy": 0.495,
+    "after_macro_f1": 0.45496541243056277,
+    "before_recall": [
+     0.56,
+     0.48,
+     0.06,
+     0.72
+    ],
+    "after_recall": [
+     0.66,
+     0.54,
+     0.06,
+     0.72
+    ]
+   },
+   "-3.0": {
+    "n": 200,
+    "before_accuracy": 0.605,
+    "before_macro_f1": 0.6017629179331307,
+    "after_accuracy": 0.655,
+    "after_macro_f1": 0.6502401238727897,
+    "before_recall": [
+     0.68,
+     0.8,
+     0.48,
+     0.46
+    ],
+    "after_recall": [
+     0.86,
+     0.82,
+     0.48,
+     0.46
+    ]
+   },
+   "0.0": {
+    "n": 200,
+    "before_accuracy": 0.795,
+    "before_macro_f1": 0.7924314689020571,
+    "after_accuracy": 0.81,
+    "after_macro_f1": 0.8073903471428223,
+    "before_recall": [
+     0.94,
+     0.9,
+     0.78,
+     0.56
+    ],
+    "after_recall": [
+     0.96,
+     0.94,
+     0.78,
+     0.56
+    ]
+   },
+   "2.0": {
+    "n": 200,
+    "before_accuracy": 0.795,
+    "before_macro_f1": 0.7902082793189871,
+    "after_accuracy": 0.815,
+    "after_macro_f1": 0.810270435910586,
+    "before_recall": [
+     1.0,
+     0.9,
+     0.8,
+     0.48
+    ],
+    "after_recall": [
+     1.0,
+     0.98,
+     0.8,
+     0.48
+    ]
+   },
+   "4.0": {
+    "n": 200,
+    "before_accuracy": 0.845,
+    "before_macro_f1": 0.8423785405232722,
+    "after_accuracy": 0.865,
+    "after_macro_f1": 0.8624005607415086,
+    "before_recall": [
+     0.98,
+     0.92,
+     0.88,
+     0.6
+    ],
+    "after_recall": [
+     1.0,
+     0.98,
+     0.88,
+     0.6
+    ]
+   },
+   "6.0": {
+    "n": 200,
+    "before_accuracy": 0.915,
+    "before_macro_f1": 0.9147291729474425,
+    "after_accuracy": 0.945,
+    "after_macro_f1": 0.9447291729474425,
+    "before_recall": [
+     0.94,
+     0.94,
+     0.96,
+     0.82
+    ],
+    "after_recall": [
+     1.0,
+     1.0,
+     0.96,
+     0.82
+    ]
+   },
+   "8.0": {
+    "n": 200,
+    "before_accuracy": 0.94,
+    "before_macro_f1": 0.94,
+    "after_accuracy": 0.95,
+    "after_macro_f1": 0.95,
+    "before_recall": [
+     0.98,
+     0.98,
+     0.9,
+     0.9
+    ],
+    "after_recall": [
+     1.0,
+     1.0,
+     0.9,
+     0.9
+    ]
+   },
+   "10.0": {
+    "n": 200,
+    "before_accuracy": 0.955,
+    "before_macro_f1": 0.9548872180451129,
+    "after_accuracy": 0.955,
+    "after_macro_f1": 0.9548872180451129,
+    "before_recall": [
+     1.0,
+     1.0,
+     0.96,
+     0.86
+    ],
+    "after_recall": [
+     1.0,
+     1.0,
+     0.96,
+     0.86
+    ]
+   },
+   "12.0": {
+    "n": 200,
+    "before_accuracy": 0.98,
+    "before_macro_f1": 0.9799979997999799,
+    "after_accuracy": 0.985,
+    "after_macro_f1": 0.984998499849985,
+    "before_recall": [
+     0.98,
+     1.0,
+     0.96,
+     0.98
+    ],
+    "after_recall": [
+     1.0,
+     1.0,
+     0.96,
+     0.98
+    ]
+   },
+   "15.0": {
+    "n": 200,
+    "before_accuracy": 0.97,
+    "before_macro_f1": 0.9699849876890402,
+    "after_accuracy": 0.985,
+    "after_macro_f1": 0.984998499849985,
+    "before_recall": [
+     0.94,
+     1.0,
+     0.96,
+     0.98
+    ],
+    "after_recall": [
+     1.0,
+     1.0,
+     0.96,
+     0.98
+    ]
+   },
+   "18.0": {
+    "n": 200,
+    "before_accuracy": 0.94,
+    "before_macro_f1": 0.9393258487707259,
+    "after_accuracy": 0.945,
+    "after_macro_f1": 0.9443263488207309,
+    "before_recall": [
+     0.98,
+     1.0,
+     0.78,
+     1.0
+    ],
+    "after_recall": [
+     1.0,
+     1.0,
+     0.78,
+     1.0
+    ]
+   },
+   "20.0": {
+    "n": 200,
+    "before_accuracy": 0.97,
+    "before_macro_f1": 0.9699879951980792,
+    "after_accuracy": 0.98,
+    "after_macro_f1": 0.9799919967987195,
+    "before_recall": [
+     0.96,
+     1.0,
+     0.94,
+     0.98
+    ],
+    "after_recall": [
+     1.0,
+     1.0,
+     0.94,
+     0.98
+    ]
+   }
+  }
+ },
+ "real_dev_replay": {
+  "sessions": {
+   "train-01": {
+    "n_normal": 10,
+    "n_off": 1,
+    "plain_bpsk": 10,
+    "proposed_bpsk": 10,
+    "plain_bpsk_rate": 1.0,
+    "proposed_bpsk_rate": 1.0,
+    "arbitration_applied": 0,
+    "off_plain_rejected": 1,
+    "off_proposed_rejected": 1,
+    "off_proposed_reasons": [
+     "noise_like"
+    ]
+   },
+   "train-02": {
+    "n_normal": 10,
+    "n_off": 1,
+    "plain_bpsk": 0,
+    "proposed_bpsk": 10,
+    "plain_bpsk_rate": 0.0,
+    "proposed_bpsk_rate": 1.0,
+    "arbitration_applied": 10,
+    "off_plain_rejected": 1,
+    "off_proposed_rejected": 1,
+    "off_proposed_reasons": [
+     "noise_like"
+    ]
+   },
+   "val-01": {
+    "n_normal": 10,
+    "n_off": 1,
+    "plain_bpsk": 10,
+    "proposed_bpsk": 10,
+    "plain_bpsk_rate": 1.0,
+    "proposed_bpsk_rate": 1.0,
+    "arbitration_applied": 0,
+    "off_plain_rejected": 1,
+    "off_proposed_rejected": 1,
+    "off_proposed_reasons": [
+     "noise_like"
+    ]
+   }
+  },
+  "totals": {
+   "n_normal": 30,
+   "plain_bpsk": 20,
+   "proposed_bpsk": 30,
+   "n_off": 3,
+   "off_plain_rejected": 3,
+   "off_proposed_rejected": 3
+  },
+  "rows": [
+   {
+    "session": "train-01",
+    "frame": "normal-01",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-02",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-03",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-04",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-05",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-06",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-07",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-08",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-09",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "normal-10",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-01",
+    "frame": "off-01",
+    "truth": "off",
+    "plain_label": "UNKNOWN",
+    "plain_reason": "confidence",
+    "proposed_label": "UNKNOWN",
+    "proposed_reason": "noise_like",
+    "arbitration_applied": false
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-01",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-02",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-03",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-04",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-05",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-06",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-07",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-08",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-09",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "normal-10",
+    "truth": "normal",
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true
+   },
+   {
+    "session": "train-02",
+    "frame": "off-01",
+    "truth": "off",
+    "plain_label": "UNKNOWN",
+    "plain_reason": "confidence",
+    "proposed_label": "UNKNOWN",
+    "proposed_reason": "noise_like",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-01",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-02",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-03",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-04",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-05",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-06",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-07",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-08",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-09",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "normal-10",
+    "truth": "normal",
+    "plain_label": "BPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": false
+   },
+   {
+    "session": "val-01",
+    "frame": "off-01",
+    "truth": "off",
+    "plain_label": "UNKNOWN",
+    "plain_reason": "confidence",
+    "proposed_label": "UNKNOWN",
+    "proposed_reason": "noise_like",
+    "arbitration_applied": false
+   }
+  ],
+  "scope": "development replay only; the three real sessions were used for round-1 analysis and round-2 design. An independent unseen real session is still required for generalisation claims."
+ },
+ "real_independent_session": {
+  "available": true,
+  "rows": [
+   {
+    "frame": "normal-01",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 245.573319746046,
+    "phase_deg": 55.267112731933594,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-02",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 248.01248235975947,
+    "phase_deg": 54.907222747802734,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-03",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 245.86258885331915,
+    "phase_deg": 55.0205192565918,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-04",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 242.1175952541257,
+    "phase_deg": 55.27580642700195,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-05",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 245.29519146740574,
+    "phase_deg": 55.697879791259766,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-06",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 244.5304512766508,
+    "phase_deg": 55.91585159301758,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-07",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 246.5272273565843,
+    "phase_deg": 54.87089538574219,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-08",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 247.69557505210025,
+    "phase_deg": 55.09471893310547,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-09",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 244.23635972979636,
+    "phase_deg": 55.35274887084961,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "normal-10",
+    "truth": "normal",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QPSK",
+    "plain_reason": "",
+    "proposed_label": "BPSK",
+    "proposed_reason": "",
+    "arbitration_applied": true,
+    "complex_rms": 243.94001507959135,
+    "phase_deg": 55.30490493774414,
+    "demod_ber": 0.0,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   {
+    "frame": "off-01",
+    "truth": "off",
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "plain_label": "QAM64",
+    "plain_reason": "",
+    "proposed_label": "UNKNOWN",
+    "proposed_reason": "noise_like",
+    "arbitration_applied": false,
+    "complex_rms": 112.18721709574358,
+    "phase_deg": 25.58358383178711,
+    "demod_ber": null,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "WEAK_SPECTRAL_ANOMALY"
+   }
+  ],
+  "summary": {
+   "available": true,
+   "session_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01",
+   "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+   "n_normal": 10,
+   "n_off": 1,
+   "plain_bpsk": 0,
+   "proposed_bpsk": 10,
+   "arbitration_applied": 10,
+   "off_plain_rejected": 0,
+   "off_proposed_rejected": 1,
+   "plain_failures": [
+    "normal-01",
+    "normal-02",
+    "normal-03",
+    "normal-04",
+    "normal-05",
+    "normal-06",
+    "normal-07",
+    "normal-08",
+    "normal-09",
+    "normal-10"
+   ],
+   "proposed_failures": [],
+   "not_used_in_development": true,
+   "scope": "independent physical BPSK session (single configuration); not a four-class real accuracy and not ARM/board inference"
+  }
+ },
+ "not_run": [
+  "ARM/board latency, parity and deployment",
+  "real four-class accuracy",
+  "further independent real sessions (only one BPSK session available)",
+  "RRC / other symbol rates",
+  "hardware impairment modelling",
+  "large hyper-parameter search"
+ ]
+}

@@ -1,0 +1,75 @@
+[
+  {
+    "capture_id": "fixture-04-bpsk-worker-mismatch",
+    "iq_file": "04-bpsk-worker-mismatch.iq",
+    "iq_sha256": "185892b15054a47f516cee2b8ee20f8ec6e7ea20d19d1a10f8e353a56e2a0330",
+    "metadata_file": "04-bpsk-worker-mismatch.json",
+    "modrec4": {
+      "frame_identity": {
+        "capture_id": "fixture-04-bpsk-worker-mismatch",
+        "iq_sha256": "185892b15054a47f516cee2b8ee20f8ec6e7ea20d19d1a10f8e353a56e2a0330",
+        "release_id": "4776ba0bf6cabac383934f0437358595",
+        "request_id": 4
+      },
+      "input_domain": {
+        "observed": {
+          "decimation": 1,
+          "format": "s16_iq_le",
+          "sample_rate_hz": 60000000,
+          "samples": 4096,
+          "shaping": "RECT",
+          "symbol_rate_hz": 3000000
+        },
+        "status": "VALID"
+      },
+      "modulation": {
+        "accepted": false,
+        "final_label": "UNKNOWN",
+        "reason": "fixture_board_result_not_truth"
+      },
+      "status": "OK"
+    },
+    "off_tx_ok": false,
+    "post_tx_source_selected": false,
+    "pre_tx_source_selected": false,
+    "release_id": "4776ba0bf6cabac383934f0437358595",
+    "request_id": 4,
+    "tx_load_evidence": {
+      "error": null,
+      "load_code": null,
+      "load_message": "",
+      "load_ok": true,
+      "load_result": {
+        "ok": true
+      },
+      "payload_length": 10160,
+      "payload_sha256": "594f2b6ec1d1f4a87ed31fe63717714a7da57d83fd853022dc1bb8e4d1f0081a",
+      "response": {
+        "ok": true
+      },
+      "run_id": "synthetic-fixture",
+      "session_id": "synthetic-fixture",
+      "session_index": 1,
+      "tx_amplitude": 60,
+      "tx_load_metadata": {
+        "bytes": 10160,
+        "direction": "tx",
+        "format": "s16_iq_le",
+        "samples": 2540,
+        "wrap": true
+      },
+      "tx_mode": "BPSK",
+      "tx_seed": 2,
+      "worker_args": {
+        "amplitude": 60,
+        "filter": "RECT",
+        "mode": "BPSK",
+        "rolloff": "0.35",
+        "sample_rate_hz": 60000000,
+        "seed": 2,
+        "symbol_rate_hz": 3000000,
+        "waveform": "digital"
+      }
+    }
+  }
+]

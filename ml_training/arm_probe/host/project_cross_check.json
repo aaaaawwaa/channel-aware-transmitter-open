@@ -1,0 +1,8 @@
+{
+ "frames": 43,
+ "mismatches": [],
+ "mismatch_count": 0,
+ "max_abs_logit_delta": 0.0,
+ "note": "package runtime vs project frozen runtime (same host NumPy)",
+ "status": "PASS"
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "directory": "20261019-172411-416965-probe",
+    "mode": "probe",
+    "status": "ERROR",
+    "error": "RuntimeError('Expected exactly one matching Pluto: {}')",
+    "files": [
+      {
+        "path": "results/20261019-172411-416965-probe/result.json",
+        "bytes": 613,
+        "sha256": "1501eee98b3a3fc76a16af6abcc86aaf0dd86fd10f46861a69c8debab9759766"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-172413-696310-offline",
+    "mode": "offline",
+    "status": "OFFLINE_PASS",
+    "error": null,
+    "files": [
+      {
+        "path": "results/20261019-172413-696310-offline/iq.npy",
+        "bytes": 2097280,
+        "sha256": "f591728f4d49e3e916a57f1c47e5d1f131b1a756745a8e9486a30f8de3ad5df3"
+      },
+      {
+        "path": "results/20261019-172413-696310-offline/result.json",
+        "bytes": 740,
+        "sha256": "4a8b70a03be9d4da0b42d35fcc6799fbd0ca48789ed5588dae1b290bd321e6ea"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-172414-898375-rx",
+    "mode": "rx",
+    "status": "ERROR",
+    "error": "RuntimeError('Expected exactly one matching Pluto: {}')",
+    "files": [
+      {
+        "path": "results/20261019-172414-898375-rx/result.json",
+        "bytes": 610,
+        "sha256": "b3a63a1483ebbe43e758997184d298c5da03725a5b0063927fca660d0a4866fd"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-172433-137205-probe",
+    "mode": "probe",
+    "status": "DEVICE_IDENTIFIED",
+    "error": null,
+    "files": [
+      {
+        "path": "results/20261019-172433-137205-probe/result.json",
+        "bytes": 3241,
+        "sha256": "d05d83a4ebfab5a881c66e33660f61822f9c0eb4287dcf68333f8241aa0efa5c"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-172434-776863-rx",
+    "mode": "rx",
+    "status": "ERROR",
+    "error": "RuntimeError('Unable to create context')",
+    "files": [
+      {
+        "path": "results/20261019-172434-776863-rx/result.json",
+        "bytes": 3282,
+        "sha256": "8170b1f52a5e40e7b4dc8b4bc8228c57ce196e959065539afc5fd3fb96ed34ad"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-172630-321868-rx",
+    "mode": "rx",
+    "status": "RX_STREAM_PASS",
+    "error": null,
+    "files": [
+      {
+        "path": "results/20261019-172630-321868-rx/iq.npy",
+        "bytes": 2097280,
+        "sha256": "1d57b957402980c1b0aeb443e04d9161672c64048907ca917c1e88b7d820a5f6"
+      },
+      {
+        "path": "results/20261019-172630-321868-rx/result.json",
+        "bytes": 3414,
+        "sha256": "fce137fbb5ef649a83c84bbefafddc9876a9be6fc6cabae0a1aae48eb3824a32"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-173153-174107-scope",
+    "mode": "scope",
+    "status": "COMPLETED",
+    "error": null,
+    "files": [
+      {
+        "path": "results/20261019-173153-174107-scope/radio-output.txt",
+        "bytes": 3507,
+        "sha256": "ce913b34906636d89eb3eba055f0f378bb50085805f1ca8875cd63dcf49e8ac0"
+      },
+      {
+        "path": "results/20261019-173153-174107-scope/result.json",
+        "bytes": 1002,
+        "sha256": "df90585ecefee0f0a470272f0b631810ad56289e180ffe711c612315b93b420d"
+      },
+      {
+        "path": "results/20261019-173153-174107-scope/scope.png",
+        "bytes": 21762,
+        "sha256": "89a6af0d444a656317afde94fd96a1a732f340c2393326eae3306c4433c6f0f7"
+      },
+      {
+        "path": "results/20261019-173153-174107-scope/stream-started.txt",
+        "bytes": 14,
+        "sha256": "e63340d3651c4d59e20adeaac906168c43a6007d32bf2f532f6abfe878722996"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-173154-376468-tx",
+    "mode": "tx",
+    "status": "TX_STREAM_COMPLETED_RF_UNVERIFIED",
+    "error": null,
+    "files": [
+      {
+        "path": "results/20261019-173154-376468-tx/result.json",
+        "bytes": 3390,
+        "sha256": "1b2139750243f8ddf32d10e52c47513cccc713e4e6f4ee72ab0f05966f74f183"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-173257-957719-probe",
+    "mode": "probe",
+    "status": "DEVICE_IDENTIFIED",
+    "error": null,
+    "files": [
+      {
+        "path": "results/20261019-173257-957719-probe/result.json",
+        "bytes": 3235,
+        "sha256": "80335139fdc735bd06ab74126672a3caaa976c6f93813e3e31e8db97deaff911"
+      }
+    ]
+  },
+  {
+    "directory": "20261019-173443-220951-rx",
+    "mode": "rx",
+    "status": "RX_STREAM_PASS",
+    "error": null,
+    "files": [
+      {
+        "path": "results/20261019-173443-220951-rx/iq.npy",
+        "bytes": 2097280,
+        "sha256": "48f2f9522b76739a27ba74113e04aa1b041ef7303698ef2ce48314ddd4eae897"
+      },
+      {
+        "path": "results/20261019-173443-220951-rx/result.json",
+        "bytes": 3407,
+        "sha256": "31fb135b222a80037da0bc600a3f2d79a8c1a6484d7761a1d36db9278d0e583f"
+      }
+    ]
+  }
+]

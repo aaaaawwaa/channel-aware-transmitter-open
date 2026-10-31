@@ -1,0 +1,103 @@
+{
+  "package": "candidate_a_replay_package",
+  "frame_id": "04_syn_test_high_snr_BPSK",
+  "category": "high_snr_correct_BPSK",
+  "synthetic": true,
+  "real_capture": false,
+  "source": {
+    "dataset": "sim-v1",
+    "split": "test",
+    "index": 500,
+    "session_id": "test-BPSK-snr+18-test-b",
+    "seed_family": "test-b"
+  },
+  "conditions": {
+    "snr_db": 18.0,
+    "cfo_hz": -5789.87109375,
+    "amplitude_codes": 417,
+    "window_offset": 10,
+    "phase_rad": 4.6165771484375,
+    "session_id": "test-BPSK-snr+18-test-b",
+    "seed_family": "test-b"
+  },
+  "truth_class": "BPSK",
+  "iq_sha256": "6bcda609b8b9d7503670827de54684cb23c6b99c41b3019789459a9953ff7822",
+  "iq_bytes": 16384,
+  "iq_file": "frame.iq",
+  "original": {
+    "label": "BPSK",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      0.9761715979933072,
+      0.023826952116061954,
+      1.449883713830611e-06,
+      6.916986402263478e-12
+    ],
+    "path": {
+      "stage": "cnn_top1",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 419.18878725146294
+      },
+      "scores": [
+        0.9761715979933072,
+        0.023826952116061954,
+        1.449883713830611e-06,
+        6.916986402263478e-12
+      ],
+      "baseline_scores": [
+        0.9999999999999996,
+        3.8588514467770346e-16,
+        7.168375396035132e-17,
+        9.781115659425314e-21
+      ],
+      "cnn_label": "BPSK",
+      "baseline_label": "BPSK",
+      "arbitration_margin_bpsk_minus_qpsk": 0.9999999999999992,
+      "arbitration_applied": false,
+      "final": "BPSK"
+    }
+  },
+  "A": {
+    "label": "BPSK",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      0.8702038426049695,
+      0.1297951506794646,
+      1.0067019809160625e-06,
+      1.3585064824616452e-11
+    ],
+    "path": {
+      "stage": "cnn_top1",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 419.18878725146294
+      },
+      "scores": [
+        0.8702038426049695,
+        0.1297951506794646,
+        1.0067019809160625e-06,
+        1.3585064824616452e-11
+      ],
+      "baseline_scores": [
+        0.9999999999999996,
+        3.8588514467770346e-16,
+        7.168375396035132e-17,
+        9.781115659425314e-21
+      ],
+      "cnn_label": "BPSK",
+      "baseline_label": "BPSK",
+      "arbitration_margin_bpsk_minus_qpsk": 0.9999999999999992,
+      "arbitration_applied": false,
+      "final": "BPSK"
+    }
+  },
+  "error_outputs_preserved": true,
+  "note": "existing synthetic frame; not generated here; not performance acceptance"
+}

@@ -1,0 +1,319 @@
+{
+ "amplitude_codes": 60,
+ "input_context": {
+  "decimation": 1,
+  "format": "s16_iq_le",
+  "sample_rate_hz": 60000000,
+  "samples": 4096,
+  "shaping": "RECT",
+  "symbol_rate_hz": 3000000
+ },
+ "model": {
+  "baseline": "ml_training/artifacts/baseline/model.json",
+  "baseline_sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014",
+  "classes": [
+   "BPSK",
+   "QPSK",
+   "QAM16",
+   "QAM64"
+  ],
+  "cnn": "ml_training/artifacts/cnn/model.json",
+  "cnn_sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc",
+  "frozen_evaluation_entry": "ml_training.real_campaign + Round2Predictor",
+  "rules": "ml_training/round2/artifacts/rule_config.json",
+  "rules_sha256": "9aceebbdb6b9b9a54ad0dd09ebd61935ae8c8fd276ba18d8b9db69e7949619e0"
+ },
+ "offline_generated_tx_payload": true,
+ "real_accuracy_applicable": false,
+ "real_capture": false,
+ "results": [
+  {
+   "accepted": true,
+   "arbitration_applied": false,
+   "classify_gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 59.916514488879386
+   },
+   "cnn_class_label": "BPSK",
+   "cnn_scores": [
+    0.9998355685475987,
+    0.0001644309580073416,
+    4.94393906557106e-10,
+    9.865350235309219e-17
+   ],
+   "final_label": "BPSK",
+   "gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 59.916514488879386
+   },
+   "input_context_check": {
+    "observed": {
+     "decimation": 1,
+     "format": "s16_iq_le",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "shaping": "RECT",
+     "symbol_rate_hz": 3000000
+    },
+    "ok": true,
+    "reason": ""
+   },
+   "input_iq_check": {
+    "digest": "e20369e47f38e351b20aef91aeae91dae8c30ab0ed79a5f45a97bfcd973a24df",
+    "observed": {
+     "bytes": 16384,
+     "dtype": "int16",
+     "exists": true,
+     "max": 60,
+     "min": -60,
+     "shape": [
+      4096,
+      2
+     ]
+    },
+    "ok": true,
+    "path": "<LOCAL_PATH>",
+    "reason": ""
+   },
+   "margin": 0.9996711375895914,
+   "model_run": true,
+   "not_tuned_note": "reported as-is; amplitude 60 / thresholds / model were not adjusted",
+   "pure_class_hint": "BPSK",
+   "reason": "",
+   "reference_path": "outputs/reference_4096/BPSK.iq",
+   "reference_sha256": "e20369e47f38e351b20aef91aeae91dae8c30ab0ed79a5f45a97bfcd973a24df",
+   "rms": 59.916514488879386,
+   "score": 0.9998355685475987,
+   "scores": [
+    0.9998355685475987,
+    0.0001644309580073416,
+    4.94393906557106e-10,
+    9.865350235309219e-17
+   ],
+   "seed": 1,
+   "truth_class": "BPSK",
+   "truth_match": true
+  },
+  {
+   "accepted": true,
+   "arbitration_applied": false,
+   "classify_gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 84.78861835320879
+   },
+   "cnn_class_label": "QPSK",
+   "cnn_scores": [
+    0.02831028564876419,
+    0.9693002938858504,
+    0.0023861033483086685,
+    3.31711707675915e-06
+   ],
+   "final_label": "QPSK",
+   "gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 84.78861835320879
+   },
+   "input_context_check": {
+    "observed": {
+     "decimation": 1,
+     "format": "s16_iq_le",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "shaping": "RECT",
+     "symbol_rate_hz": 3000000
+    },
+    "ok": true,
+    "reason": ""
+   },
+   "input_iq_check": {
+    "digest": "90730f9c856b9c6bf9379e0087a875dcb219eeb8af4bfaa5259530ca192907c9",
+    "observed": {
+     "bytes": 16384,
+     "dtype": "int16",
+     "exists": true,
+     "max": 60,
+     "min": -60,
+     "shape": [
+      4096,
+      2
+     ]
+    },
+    "ok": true,
+    "path": "<LOCAL_PATH>",
+    "reason": ""
+   },
+   "margin": 0.9409900082370862,
+   "model_run": true,
+   "not_tuned_note": "reported as-is; amplitude 60 / thresholds / model were not adjusted",
+   "pure_class_hint": "QPSK",
+   "reason": "",
+   "reference_path": "outputs/reference_4096/QPSK.iq",
+   "reference_sha256": "90730f9c856b9c6bf9379e0087a875dcb219eeb8af4bfaa5259530ca192907c9",
+   "rms": 84.78861835320879,
+   "score": 0.9693002938858504,
+   "scores": [
+    0.02831028564876419,
+    0.9693002938858504,
+    0.0023861033483086685,
+    3.31711707675915e-06
+   ],
+   "seed": 37,
+   "truth_class": "QPSK",
+   "truth_match": true
+  },
+  {
+   "accepted": true,
+   "arbitration_applied": false,
+   "classify_gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 62.824717989257124
+   },
+   "cnn_class_label": "QAM16",
+   "cnn_scores": [
+    4.67788460187535e-25,
+    1.2355668050801978e-16,
+    0.8145111397374601,
+    0.18548886026253963
+   ],
+   "final_label": "QAM16",
+   "gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 62.824717989257124
+   },
+   "input_context_check": {
+    "observed": {
+     "decimation": 1,
+     "format": "s16_iq_le",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "shaping": "RECT",
+     "symbol_rate_hz": 3000000
+    },
+    "ok": true,
+    "reason": ""
+   },
+   "input_iq_check": {
+    "digest": "b90469002df9edceaa82bb143dd6d01fa903648e70051f442423ca708e6023fc",
+    "observed": {
+     "bytes": 16384,
+     "dtype": "int16",
+     "exists": true,
+     "max": 60,
+     "min": -60,
+     "shape": [
+      4096,
+      2
+     ]
+    },
+    "ok": true,
+    "path": "<LOCAL_PATH>",
+    "reason": ""
+   },
+   "margin": 0.6290222794749205,
+   "model_run": true,
+   "not_tuned_note": "reported as-is; amplitude 60 / thresholds / model were not adjusted",
+   "pure_class_hint": "QAM16",
+   "reason": "",
+   "reference_path": "outputs/reference_4096/QAM16.iq",
+   "reference_sha256": "b90469002df9edceaa82bb143dd6d01fa903648e70051f442423ca708e6023fc",
+   "rms": 62.824717989257124,
+   "score": 0.8145111397374601,
+   "scores": [
+    4.67788460187535e-25,
+    1.2355668050801978e-16,
+    0.8145111397374601,
+    0.18548886026253963
+   ],
+   "seed": 73,
+   "truth_class": "QAM16",
+   "truth_match": true
+  },
+  {
+   "accepted": false,
+   "arbitration_applied": false,
+   "classify_gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 55.2638911222513
+   },
+   "cnn_class_label": "QAM64",
+   "cnn_scores": [
+    7.382633807228978e-24,
+    1.8158269452517128e-14,
+    0.07969551684105887,
+    0.9203044831589229
+   ],
+   "final_label": "UNKNOWN",
+   "gate": {
+    "ok": true,
+    "reason": "",
+    "rms": 55.2638911222513
+   },
+   "input_context_check": {
+    "observed": {
+     "decimation": 1,
+     "format": "s16_iq_le",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "shaping": "RECT",
+     "symbol_rate_hz": 3000000
+    },
+    "ok": true,
+    "reason": ""
+   },
+   "input_iq_check": {
+    "digest": "322c973903e751edc92fd7ab728917b288a7fa5470ac8d64f62e4cd5dabc56a4",
+    "observed": {
+     "bytes": 16384,
+     "dtype": "int16",
+     "exists": true,
+     "max": 60,
+     "min": -60,
+     "shape": [
+      4096,
+      2
+     ]
+    },
+    "ok": true,
+    "path": "<LOCAL_PATH>",
+    "reason": ""
+   },
+   "margin": 0.0,
+   "model_run": true,
+   "not_tuned_note": "reported as-is; amplitude 60 / thresholds / model were not adjusted",
+   "pure_class_hint": "QAM64",
+   "reason": "below_energy_floor",
+   "reference_path": "outputs/reference_4096/QAM64.iq",
+   "reference_sha256": "322c973903e751edc92fd7ab728917b288a7fa5470ac8d64f62e4cd5dabc56a4",
+   "rms": 55.2638911222513,
+   "score": 0.0,
+   "scores": null,
+   "seed": 127,
+   "truth_class": "QAM64",
+   "truth_match": false
+  }
+ ],
+ "schema": "ml-fourclass-hardware-amp60-frozen-eval-v1",
+ "statistical_ber_acceptance": false,
+ "status": "COMPLETED",
+ "summary": {
+  "accepted": 3,
+  "correct": 3,
+  "model_evaluated": 4,
+  "note": "Amplitude-60 offline payload check; results are reported without tuning. This is not a real-RF accuracy or statistical BER result.",
+  "reasons": {
+   "": 3,
+   "below_energy_floor": 1
+  },
+  "rejected": 1,
+  "synthetic_payloads": 4,
+  "wrong": 0
+ },
+ "truth_from_manifest_not_model": true
+}

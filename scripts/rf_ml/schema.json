@@ -1,0 +1,446 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sessions",
+    "frames"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "session_id",
+          "split",
+          "origin",
+          "split_frozen_at_utc"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "split": {
+            "enum": [
+              "train",
+              "val",
+              "test"
+            ]
+          },
+          "origin": {
+            "enum": [
+              "synthetic",
+              "physical"
+            ]
+          },
+          "split_frozen_at_utc": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Explicit UTC, frozen before capture begins."
+          }
+        }
+      }
+    },
+    "frames": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "capture_id",
+          "session_id",
+          "split",
+          "origin",
+          "label",
+          "other_kind",
+          "iq_path",
+          "iq_sha256",
+          "format",
+          "samples",
+          "release_id",
+          "configuration",
+          "tx_reference",
+          "agc",
+          "captured_at_utc",
+          "completed_monotonic_s",
+          "complete",
+          "clipping_count",
+          "exclusion_reasons",
+          "augmentation_parent_id"
+        ],
+        "properties": {
+          "capture_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "session_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "split": {
+            "enum": [
+              "train",
+              "val",
+              "test"
+            ]
+          },
+          "origin": {
+            "enum": [
+              "synthetic",
+              "physical"
+            ]
+          },
+          "label": {
+            "enum": [
+              "TONE",
+              "BPSK",
+              "QPSK",
+              "QAM16",
+              "QAM64",
+              "OTHER",
+              "OFF"
+            ]
+          },
+          "other_kind": {
+            "enum": [
+              "NOISE",
+              "CHIRP",
+              "SQUARE",
+              "MIXED",
+              null
+            ]
+          },
+          "iq_path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "iq_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "format": {
+            "const": "s16_iq_le"
+          },
+          "samples": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4096
+          },
+          "release_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{32}$"
+          },
+          "configuration": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sample_rate_hz",
+              "ratio",
+              "lo_hz",
+              "bandwidth_hz"
+            ],
+            "properties": {
+              "sample_rate_hz": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100000000
+              },
+              "ratio": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 4
+              },
+              "lo_hz": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 6000000000
+              },
+              "bandwidth_hz": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100000000
+              }
+            }
+          },
+          "tx_reference": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "seed_family",
+                  "symbol_rate_hz",
+                  "shaping"
+                ],
+                "properties": {
+                  "seed_family": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256
+                  },
+                  "symbol_rate_hz": {
+                    "minimum": 1,
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "shaping": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "agc": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "mode",
+              "gain_db"
+            ],
+            "properties": {
+              "mode": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "gain_db": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          },
+          "captured_at_utc": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Host UTC wall-clock timestamp; independent of monotonic time."
+          },
+          "completed_monotonic_s": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Local monotonic completion timestamp, not daemon timestamp or wall clock."
+          },
+          "complete": {
+            "type": "boolean"
+          },
+          "clipping_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 8192
+          },
+          "exclusion_reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "augmentation_parent_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "label": {
+                  "const": "OTHER"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "other_kind": {
+                  "enum": [
+                    "NOISE",
+                    "CHIRP",
+                    "SQUARE",
+                    "MIXED"
+                  ]
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "other_kind": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "label": {
+                  "const": "OFF"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "tx_reference": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "tx_reference": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "seed_family",
+                    "symbol_rate_hz",
+                    "shaping"
+                  ],
+                  "properties": {
+                    "seed_family": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256
+                    },
+                    "symbol_rate_hz": {
+                      "minimum": 1,
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "shaping": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 256
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "label": {
+                  "enum": [
+                    "BPSK",
+                    "QPSK",
+                    "QAM16",
+                    "QAM64"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "tx_reference": {
+                  "properties": {
+                    "symbol_rate_hz": {
+                      "enum": [
+                        2000000,
+                        3000000,
+                        5000000
+                      ]
+                    },
+                    "shaping": {
+                      "enum": [
+                        "RECT",
+                        "RRC0.35"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "complete": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "samples": {
+                  "const": 4096
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "complete": {
+                      "const": false
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "clipping_count": {
+                      "minimum": 1
+                    }
+                  }
+                }
+              ]
+            },
+            "then": {
+              "properties": {
+                "exclusion_reasons": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RX training manifest version 1",
+  "description": "Schema checks structure. dataset.validate_manifest additionally verifies actual bounded IQ bytes, signed 12-bit codes, hashes, rail counts, path containment, frozen split/session/seed/augmentation integrity and all 90 coverage cells. Empty manifests and pilot integrity are not production acceptance."
+}

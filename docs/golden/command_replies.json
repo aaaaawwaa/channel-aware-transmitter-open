@@ -1,0 +1,3719 @@
+{
+ "meta": {
+  "port": "COM11",
+  "when": "2026-09-13 22:20:19",
+  "bitstream": "awg/awg.runs/impl_1/host_bd_wrapper.bit",
+  "bitstream_md5": "97e4da807bdd375f9b432f3ba2217d1f",
+  "hwh_md5": "b5e60f2c3a0b52f23a8adb58911548b7",
+  "elf": "sdk/ws2025_gem_fresh/awg_bridge/build/awg_bridge.elf",
+  "elf_md5": "3def6b9b81300c05531749ebf9381aa8",
+  "main_c_md5": "866cb70427cb3e4db97872b1cc27d6af"
+ },
+ "cases": [
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET DIGMOD FILTER RECT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET DIGMOD ROLLOFF 0.35",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET DIGMOD SEED 127",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 WAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 WAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 FREQ 1000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 FREQ 1000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 AMPL 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 AMPL 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 DUTY 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 DUTY 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 BASE 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 BASE 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 PHASE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 PHASELINK OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM1 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM1 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM2 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM2 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM3 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM3 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM4 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 HARM4 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM1 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM1 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM2 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM2 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM3 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM3 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM4 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 HARM4 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 CHAN OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 CHAN OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 NOISE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 NOISE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 TAP CLEAR",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 TAP CLEAR",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 CHAN TONE 0 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 CHAN TONE 0 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 CHAN IMPULSE 1 1 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 CHAN IMPULSE 1 1 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 CHAN COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 CHAN COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET IQIMP OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET IQIMP COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET IQIMP PHASE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET IQIMP FREQOFF 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET IQIMP GAIN 16384",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET IQIMP PHASEERR 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET DIGMOD SYMRATE 10000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 MODWAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 MODWAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 MODFREQ 10",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 MODFREQ 10",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 AMDEPTH 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 AMDEPTH 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 FMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 FMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH1 PMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults__",
+   "cmd": "SET CH2 PMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "SET CH1 WAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "SET CH1 FREQ 100000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "SET CH1 AMPL 80",
+   "reply": "OK"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE SINE FREQ 100000 AMPL 80 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "正弦默认",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "SET CH1 WAVE SQUARE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "SET CH1 DUTY 25",
+   "reply": "OK"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE SQUARE FREQ 100000 AMPL 80 DUTY 25 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "方波占空比",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "SET CH1 WAVE TRIANGLE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "SET CH1 FREQ 5000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE TRIANGLE FREQ 5000 AMPL 80 DUTY 25 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "三角/锯齿",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "SET CH1 WAVE PULSE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "SET CH1 DUTY 12",
+   "reply": "OK"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE PULSE FREQ 5000 AMPL 80 DUTY 12 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "脉冲占空比",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "SET CH1 WAVE NOISE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "SET CH1 FREQ 50000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "噪声",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "SET CH1 BASE 60",
+   "reply": "OK"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "SET CH1 HARM1 ORDER 3",
+   "reply": "OK"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "SET CH1 HARM1 AMPL 30",
+   "reply": "OK"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "SET CH1 HARM2 ORDER 2",
+   "reply": "OK"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "SET CH1 HARM2 AMPL 15",
+   "reply": "OK"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "谐波",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "SET CH1 MODE AM",
+   "reply": "OK"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "SET CH1 MODWAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "SET CH1 MODFREQ 1000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "SET CH1 AMDEPTH 60",
+   "reply": "OK"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 1000 AMDEPTH 60 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "AM",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "SET CH1 MODE FM",
+   "reply": "OK"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "SET CH1 MODFREQ 1000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "SET CH1 FMDEV 5000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 1000 AMDEPTH 60 FMDEV 5000 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "FM",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "SET CH1 MODE PM",
+   "reply": "OK"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "SET CH1 MODFREQ 500",
+   "reply": "OK"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "SET CH1 PMDEV 300",
+   "reply": "OK"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE PM MODWAVE SINE MODFREQ 500 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "PM",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "SET CH1 MODE SWEEP",
+   "reply": "OK"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "SET CH1 MODFREQ 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "SET CH1 FMDEV 10000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE SWEEP MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 10000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "扫频",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "SET CH2 WAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "SET CH2 FREQ 100000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "SET CH2 PHASE 9000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE SWEEP MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 10000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 9000 PHASELINK OFF"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "CH2 相位",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "SET CH2 PHASELINK ON",
+   "reply": "OK"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "SET CH2 PHASE 18000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE SWEEP MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 10000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "CH2 相位联动",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "SET CH1 MODE FM",
+   "reply": "OK"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "SET CH1 FMDEV 5000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "SET CH2 MODE AM",
+   "reply": "OK"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "SET CH2 AMDEPTH 80",
+   "reply": "OK"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "两通道各自调制",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "SET CH1 NOISE 30",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "SET CH1 CHAN ON",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "信道噪声",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "SET CH1 TAP 0 255 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "SET CH1 TAP 1 255 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "SET CH1 CHAN ON",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "SET CH1 CHAN COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 0 0 IMPULSE 1 1 0 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "信道多径抽头",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "SET CH1 CHAN TONE 1000000 20",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "SET CH1 CHAN ON",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "SET CH1 CHAN COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1 1 0 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "信道单音",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "SET CH1 CHAN IMPULSE 1000 8 30",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "SET CH1 CHAN ON",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "SET CH1 CHAN COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "信道冲激",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "SET IQIMP PHASE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "SET IQIMP FREQOFF 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "SET IQIMP GAIN 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "SET IQIMP PHASEERR 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "SET IQIMP ON",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "SET IQIMP COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 0 FREQOFF 0 GAIN 0 PHASEERR 0"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "IQ 单位阵",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "SET IQIMP PHASE 4500",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "SET IQIMP GAIN 20000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "SET IQIMP PHASEERR 1200",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "SET IQIMP COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 0 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "IQ 相位/增益失配",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "SET IQIMP FREQOFF 20000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "SET IQIMP COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "IQ 频偏",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "SET DIGMOD FILTER RECT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "SET DIGMOD SYMRATE 100000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "SET DIGMOD SEED 5",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "SET DIGMOD MODE BPSK",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE BPSK SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 5 SYMRATE 100000 STATE RUNNING"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "DIGMOD BPSK/RECT",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "SET DIGMOD FILTER RRC",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "SET DIGMOD ROLLOFF 0.2",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "SET DIGMOD SYMRATE 100000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "SET DIGMOD MODE QPSK",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE QPSK SOURCE PRBS7 FILTER RRC ROLLOFF 0.2 SEED 5 SYMRATE 100000 STATE RUNNING"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "DIGMOD QPSK/RRC 0.2",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "SET DIGMOD FILTER RRC",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "SET DIGMOD ROLLOFF 0.35",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "SET DIGMOD SYMRATE 200000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "SET DIGMOD MODE QAM16",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE QAM16 SOURCE PRBS7 FILTER RRC ROLLOFF 0.35 SEED 5 SYMRATE 200000 STATE RUNNING"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "DIGMOD QAM16/RRC 0.35",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "SET DIGMOD FILTER RRC",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "SET DIGMOD ROLLOFF 0.5",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "SET DIGMOD SYMRATE 50000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "SET DIGMOD MODE QAM64",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE QAM64 SOURCE PRBS7 FILTER RRC ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE RUNNING"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "DIGMOD QAM64/RRC 0.5",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "SET DIGMOD FILTER RECT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "SET DIGMOD MODE QAM4",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE QAM4 SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE RUNNING"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "DIGMOD QAM4",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "SET DIGMOD RESET",
+   "reply": "OK"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "DIGMOD 复位重同步",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "SET CH1 FREQ 1000001",
+   "reply": "ERR FREQ OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 频率",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "SET CH1 AMPL 101",
+   "reply": "ERR AMPL OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 幅度",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "SET CH1 DUTY 101",
+   "reply": "ERR DUTY OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 占空比",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "SET CH2 PHASE 36001",
+   "reply": "ERR PHASE OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 相位",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "SET CH1 HARM1 ORDER 21",
+   "reply": "ERR HARM ORDER OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 谐波",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "SET CH1 PMDEV 512",
+   "reply": "ERR PMDEV OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: PM 偏移",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "SET CH1 NOISE 101",
+   "reply": "ERR NOISE OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 噪声",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "SET CH1 TAP 4 255 0",
+   "reply": "ERR BAD VALUE"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 抽头位置",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "SET CH1 TAP 0 256 0",
+   "reply": "ERR TAP OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 抽头增益",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "SET DIGMOD SYMRATE 1000001",
+   "reply": "ERR SYMRATE OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 符号率",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "SET DIGMOD ROLLOFF 0.4",
+   "reply": "ERR BAD VALUE"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 滚降",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "SET DIGMOD SEED 200",
+   "reply": "ERR SEED OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: seed",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "SET CH1 MODE ON",
+   "reply": "ERR MODE OUT OF RANGE"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "越界: 模式名",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "SET CH1 BOGUS 1",
+   "reply": "ERR BAD FIELD"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "错误: 未知字段",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "SET CH1 WAVE BOGUS",
+   "reply": "ERR BAD VALUE"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "错误: 非法波形名",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "SET CH1 FREQ abc",
+   "reply": "ERR BAD VALUE"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "错误: 非数字参数",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "SET CH3 FREQ 1000",
+   "reply": "ERR BAD CHANNEL"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "错误: 不存在的通道",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "SET CH1 FREQ",
+   "reply": "ERR BAD CHANNEL"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "错误: 缺参数",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET",
+   "reply": "ERR BAD CHANNEL"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE NOISE FREQ 50000 AMPL 80 DUTY 12 BASE 57 H1 3 28 H2 2 14 H3 0 0 H4 0 0 MODE FM MODWAVE SINE MODFREQ 100 AMDEPTH 60 FMDEV 5000 PMDEV 300 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 100000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE AM MODWAVE SINE MODFREQ 10 AMDEPTH 80 FMDEV 0 PMDEV 0 PHASE 18000 PHASELINK ON"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN ON NOISE 30 TONE 1000000 20 IMPULSE 1000 8 30 TAP0 255 0 TAP1 255 50 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP ON PHASE 4500 FREQOFF 20000 GAIN 20000 PHASEERR 1200"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.5 SEED 5 SYMRATE 50000 STATE STOPPED"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "错误: 空的 GET",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET DIGMOD MODE OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET DIGMOD FILTER RECT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET DIGMOD ROLLOFF 0.35",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET DIGMOD SEED 127",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 WAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 WAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 FREQ 1000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 FREQ 1000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 AMPL 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 AMPL 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 DUTY 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 DUTY 50",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 BASE 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 BASE 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 PHASE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 PHASELINK OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM1 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM1 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM2 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM2 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM3 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM3 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM4 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 HARM4 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM1 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM1 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM2 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM2 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM3 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM3 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM4 ORDER 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 HARM4 AMPL 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 CHAN OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 CHAN OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 NOISE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 NOISE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 TAP CLEAR",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 TAP CLEAR",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 CHAN TONE 0 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 CHAN TONE 0 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 CHAN IMPULSE 1 1 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 CHAN IMPULSE 1 1 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 CHAN COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 CHAN COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET IQIMP OFF",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET IQIMP COMMIT",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET IQIMP PHASE 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET IQIMP FREQOFF 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET IQIMP GAIN 16384",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET IQIMP PHASEERR 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET DIGMOD SYMRATE 10000",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 MODWAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 MODWAVE SINE",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 MODFREQ 10",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 MODFREQ 10",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 AMDEPTH 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 AMDEPTH 100",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 FMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 FMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH1 PMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__restore__",
+   "cmd": "SET CH2 PMDEV 0",
+   "reply": "OK"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET CH1",
+   "reply": "CH1 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 70 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET CH2",
+   "reply": "CH2 WAVE SINE FREQ 1000 AMPL 50 DUTY 50 BASE 100 H1 0 0 H2 0 0 H3 0 0 H4 0 0 MODE OFF MODWAVE SINE MODFREQ 10 AMDEPTH 100 FMDEV 0 PMDEV 0 PHASE 0 PHASELINK OFF"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET CH1 CHAN",
+   "reply": "CH1 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET CH2 CHAN",
+   "reply": "CH2 CHAN OFF NOISE 0 TONE 0 0 IMPULSE 1 1 0 TAP0 0 0 TAP1 0 0 TAP2 0 0 TAP3 0 0"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET IQIMP",
+   "reply": "IQIMP OFF PHASE 0 FREQOFF 0 GAIN 16384 PHASEERR 0"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET DIGMOD",
+   "reply": "DIGMOD MODE OFF SOURCE PRBS7 FILTER RECT ROLLOFF 0.35 SEED 127 SYMRATE 10000 STATE STOPPED"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET USERBUF",
+   "reply": "USERBUF VALID 0 LENGTH 0 CRC 0000 BANK 0 UPLOAD IDLE LOOP OFF COMMIT_SEEN 0 READY 0 DONE 0 UNDERFLOW 0"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET DDR PP",
+   "reply": "DDR PP ACTIVE 0 ACTIVE_BANK NONE NEXT_BANK NONE STATE IDLE ERROR 00 BANK0 VALID 0 LENGTH 0 CRC 0000 BANK1 VALID 0 LENGTH 0 CRC 0000"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET PLAY",
+   "reply": "PLAY STATE IDLE FRAME_DONE 0 UNDERFLOW 0 TRIGGER_SEEN 0 STOP_PENDING 0 ERROR_VALID 0 REPEAT_REMAINING 0 ERROR 00"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET DMA",
+   "reply": "DMA BASE 40400000 BUFFER 02200000 BYTES 65536 STATUS 00000000 STATE NOT_INIT"
+  },
+  {
+   "scenario": "__defaults_state__",
+   "cmd": "GET NET",
+   "reply": "NET GEM0 INIT 1 LINK UP IP 192.0.2.10 UDP 40100"
+  }
+ ]
+}

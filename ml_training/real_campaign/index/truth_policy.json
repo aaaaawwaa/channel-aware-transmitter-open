@@ -1,0 +1,17 @@
+{
+ "schema": "ml-real-campaign-truth-policy-v1",
+ "allowed_truth_sources": [
+  "explicit signal config",
+  "independent experiment record",
+  "synthetic generator (fixtures only)"
+ ],
+ "forbidden_truth_sources": [
+  "model prediction",
+  "environment label"
+ ],
+ "modulation_truth_fields": [
+  "demod_result.submitted.config.mode",
+  "scenario_declaration / trainval.truth (scenario only)"
+ ],
+ "note": "model_result and environment labels are imported only as non-truth diagnostics; they never become a truth class"
+}

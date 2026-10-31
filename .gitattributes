@@ -1,0 +1,14 @@
+# This repository is a byte-stable source snapshot: SHARE-MANIFEST.json records
+# SHA-256 of the exported files and rf_overlay/sw/board_app/vendor/SHA256SUMS
+# records the verbatim third-party copies, so Git must not convert line endings
+# on check-in or check-out on any platform.
+* -text
+
+# Executed on Linux: CRLF breaks /bin/sh even when hashes match. The export is
+# already LF, so this rule is a no-op on the committed bytes.
+*.sh text eol=lf
+*.service text eol=lf
+
+# Evidence hashes refer to original bytes; raw evidence is not part of this
+# snapshot, but keep the rule for development branches.
+evidence/** -text

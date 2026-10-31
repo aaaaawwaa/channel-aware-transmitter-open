@@ -1,0 +1,84 @@
+{
+ "target": {
+  "python": "3.8.x",
+  "numpy": "1.17.4",
+  "machine": "ARMv7l"
+ },
+ "host": {
+  "python": "3.12.10",
+  "numpy": "2.5.4"
+ },
+ "python_syntax_3_8_ok": true,
+ "syntax_errors": [],
+ "imports": {
+  "ml_training/arm_probe/run_replay.py": [
+   "__future__",
+   "argparse",
+   "hashlib",
+   "json",
+   "numpy",
+   "pathlib",
+   "platform",
+   "runtime",
+   "sys"
+  ],
+  "ml_training/arm_probe/runtime/__init__.py": [],
+  "ml_training/arm_probe/runtime/baseline.py": [
+   "__future__",
+   "hashlib",
+   "json",
+   "numpy",
+   "pathlib"
+  ],
+  "ml_training/arm_probe/runtime/features.py": [
+   "__future__",
+   "numpy"
+  ],
+  "ml_training/arm_probe/runtime/gate.py": [
+   "__future__",
+   "numpy"
+  ],
+  "ml_training/arm_probe/runtime/iq.py": [
+   "__future__",
+   "hashlib",
+   "numpy",
+   "pathlib"
+  ],
+  "ml_training/arm_probe/runtime/numpy_runtime.py": [
+   "__future__",
+   "json",
+   "math",
+   "numpy",
+   "pathlib"
+  ],
+  "ml_training/arm_probe/runtime/predictor.py": [
+   "__future__",
+   "hashlib",
+   "json",
+   "numpy",
+   "pathlib"
+  ],
+  "ml_training/arm_probe/runtime/preprocess.py": [
+   "__future__",
+   "numpy"
+  ],
+  "ml_training/arm_probe/runtime/spectral.py": [
+   "__future__",
+   "numpy"
+  ],
+  "ml_training/arm_probe/arm/run_arm_probe.py": [
+   "__future__",
+   "argparse",
+   "json",
+   "numpy",
+   "pathlib",
+   "platform",
+   "runtime",
+   "sys",
+   "time"
+  ]
+ },
+ "banned_imports_found": [],
+ "pure_numpy_only": true,
+ "note": "static syntax/import check only; runtime numeric equality on ARM must be verified by the bounded replay/timing probe"
+}

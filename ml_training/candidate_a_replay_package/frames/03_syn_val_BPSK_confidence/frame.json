@@ -1,0 +1,94 @@
+{
+  "package": "candidate_a_replay_package",
+  "frame_id": "03_syn_val_BPSK_confidence",
+  "category": "A_confidence_reject",
+  "synthetic": true,
+  "real_capture": false,
+  "source": {
+    "dataset": "sim-v1",
+    "split": "val",
+    "index": 158,
+    "session_id": "val-BPSK-val-b",
+    "seed_family": "val-b"
+  },
+  "conditions": {
+    "snr_db": -3.613651990890503,
+    "cfo_hz": -13134.2822265625,
+    "amplitude_codes": 296,
+    "window_offset": 16,
+    "phase_rad": 4.713899612426758,
+    "session_id": "val-BPSK-val-b",
+    "seed_family": "val-b"
+  },
+  "truth_class": "BPSK",
+  "iq_sha256": "96c8a77fb0768cfb9ea119d3a3b235363f652a8e7e3c674bb6d471eb4c2e9a25",
+  "iq_bytes": 16384,
+  "iq_file": "frame.iq",
+  "original": {
+    "label": "BPSK",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      0.5586652316051991,
+      0.39417390807711955,
+      0.03295441427271193,
+      0.014206446044969408
+    ],
+    "path": {
+      "stage": "cnn_top1",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 544.7028779537324
+      },
+      "scores": [
+        0.5586652316051991,
+        0.39417390807711955,
+        0.03295441427271193,
+        0.014206446044969408
+      ],
+      "baseline_scores": [
+        0.4123301864557359,
+        0.07776140446065838,
+        0.2950230615081476,
+        0.2148853475754581
+      ],
+      "cnn_label": "BPSK",
+      "baseline_label": "BPSK",
+      "arbitration_margin_bpsk_minus_qpsk": 0.3345687819950775,
+      "arbitration_applied": false,
+      "final": "BPSK"
+    }
+  },
+  "A": {
+    "label": "UNKNOWN",
+    "reason": "confidence",
+    "accepted": false,
+    "scores": [
+      0.2573463867110297,
+      0.26032881814308256,
+      0.31297151718363403,
+      0.1693532779622536
+    ],
+    "path": {
+      "stage": "confidence",
+      "reason": "confidence",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 544.7028779537324
+      },
+      "scores": [
+        0.2573463867110297,
+        0.26032881814308256,
+        0.31297151718363403,
+        0.1693532779622536
+      ],
+      "score": 0.31297151718363403,
+      "margin": 0.052642699040551466
+    }
+  },
+  "error_outputs_preserved": true,
+  "note": "existing synthetic frame; not generated here; not performance acceptance"
+}

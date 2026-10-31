@@ -1,0 +1,34 @@
+{
+ "schema": "ml-real-campaign-fixture-v1",
+ "synthetic": true,
+ "purpose": "duplicate_same_session",
+ "kind": "clean",
+ "scenario": "synthetic",
+ "session_id": "synthetic-sim-smoke-BPSK",
+ "split": "TEST",
+ "iq_file": "dup-session-b.iq",
+ "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+ "context": {
+  "format": "s16_iq_le",
+  "samples": 4096,
+  "sample_rate_hz": 60000000,
+  "decimation": 1,
+  "symbol_rate_hz": 3000000,
+  "shaping": "RECT"
+ },
+ "truth_source": "synthetic_generator",
+ "truth_class": "BPSK",
+ "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+ "expected_import_status": "OK",
+ "expected_reason": null,
+ "non_truth_labels": {},
+ "dataset": {
+  "dataset_id": "sim-smoke",
+  "manifest_path": "ml_training/datasets/sim-smoke/manifest.json",
+  "manifest_sha256": "d932e887e18a8c68e2f58d4231b54785588350cdb675d20b83fc60a7ee88a6b7",
+  "reference_check_path": "ml_training/data/reports/reference-check-smoke.json",
+  "reference_check_sha256": "8d064de329adf04914d6ea4762b64e32ca82383fd4f2360adce39df0348b1001"
+ },
+ "not_a_real_capture": true,
+ "source_frame_id": "test-BPSK-snr+10-test-a-0000"
+}

@@ -1,0 +1,6451 @@
+{
+ "schema": "ml-real-campaign-index-v1",
+ "generated_utc": "2026-10-21T12:52:58Z",
+ "counts": {
+  "records": 82,
+  "real": 71,
+  "synthetic": 11,
+  "invalid": 4,
+  "real_invalid": 0
+ },
+ "sources": [
+  "campaign3-2026-10-18",
+  "campaign4-2026-10-18",
+  "campaign5-2026-10-18",
+  "synthetic-fixtures",
+  "teaching-2026-10-21"
+ ],
+ "records": [
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-01",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-01.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-01.json",
+   "iq_sha256": "ec2d04281aa9c3dcc29a88ff2d2ccbf6fa36597b05f304ac2e60e4b387a6f25e",
+   "metadata_iq_sha256": "ec2d04281aa9c3dcc29a88ff2d2ccbf6fa36597b05f304ac2e60e4b387a6f25e",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9760852170687406,
+    "cnn_scores": [
+     0.021643812870270614,
+     0.9760852170687406,
+     0.002266121370056313,
+     4.848690932444648e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-02",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-02.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-02.json",
+   "iq_sha256": "28e6c31639b61a873491d3276b7ff6dc8a1060fedab2b1a956ed75972cb8dbb6",
+   "metadata_iq_sha256": "28e6c31639b61a873491d3276b7ff6dc8a1060fedab2b1a956ed75972cb8dbb6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9498047953901659,
+    "cnn_scores": [
+     0.04850260685276377,
+     0.9498047953901659,
+     0.001690500623589863,
+     2.097133480360888e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-03",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-03.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-03.json",
+   "iq_sha256": "8f2d368c657c0cab743a733f49dcb96a3a53a615f12e69d14549a377f02110e4",
+   "metadata_iq_sha256": "8f2d368c657c0cab743a733f49dcb96a3a53a615f12e69d14549a377f02110e4",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9745683082249504,
+    "cnn_scores": [
+     0.02325139876154893,
+     0.9745683082249504,
+     0.002175257399548828,
+     5.03561395190547e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-04",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-04.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-04.json",
+   "iq_sha256": "96f9e636c9516144fdec98a80238dea03d4033952409a1bb54e71030b6e138a6",
+   "metadata_iq_sha256": "96f9e636c9516144fdec98a80238dea03d4033952409a1bb54e71030b6e138a6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9603080216648161,
+    "cnn_scores": [
+     0.03803925068317354,
+     0.9603080216648161,
+     0.0016503211367217313,
+     2.4065152885865167e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-05",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-05.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-05.json",
+   "iq_sha256": "6fc37ea6aecb1063ae9f5c5b84eafb35715f6d95b535289a91ba67df2de14eb6",
+   "metadata_iq_sha256": "6fc37ea6aecb1063ae9f5c5b84eafb35715f6d95b535289a91ba67df2de14eb6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9447027903315819,
+    "cnn_scores": [
+     0.053756438875634,
+     0.9447027903315819,
+     0.0015395024004809395,
+     1.268392303107488e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-06",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-06.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-06.json",
+   "iq_sha256": "92b0ed2afaa1dbe80f0349c026b90545c62a93bc7b9de1ed5ddd2b73a9e5d011",
+   "metadata_iq_sha256": "92b0ed2afaa1dbe80f0349c026b90545c62a93bc7b9de1ed5ddd2b73a9e5d011",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9122359437187173,
+    "cnn_scores": [
+     0.08693358234824852,
+     0.9122359437187173,
+     0.0008293432612598048,
+     1.1306717744638987e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-07",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-07.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-07.json",
+   "iq_sha256": "2fd1d1029618929ec910b9e712113d6c045925ee95cd23f14c78f458c762347e",
+   "metadata_iq_sha256": "2fd1d1029618929ec910b9e712113d6c045925ee95cd23f14c78f458c762347e",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9522298039583492,
+    "cnn_scores": [
+     0.04623125559155723,
+     0.9522298039583492,
+     0.0015368249674132908,
+     2.1154826802891336e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-08",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-08.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-08.json",
+   "iq_sha256": "85d491b2bd87586ab0bf6457a274661a7802b367fc609cd5f108a98843de24bc",
+   "metadata_iq_sha256": "85d491b2bd87586ab0bf6457a274661a7802b367fc609cd5f108a98843de24bc",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8736636316971405,
+    "cnn_scores": [
+     0.12575615616008642,
+     0.8736636316971405,
+     0.0005789414547550415,
+     1.2706880180283715e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-09",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-09.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-09.json",
+   "iq_sha256": "e3a3ef9724f451f711d6fb6479f1095aa7f3fa99bb640e8362c33391f2bd7001",
+   "metadata_iq_sha256": "e3a3ef9724f451f711d6fb6479f1095aa7f3fa99bb640e8362c33391f2bd7001",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9483141792879403,
+    "cnn_scores": [
+     0.05021602651009582,
+     0.9483141792879403,
+     0.0014670956602402785,
+     2.6985417238514345e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/normal-10",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-10.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-10.json",
+   "iq_sha256": "8bb410c4dcd8645ff7ebf5fdbb809225176fc38c9201e71766bc4d5555b498ba",
+   "metadata_iq_sha256": "8bb410c4dcd8645ff7ebf5fdbb809225176fc38c9201e71766bc4d5555b498ba",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9538393937644593,
+    "cnn_scores": [
+     0.04471857795395164,
+     0.9538393937644593,
+     0.0014404055514544165,
+     1.6227301346136233e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign3-2026-10-18/train-01/off-01",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign3-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "quality",
+   "scenario": "off",
+   "truth_class": "OFF",
+   "truth_source": "experiment_record",
+   "truth_detail": "trainval.truth=off",
+   "physical": false,
+   "iq_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/off-01.iq",
+   "metadata_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/off-01.json",
+   "iq_sha256": "d9623f13874203a8f15b14b3350a7d6803da1b08dc76f26b49b8506d670a7d4f",
+   "metadata_iq_sha256": "d9623f13874203a8f15b14b3350a7d6803da1b08dc76f26b49b8506d670a7d4f",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+    "boot_declared": true,
+    "declaration_release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+    "declaration_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+    "declaration_sha256": "995d68051c6bf112793c2cf3325847ccadc39cf33fc4e47c33e596ecb3355946"
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "UNKNOWN",
+    "accepted": false,
+    "reason": "noise_like",
+    "arbitration_applied": false,
+    "score": 0.0,
+    "cnn_scores": [
+     0.0001562413811297725,
+     0.08343028398174826,
+     0.3189813245968468,
+     0.5974321500402752
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-01",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-01.json",
+   "iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826",
+   "metadata_iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8765601615172245,
+    "cnn_scores": [
+     0.8765601615172245,
+     0.12342437259687704,
+     1.5465766827829003e-05,
+     1.190705620974573e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-02",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-02.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-02.json",
+   "iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0",
+   "metadata_iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7189991565664287,
+    "cnn_scores": [
+     0.7189991565664287,
+     0.28094183646548354,
+     5.900617149452821e-05,
+     7.965931909758253e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-03",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-03.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-03.json",
+   "iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84",
+   "metadata_iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7105884385432537,
+    "cnn_scores": [
+     0.7105884385432537,
+     0.2893455304933115,
+     6.603011125209287e-05,
+     8.52182737718928e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-04",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-04.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-04.json",
+   "iq_sha256": "6a53871c06e3193d65ebec7a3dbfdd19fee47fe04451d84ec8e81985b1d84d60",
+   "metadata_iq_sha256": "6a53871c06e3193d65ebec7a3dbfdd19fee47fe04451d84ec8e81985b1d84d60",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8370129698344851,
+    "cnn_scores": [
+     0.8370129698344851,
+     0.16296441264204206,
+     2.2617298391180556e-05,
+     2.2508167320287167e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-05",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-05.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-05.json",
+   "iq_sha256": "aa0194e6f30b46e6420831b81835e58f1edc4317d01ece4b9f6cf4b47db4eb64",
+   "metadata_iq_sha256": "aa0194e6f30b46e6420831b81835e58f1edc4317d01ece4b9f6cf4b47db4eb64",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8735229746124278,
+    "cnn_scores": [
+     0.8735229746124278,
+     0.12646141864219354,
+     1.5606624015114564e-05,
+     1.2136362220274224e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-06",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-06.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-06.json",
+   "iq_sha256": "81dd54d690a29d5b49a0c3996178529e3c8c485cbc4acb5411a972e82c5ee11a",
+   "metadata_iq_sha256": "81dd54d690a29d5b49a0c3996178529e3c8c485cbc4acb5411a972e82c5ee11a",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7666131125998085,
+    "cnn_scores": [
+     0.7666131125998085,
+     0.23334091120693953,
+     4.5975689145099025e-05,
+     5.041068377352275e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-07",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-07.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-07.json",
+   "iq_sha256": "0bcc24ef1652346be62d6d4d90d63752d26e5b1c75ce2624648a3d1059848f8b",
+   "metadata_iq_sha256": "0bcc24ef1652346be62d6d4d90d63752d26e5b1c75ce2624648a3d1059848f8b",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8499614745544152,
+    "cnn_scores": [
+     0.8499614745544152,
+     0.15001895682846164,
+     1.956844050836114e-05,
+     1.7661491997782651e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-08",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-08.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-08.json",
+   "iq_sha256": "d6171f8191ff9647be729e390de921b4899ef3b2545ed8c5416aeacde78959cf",
+   "metadata_iq_sha256": "d6171f8191ff9647be729e390de921b4899ef3b2545ed8c5416aeacde78959cf",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.9088813816722168,
+    "cnn_scores": [
+     0.9088813816722168,
+     0.091110170876591,
+     8.44739179007022e-06,
+     5.940221068424931e-11
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-09",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-09.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-09.json",
+   "iq_sha256": "cd7d2fd93c4b79dec962a58b6de5620a56bf46413cf4f907cd7da57d05a28bf6",
+   "metadata_iq_sha256": "cd7d2fd93c4b79dec962a58b6de5620a56bf46413cf4f907cd7da57d05a28bf6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.916311093647639,
+    "cnn_scores": [
+     0.916311093647639,
+     0.0836817226690983,
+     7.183634292680202e-06,
+     4.897002604758224e-11
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/normal-10",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-10.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-10.json",
+   "iq_sha256": "698a2e04d021cc9add35c7f6ea2b7ac6629a7a14ff3abeb3519c7423cbdcdc94",
+   "metadata_iq_sha256": "698a2e04d021cc9add35c7f6ea2b7ac6629a7a14ff3abeb3519c7423cbdcdc94",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.808271742400368,
+    "cnn_scores": [
+     0.808271742400368,
+     0.19169943537890277,
+     2.882189014332919e-05,
+     3.305857323295023e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-01/off-01",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign4-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "quality",
+   "scenario": "off",
+   "truth_class": "OFF",
+   "truth_source": "experiment_record",
+   "truth_detail": "trainval.truth=off",
+   "physical": false,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/off-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/off-01.json",
+   "iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9",
+   "metadata_iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "UNKNOWN",
+    "accepted": false,
+    "reason": "noise_like",
+    "arbitration_applied": false,
+    "score": 0.0,
+    "cnn_scores": [
+     0.002380243806171223,
+     0.19784436699531427,
+     0.43083862325414,
+     0.36893676594437447
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-01",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-01.json",
+   "iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b",
+   "metadata_iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8246143430564032,
+    "cnn_scores": [
+     0.174204556610405,
+     0.8246143430564032,
+     0.0011808788309006933,
+     2.2150229117157988e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-02",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-02.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-02.json",
+   "iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d",
+   "metadata_iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.6790064868083286,
+    "cnn_scores": [
+     0.32031063054705905,
+     0.6790064868083286,
+     0.0006828057514915006,
+     7.689312079072098e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-03",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-03.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-03.json",
+   "iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b",
+   "metadata_iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.6066491549390236,
+    "cnn_scores": [
+     0.39292461648314025,
+     0.6066491549390236,
+     0.00042618365829011427,
+     4.491954595661777e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-04",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-04.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-04.json",
+   "iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17",
+   "metadata_iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8139245182735483,
+    "cnn_scores": [
+     0.18500780273117262,
+     0.8139245182735483,
+     0.0010674660918347338,
+     2.1290344437069543e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-05",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-05.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-05.json",
+   "iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8",
+   "metadata_iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7733467839542294,
+    "cnn_scores": [
+     0.2258396815575159,
+     0.7733467839542294,
+     0.0008133756498421994,
+     1.5883841239407572e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-06",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-06.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-06.json",
+   "iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3",
+   "metadata_iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7687620278735369,
+    "cnn_scores": [
+     0.2302016489425116,
+     0.7687620278735369,
+     0.0010361850639778398,
+     1.3811997353816546e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-07",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-07.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-07.json",
+   "iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8",
+   "metadata_iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8761858417385969,
+    "cnn_scores": [
+     0.12197999357635185,
+     0.8761858417385969,
+     0.0018337919051808378,
+     3.7277987037169594e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-08",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-08.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-08.json",
+   "iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562",
+   "metadata_iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7155626290537318,
+    "cnn_scores": [
+     0.2837265045924132,
+     0.7155626290537318,
+     0.00071078145007433,
+     8.490378066629263e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-09",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-09.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-09.json",
+   "iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772",
+   "metadata_iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7577774209497495,
+    "cnn_scores": [
+     0.24136228214130306,
+     0.7577774209497495,
+     0.0008601796032085157,
+     1.1730573892035963e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/normal-10",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-10.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-10.json",
+   "iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260",
+   "metadata_iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.5276828202898632,
+    "cnn_scores": [
+     0.47205375766467245,
+     0.5276828202898632,
+     0.0002633882350539685,
+     3.3810410288602066e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/train-02/off-01",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign4-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "quality",
+   "scenario": "off",
+   "truth_class": "OFF",
+   "truth_source": "experiment_record",
+   "truth_detail": "trainval.truth=off",
+   "physical": false,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/off-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/off-01.json",
+   "iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d",
+   "metadata_iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "UNKNOWN",
+    "accepted": false,
+    "reason": "noise_like",
+    "arbitration_applied": false,
+    "score": 0.0,
+    "cnn_scores": [
+     0.0028777097630487774,
+     0.20601692101013624,
+     0.4056866653204933,
+     0.38541870390632166
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign4-2026-10-18/val-01/normal-01",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign4-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/val-01/normal-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/val-01/normal-01.json",
+   "iq_sha256": "18b70f5ea92d8bdb3da5765c2216596a74ecff3f66cd269b3e6a609481b58fb8",
+   "metadata_iq_sha256": "18b70f5ea92d8bdb3da5765c2216596a74ecff3f66cd269b3e6a609481b58fb8",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.5866378135239395,
+    "cnn_scores": [
+     0.5866378135239395,
+     0.4132699889871037,
+     9.219495418920378e-05,
+     2.534767723125987e-09
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-01.json",
+   "iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826",
+   "metadata_iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8765601615172245,
+    "cnn_scores": [
+     0.8765601615172245,
+     0.12342437259687704,
+     1.5465766827829003e-05,
+     1.190705620974573e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-02",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-02.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-02.json",
+   "iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0",
+   "metadata_iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7189991565664287,
+    "cnn_scores": [
+     0.7189991565664287,
+     0.28094183646548354,
+     5.900617149452821e-05,
+     7.965931909758253e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-03",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-03.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-03.json",
+   "iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84",
+   "metadata_iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7105884385432537,
+    "cnn_scores": [
+     0.7105884385432537,
+     0.2893455304933115,
+     6.603011125209287e-05,
+     8.52182737718928e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-04",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-04.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-04.json",
+   "iq_sha256": "6a53871c06e3193d65ebec7a3dbfdd19fee47fe04451d84ec8e81985b1d84d60",
+   "metadata_iq_sha256": "6a53871c06e3193d65ebec7a3dbfdd19fee47fe04451d84ec8e81985b1d84d60",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8370129698344851,
+    "cnn_scores": [
+     0.8370129698344851,
+     0.16296441264204206,
+     2.2617298391180556e-05,
+     2.2508167320287167e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-05",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-05.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-05.json",
+   "iq_sha256": "aa0194e6f30b46e6420831b81835e58f1edc4317d01ece4b9f6cf4b47db4eb64",
+   "metadata_iq_sha256": "aa0194e6f30b46e6420831b81835e58f1edc4317d01ece4b9f6cf4b47db4eb64",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8735229746124278,
+    "cnn_scores": [
+     0.8735229746124278,
+     0.12646141864219354,
+     1.5606624015114564e-05,
+     1.2136362220274224e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-06",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-06.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-06.json",
+   "iq_sha256": "81dd54d690a29d5b49a0c3996178529e3c8c485cbc4acb5411a972e82c5ee11a",
+   "metadata_iq_sha256": "81dd54d690a29d5b49a0c3996178529e3c8c485cbc4acb5411a972e82c5ee11a",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7666131125998085,
+    "cnn_scores": [
+     0.7666131125998085,
+     0.23334091120693953,
+     4.5975689145099025e-05,
+     5.041068377352275e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-07",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-07.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-07.json",
+   "iq_sha256": "0bcc24ef1652346be62d6d4d90d63752d26e5b1c75ce2624648a3d1059848f8b",
+   "metadata_iq_sha256": "0bcc24ef1652346be62d6d4d90d63752d26e5b1c75ce2624648a3d1059848f8b",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8499614745544152,
+    "cnn_scores": [
+     0.8499614745544152,
+     0.15001895682846164,
+     1.956844050836114e-05,
+     1.7661491997782651e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-08",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-08.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-08.json",
+   "iq_sha256": "d6171f8191ff9647be729e390de921b4899ef3b2545ed8c5416aeacde78959cf",
+   "metadata_iq_sha256": "d6171f8191ff9647be729e390de921b4899ef3b2545ed8c5416aeacde78959cf",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.9088813816722168,
+    "cnn_scores": [
+     0.9088813816722168,
+     0.091110170876591,
+     8.44739179007022e-06,
+     5.940221068424931e-11
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-09",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-09.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-09.json",
+   "iq_sha256": "cd7d2fd93c4b79dec962a58b6de5620a56bf46413cf4f907cd7da57d05a28bf6",
+   "metadata_iq_sha256": "cd7d2fd93c4b79dec962a58b6de5620a56bf46413cf4f907cd7da57d05a28bf6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.916311093647639,
+    "cnn_scores": [
+     0.916311093647639,
+     0.0836817226690983,
+     7.183634292680202e-06,
+     4.897002604758224e-11
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/normal-10",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-10.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-10.json",
+   "iq_sha256": "698a2e04d021cc9add35c7f6ea2b7ac6629a7a14ff3abeb3519c7423cbdcdc94",
+   "metadata_iq_sha256": "698a2e04d021cc9add35c7f6ea2b7ac6629a7a14ff3abeb3519c7423cbdcdc94",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.808271742400368,
+    "cnn_scores": [
+     0.808271742400368,
+     0.19169943537890277,
+     2.882189014332919e-05,
+     3.305857323295023e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-01/off-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "session_key": "campaign5-2026-10-18/train-01",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "quality",
+   "scenario": "off",
+   "truth_class": "OFF",
+   "truth_source": "experiment_record",
+   "truth_detail": "trainval.truth=off",
+   "physical": false,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/off-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/off-01.json",
+   "iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9",
+   "metadata_iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "evaluation": {
+    "final_label": "UNKNOWN",
+    "accepted": false,
+    "reason": "noise_like",
+    "arbitration_applied": false,
+    "score": 0.0,
+    "cnn_scores": [
+     0.002380243806171223,
+     0.19784436699531427,
+     0.43083862325414,
+     0.36893676594437447
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-01.json",
+   "iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b",
+   "metadata_iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8246143430564032,
+    "cnn_scores": [
+     0.174204556610405,
+     0.8246143430564032,
+     0.0011808788309006933,
+     2.2150229117157988e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-02",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-02.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-02.json",
+   "iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d",
+   "metadata_iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.6790064868083286,
+    "cnn_scores": [
+     0.32031063054705905,
+     0.6790064868083286,
+     0.0006828057514915006,
+     7.689312079072098e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-03",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-03.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-03.json",
+   "iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b",
+   "metadata_iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.6066491549390236,
+    "cnn_scores": [
+     0.39292461648314025,
+     0.6066491549390236,
+     0.00042618365829011427,
+     4.491954595661777e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-04",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-04.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-04.json",
+   "iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17",
+   "metadata_iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8139245182735483,
+    "cnn_scores": [
+     0.18500780273117262,
+     0.8139245182735483,
+     0.0010674660918347338,
+     2.1290344437069543e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-05",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-05.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-05.json",
+   "iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8",
+   "metadata_iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7733467839542294,
+    "cnn_scores": [
+     0.2258396815575159,
+     0.7733467839542294,
+     0.0008133756498421994,
+     1.5883841239407572e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-06",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-06.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-06.json",
+   "iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3",
+   "metadata_iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7687620278735369,
+    "cnn_scores": [
+     0.2302016489425116,
+     0.7687620278735369,
+     0.0010361850639778398,
+     1.3811997353816546e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-07",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-07.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-07.json",
+   "iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8",
+   "metadata_iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8761858417385969,
+    "cnn_scores": [
+     0.12197999357635185,
+     0.8761858417385969,
+     0.0018337919051808378,
+     3.7277987037169594e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-08",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-08.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-08.json",
+   "iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562",
+   "metadata_iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7155626290537318,
+    "cnn_scores": [
+     0.2837265045924132,
+     0.7155626290537318,
+     0.00071078145007433,
+     8.490378066629263e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-09",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-09.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-09.json",
+   "iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772",
+   "metadata_iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.7577774209497495,
+    "cnn_scores": [
+     0.24136228214130306,
+     0.7577774209497495,
+     0.0008601796032085157,
+     1.1730573892035963e-07
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/normal-10",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-10.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-10.json",
+   "iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260",
+   "metadata_iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.5276828202898632,
+    "cnn_scores": [
+     0.47205375766467245,
+     0.5276828202898632,
+     0.0002633882350539685,
+     3.3810410288602066e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/train-02/off-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "session_key": "campaign5-2026-10-18/train-02",
+   "split": "TRAIN",
+   "synthetic": false,
+   "kind": "quality",
+   "scenario": "off",
+   "truth_class": "OFF",
+   "truth_source": "experiment_record",
+   "truth_detail": "trainval.truth=off",
+   "physical": false,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/off-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/off-01.json",
+   "iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d",
+   "metadata_iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 37
+   },
+   "evaluation": {
+    "final_label": "UNKNOWN",
+    "accepted": false,
+    "reason": "noise_like",
+    "arbitration_applied": false,
+    "score": 0.0,
+    "cnn_scores": [
+     0.0028777097630487774,
+     0.20601692101013624,
+     0.4056866653204933,
+     0.38541870390632166
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-01.json",
+   "iq_sha256": "30b5e62a81b11f80ee7b71509504a25c3998b89cc8178b2c7e550e762de1dadb",
+   "metadata_iq_sha256": "30b5e62a81b11f80ee7b71509504a25c3998b89cc8178b2c7e550e762de1dadb",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8979646623032148,
+    "cnn_scores": [
+     0.8979646623032148,
+     0.10202698496355136,
+     8.352655393675344e-06,
+     7.784013981582543e-11
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-02",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-02.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-02.json",
+   "iq_sha256": "c7d77f0e9561c118b41d63545740ec4e4b3751a68e0acd97657428d4680b7595",
+   "metadata_iq_sha256": "c7d77f0e9561c118b41d63545740ec4e4b3751a68e0acd97657428d4680b7595",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8547494682028349,
+    "cnn_scores": [
+     0.8547494682028349,
+     0.14523528728547055,
+     1.5244333498725269e-05,
+     1.7819583501353846e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-03",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-03.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-03.json",
+   "iq_sha256": "65706320773e09994b7e182bb641c2afa16171fe52950a17a680cf0d0c2a1692",
+   "metadata_iq_sha256": "65706320773e09994b7e182bb641c2afa16171fe52950a17a680cf0d0c2a1692",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7643275090976407,
+    "cnn_scores": [
+     0.7643275090976407,
+     0.23564047352789838,
+     3.201673228316184e-05,
+     6.421777726291847e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-04",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-04.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-04.json",
+   "iq_sha256": "e297bd0cc19d86ee35655967c8e1fc01c9cb100eb84a00b21c922a8d69e2ebc6",
+   "metadata_iq_sha256": "e297bd0cc19d86ee35655967c8e1fc01c9cb100eb84a00b21c922a8d69e2ebc6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8358786777087007,
+    "cnn_scores": [
+     0.8358786777087007,
+     0.16410212424654436,
+     1.9197802377584777e-05,
+     2.4237743282225606e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-05",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-05.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-05.json",
+   "iq_sha256": "8b1883f1296cbfff978a1d55cf69bf9bfc1ebce2a5032e21a65def5d8615e6b6",
+   "metadata_iq_sha256": "8b1883f1296cbfff978a1d55cf69bf9bfc1ebce2a5032e21a65def5d8615e6b6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7134902263075273,
+    "cnn_scores": [
+     0.7134902263075273,
+     0.2864596776939195,
+     5.0095124808925165e-05,
+     8.737440873832376e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-06",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-06.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-06.json",
+   "iq_sha256": "b411cbb75a38e2e7beec4c2e117c5a98f1ad074f308f7f5b77e030faf94e9f0d",
+   "metadata_iq_sha256": "b411cbb75a38e2e7beec4c2e117c5a98f1ad074f308f7f5b77e030faf94e9f0d",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.7990743900740617,
+    "cnn_scores": [
+     0.7990743900740617,
+     0.20089943887375036,
+     2.6170670055318964e-05,
+     3.821327560796114e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-07",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-07.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-07.json",
+   "iq_sha256": "19b1a05761d9c9101c6a2bb4b810e318abc812bdb9553aab1986aa0ed6d5056c",
+   "metadata_iq_sha256": "19b1a05761d9c9101c6a2bb4b810e318abc812bdb9553aab1986aa0ed6d5056c",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.6900544096337808,
+    "cnn_scores": [
+     0.6900544096337808,
+     0.3098875524959312,
+     5.803677227042488e-05,
+     1.0980174654933016e-09
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-08",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-08.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-08.json",
+   "iq_sha256": "390a6f33aa854c803551261a5fb67ad791eb5b012b6aa5c7c39937b48048b3d6",
+   "metadata_iq_sha256": "390a6f33aa854c803551261a5fb67ad791eb5b012b6aa5c7c39937b48048b3d6",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8105083995143303,
+    "cnn_scores": [
+     0.8105083995143303,
+     0.18946654307253233,
+     2.5057096704553983e-05,
+     3.164328609607611e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-09",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-09.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-09.json",
+   "iq_sha256": "921d1ccf2ef86af32248dc615429b268e020e0484ccb727886d4a1346fdc602e",
+   "metadata_iq_sha256": "921d1ccf2ef86af32248dc615429b268e020e0484ccb727886d4a1346fdc602e",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8952251366308198,
+    "cnn_scores": [
+     0.8952251366308198,
+     0.10476602685315888,
+     8.83642837753746e-06,
+     8.764381639770454e-11
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/normal-10",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-10.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-10.json",
+   "iq_sha256": "6aa01f76a5cae1c8a89918a6ef8b09f360eea4805f4af1c1ad36d0ab9a047157",
+   "metadata_iq_sha256": "6aa01f76a5cae1c8a89918a6ef8b09f360eea4805f4af1c1ad36d0ab9a047157",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "BPSK",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8156669205479504,
+    "cnn_scores": [
+     0.8156669205479504,
+     0.18431075100454905,
+     2.232813863160128e-05,
+     3.088688990630298e-10
+    ]
+   }
+  },
+  {
+   "frame_id": "campaign5-2026-10-18/val-01/off-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "session_key": "campaign5-2026-10-18/val-01",
+   "split": "VAL",
+   "synthetic": false,
+   "kind": "quality",
+   "scenario": "off",
+   "truth_class": "OFF",
+   "truth_source": "experiment_record",
+   "truth_detail": "trainval.truth=off",
+   "physical": false,
+   "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/off-01.iq",
+   "metadata_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/off-01.json",
+   "iq_sha256": "a5abb394cc50b432684dc0907880d04137ede85eb7dc4854d3d5626bdcb9d108",
+   "metadata_iq_sha256": "a5abb394cc50b432684dc0907880d04137ede85eb7dc4854d3d5626bdcb9d108",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "1c0894bfe7751be2e1afa4e8bac564b8",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "UNKNOWN",
+    "environment_label": null
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "source_root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1
+   },
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 73
+   },
+   "evaluation": {
+    "final_label": "UNKNOWN",
+    "accepted": false,
+    "reason": "noise_like",
+    "arbitration_applied": false,
+    "score": 0.0,
+    "cnn_scores": [
+     0.008578042379966042,
+     0.3195260204754537,
+     0.37200527785494564,
+     0.29989065928963465
+    ]
+   }
+  },
+  {
+   "frame_id": "teaching-2026-10-21/nf-00-normal",
+   "source_id": "teaching-2026-10-21",
+   "session_id": "s2-46db-80mhz-narrowband-2026-10-21",
+   "session_key": "teaching-2026-10-21/s2-46db-80mhz-narrowband-2026-10-21",
+   "split": "UNASSIGNED",
+   "synthetic": false,
+   "kind": "clean",
+   "scenario": "normal",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "experiment_record.scenario_declaration + demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-00-normal.iq",
+   "metadata_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-00-normal.json",
+   "iq_sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b",
+   "metadata_iq_sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": "UNKNOWN"
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "experiment_record_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/records/experiment-904f6df3f8ad4d1890716fe0a43ffd25/metadata.json",
+   "experiment_record_sha256": "3fe2e130bc3e7d6437989ba556cb160fd89809ef4b0f9858244f8160cdea1279",
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "physical": true
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9544920356426029,
+    "cnn_scores": [
+     0.04374544503307904,
+     0.9544920356426029,
+     0.0017614610016152069,
+     1.0583227028565073e-06
+    ]
+   }
+  },
+  {
+   "frame_id": "teaching-2026-10-21/nf-01-narrowband",
+   "source_id": "teaching-2026-10-21",
+   "session_id": "s2-46db-80mhz-narrowband-2026-10-21",
+   "session_key": "teaching-2026-10-21/s2-46db-80mhz-narrowband-2026-10-21",
+   "split": "UNASSIGNED",
+   "synthetic": false,
+   "kind": "stress",
+   "scenario": "narrowband",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "experiment_record.scenario_declaration + demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-01-narrowband.iq",
+   "metadata_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-01-narrowband.json",
+   "iq_sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e",
+   "metadata_iq_sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": "NARROWBAND"
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "experiment_record_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/records/experiment-ba9e4a8be4624202867b5a50e95d436c/metadata.json",
+   "experiment_record_sha256": "18056c2c8fc02595134cc01363298b97eb6b2e8f4163d0ccbf3fef0d4ccc1c88",
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "physical": true
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9387921548488584,
+    "cnn_scores": [
+     0.00016488967176774575,
+     0.9387921548488584,
+     0.0606078741219814,
+     0.0004350813573924745
+    ]
+   }
+  },
+  {
+   "frame_id": "teaching-2026-10-21/nf-02-narrowband",
+   "source_id": "teaching-2026-10-21",
+   "session_id": "s2-46db-80mhz-narrowband-2026-10-21",
+   "session_key": "teaching-2026-10-21/s2-46db-80mhz-narrowband-2026-10-21",
+   "split": "UNASSIGNED",
+   "synthetic": false,
+   "kind": "stress",
+   "scenario": "narrowband",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "experiment_record.scenario_declaration + demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-02-narrowband.iq",
+   "metadata_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-02-narrowband.json",
+   "iq_sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242",
+   "metadata_iq_sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": "NARROWBAND"
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "experiment_record_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/records/experiment-15c2e7a8cc9344e5ae97a4f555a4c8f2/metadata.json",
+   "experiment_record_sha256": "dd273a8796543c73d002d4af774d6e7e44c4ea70a9ba30fa9f580f5374d50f36",
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "physical": true
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.9355897680060253,
+    "cnn_scores": [
+     0.0001275836291763293,
+     0.9355897680060253,
+     0.06358567489780889,
+     0.0006969734669897226
+    ]
+   }
+  },
+  {
+   "frame_id": "teaching-2026-10-21/nf-03-narrowband",
+   "source_id": "teaching-2026-10-21",
+   "session_id": "s2-46db-80mhz-narrowband-2026-10-21",
+   "session_key": "teaching-2026-10-21/s2-46db-80mhz-narrowband-2026-10-21",
+   "split": "UNASSIGNED",
+   "synthetic": false,
+   "kind": "stress",
+   "scenario": "narrowband",
+   "truth_class": "BPSK",
+   "truth_source": "signal_config",
+   "truth_detail": "experiment_record.scenario_declaration + demod_result.submitted.config.mode",
+   "physical": true,
+   "iq_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-03-narrowband.iq",
+   "metadata_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-03-narrowband.json",
+   "iq_sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e",
+   "metadata_iq_sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK",
+    "environment_label": "NARROWBAND"
+   },
+   "status": "OK",
+   "invalid_reasons": [],
+   "experiment_record_path": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/records/experiment-46e1c3bd6f80457c91edb937d2a1b6fe/metadata.json",
+   "experiment_record_sha256": "daef7f85f078362d5c955991b3ca73105398dd8a704b21efbdc993cebfad0ee9",
+   "signal_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "observed_input": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "physical": true
+   },
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": true,
+    "score": 0.8591555389509459,
+    "cnn_scores": [
+     3.216934331967207e-05,
+     0.8591555389509459,
+     0.13837315440353606,
+     0.002439137302198426
+    ]
+   }
+  },
+  {
+   "frame_id": "synthetic-fixtures/duplicates/dup-session-b.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-BPSK",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-BPSK",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "BPSK",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/dup-session-b.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/dup-session-b.json",
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "metadata_iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "OK",
+   "invalid_reasons": [],
+   "fixture_purpose": "duplicate_same_session",
+   "expected_import_status": "OK",
+   "expected_reason": null,
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.653721308733827,
+    "cnn_scores": [
+     0.653721308733827,
+     0.3462345110685254,
+     4.416971536697378e-05,
+     1.0482280744999963e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "synthetic-fixtures/duplicates/leak-train.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-leak-train",
+   "session_key": "synthetic-fixtures/synthetic-leak-train",
+   "split": "TRAIN",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "BPSK",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-train.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-train.json",
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "metadata_iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "OK",
+   "invalid_reasons": [],
+   "fixture_purpose": "duplicate_cross_split_train",
+   "expected_import_status": "OK",
+   "expected_reason": null,
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.653721308733827,
+    "cnn_scores": [
+     0.653721308733827,
+     0.3462345110685254,
+     4.416971536697378e-05,
+     1.0482280744999963e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "synthetic-fixtures/duplicates/leak-val.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-leak-val",
+   "session_key": "synthetic-fixtures/synthetic-leak-val",
+   "split": "VAL",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "BPSK",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-val.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-val.json",
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "metadata_iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "OK",
+   "invalid_reasons": [],
+   "fixture_purpose": "duplicate_cross_split_val",
+   "expected_import_status": "OK",
+   "expected_reason": null,
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.653721308733827,
+    "cnn_scores": [
+     0.653721308733827,
+     0.3462345110685254,
+     4.416971536697378e-05,
+     1.0482280744999963e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "synthetic-fixtures/invalid/truth_from_environment.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-test",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-test",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "quality",
+   "scenario": "synthetic",
+   "truth_class": "OFF",
+   "truth_source": "environment_label",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_environment.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_environment.json",
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "metadata_iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {
+    "environment_label": "NARROWBAND"
+   },
+   "status": "INVALID",
+   "invalid_reasons": [
+    "truth_source_not_independent"
+   ],
+   "fixture_purpose": "invalid_truth_from_environment",
+   "expected_import_status": "INVALID",
+   "expected_reason": "truth_source_not_independent"
+  },
+  {
+   "frame_id": "synthetic-fixtures/invalid/truth_from_model.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-test",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-test",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": null,
+   "truth_source": "model_prediction",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_model.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_model.json",
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "metadata_iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {
+    "model_result_label": "QPSK"
+   },
+   "status": "INVALID",
+   "invalid_reasons": [
+    "truth_source_not_independent",
+    "truth_missing"
+   ],
+   "fixture_purpose": "invalid_truth_from_model",
+   "expected_import_status": "INVALID",
+   "expected_reason": "truth_source_not_independent"
+  },
+  {
+   "frame_id": "synthetic-fixtures/invalid/wrong_length.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-test",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-test",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "BPSK",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/wrong_length.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/invalid/wrong_length.json",
+   "iq_sha256": "e1638daef881b29377fe5416b4771378f4c04c6a92544fee1353de92ac501485",
+   "metadata_iq_sha256": "e1638daef881b29377fe5416b4771378f4c04c6a92544fee1353de92ac501485",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": null,
+   "domain_status": "INVALID",
+   "domain_reason": "invalid_iq_length",
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "INVALID",
+   "invalid_reasons": [
+    "invalid_iq_length"
+   ],
+   "fixture_purpose": "invalid_length",
+   "expected_import_status": "INVALID",
+   "expected_reason": "invalid_iq_length"
+  },
+  {
+   "frame_id": "synthetic-fixtures/invalid/wrong_sample_rate.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-test",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-test",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "BPSK",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/wrong_sample_rate.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/invalid/wrong_sample_rate.json",
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "metadata_iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 30000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": false,
+    "reason": "unsupported_sampling_domain",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 30000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    },
+    "required": {
+     "sample_rate_hz": 60000000,
+     "decimation": 1
+    }
+   },
+   "domain_status": "UNSUPPORTED",
+   "domain_reason": "unsupported_sampling_domain",
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "INVALID",
+   "invalid_reasons": [
+    "unsupported_sampling_domain"
+   ],
+   "fixture_purpose": "invalid_sample_rate",
+   "expected_import_status": "INVALID",
+   "expected_reason": "unsupported_sampling_domain"
+  },
+  {
+   "frame_id": "synthetic-fixtures/valid/BPSK.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-BPSK",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-BPSK",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "BPSK",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/valid/BPSK.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/valid/BPSK.json",
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "metadata_iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "OK",
+   "invalid_reasons": [],
+   "fixture_purpose": "valid_synthetic_bpsk",
+   "expected_import_status": "OK",
+   "expected_reason": null,
+   "evaluation": {
+    "final_label": "BPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.653721308733827,
+    "cnn_scores": [
+     0.653721308733827,
+     0.3462345110685254,
+     4.416971536697378e-05,
+     1.0482280744999963e-08
+    ]
+   }
+  },
+  {
+   "frame_id": "synthetic-fixtures/valid/QAM16.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-QAM16",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-QAM16",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "QAM16",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/valid/QAM16.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/valid/QAM16.json",
+   "iq_sha256": "1152cd5c46b96fd4c0feccbe0f4d1972c49138087d7952ff7fa0720baa2b1f96",
+   "metadata_iq_sha256": "1152cd5c46b96fd4c0feccbe0f4d1972c49138087d7952ff7fa0720baa2b1f96",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "OK",
+   "invalid_reasons": [],
+   "fixture_purpose": "valid_synthetic_qam16",
+   "expected_import_status": "OK",
+   "expected_reason": null,
+   "evaluation": {
+    "final_label": "QAM16",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.6434319171548318,
+    "cnn_scores": [
+     5.272149494621086e-19,
+     2.2428734607993042e-12,
+     0.6434319171548318,
+     0.35656808284292524
+    ]
+   }
+  },
+  {
+   "frame_id": "synthetic-fixtures/valid/QAM64.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-QAM64",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-QAM64",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "QAM64",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/valid/QAM64.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/valid/QAM64.json",
+   "iq_sha256": "0ac9ceb5610a384deda3215f7698d5d2bad265b1d27a1949782a69e092ea08bf",
+   "metadata_iq_sha256": "0ac9ceb5610a384deda3215f7698d5d2bad265b1d27a1949782a69e092ea08bf",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "OK",
+   "invalid_reasons": [],
+   "fixture_purpose": "valid_synthetic_qam64",
+   "expected_import_status": "OK",
+   "expected_reason": null,
+   "evaluation": {
+    "final_label": "QAM64",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8175121680614399,
+    "cnn_scores": [
+     4.1555285863864862e-22,
+     7.464418696645566e-14,
+     0.1824878319384855,
+     0.8175121680614399
+    ]
+   }
+  },
+  {
+   "frame_id": "synthetic-fixtures/valid/QPSK.json",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-QPSK",
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-QPSK",
+   "split": "TEST",
+   "synthetic": true,
+   "kind": "clean",
+   "scenario": "synthetic",
+   "truth_class": "QPSK",
+   "truth_source": "synthetic_generator",
+   "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+   "physical": false,
+   "iq_path": "ml_training/real_campaign/fixtures/synthetic/valid/QPSK.iq",
+   "metadata_path": "ml_training/real_campaign/fixtures/synthetic/valid/QPSK.json",
+   "iq_sha256": "c500339e5716266e50a6fdef15c8d28e606d2accb290a09c8ab431fdb772aa96",
+   "metadata_iq_sha256": "c500339e5716266e50a6fdef15c8d28e606d2accb290a09c8ab431fdb772aa96",
+   "digest_match": true,
+   "context": {
+    "format": "s16_iq_le",
+    "samples": 4096,
+    "sample_rate_hz": 60000000,
+    "decimation": 1,
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT"
+   },
+   "context_check": {
+    "ok": true,
+    "reason": "",
+    "observed": {
+     "format": "s16_iq_le",
+     "samples": 4096,
+     "sample_rate_hz": 60000000,
+     "decimation": 1,
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT"
+    }
+   },
+   "domain_status": "OK",
+   "domain_reason": null,
+   "identity": {
+    "release_id": null,
+    "boot_id": null,
+    "boot_declared": false,
+    "declaration_release_id": null
+   },
+   "non_truth_labels": {},
+   "status": "OK",
+   "invalid_reasons": [],
+   "fixture_purpose": "valid_synthetic_qpsk",
+   "expected_import_status": "OK",
+   "expected_reason": null,
+   "evaluation": {
+    "final_label": "QPSK",
+    "accepted": true,
+    "reason": "",
+    "arbitration_applied": false,
+    "score": 0.8705513139191146,
+    "cnn_scores": [
+     0.12848165565125894,
+     0.8705513139191146,
+     0.0009613666687468034,
+     5.6637608798574235e-06
+    ]
+   }
+  }
+ ]
+}

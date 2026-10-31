@@ -1,0 +1,20 @@
+test_default (test_radio_test.TestSmoke) ... ok
+test_reject_bad_rf_settings (test_radio_test.TestSmoke) ... ok
+test_reject_short_or_nan (test_radio_test.TestSmoke) ... ok
+test_tone_frequency_and_amplitude (test_radio_test.TestSmoke) ... ok
+test_zero_is_not_signal (test_radio_test.TestSmoke) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.024s
+
+OK
+<<< Welcome to GNU Radio Companion Compiler 3.10.12.0 >>>
+
+Block paths:
+	<LOCAL_PATH>
+	<LOCAL_PATH>
+
+>>> Loading: <LOCAL_PATH>
+>>> Generating: <LOCAL_PATH>
+>>> Warning: This flow graph may not have flow control: no audio or RF hardware blocks found. Add a Misc->Throttle block to your flow graph to avoid CPU congestion.
+GRC samples 262144 RMS 0.24999922513961792

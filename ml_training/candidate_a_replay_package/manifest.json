@@ -1,0 +1,662 @@
+{
+  "schema": "ml-candidate-a-replay-package-v1",
+  "package_id": "candidate_a_replay_package",
+  "purpose": "host/ARM computation-consistency replay for original vs candidate A; NOT performance acceptance",
+  "frame_count": 6,
+  "synthetic_frames": 5,
+  "real_frames": 1,
+  "frames": [
+    {
+      "package": "candidate_a_replay_package",
+      "frame_id": "01_syn_val_BPSK_to_QPSK",
+      "category": "A_BPSK_to_QPSK",
+      "synthetic": true,
+      "real_capture": false,
+      "source": {
+        "dataset": "sim-v1",
+        "split": "val",
+        "index": 24,
+        "session_id": "val-BPSK-val-a",
+        "seed_family": "val-a"
+      },
+      "conditions": {
+        "snr_db": -2.6115224361419678,
+        "cfo_hz": 12862.36328125,
+        "amplitude_codes": 327,
+        "window_offset": 8,
+        "phase_rad": 1.1263258457183838,
+        "session_id": "val-BPSK-val-a",
+        "seed_family": "val-a"
+      },
+      "truth_class": "BPSK",
+      "iq_sha256": "08280945722af1213e099536beec9c7b265f19078ec956b6d9f93c791013d412",
+      "iq_bytes": 16384,
+      "iq_file": "frame.iq",
+      "original": {
+        "label": "BPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.5276116078859373,
+          0.4704275606599454,
+          0.0011971806765186496,
+          0.0007636507775986471
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 547.6324388433721
+          },
+          "scores": [
+            0.5276116078859373,
+            0.4704275606599454,
+            0.0011971806765186496,
+            0.0007636507775986471
+          ],
+          "baseline_scores": [
+            0.3714316116268758,
+            0.09136411326120593,
+            0.2886730126654625,
+            0.24853126244645576
+          ],
+          "cnn_label": "BPSK",
+          "baseline_label": "BPSK",
+          "arbitration_margin_bpsk_minus_qpsk": 0.2800674983656699,
+          "arbitration_applied": false,
+          "final": "BPSK"
+        }
+      },
+      "A": {
+        "label": "QPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.13303059265369868,
+          0.8660343873185912,
+          0.0008580261184711128,
+          7.699390923914124e-05
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 547.6324388433721
+          },
+          "scores": [
+            0.13303059265369868,
+            0.8660343873185912,
+            0.0008580261184711128,
+            7.699390923914124e-05
+          ],
+          "baseline_scores": [
+            0.3714316116268758,
+            0.09136411326120593,
+            0.2886730126654625,
+            0.24853126244645576
+          ],
+          "cnn_label": "QPSK",
+          "baseline_label": "BPSK",
+          "arbitration_margin_bpsk_minus_qpsk": 0.2800674983656699,
+          "arbitration_applied": false,
+          "final": "QPSK"
+        }
+      },
+      "error_outputs_preserved": true,
+      "note": "existing synthetic frame; not generated here; not performance acceptance"
+    },
+    {
+      "package": "candidate_a_replay_package",
+      "frame_id": "02_syn_test_BPSK_to_QAM64",
+      "category": "A_BPSK_to_QAM64",
+      "synthetic": true,
+      "real_capture": false,
+      "source": {
+        "dataset": "sim-v1",
+        "split": "test",
+        "index": 439,
+        "session_id": "test-BPSK-snr+12-test-c",
+        "seed_family": "test-c"
+      },
+      "conditions": {
+        "snr_db": 12.0,
+        "cfo_hz": -2199.50390625,
+        "amplitude_codes": 994,
+        "window_offset": 18,
+        "phase_rad": 1.1357393264770508,
+        "session_id": "test-BPSK-snr+12-test-c",
+        "seed_family": "test-c"
+      },
+      "truth_class": "BPSK",
+      "iq_sha256": "1d1790b75aae967fab560a6aaf838cb0ff61436587a1c35e08d897cc6d753d35",
+      "iq_bytes": 16384,
+      "iq_file": "frame.iq",
+      "original": {
+        "label": "BPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.0002157058025830842,
+          0.9949915818519668,
+          0.004056751441650552,
+          0.00073596090379964
+        ],
+        "path": {
+          "stage": "arbitration",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 1005.509523693253
+          },
+          "scores": [
+            0.0002157058025830842,
+            0.9949915818519668,
+            0.004056751441650552,
+            0.00073596090379964
+          ],
+          "baseline_scores": [
+            1.0,
+            1.4559222985971688e-28,
+            3.703437506611999e-23,
+            6.527720104131384e-19
+          ],
+          "cnn_label": "QPSK",
+          "baseline_label": "BPSK",
+          "arbitration_margin_bpsk_minus_qpsk": 1.0,
+          "arbitration_applied": true,
+          "final": "BPSK"
+        }
+      },
+      "A": {
+        "label": "QAM64",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.3912563662787986,
+          1.7444596622972785e-05,
+          0.00011923270523777646,
+          0.6086069564193407
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 1005.509523693253
+          },
+          "scores": [
+            0.3912563662787986,
+            1.7444596622972785e-05,
+            0.00011923270523777646,
+            0.6086069564193407
+          ],
+          "baseline_scores": [
+            1.0,
+            1.4559222985971688e-28,
+            3.703437506611999e-23,
+            6.527720104131384e-19
+          ],
+          "cnn_label": "QAM64",
+          "baseline_label": "BPSK",
+          "arbitration_margin_bpsk_minus_qpsk": 1.0,
+          "arbitration_applied": false,
+          "final": "QAM64"
+        }
+      },
+      "error_outputs_preserved": true,
+      "note": "existing synthetic frame; not generated here; not performance acceptance"
+    },
+    {
+      "package": "candidate_a_replay_package",
+      "frame_id": "03_syn_val_BPSK_confidence",
+      "category": "A_confidence_reject",
+      "synthetic": true,
+      "real_capture": false,
+      "source": {
+        "dataset": "sim-v1",
+        "split": "val",
+        "index": 158,
+        "session_id": "val-BPSK-val-b",
+        "seed_family": "val-b"
+      },
+      "conditions": {
+        "snr_db": -3.613651990890503,
+        "cfo_hz": -13134.2822265625,
+        "amplitude_codes": 296,
+        "window_offset": 16,
+        "phase_rad": 4.713899612426758,
+        "session_id": "val-BPSK-val-b",
+        "seed_family": "val-b"
+      },
+      "truth_class": "BPSK",
+      "iq_sha256": "96c8a77fb0768cfb9ea119d3a3b235363f652a8e7e3c674bb6d471eb4c2e9a25",
+      "iq_bytes": 16384,
+      "iq_file": "frame.iq",
+      "original": {
+        "label": "BPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.5586652316051991,
+          0.39417390807711955,
+          0.03295441427271193,
+          0.014206446044969408
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 544.7028779537324
+          },
+          "scores": [
+            0.5586652316051991,
+            0.39417390807711955,
+            0.03295441427271193,
+            0.014206446044969408
+          ],
+          "baseline_scores": [
+            0.4123301864557359,
+            0.07776140446065838,
+            0.2950230615081476,
+            0.2148853475754581
+          ],
+          "cnn_label": "BPSK",
+          "baseline_label": "BPSK",
+          "arbitration_margin_bpsk_minus_qpsk": 0.3345687819950775,
+          "arbitration_applied": false,
+          "final": "BPSK"
+        }
+      },
+      "A": {
+        "label": "UNKNOWN",
+        "reason": "confidence",
+        "accepted": false,
+        "scores": [
+          0.2573463867110297,
+          0.26032881814308256,
+          0.31297151718363403,
+          0.1693532779622536
+        ],
+        "path": {
+          "stage": "confidence",
+          "reason": "confidence",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 544.7028779537324
+          },
+          "scores": [
+            0.2573463867110297,
+            0.26032881814308256,
+            0.31297151718363403,
+            0.1693532779622536
+          ],
+          "score": 0.31297151718363403,
+          "margin": 0.052642699040551466
+        }
+      },
+      "error_outputs_preserved": true,
+      "note": "existing synthetic frame; not generated here; not performance acceptance"
+    },
+    {
+      "package": "candidate_a_replay_package",
+      "frame_id": "04_syn_test_high_snr_BPSK",
+      "category": "high_snr_correct_BPSK",
+      "synthetic": true,
+      "real_capture": false,
+      "source": {
+        "dataset": "sim-v1",
+        "split": "test",
+        "index": 500,
+        "session_id": "test-BPSK-snr+18-test-b",
+        "seed_family": "test-b"
+      },
+      "conditions": {
+        "snr_db": 18.0,
+        "cfo_hz": -5789.87109375,
+        "amplitude_codes": 417,
+        "window_offset": 10,
+        "phase_rad": 4.6165771484375,
+        "session_id": "test-BPSK-snr+18-test-b",
+        "seed_family": "test-b"
+      },
+      "truth_class": "BPSK",
+      "iq_sha256": "6bcda609b8b9d7503670827de54684cb23c6b99c41b3019789459a9953ff7822",
+      "iq_bytes": 16384,
+      "iq_file": "frame.iq",
+      "original": {
+        "label": "BPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.9761715979933072,
+          0.023826952116061954,
+          1.449883713830611e-06,
+          6.916986402263478e-12
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 419.18878725146294
+          },
+          "scores": [
+            0.9761715979933072,
+            0.023826952116061954,
+            1.449883713830611e-06,
+            6.916986402263478e-12
+          ],
+          "baseline_scores": [
+            0.9999999999999996,
+            3.8588514467770346e-16,
+            7.168375396035132e-17,
+            9.781115659425314e-21
+          ],
+          "cnn_label": "BPSK",
+          "baseline_label": "BPSK",
+          "arbitration_margin_bpsk_minus_qpsk": 0.9999999999999992,
+          "arbitration_applied": false,
+          "final": "BPSK"
+        }
+      },
+      "A": {
+        "label": "BPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.8702038426049695,
+          0.1297951506794646,
+          1.0067019809160625e-06,
+          1.3585064824616452e-11
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 419.18878725146294
+          },
+          "scores": [
+            0.8702038426049695,
+            0.1297951506794646,
+            1.0067019809160625e-06,
+            1.3585064824616452e-11
+          ],
+          "baseline_scores": [
+            0.9999999999999996,
+            3.8588514467770346e-16,
+            7.168375396035132e-17,
+            9.781115659425314e-21
+          ],
+          "cnn_label": "BPSK",
+          "baseline_label": "BPSK",
+          "arbitration_margin_bpsk_minus_qpsk": 0.9999999999999992,
+          "arbitration_applied": false,
+          "final": "BPSK"
+        }
+      },
+      "error_outputs_preserved": true,
+      "note": "existing synthetic frame; not generated here; not performance acceptance"
+    },
+    {
+      "package": "candidate_a_replay_package",
+      "frame_id": "05_syn_test_correct_QPSK",
+      "category": "correct_QPSK",
+      "synthetic": true,
+      "real_capture": false,
+      "source": {
+        "dataset": "sim-v1",
+        "split": "test",
+        "index": 1100,
+        "session_id": "test-QPSK-snr+18-test-b",
+        "seed_family": "test-b"
+      },
+      "conditions": {
+        "snr_db": 18.0,
+        "cfo_hz": -12731.4853515625,
+        "amplitude_codes": 436,
+        "window_offset": 16,
+        "phase_rad": 1.1573495864868164,
+        "session_id": "test-QPSK-snr+18-test-b",
+        "seed_family": "test-b"
+      },
+      "truth_class": "QPSK",
+      "iq_sha256": "d2772a307b1998f423b918ba560cf8e10053eeb26afdc54fc57ef4bb19ff883a",
+      "iq_bytes": 16384,
+      "iq_file": "frame.iq",
+      "original": {
+        "label": "QPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.021377806808101394,
+          0.9752359178174326,
+          0.003372175408637555,
+          1.4099965828353507e-05
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 438.74676823825064
+          },
+          "scores": [
+            0.021377806808101394,
+            0.9752359178174326,
+            0.003372175408637555,
+            1.4099965828353507e-05
+          ],
+          "baseline_scores": [
+            2.7200702981634215e-12,
+            0.9824541353051167,
+            0.017545860806894315,
+            3.885268914055139e-09
+          ],
+          "cnn_label": "QPSK",
+          "baseline_label": "QPSK",
+          "arbitration_margin_bpsk_minus_qpsk": -0.9824541353023967,
+          "arbitration_applied": false,
+          "final": "QPSK"
+        }
+      },
+      "A": {
+        "label": "QPSK",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          0.012823109448532119,
+          0.9871768886859206,
+          1.8655472771443615e-09,
+          3.528795995208261e-17
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 438.74676823825064
+          },
+          "scores": [
+            0.012823109448532119,
+            0.9871768886859206,
+            1.8655472771443615e-09,
+            3.528795995208261e-17
+          ],
+          "baseline_scores": [
+            2.7200702981634215e-12,
+            0.9824541353051167,
+            0.017545860806894315,
+            3.885268914055139e-09
+          ],
+          "cnn_label": "QPSK",
+          "baseline_label": "QPSK",
+          "arbitration_margin_bpsk_minus_qpsk": -0.9824541353023967,
+          "arbitration_applied": false,
+          "final": "QPSK"
+        }
+      },
+      "error_outputs_preserved": true,
+      "note": "existing synthetic frame; not generated here; not performance acceptance"
+    },
+    {
+      "package": "candidate_a_replay_package",
+      "frame_id": "06_real_task80_off_last",
+      "category": "task80_OFF_last",
+      "synthetic": false,
+      "real_capture": true,
+      "source": {
+        "real_path": "evidence/rf-teaching/s2-46db-fourclass-seed-validation-2026-10-22/raw/10-off-last/s00-off-00.iq",
+        "metadata_path": "evidence/rf-teaching/s2-46db-fourclass-seed-validation-2026-10-22/raw/10-off-last/s00-off-00.json",
+        "label": "10-off-last",
+        "capture_id": "rx-4776ba0b-g8-c2-1",
+        "request_id": 21
+      },
+      "conditions": {
+        "tx_amplitude": 60,
+        "off_tx_ok": true,
+        "pre_tx_source_selected": false,
+        "post_tx_source_selected": false,
+        "demod_cfo_hz": 12434.792997971157,
+        "demod_carrier_sync": false,
+        "demod_carrier_coherence": 0.037623949541063316,
+        "environment": "INVALID",
+        "environment_reason": "RF_DOMAIN_MISMATCH",
+        "snr_db": null,
+        "missing_fields": [
+          "snr_db"
+        ]
+      },
+      "truth_class": "OFF",
+      "iq_sha256": "ce19198bbba2af0eb4059edda01b633fb2da29e74ab463ea80a539579a9c84b3",
+      "iq_bytes": 16384,
+      "iq_file": "frame.iq",
+      "original": {
+        "label": "QAM64",
+        "reason": "",
+        "accepted": true,
+        "scores": [
+          2.9728266084530505e-05,
+          0.05988943264425377,
+          0.2973835040712974,
+          0.6426973350183643
+        ],
+        "path": {
+          "stage": "cnn_top1",
+          "reason": "",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 104.4820003097049
+          },
+          "scores": [
+            2.9728266084530505e-05,
+            0.05988943264425377,
+            0.2973835040712974,
+            0.6426973350183643
+          ],
+          "baseline_scores": [
+            0.26361992230110326,
+            0.07714337160101466,
+            0.23744198089355636,
+            0.42179472520432565
+          ],
+          "cnn_label": "QAM64",
+          "baseline_label": "QAM64",
+          "arbitration_margin_bpsk_minus_qpsk": 0.18647655070008862,
+          "arbitration_applied": false,
+          "final": "QAM64"
+        }
+      },
+      "A": {
+        "label": "UNKNOWN",
+        "reason": "confidence",
+        "accepted": false,
+        "scores": [
+          0.362718470771881,
+          0.14652820647007386,
+          0.31918068871444366,
+          0.17157263404360143
+        ],
+        "path": {
+          "stage": "confidence",
+          "reason": "confidence",
+          "gate": {
+            "ok": true,
+            "reason": "",
+            "rms": 104.4820003097049
+          },
+          "scores": [
+            0.362718470771881,
+            0.14652820647007386,
+            0.31918068871444366,
+            0.17157263404360143
+          ],
+          "score": 0.362718470771881,
+          "margin": 0.04353778205743736
+        }
+      },
+      "error_outputs_preserved": true,
+      "note": "existing task80 real OFF frame; independent diagnostic, not training/acceptance"
+    }
+  ],
+  "models": {
+    "original": {
+      "model_path": "ml_training/artifacts/cnn/model.json",
+      "model_sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc",
+      "rules_path": "ml_training/round2/artifacts/rule_config.json",
+      "rules_sha256": "9aceebbdb6b9b9a54ad0dd09ebd61935ae8c8fd276ba18d8b9db69e7949619e0"
+    },
+    "A": {
+      "model_path": "ml_training/qam16_domain_repair/results/candidate_A/model.json",
+      "model_sha256": "b840f9dbaebc5db855ef1535d091e1f1583e12368ca62742f517a8d38123a28e",
+      "rules_path": "ml_training/qam16_domain_repair/results/candidate_A/rules.json",
+      "rules_sha256": "10a0bef4d237818eaa39dcd4e3048466de60017dbf0545c02bcbf405da2cdf64",
+      "metadata_path": "ml_training/qam16_domain_repair/results/candidate_A/metadata.json",
+      "metadata_sha256": "da1c7ec8ad504f7c632146090bd1604420ff91aa086f62a17d1edd107b36b8d1"
+    },
+    "baseline_path": "ml_training/artifacts/baseline/model.json",
+    "baseline_sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014",
+    "preprocessing": "dc-complex-rms-v1",
+    "class_order": [
+      "BPSK",
+      "QPSK",
+      "QAM16",
+      "QAM64"
+    ]
+  },
+  "corrections": {
+    "tx_amplitude": {
+      "tx_amplitude_code": 60,
+      "note": "TX amp60 is a transmit amplitude code, NOT receive IQ amplitude",
+      "actual_adc_peak": 898,
+      "dc_removed_complex_rms": 504.514147311898,
+      "source": "evidence/rf-teaching/s2-46db-fourclass-seed-validation-2026-10-22/raw/02-bpsk-2/s00-on-00.iq",
+      "iq_sha256": "8c8232b1e4676ad2f72789d2b6e80c2884bf44094dcc07c03591c41bd65c763a"
+    },
+    "high_snr_statistics": "high-SNR stratified numbers are NEW A-vs-original error rates, NOT A's overall error rate",
+    "task80_scope": "task80 10 frames is independent diagnostic, not overall accuracy"
+  },
+  "boundaries": {
+    "training": false,
+    "new_simulation_generated": false,
+    "A_bytes_modified": false,
+    "thresholds_changed": false,
+    "device_access": false,
+    "performance_acceptance": false,
+    "errors_preserved_unchanged": true
+  }
+}

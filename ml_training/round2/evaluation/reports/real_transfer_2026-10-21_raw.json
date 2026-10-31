@@ -1,0 +1,670 @@
+{
+ "schema": "ml-modrec-real-transfer-frozen-v1",
+ "generated_utc": "2026-10-21T08:33:18Z",
+ "scope": "frozen round-2 offline pipeline transfer test on new physical 2026-10-21 frames; read-only; no retraining/recalibration/device/product change",
+ "frozen_pipeline": {
+  "cnn_model_json": {
+   "path": "ml_training/artifacts/cnn/model.json",
+   "sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc"
+  },
+  "baseline_model_json": {
+   "path": "ml_training/artifacts/baseline/model.json",
+   "sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014"
+  },
+  "rule_config": {
+   "path": "ml_training/round2/artifacts/rule_config.json",
+   "sha256": "9aceebbdb6b9b9a54ad0dd09ebd61935ae8c8fd276ba18d8b9db69e7949619e0",
+   "schema": "ml-modrec-round2-rule-config-v1",
+   "arbitration_threshold": 0.3,
+   "tone_rule": {
+    "feature": "top5_frac",
+    "op": ">",
+    "threshold": 0.527328260750662,
+    "selection": {
+     "method": "midpoint between max known and min tone",
+     "max_known_valid": 0.1376966157306292,
+     "min_tone_valid": 0.9169599057706946,
+     "known_false_rejection": 0.0,
+     "tone_rejection": 1.0
+    }
+   },
+   "noise_rule": {
+    "feature": "band_frac_3m",
+    "op": "<",
+    "threshold": 0.25161,
+    "selection": {
+     "threshold": 0.25161,
+     "noise_rejection": 1.0,
+     "incremental_known_false_rejection": 0.0008333333333333334,
+     "incremental_known_false_rejection_cap": 0.01
+    }
+   },
+   "frozen_gate": {
+    "max_softmax": 0.45,
+    "margin": 0.0,
+    "min_complex_rms": 57.05962767972466
+   }
+  },
+  "pipeline": "round-1 4-class TinyIQCNN + round-2 feature arbitration + spectral gate"
+ },
+ "data": {
+  "evidence_root": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21",
+  "summary": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/SUMMARY.json",
+  "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+  "frames": 4,
+  "sha256sums": {
+   "available": true,
+   "entries": 60,
+   "mismatches": [],
+   "all_ok": true
+  },
+  "capture_script_note": "\u4e0d\u8bfb\u53d6\u6267\u884c\u547d\u4ee4\uff0c\u4ec5\u4f7f\u7528 raw \u539f\u59cb\u5e27\u4e0e\u5176 sidecar"
+ },
+ "development_use_audit": {
+  "development_real_iq_hashes": 45,
+  "development_roots": [
+   "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup",
+   "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4",
+   "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18"
+  ],
+  "overlap": [],
+  "overlap_count": 0,
+  "ml_training_references_before_capture": [],
+  "pre_existing_reference_count": 0,
+  "ml_training_references_created_after_capture": [
+   {
+    "path": "ml_training/round2/evaluation/reports/real_transfer_2026-10-21_raw.json",
+    "needle": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21",
+    "mtime": "2026-10-21T16:32:49+08:00"
+   },
+   {
+    "path": "ml_training/round2/scripts/evaluate_real_transfer_2026_10_21.py",
+    "needle": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21",
+    "mtime": "2026-10-21T16:33:15+08:00"
+   }
+  ],
+  "created_after_capture_count": 2,
+  "reference_scan_note": "files whose mtime is earlier than the new evidence capture are pre-existing development references; the new evaluation script/report themselves naturally mention the evidence path",
+  "mtimes": {
+   "cnn_model_json": "2026-10-20T21:04:21+08:00",
+   "baseline_model_json": "2026-10-20T21:01:50+08:00",
+   "round2_rule_config": "2026-10-20T22:52:53+08:00",
+   "evidence_raw_frame": "2026-10-21T15:48:50+08:00"
+  },
+  "conclusion": "new capture after the frozen artifacts; no hash overlap with the round-1/round-2 development replay frames and no pre-existing ml_training reference"
+ },
+ "frames": [
+  {
+   "tag": "nf-00-normal",
+   "kind": "normal",
+   "files": {
+    "iq": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-00-normal.iq",
+    "metadata": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-00-normal.json",
+    "environment": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-00-normal.environment.json"
+   },
+   "format": {
+    "bytes": 16384,
+    "dtype": "little-endian signed int16",
+    "shape": [
+     4096,
+     2
+    ],
+    "samples": 4096,
+    "min_code": -437,
+    "max_code": 442,
+    "all_zero": false,
+    "rail_count": 0,
+    "expected_bytes": 16384,
+    "format_ok": true
+   },
+   "hashes": {
+    "iq_sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b",
+    "metadata_iq_sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b",
+    "summary_iq_sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b",
+    "metadata_match": true,
+    "summary_match": true
+   },
+   "identity": {
+    "capture_id": "rx-3f84f6a1-g10-c2-1",
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "capture_state": "done",
+    "physical": true,
+    "op": "loopback.physical.capture",
+    "session": "single",
+    "egress_safe": true,
+    "environment_label": "UNKNOWN",
+    "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+   },
+   "truth": {
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "tx_config_ok": true,
+    "demod_reason": "",
+    "demod_carrier_sync": true,
+    "demod_reference_sync": true,
+    "demod_ber": 0.0,
+    "demod_compared_bits": 138,
+    "declared_scenario": "normal",
+    "declared_tone_amplitude": 0,
+    "declared_tone_frequency_hz": 6000000.0,
+    "environment_label_is_not_truth": true,
+    "truth_conclusion": "BPSK / 3 MSym/s / RECT from the submitted TX config; normal scenario declared and demod BER=0 with sync"
+   },
+   "diagnostics": {
+    "gate_ok": true,
+    "gate_reason": "",
+    "rms": 275.10910789349816,
+    "clipped": false,
+    "phase_deg": 48.22808805807349,
+    "spectral": {
+     "top1_frac": 0.013328655848268402,
+     "top5_frac": 0.05949729613509824,
+     "top9_frac": 0.09663922834503355,
+     "band_frac_3m": 0.8345976489451205,
+     "peak_to_median_db": 29.892754551235676,
+     "spectral_entropy": 0.7360811465135244
+    }
+   },
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9544920356426029,
+    "margin": 0.9107465906095238,
+    "scores": [
+     0.04374544503307904,
+     0.9544920356426029,
+     0.0017614610016152069,
+     1.0583227028565073e-06
+    ],
+    "rms": 275.10910789349816
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9544920356426029,
+    "margin": 0.9107465906095238,
+    "scores": [
+     0.04374544503307904,
+     0.9544920356426029,
+     0.0017614610016152069,
+     1.0583227028565073e-06
+    ],
+    "rms": 275.10910789349816,
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999989335
+    },
+    "baseline_scores": [
+     0.9999999999989335,
+     7.386746160604239e-24,
+     7.629468757709227e-17,
+     1.0664566254315675e-12
+    ],
+    "spectral": {
+     "top1_frac": 0.013328655848268402,
+     "top5_frac": 0.05949729613509824,
+     "top9_frac": 0.09663922834503355,
+     "band_frac_3m": 0.8345976489451205,
+     "peak_to_median_db": 29.892754551235676,
+     "spectral_entropy": 0.7360811465135244
+    },
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK",
+    "pure_class_index": 0,
+    "pure_arbitration_applied": true
+   },
+   "board_runtime_context": {
+    "note": "the raw metadata was produced by the board runtime 6-class model, not by the frozen offline 4-class pipeline; shown as context only",
+    "label": "QPSK",
+    "model_sha256": "f76f2fc05aee93f72b2427f17f41e0bf59ce538f84688b8350a8d0800ddb9d47",
+    "rejected": false
+   }
+  },
+  {
+   "tag": "nf-01-narrowband",
+   "kind": "narrowband",
+   "files": {
+    "iq": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-01-narrowband.iq",
+    "metadata": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-01-narrowband.json",
+    "environment": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-01-narrowband.environment.json"
+   },
+   "format": {
+    "bytes": 16384,
+    "dtype": "little-endian signed int16",
+    "shape": [
+     4096,
+     2
+    ],
+    "samples": 4096,
+    "min_code": -589,
+    "max_code": 831,
+    "all_zero": false,
+    "rail_count": 0,
+    "expected_bytes": 16384,
+    "format_ok": true
+   },
+   "hashes": {
+    "iq_sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e",
+    "metadata_iq_sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e",
+    "summary_iq_sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e",
+    "metadata_match": true,
+    "summary_match": true
+   },
+   "identity": {
+    "capture_id": "rx-3f84f6a1-g10-c2-2",
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "capture_state": "done",
+    "physical": true,
+    "op": "loopback.physical.capture",
+    "session": "single",
+    "egress_safe": true,
+    "environment_label": "NARROWBAND",
+    "environment_reason": "SPECTRAL_EXCESS"
+   },
+   "truth": {
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "tx_config_ok": true,
+    "demod_reason": "CARRIER_NOT_SYNCED",
+    "demod_carrier_sync": false,
+    "demod_reference_sync": false,
+    "demod_ber": null,
+    "demod_compared_bits": null,
+    "declared_scenario": "narrowband",
+    "declared_tone_amplitude": 40,
+    "declared_tone_frequency_hz": 6000000.0,
+    "environment_label_is_not_truth": true,
+    "truth_conclusion": "BPSK / 3 MSym/s / RECT from the submitted TX config; narrowband scenario declared (BPSK plus injected tone); interference stress test, not clean 4-class data"
+   },
+   "diagnostics": {
+    "gate_ok": true,
+    "gate_reason": "",
+    "rms": 342.3486441929671,
+    "clipped": false,
+    "phase_deg": 49.45369916318723,
+    "spectral": {
+     "top1_frac": 0.17793354931370248,
+     "top5_frac": 0.2984981034040106,
+     "top9_frac": 0.3289960243223602,
+     "band_frac_3m": 0.5590126679462982,
+     "peak_to_median_db": 42.59745525791898,
+     "spectral_entropy": 0.6345634197519316
+    }
+   },
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9387921548488584,
+    "margin": 0.8781842807268769,
+    "scores": [
+     0.00016488967176774575,
+     0.9387921548488584,
+     0.0606078741219814,
+     0.0004350813573924745
+    ],
+    "rms": 342.3486441929671
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9387921548488584,
+    "margin": 0.8781842807268769,
+    "scores": [
+     0.00016488967176774575,
+     0.9387921548488584,
+     0.0606078741219814,
+     0.0004350813573924745
+    ],
+    "rms": 342.3486441929671,
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9973234644872209
+    },
+    "baseline_scores": [
+     0.9973234644877049,
+     4.840376632042671e-13,
+     9.677650127207464e-05,
+     0.0025797590105390974
+    ],
+    "spectral": {
+     "top1_frac": 0.17793354931370248,
+     "top5_frac": 0.2984981034040106,
+     "top9_frac": 0.3289960243223602,
+     "band_frac_3m": 0.5590126679462982,
+     "peak_to_median_db": 42.59745525791898,
+     "spectral_entropy": 0.6345634197519316
+    },
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK",
+    "pure_class_index": 0,
+    "pure_arbitration_applied": true
+   },
+   "board_runtime_context": {
+    "note": "the raw metadata was produced by the board runtime 6-class model, not by the frozen offline 4-class pipeline; shown as context only",
+    "label": "QPSK",
+    "model_sha256": "f76f2fc05aee93f72b2427f17f41e0bf59ce538f84688b8350a8d0800ddb9d47",
+    "rejected": false
+   }
+  },
+  {
+   "tag": "nf-02-narrowband",
+   "kind": "narrowband",
+   "files": {
+    "iq": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-02-narrowband.iq",
+    "metadata": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-02-narrowband.json",
+    "environment": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-02-narrowband.environment.json"
+   },
+   "format": {
+    "bytes": 16384,
+    "dtype": "little-endian signed int16",
+    "shape": [
+     4096,
+     2
+    ],
+    "samples": 4096,
+    "min_code": -590,
+    "max_code": 815,
+    "all_zero": false,
+    "rail_count": 0,
+    "expected_bytes": 16384,
+    "format_ok": true
+   },
+   "hashes": {
+    "iq_sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242",
+    "metadata_iq_sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242",
+    "summary_iq_sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242",
+    "metadata_match": true,
+    "summary_match": true
+   },
+   "identity": {
+    "capture_id": "rx-3f84f6a1-g10-c2-3",
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "capture_state": "done",
+    "physical": true,
+    "op": "loopback.physical.capture",
+    "session": "single",
+    "egress_safe": true,
+    "environment_label": "NARROWBAND",
+    "environment_reason": "SPECTRAL_EXCESS"
+   },
+   "truth": {
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "tx_config_ok": true,
+    "demod_reason": "CARRIER_NOT_SYNCED",
+    "demod_carrier_sync": false,
+    "demod_reference_sync": false,
+    "demod_ber": null,
+    "demod_compared_bits": null,
+    "declared_scenario": "narrowband",
+    "declared_tone_amplitude": 40,
+    "declared_tone_frequency_hz": 6000000.0,
+    "environment_label_is_not_truth": true,
+    "truth_conclusion": "BPSK / 3 MSym/s / RECT from the submitted TX config; narrowband scenario declared (BPSK plus injected tone); interference stress test, not clean 4-class data"
+   },
+   "diagnostics": {
+    "gate_ok": true,
+    "gate_reason": "",
+    "rms": 345.7650339235395,
+    "clipped": false,
+    "phase_deg": 49.833015541616184,
+    "spectral": {
+     "top1_frac": 0.18223658581039331,
+     "top5_frac": 0.3001685221485012,
+     "top9_frac": 0.3357260987775692,
+     "band_frac_3m": 0.5622069971611694,
+     "peak_to_median_db": 43.201261994283094,
+     "spectral_entropy": 0.6336418387806454
+    }
+   },
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9355897680060253,
+    "margin": 0.8720040931082165,
+    "scores": [
+     0.0001275836291763293,
+     0.9355897680060253,
+     0.06358567489780889,
+     0.0006969734669897226
+    ],
+    "rms": 345.7650339235395
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9355897680060253,
+    "margin": 0.8720040931082165,
+    "scores": [
+     0.0001275836291763293,
+     0.9355897680060253,
+     0.06358567489780889,
+     0.0006969734669897226
+    ],
+    "rms": 345.7650339235395,
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9994501159487987
+    },
+    "baseline_scores": [
+     0.9994501159489364,
+     1.3762491123375287e-13,
+     1.484577839372716e-05,
+     0.0005350382725323281
+    ],
+    "spectral": {
+     "top1_frac": 0.18223658581039331,
+     "top5_frac": 0.3001685221485012,
+     "top9_frac": 0.3357260987775692,
+     "band_frac_3m": 0.5622069971611694,
+     "peak_to_median_db": 43.201261994283094,
+     "spectral_entropy": 0.6336418387806454
+    },
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK",
+    "pure_class_index": 0,
+    "pure_arbitration_applied": true
+   },
+   "board_runtime_context": {
+    "note": "the raw metadata was produced by the board runtime 6-class model, not by the frozen offline 4-class pipeline; shown as context only",
+    "label": "QPSK",
+    "model_sha256": "f76f2fc05aee93f72b2427f17f41e0bf59ce538f84688b8350a8d0800ddb9d47",
+    "rejected": false
+   }
+  },
+  {
+   "tag": "nf-03-narrowband",
+   "kind": "narrowband",
+   "files": {
+    "iq": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-03-narrowband.iq",
+    "metadata": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-03-narrowband.json",
+    "environment": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-03-narrowband.environment.json"
+   },
+   "format": {
+    "bytes": 16384,
+    "dtype": "little-endian signed int16",
+    "shape": [
+     4096,
+     2
+    ],
+    "samples": 4096,
+    "min_code": -589,
+    "max_code": 772,
+    "all_zero": false,
+    "rail_count": 0,
+    "expected_bytes": 16384,
+    "format_ok": true
+   },
+   "hashes": {
+    "iq_sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e",
+    "metadata_iq_sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e",
+    "summary_iq_sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e",
+    "metadata_match": true,
+    "summary_match": true
+   },
+   "identity": {
+    "capture_id": "rx-3f84f6a1-g10-c2-4",
+    "release_id": "3f84f6a189e833b6986f4c819ff89be0",
+    "capture_state": "done",
+    "physical": true,
+    "op": "loopback.physical.capture",
+    "session": "single",
+    "egress_safe": true,
+    "environment_label": "NARROWBAND",
+    "environment_reason": "SPECTRAL_EXCESS"
+   },
+   "truth": {
+    "tx_config": {
+     "mode": "BPSK",
+     "symbol_rate_hz": 3000000,
+     "shaping": "RECT",
+     "reference_prbs7_seed": 1
+    },
+    "tx_config_ok": true,
+    "demod_reason": "CARRIER_NOT_SYNCED",
+    "demod_carrier_sync": false,
+    "demod_reference_sync": false,
+    "demod_ber": null,
+    "demod_compared_bits": null,
+    "declared_scenario": "narrowband",
+    "declared_tone_amplitude": 40,
+    "declared_tone_frequency_hz": 6000000.0,
+    "environment_label_is_not_truth": true,
+    "truth_conclusion": "BPSK / 3 MSym/s / RECT from the submitted TX config; narrowband scenario declared (BPSK plus injected tone); interference stress test, not clean 4-class data"
+   },
+   "diagnostics": {
+    "gate_ok": true,
+    "gate_reason": "",
+    "rms": 345.3302769926804,
+    "clipped": false,
+    "phase_deg": 50.730769823002326,
+    "spectral": {
+     "top1_frac": 0.18315985361924098,
+     "top5_frac": 0.2945938815970611,
+     "top9_frac": 0.3276654303803691,
+     "band_frac_3m": 0.5676057976623758,
+     "peak_to_median_db": 43.201592533715036,
+     "spectral_entropy": 0.6328436772660017
+    }
+   },
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.8591555389509459,
+    "margin": 0.7207823845474098,
+    "scores": [
+     3.216934331967207e-05,
+     0.8591555389509459,
+     0.13837315440353606,
+     0.002439137302198426
+    ],
+    "rms": 345.3302769926804
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8591555389509459,
+    "margin": 0.7207823845474098,
+    "scores": [
+     3.216934331967207e-05,
+     0.8591555389509459,
+     0.13837315440353606,
+     0.002439137302198426
+    ],
+    "rms": 345.3302769926804,
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.999551556369935
+    },
+    "baseline_scores": [
+     0.9995515563700164,
+     8.137600294604744e-14,
+     1.2334715786103997e-05,
+     0.00043610891411588763
+    ],
+    "spectral": {
+     "top1_frac": 0.18315985361924098,
+     "top5_frac": 0.2945938815970611,
+     "top9_frac": 0.3276654303803691,
+     "band_frac_3m": 0.5676057976623758,
+     "peak_to_median_db": 43.201592533715036,
+     "spectral_entropy": 0.6328436772660017
+    },
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK",
+    "pure_class_index": 0,
+    "pure_arbitration_applied": true
+   },
+   "board_runtime_context": {
+    "note": "the raw metadata was produced by the board runtime 6-class model, not by the frozen offline 4-class pipeline; shown as context only",
+    "label": "QPSK",
+    "model_sha256": "f76f2fc05aee93f72b2427f17f41e0bf59ce538f84688b8350a8d0800ddb9d47",
+    "rejected": false
+   }
+  }
+ ],
+ "summary": {
+  "normal": {
+   "frames": 1,
+   "clean_4class_accuracy": 1.0,
+   "note": "single normal frame; a per-frame pass is not an accuracy estimate and does not establish real four-class accuracy",
+   "before_labels": [
+    "QPSK"
+   ],
+   "after_labels": [
+    "BPSK"
+   ],
+   "after_reasons": [
+    ""
+   ]
+  },
+  "narrowband_stress": {
+   "frames": 3,
+   "counted_as_clean_4class": false,
+   "interpretation": "stress only: underlying TX is BPSK plus an injected 6 MHz tone; any accepted known-class label here is a stress false acceptance, not clean accuracy",
+   "before_labels": [
+    "QPSK",
+    "QPSK",
+    "QPSK"
+   ],
+   "after_labels": [
+    "BPSK",
+    "BPSK",
+    "BPSK"
+   ],
+   "after_reasons": [
+    "",
+    "",
+    ""
+   ]
+  }
+ },
+ "discipline": {
+  "retrained": false,
+  "recalibrated": false,
+  "device_accessed": false,
+  "product_runtime_modified": false,
+  "results_saved_before_any_improvement": true,
+  "dev_replay_note": "these frames are new and were not used in development; if they are later used to design an improvement they become development replay data and must no longer be called unseen"
+ }
+}

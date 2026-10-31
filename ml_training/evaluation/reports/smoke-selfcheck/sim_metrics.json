@@ -1,0 +1,923 @@
+{
+  "schema": "ml-modrec-eval-sim-v1",
+  "generated_utc": "2026-10-20T12:26:31Z",
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "backend": "host CPU numpy runtime (NOT ARM, NOT board)"
+  },
+  "dataset": {
+    "dataset_id": "sim-smoke",
+    "directory": "ml_training/datasets/sim-smoke",
+    "manifest_path": "ml_training/datasets/sim-smoke/manifest.json",
+    "manifest_sha256": "3e5a008d0394aba0933bc814a31f3fe2d6a44351e9a619b5a36a882a80e994af",
+    "schema": "ml-modrec-synthetic-v1",
+    "config_path": "ml_training/config/first_round.json",
+    "config_sha256": "3ff9ea8d782afbbe5050579ea9d67f94b9092a87d7c583871f38c2accd10ea50",
+    "created_utc": "2026-10-20T12:24:08Z",
+    "classes": [
+      "BPSK",
+      "QPSK",
+      "QAM16",
+      "QAM64"
+    ],
+    "gate_kinds": [
+      "OFF",
+      "NOISE",
+      "TONE",
+      "CLIP"
+    ],
+    "numpy_version": "2.5.4",
+    "files": [
+      {
+        "path": "frames/train-BPSK.npz",
+        "sha256": "28f56300ff6f5a371a4236d691a8052a1d5eb10e1bc381e040fe3870d65effd4",
+        "split": "train",
+        "label": "BPSK",
+        "count": 20,
+        "clipped_count": 0
+      },
+      {
+        "path": "frames/train-QPSK.npz",
+        "sha256": "b1ed8eb8d459f1269f8fb5ee77bc97787268905b93b165832bba5b43d77a1e3d",
+        "split": "train",
+        "label": "QPSK",
+        "count": 20,
+        "clipped_count": 2
+      },
+      {
+        "path": "frames/train-QAM16.npz",
+        "sha256": "fbe4f1db8aa0bf23912fe103d78bfff1960a17dc5a19c0bb351c7ca3322f3b02",
+        "split": "train",
+        "label": "QAM16",
+        "count": 20,
+        "clipped_count": 1
+      },
+      {
+        "path": "frames/train-QAM64.npz",
+        "sha256": "de05da57c3a9d492087bdd78bc56dab8eaaa46572a793b199fce452b6ac753d1",
+        "split": "train",
+        "label": "QAM64",
+        "count": 20,
+        "clipped_count": 0
+      },
+      {
+        "path": "frames/val-BPSK.npz",
+        "sha256": "fd7d8aaed6f2ae6fb72353c764d62382bbf924f53bb70ff27bc877983bc1a24b",
+        "split": "val",
+        "label": "BPSK",
+        "count": 10,
+        "clipped_count": 0
+      },
+      {
+        "path": "frames/val-QPSK.npz",
+        "sha256": "3c0541c69cbd207677020128c7704bf8141a19a606971f3155de2598eac3e048",
+        "split": "val",
+        "label": "QPSK",
+        "count": 10,
+        "clipped_count": 1
+      },
+      {
+        "path": "frames/val-QAM16.npz",
+        "sha256": "9ce22f11c18e1b8798c1fc23693dcf0647b7c2a98c5def23b419e9c2a675057c",
+        "split": "val",
+        "label": "QAM16",
+        "count": 10,
+        "clipped_count": 1
+      },
+      {
+        "path": "frames/val-QAM64.npz",
+        "sha256": "56b96012b5a198a6f5ca69f6565f2af5673ee32a2ff28a5097645093cbfba89f",
+        "split": "val",
+        "label": "QAM64",
+        "count": 10,
+        "clipped_count": 1
+      },
+      {
+        "path": "frames/test-BPSK.npz",
+        "sha256": "3788929f7a85a3738c0d72fe4afc2171f302b4f61985b4969f1139fd0716f9cc",
+        "split": "test",
+        "label": "BPSK",
+        "count": 20,
+        "clipped_count": 0
+      },
+      {
+        "path": "frames/test-QPSK.npz",
+        "sha256": "56310ba353a0b81779ddcf8b0d65aea1e95403187b08232c64843ed9119dae05",
+        "split": "test",
+        "label": "QPSK",
+        "count": 20,
+        "clipped_count": 4
+      },
+      {
+        "path": "frames/test-QAM16.npz",
+        "sha256": "f3d6394c062f62fbb7034f184e1952220524d3f74e34ddee40fdf818a5b9dc4c",
+        "split": "test",
+        "label": "QAM16",
+        "count": 20,
+        "clipped_count": 4
+      },
+      {
+        "path": "frames/test-QAM64.npz",
+        "sha256": "eb5b301a4ab26558b7b6b76dd4fa730215b66d7d8466991d8b3ca6cd316f47ef",
+        "split": "test",
+        "label": "QAM64",
+        "count": 20,
+        "clipped_count": 2
+      },
+      {
+        "path": "gate/gate_cal-OFF.npz",
+        "sha256": "6ce60347f0c09253cbaf851c4e3c6a1f232358f3a9aa162e79160857b6145f83",
+        "split": "gate_cal",
+        "label": "OFF",
+        "count": 10,
+        "clipped_count": 0
+      },
+      {
+        "path": "gate/gate_cal-NOISE.npz",
+        "sha256": "2877233f80a32267cf82f531049b5a897083efebc574426e6ece647635ebf70f",
+        "split": "gate_cal",
+        "label": "NOISE",
+        "count": 10,
+        "clipped_count": 1
+      },
+      {
+        "path": "gate/gate_cal-TONE.npz",
+        "sha256": "3ad6d1bcfc86d19f61390e383b0e32319d72e406e8bf178fd5e57e9446900dee",
+        "split": "gate_cal",
+        "label": "TONE",
+        "count": 10,
+        "clipped_count": 0
+      },
+      {
+        "path": "gate/gate_cal-CLIP.npz",
+        "sha256": "552b27d17b9b76a5bb9f147f7228571cd38c025bb811f7d6e9d082d2b019a207",
+        "split": "gate_cal",
+        "label": "CLIP",
+        "count": 10,
+        "clipped_count": 10
+      },
+      {
+        "path": "gate/gate_test-OFF.npz",
+        "sha256": "47012fb7ef1951f5d790cbfe6d3b8cceabd1afb039e4b2d474f6af9839507a73",
+        "split": "gate_test",
+        "label": "OFF",
+        "count": 10,
+        "clipped_count": 0
+      },
+      {
+        "path": "gate/gate_test-NOISE.npz",
+        "sha256": "a8d19bdbf948e8475422a429001b0587ab36bf3716b1895d5b0f59cfd49b041b",
+        "split": "gate_test",
+        "label": "NOISE",
+        "count": 10,
+        "clipped_count": 3
+      },
+      {
+        "path": "gate/gate_test-TONE.npz",
+        "sha256": "1b86180da2f7c818d692537c92f4362f3a6dd9953c1051ba46c398281a3f03ad",
+        "split": "gate_test",
+        "label": "TONE",
+        "count": 10,
+        "clipped_count": 0
+      },
+      {
+        "path": "gate/gate_test-CLIP.npz",
+        "sha256": "64f13abc49d08aebe67814fa2ac2a00233135ecfa612ff77ed183732751b680d",
+        "split": "gate_test",
+        "label": "CLIP",
+        "count": 10,
+        "clipped_count": 10
+      }
+    ],
+    "per_split_counts": {
+      "train": {
+        "BPSK": {
+          "path": "frames/train-BPSK.npz",
+          "count": 20,
+          "clipped_count": 0
+        },
+        "QPSK": {
+          "path": "frames/train-QPSK.npz",
+          "count": 20,
+          "clipped_count": 2
+        },
+        "QAM16": {
+          "path": "frames/train-QAM16.npz",
+          "count": 20,
+          "clipped_count": 1
+        },
+        "QAM64": {
+          "path": "frames/train-QAM64.npz",
+          "count": 20,
+          "clipped_count": 0
+        }
+      },
+      "val": {
+        "BPSK": {
+          "path": "frames/val-BPSK.npz",
+          "count": 10,
+          "clipped_count": 0
+        },
+        "QPSK": {
+          "path": "frames/val-QPSK.npz",
+          "count": 10,
+          "clipped_count": 1
+        },
+        "QAM16": {
+          "path": "frames/val-QAM16.npz",
+          "count": 10,
+          "clipped_count": 1
+        },
+        "QAM64": {
+          "path": "frames/val-QAM64.npz",
+          "count": 10,
+          "clipped_count": 1
+        }
+      },
+      "test": {
+        "BPSK": {
+          "path": "frames/test-BPSK.npz",
+          "count": 20,
+          "clipped_count": 0
+        },
+        "QPSK": {
+          "path": "frames/test-QPSK.npz",
+          "count": 20,
+          "clipped_count": 4
+        },
+        "QAM16": {
+          "path": "frames/test-QAM16.npz",
+          "count": 20,
+          "clipped_count": 4
+        },
+        "QAM64": {
+          "path": "frames/test-QAM64.npz",
+          "count": 20,
+          "clipped_count": 2
+        }
+      },
+      "gate_cal": {
+        "OFF": {
+          "path": "gate/gate_cal-OFF.npz",
+          "count": 10,
+          "clipped_count": 0
+        },
+        "NOISE": {
+          "path": "gate/gate_cal-NOISE.npz",
+          "count": 10,
+          "clipped_count": 1
+        },
+        "TONE": {
+          "path": "gate/gate_cal-TONE.npz",
+          "count": 10,
+          "clipped_count": 0
+        },
+        "CLIP": {
+          "path": "gate/gate_cal-CLIP.npz",
+          "count": 10,
+          "clipped_count": 10
+        }
+      },
+      "gate_test": {
+        "OFF": {
+          "path": "gate/gate_test-OFF.npz",
+          "count": 10,
+          "clipped_count": 0
+        },
+        "NOISE": {
+          "path": "gate/gate_test-NOISE.npz",
+          "count": 10,
+          "clipped_count": 3
+        },
+        "TONE": {
+          "path": "gate/gate_test-TONE.npz",
+          "count": 10,
+          "clipped_count": 0
+        },
+        "CLIP": {
+          "path": "gate/gate_test-CLIP.npz",
+          "count": 10,
+          "clipped_count": 10
+        }
+      }
+    },
+    "summary": {
+      "total_frames": 280,
+      "per_split": {
+        "train": 80,
+        "val": 40,
+        "test": 80,
+        "gate_cal": 40,
+        "gate_test": 40
+      },
+      "clipped_frames": 40,
+      "clipped_frames_by_split": {
+        "train": 3,
+        "val": 3,
+        "test": 10,
+        "gate_cal": 11,
+        "gate_test": 13
+      },
+      "cross_split_duplicate_iq": 0,
+      "intra_split_duplicate_iq": 0,
+      "unique_iq_frames": 280
+    }
+  },
+  "model": {
+    "kind": "cnn",
+    "artifact_path": "ml_training/artifacts/cnn",
+    "model_json_path": "ml_training/artifacts/cnn/model.json",
+    "model_json_sha256": "02687b5e5f6560ea0b372747106689736614650fba25c7ae6218592dd6ba1f7f",
+    "network": "tiny-iq-cnn-v1",
+    "variant": "modrec4",
+    "preprocessing": "dc-complex-rms-v1",
+    "classes": [
+      "BPSK",
+      "QPSK",
+      "QAM16",
+      "QAM64"
+    ],
+    "thresholds": {
+      "max_softmax": 0.5,
+      "margin": 0.0,
+      "min_complex_rms": 28.52203968514979
+    },
+    "status": "experimental",
+    "params": 1628,
+    "board_compat": "4-class offline variant: a stock board runtime enforces a fixed 6-class contract, so board deployment needs a contract extension; not done in this phase",
+    "training": {
+      "manifest_sha256": "83f1d2a6ad970c8d5a754901207fac858e7e57bab6a8b826bbf8a2d0477e664e",
+      "config_sha256": "3ff9ea8d782afbbe5050579ea9d67f94b9092a87d7c583871f38c2accd10ea50",
+      "best_epoch": 2,
+      "val_macro_f1": 0.25,
+      "seed": 20261020
+    },
+    "supported_domain": {
+      "input_fs_hz": 60000000,
+      "decim": [
+        1
+      ],
+      "symbol_rates_hz": [
+        3000000
+      ],
+      "shaping": [
+        "RECT"
+      ]
+    }
+  },
+  "baseline": {
+    "kind": "baseline",
+    "artifact_path": "ml_training/artifacts/baseline",
+    "model_json_path": "ml_training/artifacts/baseline/model.json",
+    "model_json_sha256": "946f0dc8c19b78d2c56a7eb1543cb1da4de8103dbe6512cfe93b62fa712991bc",
+    "network": null,
+    "variant": null,
+    "preprocessing": null,
+    "classes": [
+      "BPSK",
+      "QPSK",
+      "QAM16",
+      "QAM64"
+    ],
+    "thresholds": {
+      "max_softmax": 0.0,
+      "margin": 0.0,
+      "min_complex_rms": 28.52203968514979
+    },
+    "status": "experimental",
+    "params": null,
+    "board_compat": null,
+    "training": {
+      "l2_grid": [
+        0.0001,
+        0.001,
+        0.01,
+        0.1
+      ],
+      "l2": 0.001,
+      "epochs": 20,
+      "lr": 0.5,
+      "seed": 20261020,
+      "val_accuracy": 0.5405405405405406,
+      "train_frames": 77,
+      "val_frames": 37,
+      "elapsed_seconds": 0.029757700001937337,
+      "selection": "max val accuracy over l2 grid; argmax decision (no confidence gate)"
+    },
+    "supported_domain": null
+  },
+  "protocol": {
+    "four_class_population": "test split only; clipped=False frames only",
+    "four_class_prediction": "argmax over the four class scores returned by the predictor; a quality-gate rejection does not change the 4-class prediction",
+    "gate_population": "gate_test split only (OFF/NOISE/TONE/CLIP); CLIP frames kept",
+    "gate_known_false_rejection_population": "known test frames (clipped=False); gate metrics only, never the 4x4 matrix",
+    "test_evaluated_once": true,
+    "selection_discipline": "model/threshold selection used only train/val/gate_cal by the Lead; this script reports the independent test split once",
+    "host_only": true,
+    "arm_or_board_numbers": "NOT_RUN - no ARM/board execution in this script",
+    "truth_source": "synthetic dataset npz labels (manifest split isolation, CONTRACTS §6)",
+    "n_test_frames": 70,
+    "n_test_frames_dropped_clipped": 10,
+    "n_gate_test_frames": 40,
+    "n_gate_test_clipped_flagged": 13
+  },
+  "cnn": {
+    "labels": [
+      "BPSK",
+      "QPSK",
+      "QAM16",
+      "QAM64"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        10,
+        0,
+        10
+      ],
+      [
+        0,
+        10,
+        0,
+        6
+      ],
+      [
+        0,
+        10,
+        0,
+        6
+      ],
+      [
+        0,
+        10,
+        0,
+        8
+      ]
+    ],
+    "per_class": {
+      "BPSK": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 20,
+        "predicted": 0,
+        "true_positive": 0
+      },
+      "QPSK": {
+        "precision": 0.25,
+        "recall": 0.625,
+        "f1": 0.35714285714285715,
+        "support": 16,
+        "predicted": 40,
+        "true_positive": 10
+      },
+      "QAM16": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 16,
+        "predicted": 0,
+        "true_positive": 0
+      },
+      "QAM64": {
+        "precision": 0.26666666666666666,
+        "recall": 0.4444444444444444,
+        "f1": 0.33333333333333337,
+        "support": 18,
+        "predicted": 30,
+        "true_positive": 8
+      }
+    },
+    "macro_f1": 0.17261904761904762,
+    "accuracy": 0.2571428571428571,
+    "n_frames": 70,
+    "correct": 18,
+    "gate_rejected_known_frames": 70,
+    "gate_rejection_rate": 1.0,
+    "accuracy_with_gate": 0.0,
+    "per_snr": [
+      {
+        "snr_db": 0.0,
+        "n": 40,
+        "accuracy": 0.25,
+        "macro_f1": 0.1,
+        "macro_f1_all_classes": 0.1,
+        "macro_f1_scope": "mean F1 over classes with support>0 at this SNR",
+        "recall": {
+          "BPSK": 0.0,
+          "QPSK": 1.0,
+          "QAM16": 0.0,
+          "QAM64": 0.0
+        },
+        "support": {
+          "BPSK": 10,
+          "QPSK": 10,
+          "QAM16": 10,
+          "QAM64": 10
+        },
+        "confusion_matrix": [
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "snr_db": 10.0,
+        "n": 30,
+        "accuracy": 0.26666666666666666,
+        "macro_f1": 0.10526315789473685,
+        "macro_f1_all_classes": 0.10526315789473685,
+        "macro_f1_scope": "mean F1 over classes with support>0 at this SNR",
+        "recall": {
+          "BPSK": 0.0,
+          "QPSK": 0.0,
+          "QAM16": 0.0,
+          "QAM64": 1.0
+        },
+        "support": {
+          "BPSK": 10,
+          "QPSK": 6,
+          "QAM16": 6,
+          "QAM64": 8
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            10
+          ],
+          [
+            0,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      }
+    ]
+  },
+  "baseline_report": {
+    "labels": [
+      "BPSK",
+      "QPSK",
+      "QAM16",
+      "QAM64"
+    ],
+    "confusion_matrix": [
+      [
+        17,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        7,
+        8,
+        1
+      ],
+      [
+        2,
+        0,
+        8,
+        6
+      ],
+      [
+        2,
+        1,
+        8,
+        7
+      ]
+    ],
+    "per_class": {
+      "BPSK": {
+        "precision": 0.8095238095238095,
+        "recall": 0.85,
+        "f1": 0.8292682926829269,
+        "support": 20,
+        "predicted": 21,
+        "true_positive": 17
+      },
+      "QPSK": {
+        "precision": 0.7777777777777778,
+        "recall": 0.4375,
+        "f1": 0.56,
+        "support": 16,
+        "predicted": 9,
+        "true_positive": 7
+      },
+      "QAM16": {
+        "precision": 0.3076923076923077,
+        "recall": 0.5,
+        "f1": 0.380952380952381,
+        "support": 16,
+        "predicted": 26,
+        "true_positive": 8
+      },
+      "QAM64": {
+        "precision": 0.5,
+        "recall": 0.3888888888888889,
+        "f1": 0.43750000000000006,
+        "support": 18,
+        "predicted": 14,
+        "true_positive": 7
+      }
+    },
+    "macro_f1": 0.551930168408827,
+    "accuracy": 0.5571428571428572,
+    "n_frames": 70,
+    "correct": 39,
+    "gate_rejected_known_frames": 0,
+    "gate_rejection_rate": 0.0,
+    "accuracy_with_gate": 0.5571428571428572,
+    "per_snr": [
+      {
+        "snr_db": 0.0,
+        "n": 40,
+        "accuracy": 0.375,
+        "macro_f1": 0.30833333333333335,
+        "macro_f1_all_classes": 0.30833333333333335,
+        "macro_f1_scope": "mean F1 over classes with support>0 at this SNR",
+        "recall": {
+          "BPSK": 0.7,
+          "QPSK": 0.1,
+          "QAM16": 0.7,
+          "QAM64": 0.0
+        },
+        "support": {
+          "BPSK": 10,
+          "QPSK": 10,
+          "QAM16": 10,
+          "QAM64": 10
+        },
+        "confusion_matrix": [
+          [
+            7,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            8,
+            1
+          ],
+          [
+            2,
+            0,
+            7,
+            1
+          ],
+          [
+            2,
+            0,
+            8,
+            0
+          ]
+        ]
+      },
+      {
+        "snr_db": 10.0,
+        "n": 30,
+        "accuracy": 0.8,
+        "macro_f1": 0.7271978021978022,
+        "macro_f1_all_classes": 0.7271978021978022,
+        "macro_f1_scope": "mean F1 over classes with support>0 at this SNR",
+        "recall": {
+          "BPSK": 1.0,
+          "QPSK": 1.0,
+          "QAM16": 0.16666666666666666,
+          "QAM64": 0.875
+        },
+        "support": {
+          "BPSK": 10,
+          "QPSK": 6,
+          "QAM16": 6,
+          "QAM64": 8
+        },
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            0,
+            7
+          ]
+        ]
+      }
+    ]
+  },
+  "comparison": {
+    "accuracy": {
+      "cnn": 0.2571428571428571,
+      "baseline": 0.5571428571428572,
+      "delta_cnn_minus_baseline": -0.30000000000000004
+    },
+    "macro_f1": {
+      "cnn": 0.17261904761904762,
+      "baseline": 0.551930168408827,
+      "delta_cnn_minus_baseline": -0.3793111207897794
+    },
+    "per_class": {
+      "BPSK": {
+        "cnn_recall": 0.0,
+        "baseline_recall": 0.85,
+        "recall_delta_cnn_minus_baseline": -0.85,
+        "cnn_f1": 0.0,
+        "baseline_f1": 0.8292682926829269,
+        "f1_delta_cnn_minus_baseline": -0.8292682926829269
+      },
+      "QPSK": {
+        "cnn_recall": 0.625,
+        "baseline_recall": 0.4375,
+        "recall_delta_cnn_minus_baseline": 0.1875,
+        "cnn_f1": 0.35714285714285715,
+        "baseline_f1": 0.56,
+        "f1_delta_cnn_minus_baseline": -0.2028571428571429
+      },
+      "QAM16": {
+        "cnn_recall": 0.0,
+        "baseline_recall": 0.5,
+        "recall_delta_cnn_minus_baseline": -0.5,
+        "cnn_f1": 0.0,
+        "baseline_f1": 0.380952380952381,
+        "f1_delta_cnn_minus_baseline": -0.380952380952381
+      },
+      "QAM64": {
+        "cnn_recall": 0.4444444444444444,
+        "baseline_recall": 0.3888888888888889,
+        "recall_delta_cnn_minus_baseline": 0.055555555555555525,
+        "cnn_f1": 0.33333333333333337,
+        "baseline_f1": 0.43750000000000006,
+        "f1_delta_cnn_minus_baseline": -0.10416666666666669
+      }
+    },
+    "note": "Delta is CNN minus feature baseline on the identical test frames."
+  },
+  "gate": {
+    "split": "gate_test",
+    "n_gate_frames": 40,
+    "per_kind": {
+      "OFF": {
+        "n": 10,
+        "clipped_flag": 0,
+        "rejected": 10,
+        "rejection_rate": 1.0,
+        "accepted_labels": {},
+        "reject_reasons": {
+          "below_energy_floor": 6,
+          "confidence": 4
+        }
+      },
+      "NOISE": {
+        "n": 10,
+        "clipped_flag": 3,
+        "rejected": 10,
+        "rejection_rate": 1.0,
+        "accepted_labels": {},
+        "reject_reasons": {
+          "clipping": 3,
+          "confidence": 7
+        }
+      },
+      "TONE": {
+        "n": 10,
+        "clipped_flag": 0,
+        "rejected": 10,
+        "rejection_rate": 1.0,
+        "accepted_labels": {},
+        "reject_reasons": {
+          "confidence": 10
+        }
+      },
+      "CLIP": {
+        "n": 10,
+        "clipped_flag": 10,
+        "rejected": 10,
+        "rejection_rate": 1.0,
+        "accepted_labels": {},
+        "reject_reasons": {
+          "clipping": 10
+        }
+      }
+    },
+    "known_class_false_rejection": {
+      "source": "independent test split (clipped=False) - gate metrics only; these frames never enter the gate_test rejection rates",
+      "n_frames": 70,
+      "rejected": 70,
+      "rate": 1.0,
+      "per_class": {
+        "BPSK": {
+          "n": 20,
+          "rejected": 20,
+          "rejection_rate": 1.0
+        },
+        "QPSK": {
+          "n": 16,
+          "rejected": 16,
+          "rejection_rate": 1.0
+        },
+        "QAM16": {
+          "n": 16,
+          "rejected": 16,
+          "rejection_rate": 1.0
+        },
+        "QAM64": {
+          "n": 18,
+          "rejected": 18,
+          "rejection_rate": 1.0
+        }
+      },
+      "reject_reasons": {
+        "confidence": 70
+      }
+    },
+    "separation": {
+      "gate_kinds": [
+        "OFF",
+        "NOISE",
+        "TONE",
+        "CLIP"
+      ],
+      "gate_frames_never_enter_four_class_matrix": true,
+      "four_class_labels_never_enter_gate_rates": true,
+      "note": "OFF/NOISE/TONE/CLIP rejection rates use gate_test only; the known-class false-rejection rate uses test known frames only. Neither population changes the 4x4 test confusion matrix."
+    },
+    "baseline": {
+      "status": "NOT_RUN",
+      "reason": "feature baseline has no quality gate in CONTRACTS §9; only the CNN quality gate is characterised. The counts below are informational.",
+      "known_frames_rejected_by_label": 0
+    }
+  },
+  "not_run": [
+    "arm_inference: NOT_RUN - all inference in this report ran on the host CPU with the numpy runtime; these numbers are NOT ARM numbers and NOT board numbers.",
+    "board_hardware_accuracy: NOT_RUN - no board/hardware execution was performed by the evaluation tools.",
+    "azure_vm: NOT_RUN - no Azure connection information is available in this round.",
+    "real_data_transfer: NOT_RUN here - real (physical) data is evaluated separately and read-only by ml_training/evaluation/real_transfer.py; it is not mixed into simulated metrics.",
+    "val_split_metrics: NOT_RUN - the val split is reserved for checkpoint/threshold selection (CONTRACTS §6/§13); this script reports the independent test split only.",
+    "train_split_metrics: NOT_RUN - training split accuracy is not an evaluation metric.",
+    "baseline_gate_metrics: NOT_RUN - the feature baseline has no rejection gate in CONTRACTS §9; only the CNN quality gate is characterised on gate_test.",
+    "arm_latency: NOT_RUN - no latency measurement was performed by this script."
+  ],
+  "limitations": [
+    "Metrics are single-run point estimates on the frozen test split; no confidence intervals are computed.",
+    "The synthetic impairment model explicitly excludes IQ imbalance, DC offset, receive filter/RRC distortion, multipath, phase noise, AGC transients, hardware frequency response and RF-chain nonlinearity (CONTRACTS §5); these are unmodeled, not calibrated.",
+    "gate_test CLIP frames are kept even when their quantization overflow sets clipped=True; they are used only for the gate rejection rates, never for the 4x4 matrix.",
+    "Per-SNR macro-F1 is the mean F1 over classes with support>0 at that SNR; recall is null for a class with no support at that SNR."
+  ]
+}

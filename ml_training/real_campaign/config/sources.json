@@ -1,0 +1,103 @@
+{
+  "schema": "ml-real-campaign-sources-v1",
+  "description": "Existing real evidence sources for the four-class acceptance tool. Original IQ is read-only; only an index and reports are generated.",
+  "sources": [
+    {
+      "source_id": "campaign3-2026-10-18",
+      "kind": "board_trainval",
+      "root": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download",
+      "session_dirs": [
+        "train-01"
+      ],
+      "declaration": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/declaration.json",
+      "declaration_release_path": "board_reference.release_id",
+      "declaration_boot_path": "board_reference.boot_id",
+      "synthetic": false,
+      "declared_context": {
+        "format": "s16_iq_le",
+        "samples": 4096,
+        "sample_rate_hz": 60000000,
+        "decimation": 1,
+        "symbol_rate_hz": 3000000,
+        "shaping": "RECT"
+      }
+    },
+    {
+      "source_id": "campaign4-2026-10-18",
+      "kind": "board_trainval",
+      "root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download",
+      "session_dirs": [
+        "train-01",
+        "train-02",
+        "val-01"
+      ],
+      "synthetic": false,
+      "declared_context": {
+        "format": "s16_iq_le",
+        "samples": 4096,
+        "sample_rate_hz": 60000000,
+        "decimation": 1,
+        "symbol_rate_hz": 3000000,
+        "shaping": "RECT"
+      }
+    },
+    {
+      "source_id": "campaign5-2026-10-18",
+      "kind": "board_trainval",
+      "root": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download",
+      "session_dirs": [
+        "train-01",
+        "train-02",
+        "val-01"
+      ],
+      "synthetic": false,
+      "declared_context": {
+        "format": "s16_iq_le",
+        "samples": 4096,
+        "sample_rate_hz": 60000000,
+        "decimation": 1,
+        "symbol_rate_hz": 3000000,
+        "shaping": "RECT"
+      }
+    },
+    {
+      "source_id": "teaching-2026-10-21",
+      "kind": "teaching_experiment",
+      "root": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw",
+      "frame_glob": "nf-*.json",
+      "record_glob": "records/experiment-*/metadata.json",
+      "session_id": "s2-46db-80mhz-narrowband-2026-10-21",
+      "split": "UNASSIGNED",
+      "synthetic": false,
+      "declared_context": {
+        "format": "s16_iq_le",
+        "samples": 4096,
+        "sample_rate_hz": 60000000,
+        "decimation": 1,
+        "symbol_rate_hz": 3000000,
+        "shaping": "RECT"
+      }
+    },
+    {
+      "source_id": "synthetic-fixtures",
+      "kind": "fixture_records",
+      "root": "ml_training/real_campaign/fixtures/synthetic",
+      "synthetic": true,
+      "declared_context": {
+        "format": "s16_iq_le",
+        "samples": 4096,
+        "sample_rate_hz": 60000000,
+        "decimation": 1,
+        "symbol_rate_hz": 3000000,
+        "shaping": "RECT"
+      }
+    }
+  ],
+  "missing_real_corpus_notes": [
+    {
+      "corpus": "rx-smart lowclip real 6-class physical captures (2026-10-03)",
+      "status": "NOT_PRESENT_IN_CHECKOUT",
+      "detail": "Only acceptance receipts are present; raw IQ/session manifests are not in this checkout, so no real QPSK/QAM16/QAM64 acceptance is claimed."
+    }
+  ]
+}

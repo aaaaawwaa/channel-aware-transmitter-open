@@ -1,0 +1,252 @@
+{
+ "available": true,
+ "rows": [
+  {
+   "frame": "normal-01",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 245.573319746046,
+   "phase_deg": 55.267112731933594,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-02",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 248.01248235975947,
+   "phase_deg": 54.907222747802734,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-03",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 245.86258885331915,
+   "phase_deg": 55.0205192565918,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-04",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 242.1175952541257,
+   "phase_deg": 55.27580642700195,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-05",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 245.29519146740574,
+   "phase_deg": 55.697879791259766,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-06",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 244.5304512766508,
+   "phase_deg": 55.91585159301758,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-07",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 246.5272273565843,
+   "phase_deg": 54.87089538574219,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-08",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 247.69557505210025,
+   "phase_deg": 55.09471893310547,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-09",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 244.23635972979636,
+   "phase_deg": 55.35274887084961,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "normal-10",
+   "truth": "normal",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QPSK",
+   "plain_reason": "",
+   "proposed_label": "BPSK",
+   "proposed_reason": "",
+   "arbitration_applied": true,
+   "complex_rms": 243.94001507959135,
+   "phase_deg": 55.30490493774414,
+   "demod_ber": 0.0,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "AMPLITUDE_OUTSIDE_RULE_SUPPORT"
+  },
+  {
+   "frame": "off-01",
+   "truth": "off",
+   "tx_config": {
+    "mode": "BPSK",
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "reference_prbs7_seed": 1
+   },
+   "plain_label": "QAM64",
+   "plain_reason": "",
+   "proposed_label": "UNKNOWN",
+   "proposed_reason": "noise_like",
+   "arbitration_applied": false,
+   "complex_rms": 112.18721709574358,
+   "phase_deg": 25.58358383178711,
+   "demod_ber": null,
+   "environment_label": "UNKNOWN",
+   "environment_reason": "WEAK_SPECTRAL_ANOMALY"
+  }
+ ],
+ "summary": {
+  "available": true,
+  "session_path": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01",
+  "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+  "n_normal": 10,
+  "n_off": 1,
+  "plain_bpsk": 0,
+  "proposed_bpsk": 10,
+  "arbitration_applied": 10,
+  "off_plain_rejected": 0,
+  "off_proposed_rejected": 1,
+  "plain_failures": [
+   "normal-01",
+   "normal-02",
+   "normal-03",
+   "normal-04",
+   "normal-05",
+   "normal-06",
+   "normal-07",
+   "normal-08",
+   "normal-09",
+   "normal-10"
+  ],
+  "proposed_failures": [],
+  "not_used_in_development": true,
+  "scope": "independent physical BPSK session (single configuration); not a four-class real accuracy and not ARM/board inference"
+ }
+}

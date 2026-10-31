@@ -1,0 +1,374 @@
+{
+ "schema": "ml-real-campaign-sessions-v1",
+ "session_count": 15,
+ "sessions": [
+  {
+   "session_key": "campaign3-2026-10-18/train-01",
+   "source_id": "campaign3-2026-10-18",
+   "session_id": "train-01",
+   "split": "TRAIN",
+   "frames": 11,
+   "clean": 10,
+   "quality": 1,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "1a30f4b7b9aebe27965fcdd6dcf7634e"
+   ],
+   "boot_id": "f4015100-cd95-4fc0-a384-1b33205fb9fe",
+   "map": [
+    "campaign3-2026-10-18/train-01/normal-01",
+    "campaign3-2026-10-18/train-01/normal-02",
+    "campaign3-2026-10-18/train-01/normal-03",
+    "campaign3-2026-10-18/train-01/normal-04",
+    "campaign3-2026-10-18/train-01/normal-05",
+    "campaign3-2026-10-18/train-01/normal-06",
+    "campaign3-2026-10-18/train-01/normal-07",
+    "campaign3-2026-10-18/train-01/normal-08",
+    "campaign3-2026-10-18/train-01/normal-09",
+    "campaign3-2026-10-18/train-01/normal-10",
+    "campaign3-2026-10-18/train-01/off-01"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "campaign4-2026-10-18/train-01",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-01",
+   "split": "TRAIN",
+   "frames": 11,
+   "clean": 10,
+   "quality": 1,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "1c0894bfe7751be2e1afa4e8bac564b8"
+   ],
+   "boot_id": null,
+   "map": [
+    "campaign4-2026-10-18/train-01/normal-01",
+    "campaign4-2026-10-18/train-01/normal-02",
+    "campaign4-2026-10-18/train-01/normal-03",
+    "campaign4-2026-10-18/train-01/normal-04",
+    "campaign4-2026-10-18/train-01/normal-05",
+    "campaign4-2026-10-18/train-01/normal-06",
+    "campaign4-2026-10-18/train-01/normal-07",
+    "campaign4-2026-10-18/train-01/normal-08",
+    "campaign4-2026-10-18/train-01/normal-09",
+    "campaign4-2026-10-18/train-01/normal-10",
+    "campaign4-2026-10-18/train-01/off-01"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "campaign4-2026-10-18/train-02",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "train-02",
+   "split": "TRAIN",
+   "frames": 11,
+   "clean": 10,
+   "quality": 1,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "1c0894bfe7751be2e1afa4e8bac564b8"
+   ],
+   "boot_id": null,
+   "map": [
+    "campaign4-2026-10-18/train-02/normal-01",
+    "campaign4-2026-10-18/train-02/normal-02",
+    "campaign4-2026-10-18/train-02/normal-03",
+    "campaign4-2026-10-18/train-02/normal-04",
+    "campaign4-2026-10-18/train-02/normal-05",
+    "campaign4-2026-10-18/train-02/normal-06",
+    "campaign4-2026-10-18/train-02/normal-07",
+    "campaign4-2026-10-18/train-02/normal-08",
+    "campaign4-2026-10-18/train-02/normal-09",
+    "campaign4-2026-10-18/train-02/normal-10",
+    "campaign4-2026-10-18/train-02/off-01"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "campaign4-2026-10-18/val-01",
+   "source_id": "campaign4-2026-10-18",
+   "session_id": "val-01",
+   "split": "VAL",
+   "frames": 1,
+   "clean": 1,
+   "quality": 0,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "1c0894bfe7751be2e1afa4e8bac564b8"
+   ],
+   "boot_id": null,
+   "map": [
+    "campaign4-2026-10-18/val-01/normal-01"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "campaign5-2026-10-18/train-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-01",
+   "split": "TRAIN",
+   "frames": 11,
+   "clean": 10,
+   "quality": 1,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "1c0894bfe7751be2e1afa4e8bac564b8"
+   ],
+   "boot_id": null,
+   "map": [
+    "campaign5-2026-10-18/train-01/normal-01",
+    "campaign5-2026-10-18/train-01/normal-02",
+    "campaign5-2026-10-18/train-01/normal-03",
+    "campaign5-2026-10-18/train-01/normal-04",
+    "campaign5-2026-10-18/train-01/normal-05",
+    "campaign5-2026-10-18/train-01/normal-06",
+    "campaign5-2026-10-18/train-01/normal-07",
+    "campaign5-2026-10-18/train-01/normal-08",
+    "campaign5-2026-10-18/train-01/normal-09",
+    "campaign5-2026-10-18/train-01/normal-10",
+    "campaign5-2026-10-18/train-01/off-01"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "campaign5-2026-10-18/train-02",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "train-02",
+   "split": "TRAIN",
+   "frames": 11,
+   "clean": 10,
+   "quality": 1,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "1c0894bfe7751be2e1afa4e8bac564b8"
+   ],
+   "boot_id": null,
+   "map": [
+    "campaign5-2026-10-18/train-02/normal-01",
+    "campaign5-2026-10-18/train-02/normal-02",
+    "campaign5-2026-10-18/train-02/normal-03",
+    "campaign5-2026-10-18/train-02/normal-04",
+    "campaign5-2026-10-18/train-02/normal-05",
+    "campaign5-2026-10-18/train-02/normal-06",
+    "campaign5-2026-10-18/train-02/normal-07",
+    "campaign5-2026-10-18/train-02/normal-08",
+    "campaign5-2026-10-18/train-02/normal-09",
+    "campaign5-2026-10-18/train-02/normal-10",
+    "campaign5-2026-10-18/train-02/off-01"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "campaign5-2026-10-18/val-01",
+   "source_id": "campaign5-2026-10-18",
+   "session_id": "val-01",
+   "split": "VAL",
+   "frames": 11,
+   "clean": 10,
+   "quality": 1,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "1c0894bfe7751be2e1afa4e8bac564b8"
+   ],
+   "boot_id": null,
+   "map": [
+    "campaign5-2026-10-18/val-01/normal-01",
+    "campaign5-2026-10-18/val-01/normal-02",
+    "campaign5-2026-10-18/val-01/normal-03",
+    "campaign5-2026-10-18/val-01/normal-04",
+    "campaign5-2026-10-18/val-01/normal-05",
+    "campaign5-2026-10-18/val-01/normal-06",
+    "campaign5-2026-10-18/val-01/normal-07",
+    "campaign5-2026-10-18/val-01/normal-08",
+    "campaign5-2026-10-18/val-01/normal-09",
+    "campaign5-2026-10-18/val-01/normal-10",
+    "campaign5-2026-10-18/val-01/off-01"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "synthetic-fixtures/synthetic-leak-train",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-leak-train",
+   "split": "TRAIN",
+   "frames": 1,
+   "clean": 1,
+   "quality": 0,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": true,
+   "release_ids": [],
+   "boot_id": null,
+   "map": [
+    "synthetic-fixtures/duplicates/leak-train.json"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "synthetic-fixtures/synthetic-leak-val",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-leak-val",
+   "split": "VAL",
+   "frames": 1,
+   "clean": 1,
+   "quality": 0,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": true,
+   "release_ids": [],
+   "boot_id": null,
+   "map": [
+    "synthetic-fixtures/duplicates/leak-val.json"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-BPSK",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-BPSK",
+   "split": "TEST",
+   "frames": 2,
+   "clean": 2,
+   "quality": 0,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": true,
+   "release_ids": [],
+   "boot_id": null,
+   "map": [
+    "synthetic-fixtures/duplicates/dup-session-b.json",
+    "synthetic-fixtures/valid/BPSK.json"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-QAM16",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-QAM16",
+   "split": "TEST",
+   "frames": 1,
+   "clean": 1,
+   "quality": 0,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": true,
+   "release_ids": [],
+   "boot_id": null,
+   "map": [
+    "synthetic-fixtures/valid/QAM16.json"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-QAM64",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-QAM64",
+   "split": "TEST",
+   "frames": 1,
+   "clean": 1,
+   "quality": 0,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": true,
+   "release_ids": [],
+   "boot_id": null,
+   "map": [
+    "synthetic-fixtures/valid/QAM64.json"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-QPSK",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-QPSK",
+   "split": "TEST",
+   "frames": 1,
+   "clean": 1,
+   "quality": 0,
+   "stress": 0,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": true,
+   "release_ids": [],
+   "boot_id": null,
+   "map": [
+    "synthetic-fixtures/valid/QPSK.json"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "synthetic-fixtures/synthetic-sim-smoke-test",
+   "source_id": "synthetic-fixtures",
+   "session_id": "synthetic-sim-smoke-test",
+   "split": "TEST",
+   "frames": 4,
+   "clean": 3,
+   "quality": 1,
+   "stress": 0,
+   "other": 0,
+   "invalid": 4,
+   "synthetic": true,
+   "release_ids": [],
+   "boot_id": null,
+   "map": [
+    "synthetic-fixtures/invalid/truth_from_environment.json",
+    "synthetic-fixtures/invalid/truth_from_model.json",
+    "synthetic-fixtures/invalid/wrong_length.json",
+    "synthetic-fixtures/invalid/wrong_sample_rate.json"
+   ],
+   "release_consistent": true
+  },
+  {
+   "session_key": "teaching-2026-10-21/s2-46db-80mhz-narrowband-2026-10-21",
+   "source_id": "teaching-2026-10-21",
+   "session_id": "s2-46db-80mhz-narrowband-2026-10-21",
+   "split": "UNASSIGNED",
+   "frames": 4,
+   "clean": 1,
+   "quality": 0,
+   "stress": 3,
+   "other": 0,
+   "invalid": 0,
+   "synthetic": false,
+   "release_ids": [
+    "3f84f6a189e833b6986f4c819ff89be0"
+   ],
+   "boot_id": null,
+   "map": [
+    "teaching-2026-10-21/nf-00-normal",
+    "teaching-2026-10-21/nf-01-narrowband",
+    "teaching-2026-10-21/nf-02-narrowband",
+    "teaching-2026-10-21/nf-03-narrowband"
+   ],
+   "release_consistent": true
+  }
+ ]
+}

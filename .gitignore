@@ -1,0 +1,63 @@
+# Vivado 工程产物
+awg/
+.Xil/
+*.jou
+*.log
+*.backup.jou
+*.backup.log
+webtalk*
+# xsim 仿真产物
+xvlog.pb
+xelab.pb
+xsim.dir/
+# Python
+__pycache__/
+*.pyc
+# SDK generated workspace
+sdk/ws*/
+sdk/hw/
+sdk/tmp_ws/
+
+# 上位机与 SDK 产物
+host/.venv/
+.superpowers/
+ui_candidate/
+
+# 本地环境与调试产物
+.claude/
+NA/
+*.wdb
+harm_out.txt
+dfx_runtime.txt
+
+# PYNQ overlay 工程产物(源码在 pynq_overlay/{bd,constraints,sw})
+pynq_overlay/vivado/
+pynq_overlay/out/
+# 合流 overlay 的位流副本: 由 awg 的构建产物 + hwh 拷成 PYNQ 能装的一对, 是派生状态
+pynq_overlay/out_merged/
+# 每个 testbench 的 xsim 工作目录(放 _run.tcl 与仿真产物, 不是源码)
+pynq_overlay/tb/sim_*/
+# RF overlay 构建产物(BD 是派生状态, 由 rf_overlay/build.tcl 重新生成)
+rf_overlay/vivado/
+rf_overlay/logs/
+# RF overlay 的位流与 hwh 也是派生状态(同 awg/ 与 pynq_overlay/out/ 的惯例)
+rf_overlay/out/
+
+# 参考资料的大二进制(pdf/zip, 其中一个 791 MB); 目录里的文本文件仍跟踪
+docs/reference/*.pdf
+docs/reference/*.zip
+
+# board_app 的编译产物(.obj/ 板端, .hostobj/ 主机侧, 以及可执行文件)
+rf_overlay/sw/board_app/.obj/
+rf_overlay/sw/board_app/.hostobj/
+rf_overlay/sw/board_app/board_app
+rf_overlay/sw/.board_branch_check/
+
+# Local archive, sanitized exports, test scratch and private configuration
+/.local/
+/dist/
+.pytest_cache/
+.pytest-work*/
+.env
+.env.*
+!.env.example

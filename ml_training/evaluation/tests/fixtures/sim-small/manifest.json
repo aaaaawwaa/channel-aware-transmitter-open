@@ -1,0 +1,223 @@
+{
+  "schema": "ml-modrec-synthetic-v1",
+  "dataset_id": "sim-small",
+  "created_utc": "2026-10-20T00:00:00Z",
+  "config_path": "ml_training/config/first_round.json",
+  "config_sha256": "f1a677ce0cb2e929ef6b3d3452ab395e925ac07caae54921210e405c1b68dbcc",
+  "numpy_version": "2.5.4",
+  "waveform": {
+    "fs_hz": 60000000,
+    "symbol_rate_hz": 3000000,
+    "sps": 20,
+    "shaping": "RECT",
+    "samples": 4096,
+    "n_symbols": 207
+  },
+  "classes": [
+    "BPSK",
+    "QPSK",
+    "QAM16",
+    "QAM64"
+  ],
+  "gate_kinds": [
+    "OFF",
+    "NOISE",
+    "TONE",
+    "CLIP"
+  ],
+  "splits": {
+    "train": {
+      "seed_families": [
+        "train-a"
+      ],
+      "snr": {
+        "kind": "uniform",
+        "low": -6.0,
+        "high": 18.0
+      },
+      "sessions": []
+    },
+    "val": {
+      "seed_families": [
+        "val-a"
+      ],
+      "snr": {
+        "kind": "uniform",
+        "low": -6.0,
+        "high": 18.0
+      },
+      "sessions": []
+    },
+    "test": {
+      "seed_families": [
+        "test-a"
+      ],
+      "snr_db_grid": [
+        0.0,
+        10.0
+      ],
+      "sessions": [
+        {
+          "session_id": "test-BPSK-test-a",
+          "label": "BPSK",
+          "seed_family": "test-a",
+          "frames": 2,
+          "snr_db_grid": [
+            0.0,
+            10.0
+          ]
+        },
+        {
+          "session_id": "test-QPSK-test-a",
+          "label": "QPSK",
+          "seed_family": "test-a",
+          "frames": 2,
+          "snr_db_grid": [
+            0.0,
+            10.0
+          ]
+        },
+        {
+          "session_id": "test-QAM16-test-a",
+          "label": "QAM16",
+          "seed_family": "test-a",
+          "frames": 2,
+          "snr_db_grid": [
+            0.0,
+            10.0
+          ]
+        },
+        {
+          "session_id": "test-QAM64-test-a",
+          "label": "QAM64",
+          "seed_family": "test-a",
+          "frames": 2,
+          "snr_db_grid": [
+            0.0,
+            10.0
+          ]
+        }
+      ]
+    },
+    "gate_cal": {
+      "families": [
+        "gate-cal-a"
+      ],
+      "frames_per_kind": 3,
+      "sessions": []
+    },
+    "gate_test": {
+      "families": [
+        "gate-test-a"
+      ],
+      "frames_per_kind": 3,
+      "sessions": [
+        {
+          "session_id": "gate-test-OFF-gate-test-a",
+          "kind": "OFF",
+          "label": "OFF",
+          "seed_family": "gate-test-a",
+          "frames": 3,
+          "snr_db_grid": null
+        },
+        {
+          "session_id": "gate-test-NOISE-gate-test-a",
+          "kind": "NOISE",
+          "label": "NOISE",
+          "seed_family": "gate-test-a",
+          "frames": 3,
+          "snr_db_grid": null
+        },
+        {
+          "session_id": "gate-test-TONE-gate-test-a",
+          "kind": "TONE",
+          "label": "TONE",
+          "seed_family": "gate-test-a",
+          "frames": 3,
+          "snr_db_grid": null
+        },
+        {
+          "session_id": "gate-test-CLIP-gate-test-a",
+          "kind": "CLIP",
+          "label": "CLIP",
+          "seed_family": "gate-test-a",
+          "frames": 3,
+          "snr_db_grid": null
+        }
+      ]
+    }
+  },
+  "files": [
+    {
+      "path": "frames/test-BPSK.npz",
+      "sha256": "7102cc5a0f02b7347a28dc1645e7f027dd66651692d51dab11db7aa6dff7d9a3",
+      "split": "test",
+      "label": "BPSK",
+      "count": 3,
+      "clipped_count": 1
+    },
+    {
+      "path": "frames/test-QPSK.npz",
+      "sha256": "a75b346f924ccd1748e335d26cd0d2966bff1ad6071dba52f191ecf2ba1c9608",
+      "split": "test",
+      "label": "QPSK",
+      "count": 3,
+      "clipped_count": 1
+    },
+    {
+      "path": "frames/test-QAM16.npz",
+      "sha256": "047396444eca3d68cbfd802d568615bf9324dc5a44331227ea3b6388851e4d61",
+      "split": "test",
+      "label": "QAM16",
+      "count": 3,
+      "clipped_count": 1
+    },
+    {
+      "path": "frames/test-QAM64.npz",
+      "sha256": "2778e1df3f5d30971a72e3b4942285b75df7d68697bd694c57fe7ae7cdb7630a",
+      "split": "test",
+      "label": "QAM64",
+      "count": 3,
+      "clipped_count": 1
+    },
+    {
+      "path": "gate/gate_test-OFF.npz",
+      "sha256": "8aef8291d727334b5232b837d9fdeb5f96181d6cb2823df44e1610caa4208c71",
+      "split": "gate_test",
+      "label": "OFF",
+      "count": 3,
+      "clipped_count": 0
+    },
+    {
+      "path": "gate/gate_test-NOISE.npz",
+      "sha256": "5a5303e7d3a7bae054cc87ec540fb6d1dd697a0f76c5303757334f521df915af",
+      "split": "gate_test",
+      "label": "NOISE",
+      "count": 3,
+      "clipped_count": 0
+    },
+    {
+      "path": "gate/gate_test-TONE.npz",
+      "sha256": "aa6a362da858fd48137cc2562c7e7f129e88856f538300bbc391c12c352facd1",
+      "split": "gate_test",
+      "label": "TONE",
+      "count": 3,
+      "clipped_count": 0
+    },
+    {
+      "path": "gate/gate_test-CLIP.npz",
+      "sha256": "b3bca31d2c38a90e91eb561b23880cd7f3ff73bd22bfad2cf2437f520a87caeb",
+      "split": "gate_test",
+      "label": "CLIP",
+      "count": 3,
+      "clipped_count": 3
+    }
+  ],
+  "summary": {
+    "total_frames": 24,
+    "clipped_frames": 7,
+    "cross_split_duplicate_iq": 0,
+    "intra_split_duplicate_iq": 0,
+    "note": "fixture dataset for evaluation tests; NOT the training dataset"
+  }
+}

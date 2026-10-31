@@ -1,0 +1,12 @@
+{
+  "serial": "<DEVICE_SERIAL>",
+  "center_hz": 433900000,
+  "sample_rate": 2400000,
+  "bandwidth_hz": 1500000,
+  "tone_hz": 200000,
+  "amplitude": 0.1,
+  "tx_attenuation_db": 60,
+  "rx_gain_db": 0,
+  "duration_s": 2,
+  "capture_samples": 262144
+}

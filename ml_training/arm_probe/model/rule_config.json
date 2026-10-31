@@ -1,0 +1,283 @@
+{
+ "schema": "ml-modrec-round2-rule-config-v1",
+ "created_utc": "2026-10-20T14:52:53Z",
+ "purpose": "round-2 offline improvement: frozen round-1 CNN + interpretable feature arbitration for BPSK/QPSK + interpretable spectral rejection rules",
+ "frozen_round1": {
+  "cnn": {
+   "path": "ml_training/artifacts/cnn/model.json",
+   "sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc"
+  },
+  "baseline": {
+   "path": "ml_training/artifacts/baseline/model.json",
+   "sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014"
+  },
+  "gate": {
+   "max_softmax": 0.45,
+   "margin": 0.0,
+   "min_complex_rms": 57.05962767972466
+  },
+  "thresholds_json_sha256": "6c8bb7c9fa536cd230d926b59eb0aa19746641175fa0e9a6c89b1c8b57565eb8"
+ },
+ "arbitration": {
+  "variant": "v1",
+  "threshold": 0.3,
+  "classes": [
+   "BPSK",
+   "QPSK"
+  ],
+  "description": "when the frozen CNN top-1 is BPSK or QPSK, the frozen 36-parameter interpretable baseline arbitrates between them if |p_BPSK - p_QPSK| > threshold",
+  "calibration": {
+   "split": "sim-r2/val (dev, new seed families)",
+   "plain_val_accuracy": 0.8375,
+   "arbitrated_val_accuracy": 0.8541666666666666,
+   "changed_to_correct": 21,
+   "changed_from_correct": 1,
+   "per_class_recall": {
+    "BPSK": {
+     "n": 300,
+     "plain_recall": 0.9333333333333333,
+     "arbitrated_recall": 0.9733333333333334
+    },
+    "QPSK": {
+     "n": 300,
+     "plain_recall": 0.9,
+     "arbitrated_recall": 0.9266666666666666
+    },
+    "QAM16": {
+     "n": 300,
+     "plain_recall": 0.7966666666666666,
+     "arbitrated_recall": 0.7966666666666666
+    },
+    "QAM64": {
+     "n": 300,
+     "plain_recall": 0.72,
+     "arbitrated_recall": 0.72
+    }
+   },
+   "grid": [
+    {
+     "threshold": 0.0,
+     "val_accuracy": 0.845,
+     "changed_to_correct": 36,
+     "changed_from_correct": 27
+    },
+    {
+     "threshold": 0.05,
+     "val_accuracy": 0.85,
+     "changed_to_correct": 34,
+     "changed_from_correct": 19
+    },
+    {
+     "threshold": 0.1,
+     "val_accuracy": 0.85,
+     "changed_to_correct": 30,
+     "changed_from_correct": 15
+    },
+    {
+     "threshold": 0.15,
+     "val_accuracy": 0.8533333333333334,
+     "changed_to_correct": 29,
+     "changed_from_correct": 10
+    },
+    {
+     "threshold": 0.2,
+     "val_accuracy": 0.8541666666666666,
+     "changed_to_correct": 26,
+     "changed_from_correct": 6
+    },
+    {
+     "threshold": 0.25,
+     "val_accuracy": 0.8533333333333334,
+     "changed_to_correct": 22,
+     "changed_from_correct": 3
+    },
+    {
+     "threshold": 0.3,
+     "val_accuracy": 0.8541666666666666,
+     "changed_to_correct": 21,
+     "changed_from_correct": 1
+    },
+    {
+     "threshold": 0.35,
+     "val_accuracy": 0.8516666666666667,
+     "changed_to_correct": 17,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.4,
+     "val_accuracy": 0.8491666666666666,
+     "changed_to_correct": 14,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.45,
+     "val_accuracy": 0.8483333333333334,
+     "changed_to_correct": 13,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.5,
+     "val_accuracy": 0.8483333333333334,
+     "changed_to_correct": 13,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.55,
+     "val_accuracy": 0.8483333333333334,
+     "changed_to_correct": 13,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.6,
+     "val_accuracy": 0.8483333333333334,
+     "changed_to_correct": 13,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.65,
+     "val_accuracy": 0.8483333333333334,
+     "changed_to_correct": 13,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.7,
+     "val_accuracy": 0.8483333333333334,
+     "changed_to_correct": 13,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.75,
+     "val_accuracy": 0.8483333333333334,
+     "changed_to_correct": 13,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.8,
+     "val_accuracy": 0.8475,
+     "changed_to_correct": 12,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.85,
+     "val_accuracy": 0.8475,
+     "changed_to_correct": 12,
+     "changed_from_correct": 0
+    },
+    {
+     "threshold": 0.9,
+     "val_accuracy": 0.8458333333333333,
+     "changed_to_correct": 10,
+     "changed_from_correct": 0
+    }
+   ],
+   "variant_comparison": {
+    "v1": {
+     "threshold": 0.3,
+     "val_accuracy": 0.8541666666666666,
+     "changed_to_correct": 21,
+     "changed_from_correct": 1
+    },
+    "v2": {
+     "threshold": 0.3,
+     "val_accuracy": 0.8516666666666667,
+     "changed_to_correct": 18,
+     "changed_from_correct": 1
+    }
+   }
+  }
+ },
+ "spectral_gate": {
+  "tone": {
+   "feature": "top5_frac",
+   "op": ">",
+   "threshold": 0.527328260750662,
+   "selection": {
+    "method": "midpoint between max known and min tone",
+    "max_known_valid": 0.1376966157306292,
+    "min_tone_valid": 0.9169599057706946,
+    "known_false_rejection": 0.0,
+    "tone_rejection": 1.0
+   }
+  },
+  "noise": {
+   "feature": "band_frac_3m",
+   "op": "<",
+   "threshold": 0.25161,
+   "selection": {
+    "threshold": 0.25161,
+    "noise_rejection": 1.0,
+    "incremental_known_false_rejection": 0.0008333333333333334,
+    "incremental_known_false_rejection_cap": 0.01
+   }
+  },
+  "feature_definitions": {
+   "top5_frac": "fraction of FFT power in the five strongest bins",
+   "band_frac_3m": "fraction of FFT power inside |f| <= 3 MHz"
+  },
+  "calibration": {
+   "split": "sim-r2/gate_cal + sim-r2/val (dev)",
+   "known_frames": 1200,
+   "before_gate_accepted": 1171,
+   "before_gate_known_false_rejection": 0.02416666666666667,
+   "after_gate_accepted": 1170,
+   "after_gate_known_false_rejection": 0.025000000000000022,
+   "incremental_known_false_rejection": 0.0008333333333333334,
+   "incremental_known_false_rejection_count": 1,
+   "gate_cal_rejection_before_after": {
+    "OFF": {
+     "n": 100,
+     "before_rejected": 100,
+     "after_rejected": 100
+    },
+    "NOISE": {
+     "n": 100,
+     "before_rejected": 16,
+     "after_rejected": 100
+    },
+    "TONE": {
+     "n": 100,
+     "before_rejected": 0,
+     "after_rejected": 100
+    },
+    "CLIP": {
+     "n": 100,
+     "before_rejected": 100,
+     "after_rejected": 100
+    }
+   },
+   "noise_rejection_tradeoff": [
+    {
+     "target": 0.005,
+     "threshold": 0.25161,
+     "noise_rejection": 1.0,
+     "incremental_known_false_rejection": 0.0008333333333333334
+    },
+    {
+     "target": 0.01,
+     "threshold": 0.25161,
+     "noise_rejection": 1.0,
+     "incremental_known_false_rejection": 0.0008333333333333334
+    },
+    {
+     "target": 0.02,
+     "threshold": 0.25161,
+     "noise_rejection": 1.0,
+     "incremental_known_false_rejection": 0.0008333333333333334
+    }
+   ],
+   "tone_rejection_on_gate_cal": 1.0,
+   "noise_rejection_on_gate_cal": 1.0
+  }
+ },
+ "dataset": {
+  "path": "ml_training/round2/datasets/sim-r2",
+  "manifest_sha256": "83afaf8a9fe604114d3d1f260a4e1e445aaf7575ae9f26bff3d7bfbdd62e88e9",
+  "config_sha256": "431c4e7b3ac53a6c91a8075816049945ab9f386476c71150dd0e8acffe2cbdde",
+  "data_use": "test/gate_test not used by this calibration"
+ },
+ "notes": {
+  "no_retraining": true,
+  "parameter_count_added": 0,
+  "round1_artifacts_modified": false
+ }
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "ml-fourclass-test-vectors-config-v1",
+  "synthetic": true,
+  "real_capture": false,
+  "product_qualification": false,
+  "source_generator": "pynq_overlay/sw/rf_iq_signal.py",
+  "source_generator_version_note": "reuse product PRBS7, constellation mapping, RECT pulse shaping and s16_iq_le packing; no new waveform framework",
+  "mode_order": ["BPSK", "QPSK", "QAM16", "QAM64"],
+  "vectors": [
+    {"mode": "BPSK", "seed": 1},
+    {"mode": "QPSK", "seed": 37},
+    {"mode": "QAM16", "seed": 73},
+    {"mode": "QAM64", "seed": 127}
+  ],
+  "signal": {
+    "symbol_rate_hz": 3000000,
+    "shaping": "RECT",
+    "differential_encoding": false,
+    "rolloff": "0.2",
+    "prbs_polynomial": "x^7 + x^6 + 1 (RTL bit6 output, bit6 XOR bit5 feedback)",
+    "prbs_seed_range": [1, 127],
+    "prbs_symbols_per_period": 127,
+    "amplitude_codes": 1800,
+    "amplitude_normalisation": "component_peak",
+    "amplitude_note": "max(max|I|, max|Q|) == amplitude_codes, matching rf_iq_signal.generate_digital_frame; no code equals -2048 or 2047; the 60 MSPS representation is derived by holding each 6 MSPS sample for 10 samples, so both rates share one quantized baseband"
+  },
+  "rates": {
+    "six_msps": {
+      "sample_rate_hz": 6000000,
+      "samples_per_symbol": 2,
+      "samples": 254,
+      "bytes": 1016,
+      "period_symbols": 127,
+      "duration_us": 42.3333333333,
+      "sha": "computed at generation"
+    },
+    "sixty_msps": {
+      "sample_rate_hz": 60000000,
+      "samples_per_symbol": 20,
+      "samples": 4096,
+      "bytes": 16384,
+      "window_offset_samples": 0,
+      "upsample_factor_from_six_msps": 10,
+      "six_msps_period_samples": 2540,
+      "periods_available": 2,
+      "duration_us": 68.2666666667,
+      "window_note": "first 4096 samples of two repeats of the 6 MSPS period upsampled by 10; a receiver window is not a separate symbol generator"
+    }
+  },
+  "format": {
+    "name": "s16_iq_le",
+    "item": "little-endian signed int16",
+    "interleaving": "I,Q per complex sample",
+    "bytes_per_complex_sample": 4,
+    "code_range": [-2048, 2047],
+    "no_differential_encoding": true
+  },
+  "constellation_mapping": {
+    "bit_order": "MSB-first per symbol; first serial bit maps to I, later bits to Q",
+    "axis2": [1, -1],
+    "axis4": [3, 1, -3, -1],
+    "axis8": [7, 5, 1, 3, -7, -5, -1, -3],
+    "BPSK": "I=axis2[b0], Q=0",
+    "QPSK": "I=axis2[b0], Q=axis2[b1]",
+    "QAM16": "I=axis4[(b0<<1)|b1], Q=axis4[(b2<<1)|b3]",
+    "QAM64": "I=axis8[(b0<<2)|(b1<<1)|b2], Q=axis8[(b3<<2)|(b4<<1)|b5]"
+  },
+  "truth": {
+    "source": "declared class in this config plus independent PRBS/constellation verification",
+    "model_predictions_are_not_truth": true
+  },
+  "scope_note": "SYNTHETIC offline vectors only. Counts are not real captures, real accuracy, or product qualification. 6 MSPS is for a future Pluto/GNU Radio transmit interface; 60 MSPS is the frozen model offline domain. Never mix the two rates."
+}

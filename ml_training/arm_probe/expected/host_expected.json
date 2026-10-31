@@ -1,0 +1,3175 @@
+{
+ "schema": "ml-modrec-arm-probe-replay-v1",
+ "package": {
+  "name": "ml_training/arm_probe",
+  "manifest_sha256": "fa438909919c17ac761bb380a783d52116309cda0768f033569e8773f794cc00",
+  "frames": 43
+ },
+ "host": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64"
+ },
+ "frames": [
+  {
+   "id": "clean-fail-train02-normal-01",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-01.iq",
+   "iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b",
+   "rms": 322.5734087316783,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.8246143430564032,
+    "margin": 0.6504097864459982,
+    "scores": [
+     0.174204556610405,
+     0.8246143430564032,
+     0.0011808788309006933,
+     2.2150229117157988e-07
+    ],
+    "logits": [
+     5.870659828186035,
+     7.425345420837402,
+     0.876688539981842,
+     -7.704648017883301
+    ],
+    "rms": 322.5734087316783
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8246143430564032,
+    "margin": 0.6504097864459982,
+    "scores": [
+     0.174204556610405,
+     0.8246143430564032,
+     0.0011808788309006933,
+     2.2150229117157988e-07
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999905
+    },
+    "baseline_scores": [
+     0.9999999999999905,
+     4.6597405587947805e-27,
+     1.5505734523627026e-18,
+     9.510681671666966e-15
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014487137899939185,
+    "top5_frac": 0.0634838057257459,
+    "top9_frac": 0.10503511686432065,
+    "band_frac_3m": 0.8666642366076498,
+    "peak_to_median_db": 31.9472331806936,
+    "spectral_entropy": 0.7216070722853783
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-02",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-02.iq",
+   "iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d",
+   "rms": 318.36109159107446,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.6790064868083286,
+    "margin": 0.3586958562612696,
+    "scores": [
+     0.32031063054705905,
+     0.6790064868083286,
+     0.0006828057514915006,
+     7.689312079072098e-08
+    ],
+    "logits": [
+     6.7965569496154785,
+     7.547896385192871,
+     0.6457208395004272,
+     -8.445828437805176
+    ],
+    "rms": 318.36109159107446
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.6790064868083286,
+    "margin": 0.3586958562612696,
+    "scores": [
+     0.32031063054705905,
+     0.6790064868083286,
+     0.0006828057514915006,
+     7.689312079072098e-08
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999958
+    },
+    "baseline_scores": [
+     0.9999999999999958,
+     3.3685241049198345e-27,
+     5.487190566978496e-19,
+     4.147550917508799e-15
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.015250454753623442,
+    "top5_frac": 0.06667078263101331,
+    "top9_frac": 0.10271415421735249,
+    "band_frac_3m": 0.8715382618668089,
+    "peak_to_median_db": 31.814805284181165,
+    "spectral_entropy": 0.7197449495375646
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-03",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-03.iq",
+   "iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b",
+   "rms": 317.34742372115295,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.6066491549390236,
+    "margin": 0.21372453845588335,
+    "scores": [
+     0.39292461648314025,
+     0.6066491549390236,
+     0.00042618365829011427,
+     4.491954595661777e-08
+    ],
+    "logits": [
+     7.26116418838501,
+     7.695497035980225,
+     0.43466150760650635,
+     -8.723091125488281
+    ],
+    "rms": 317.34742372115295
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.6066491549390236,
+    "margin": 0.21372453845588335,
+    "scores": [
+     0.39292461648314025,
+     0.6066491549390236,
+     0.00042618365829011427,
+     4.491954595661777e-08
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999871
+    },
+    "baseline_scores": [
+     0.9999999999999871,
+     1.1191957897471444e-26,
+     1.6654189334167686e-18,
+     1.2952658352556766e-14
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014944921395031301,
+    "top5_frac": 0.06331992032749885,
+    "top9_frac": 0.10357969876009329,
+    "band_frac_3m": 0.8653169583046969,
+    "peak_to_median_db": 31.76046329691722,
+    "spectral_entropy": 0.7227264232802554
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-04",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-04.iq",
+   "iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17",
+   "rms": 317.26243092860176,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.8139245182735483,
+    "margin": 0.6289167155423756,
+    "scores": [
+     0.18500780273117262,
+     0.8139245182735483,
+     0.0010674660918347338,
+     2.1290344437069543e-07
+    ],
+    "logits": [
+     5.948249340057373,
+     7.429718971252441,
+     0.7931390404701233,
+     -7.726820468902588
+    ],
+    "rms": 317.26243092860176
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8139245182735483,
+    "margin": 0.6289167155423756,
+    "scores": [
+     0.18500780273117262,
+     0.8139245182735483,
+     0.0010674660918347338,
+     2.1290344437069543e-07
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999944
+    },
+    "baseline_scores": [
+     0.9999999999999944,
+     4.006092627226334e-27,
+     5.870006343052596e-19,
+     5.565898819451828e-15
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.01459428282360765,
+    "top5_frac": 0.06362275788470792,
+    "top9_frac": 0.10347558399691596,
+    "band_frac_3m": 0.8661911658624054,
+    "peak_to_median_db": 31.303166181005647,
+    "spectral_entropy": 0.7216007591688007
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-05",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-05.iq",
+   "iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8",
+   "rms": 317.987552951597,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.7733467839542294,
+    "margin": 0.5475071023967135,
+    "scores": [
+     0.2258396815575159,
+     0.7733467839542294,
+     0.0008133756498421994,
+     1.5883841239407572e-07
+    ],
+    "logits": [
+     6.258120536804199,
+     7.489022731781006,
+     0.6317329406738281,
+     -7.909327983856201
+    ],
+    "rms": 317.987552951597
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7733467839542294,
+    "margin": 0.5475071023967135,
+    "scores": [
+     0.2258396815575159,
+     0.7733467839542294,
+     0.0008133756498421994,
+     1.5883841239407572e-07
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999953
+    },
+    "baseline_scores": [
+     0.9999999999999953,
+     2.123106034536372e-27,
+     5.231456951079326e-19,
+     4.567979386133553e-15
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.013647988718666536,
+    "top5_frac": 0.06273611651619579,
+    "top9_frac": 0.10380137323801447,
+    "band_frac_3m": 0.865716078632109,
+    "peak_to_median_db": 31.8887111634931,
+    "spectral_entropy": 0.7216108676181733
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-06",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-06.iq",
+   "iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3",
+   "rms": 315.03868392316156,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.7687620278735369,
+    "margin": 0.5385603789310253,
+    "scores": [
+     0.2302016489425116,
+     0.7687620278735369,
+     0.0010361850639778398,
+     1.3811997353816546e-07
+    ],
+    "logits": [
+     6.255051612854004,
+     7.460877418518066,
+     0.8516417145729065,
+     -8.07129192352295
+    ],
+    "rms": 315.03868392316156
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7687620278735369,
+    "margin": 0.5385603789310253,
+    "scores": [
+     0.2302016489425116,
+     0.7687620278735369,
+     0.0010361850639778398,
+     1.3811997353816546e-07
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999891
+    },
+    "baseline_scores": [
+     0.9999999999999891,
+     8.487689105184585e-27,
+     1.7685610661791153e-18,
+     1.0905672416512464e-14
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.01381620835909306,
+    "top5_frac": 0.05915504403916131,
+    "top9_frac": 0.09903425562843564,
+    "band_frac_3m": 0.8672612626778498,
+    "peak_to_median_db": 31.51206538221096,
+    "spectral_entropy": 0.7230377728266486
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-07",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-07.iq",
+   "iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8",
+   "rms": 316.3972285432753,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.8761858417385969,
+    "margin": 0.7542058481622451,
+    "scores": [
+     0.12197999357635185,
+     0.8761858417385969,
+     0.0018337919051808378,
+     3.7277987037169594e-07
+    ],
+    "logits": [
+     5.332893371582031,
+     7.304614543914795,
+     1.1354222297668457,
+     -7.365486145019531
+    ],
+    "rms": 316.3972285432753
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8761858417385969,
+    "margin": 0.7542058481622451,
+    "scores": [
+     0.12197999357635185,
+     0.8761858417385969,
+     0.0018337919051808378,
+     3.7277987037169594e-07
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999905
+    },
+    "baseline_scores": [
+     0.9999999999999905,
+     7.366448035962477e-27,
+     1.5984378991191505e-18,
+     9.558314209710699e-15
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014190035113775245,
+    "top5_frac": 0.0659325434461878,
+    "top9_frac": 0.1036932013253848,
+    "band_frac_3m": 0.8668779318510424,
+    "peak_to_median_db": 31.55752993457982,
+    "spectral_entropy": 0.7220883519302195
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-08",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-08.iq",
+   "iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562",
+   "rms": 314.67646704447185,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.7155626290537318,
+    "margin": 0.4318361244613186,
+    "scores": [
+     0.2837265045924132,
+     0.7155626290537318,
+     0.00071078145007433,
+     8.490378066629263e-08
+    ],
+    "logits": [
+     6.673038959503174,
+     7.598097324371338,
+     0.6836379170417786,
+     -8.348963737487793
+    ],
+    "rms": 314.67646704447185
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7155626290537318,
+    "margin": 0.4318361244613186,
+    "scores": [
+     0.2837265045924132,
+     0.7155626290537318,
+     0.00071078145007433,
+     8.490378066629263e-08
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999931
+    },
+    "baseline_scores": [
+     0.9999999999999931,
+     3.0509262737056575e-27,
+     9.167915538860509e-19,
+     6.983246265473868e-15
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.012575257521093237,
+    "top5_frac": 0.05985054211868054,
+    "top9_frac": 0.10265754247633732,
+    "band_frac_3m": 0.8713308230518587,
+    "peak_to_median_db": 31.080574446760668,
+    "spectral_entropy": 0.7200828745173512
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-09",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-09.iq",
+   "iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772",
+   "rms": 312.9979219964665,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.7577774209497495,
+    "margin": 0.5164151388084465,
+    "scores": [
+     0.24136228214130306,
+     0.7577774209497495,
+     0.0008601796032085157,
+     1.1730573892035963e-07
+    ],
+    "logits": [
+     6.400831699371338,
+     7.544922351837158,
+     0.7639185786247253,
+     -8.136194229125977
+    ],
+    "rms": 312.9979219964665
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7577774209497495,
+    "margin": 0.5164151388084465,
+    "scores": [
+     0.24136228214130306,
+     0.7577774209497495,
+     0.0008601796032085157,
+     1.1730573892035963e-07
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999902
+    },
+    "baseline_scores": [
+     0.9999999999999902,
+     7.787826889697653e-27,
+     1.6179306915774373e-18,
+     9.793100181419859e-15
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014915943863494577,
+    "top5_frac": 0.06501881862643229,
+    "top9_frac": 0.10360966066113045,
+    "band_frac_3m": 0.8631626668698453,
+    "peak_to_median_db": 31.624029752860594,
+    "spectral_entropy": 0.7228951221584495
+   }
+  },
+  {
+   "id": "clean-fail-train02-normal-10",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-10.iq",
+   "iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260",
+   "rms": 312.8274708878163,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.5276828202898632,
+    "margin": 0.055629062625190795,
+    "scores": [
+     0.47205375766467245,
+     0.5276828202898632,
+     0.0002633882350539685,
+     3.3810410288602066e-08
+    ],
+    "logits": [
+     7.608785629272461,
+     7.720188140869141,
+     0.11756660044193268,
+     -8.843049049377441
+    ],
+    "rms": 312.8274708878163
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.5276828202898632,
+    "margin": 0.055629062625190795,
+    "scores": [
+     0.47205375766467245,
+     0.5276828202898632,
+     0.0002633882350539685,
+     3.3810410288602066e-08
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999856
+    },
+    "baseline_scores": [
+     0.9999999999999856,
+     2.803281125365668e-26,
+     2.2333314534751747e-18,
+     1.436176703850665e-14
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.013676247856837916,
+    "top5_frac": 0.0620171989772801,
+    "top9_frac": 0.1018967577608062,
+    "band_frac_3m": 0.8630801941755805,
+    "peak_to_median_db": 31.207916607145954,
+    "spectral_entropy": 0.7241983710030414
+   }
+  },
+  {
+   "id": "clean-real-bpsk-train-01-normal-01",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-01.iq",
+   "iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826",
+   "rms": 569.5446833451443,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8765601615172245,
+    "margin": 0.7531357889203475,
+    "scores": [
+     0.8765601615172245,
+     0.12342437259687704,
+     1.5465766827829003e-05,
+     1.190705620974573e-10
+    ],
+    "logits": [
+     10.764854431152344,
+     8.80447769165039,
+     -0.18027719855308533,
+     -11.954700469970703
+    ],
+    "rms": 569.5446833451443
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8765601615172245,
+    "margin": 0.7531357889203475,
+    "scores": [
+     0.8765601615172245,
+     0.12342437259687704,
+     1.5465766827829003e-05,
+     1.190705620974573e-10
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999996
+    },
+    "baseline_scores": [
+     0.9999999999999996,
+     8.177489520524944e-29,
+     1.1096488174950948e-17,
+     3.4773617739525343e-16
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014878703500757113,
+    "top5_frac": 0.067859384210439,
+    "top9_frac": 0.1078434595667573,
+    "band_frac_3m": 0.9086717356132905,
+    "peak_to_median_db": 35.874319216395065,
+    "spectral_entropy": 0.6984331865115725
+   }
+  },
+  {
+   "id": "clean-real-bpsk-train-01-normal-02",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-02.iq",
+   "iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0",
+   "rms": 569.5358612531107,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7189991565664287,
+    "margin": 0.4380573201009451,
+    "scores": [
+     0.7189991565664287,
+     0.28094183646548354,
+     5.900617149452821e-05,
+     7.965931909758253e-10
+    ],
+    "logits": [
+     9.570512771606445,
+     8.630800247192383,
+     0.16253934800624847,
+     -11.05026912689209
+    ],
+    "rms": 569.5358612531107
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7189991565664287,
+    "margin": 0.4380573201009451,
+    "scores": [
+     0.7189991565664287,
+     0.28094183646548354,
+     5.900617149452821e-05,
+     7.965931909758253e-10
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999996
+    },
+    "baseline_scores": [
+     0.9999999999999996,
+     1.5397082495053572e-28,
+     2.5195083357563343e-17,
+     4.434505296571833e-16
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.015608996453119186,
+    "top5_frac": 0.06888023926134894,
+    "top9_frac": 0.11149990949681779,
+    "band_frac_3m": 0.9106694119389445,
+    "peak_to_median_db": 35.69273160196232,
+    "spectral_entropy": 0.6976873394639221
+   }
+  },
+  {
+   "id": "clean-real-bpsk-train-01-normal-03",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-03.iq",
+   "iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84",
+   "rms": 568.4837762549911,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7105884385432537,
+    "margin": 0.4212429080499422,
+    "scores": [
+     0.7105884385432537,
+     0.2893455304933115,
+     6.603011125209287e-05,
+     8.52182737718928e-10
+    ],
+    "logits": [
+     9.5095853805542,
+     8.611113548278809,
+     0.22584755718708038,
+     -11.031972885131836
+    ],
+    "rms": 568.4837762549911
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7105884385432537,
+    "margin": 0.4212429080499422,
+    "scores": [
+     0.7105884385432537,
+     0.2893455304933115,
+     6.603011125209287e-05,
+     8.52182737718928e-10
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999996
+    },
+    "baseline_scores": [
+     0.9999999999999996,
+     1.0138837031157664e-28,
+     8.484802451796435e-18,
+     3.4429096255949583e-16
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014722372396324984,
+    "top5_frac": 0.06671692418134822,
+    "top9_frac": 0.10941691178080881,
+    "band_frac_3m": 0.9062600830484566,
+    "peak_to_median_db": 35.885451191040325,
+    "spectral_entropy": 0.6996182698523535
+   }
+  },
+  {
+   "id": "clean-real-bpsk-val-01-normal-01",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-01.iq",
+   "iq_sha256": "30b5e62a81b11f80ee7b71509504a25c3998b89cc8178b2c7e550e762de1dadb",
+   "rms": 620.4079537477072,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8979646623032148,
+    "margin": 0.7959376773396635,
+    "scores": [
+     0.8979646623032148,
+     0.10202698496355136,
+     8.352655393675344e-06,
+     7.784013981582543e-11
+    ],
+    "logits": [
+     11.112828254699707,
+     8.937934875488281,
+     -0.4724782407283783,
+     -12.05591106414795
+    ],
+    "rms": 620.4079537477072
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8979646623032148,
+    "margin": 0.7959376773396635,
+    "scores": [
+     0.8979646623032148,
+     0.10202698496355136,
+     8.352655393675344e-06,
+     7.784013981582543e-11
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 1.0
+    },
+    "baseline_scores": [
+     1.0,
+     9.739695186857763e-31,
+     1.840469948999926e-18,
+     6.5232596879474576e-18
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.015052399622901889,
+    "top5_frac": 0.0681865712024676,
+    "top9_frac": 0.10948007358427728,
+    "band_frac_3m": 0.9196871492527229,
+    "peak_to_median_db": 36.79732096195965,
+    "spectral_entropy": 0.692787208352767
+   }
+  },
+  {
+   "id": "clean-real-bpsk-val-01-normal-02",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-02.iq",
+   "iq_sha256": "c7d77f0e9561c118b41d63545740ec4e4b3751a68e0acd97657428d4680b7595",
+   "rms": 616.8589529409346,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8547494682028349,
+    "margin": 0.7095141809173644,
+    "scores": [
+     0.8547494682028349,
+     0.14523528728547055,
+     1.5244333498725269e-05,
+     1.7819583501353846e-10
+    ],
+    "logits": [
+     10.613389015197754,
+     8.840935707092285,
+     -0.32096680998802185,
+     -11.677802085876465
+    ],
+    "rms": 616.8589529409346
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8547494682028349,
+    "margin": 0.7095141809173644,
+    "scores": [
+     0.8547494682028349,
+     0.14523528728547055,
+     1.5244333498725269e-05,
+     1.7819583501353846e-10
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 1.0
+    },
+    "baseline_scores": [
+     1.0,
+     4.77483467881523e-31,
+     9.309608002632278e-19,
+     5.56396711409587e-18
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014662837628548506,
+    "top5_frac": 0.06787925999642008,
+    "top9_frac": 0.11090835132257214,
+    "band_frac_3m": 0.9197781082249139,
+    "peak_to_median_db": 36.845646707302095,
+    "spectral_entropy": 0.6931182613617924
+   }
+  },
+  {
+   "id": "clean-real-bpsk-val-01-normal-03",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-03.iq",
+   "iq_sha256": "65706320773e09994b7e182bb641c2afa16171fe52950a17a680cf0d0c2a1692",
+   "rms": 615.84534329964,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7643275090976407,
+    "margin": 0.5286870355697423,
+    "scores": [
+     0.7643275090976407,
+     0.23564047352789838,
+     3.201673228316184e-05,
+     6.421777726291847e-10
+    ],
+    "logits": [
+     9.870070457458496,
+     8.693381309509277,
+     -0.210422545671463,
+     -11.027326583862305
+    ],
+    "rms": 615.84534329964
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.7643275090976407,
+    "margin": 0.5286870355697423,
+    "scores": [
+     0.7643275090976407,
+     0.23564047352789838,
+     3.201673228316184e-05,
+     6.421777726291847e-10
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 1.0
+    },
+    "baseline_scores": [
+     1.0,
+     2.935969181835487e-31,
+     4.181686809026813e-19,
+     5.738497747634831e-18
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.01544999429064,
+    "top5_frac": 0.06883951840846743,
+    "top9_frac": 0.11200680830858223,
+    "band_frac_3m": 0.9188981202707027,
+    "peak_to_median_db": 36.64566918442048,
+    "spectral_entropy": 0.6921938270710889
+   }
+  },
+  {
+   "id": "clean-real-campaign3-normal-01",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "independent session TX config BPSK/3M/RECT",
+    "note": "independent physical session"
+   },
+   "source": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-01.iq",
+   "iq_sha256": "ec2d04281aa9c3dcc29a88ff2d2ccbf6fa36597b05f304ac2e60e4b387a6f25e",
+   "rms": 241.9308264727693,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9760852170687406,
+    "margin": 0.95444140419847,
+    "scores": [
+     0.021643812870270614,
+     0.9760852170687406,
+     0.002266121370056313,
+     4.848690932444648e-06
+    ],
+    "logits": [
+     3.2204504013061523,
+     7.029280662536621,
+     0.9638004899024963,
+     -5.183315753936768
+    ],
+    "rms": 241.9308264727693
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9760852170687406,
+    "margin": 0.95444140419847,
+    "scores": [
+     0.021643812870270614,
+     0.9760852170687406,
+     0.002266121370056313,
+     4.848690932444648e-06
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999078601
+    },
+    "baseline_scores": [
+     0.9999999999078601,
+     1.2708200366292211e-21,
+     8.658613520610925e-15,
+     9.213112184049146e-11
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.014146561342784605,
+    "top5_frac": 0.061565494356235706,
+    "top9_frac": 0.09880342412192387,
+    "band_frac_3m": 0.8072692939625411,
+    "peak_to_median_db": 28.955476833534686,
+    "spectral_entropy": 0.7491215346338732
+   }
+  },
+  {
+   "id": "clean-real-campaign3-normal-02",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "independent session TX config BPSK/3M/RECT",
+    "note": "independent physical session"
+   },
+   "source": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-02.iq",
+   "iq_sha256": "28e6c31639b61a873491d3276b7ff6dc8a1060fedab2b1a956ed75972cb8dbb6",
+   "rms": 242.76212751490496,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9498047953901659,
+    "margin": 0.9013021885374022,
+    "scores": [
+     0.04850260685276377,
+     0.9498047953901659,
+     0.001690500623589863,
+     2.097133480360888e-06
+    ],
+    "logits": [
+     4.128297805786133,
+     7.102936744689941,
+     0.7717049717903137,
+     -5.920503616333008
+    ],
+    "rms": 242.76212751490496
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9498047953901659,
+    "margin": 0.9013021885374022,
+    "scores": [
+     0.04850260685276377,
+     0.9498047953901659,
+     0.001690500623589863,
+     2.097133480360888e-06
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999997608489
+    },
+    "baseline_scores": [
+     0.9999999997608489,
+     8.105721544297784e-22,
+     3.374943069730524e-14,
+     2.3911728783802334e-10
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.015473319575894214,
+    "top5_frac": 0.06012019939953219,
+    "top9_frac": 0.09667640207686617,
+    "band_frac_3m": 0.8207228738871002,
+    "peak_to_median_db": 29.474103745437876,
+    "spectral_entropy": 0.7444094591544882
+   }
+  },
+  {
+   "id": "clean-real-campaign3-normal-03",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "independent session TX config BPSK/3M/RECT",
+    "note": "independent physical session"
+   },
+   "source": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-03.iq",
+   "iq_sha256": "8f2d368c657c0cab743a733f49dcb96a3a53a615f12e69d14549a377f02110e4",
+   "rms": 241.97581679099613,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9745683082249504,
+    "margin": 0.9513169094634015,
+    "scores": [
+     0.02325139876154893,
+     0.9745683082249504,
+     0.002175257399548828,
+     5.03561395190547e-06
+    ],
+    "logits": [
+     3.2604763507843018,
+     6.996105670928955,
+     0.8912580609321594,
+     -5.1771087646484375
+    ],
+    "rms": 241.97581679099613
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9745683082249504,
+    "margin": 0.9513169094634015,
+    "scores": [
+     0.02325139876154893,
+     0.9745683082249504,
+     0.002175257399548828,
+     5.03561395190547e-06
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999998599549
+    },
+    "baseline_scores": [
+     0.9999999998599549,
+     8.245465009815454e-22,
+     1.2380264183599165e-14,
+     1.400326472975277e-10
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.01390513372797184,
+    "top5_frac": 0.061157854436896066,
+    "top9_frac": 0.09585357023775848,
+    "band_frac_3m": 0.8127073516802932,
+    "peak_to_median_db": 28.92798851031683,
+    "spectral_entropy": 0.7470402343948847
+   }
+  },
+  {
+   "id": "clean-real-new-normal",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT; demod BER=0",
+    "note": "new 2026-10-21 normal frame"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-00-normal.iq",
+   "iq_sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b",
+   "rms": 275.10910789349816,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9544920356426029,
+    "margin": 0.9107465906095238,
+    "scores": [
+     0.04374544503307904,
+     0.9544920356426029,
+     0.0017614610016152069,
+     1.0583227028565073e-06
+    ],
+    "logits": [
+     4.2746968269348145,
+     7.357488632202148,
+     1.0624529123306274,
+     -6.354760646820068
+    ],
+    "rms": 275.10910789349816
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9544920356426029,
+    "margin": 0.9107465906095238,
+    "scores": [
+     0.04374544503307904,
+     0.9544920356426029,
+     0.0017614610016152069,
+     1.0583227028565073e-06
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999989335
+    },
+    "baseline_scores": [
+     0.9999999999989335,
+     7.386746160604239e-24,
+     7.629468757709227e-17,
+     1.0664566254315675e-12
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.013328655848268402,
+    "top5_frac": 0.05949729613509824,
+    "top9_frac": 0.09663922834503355,
+    "band_frac_3m": 0.8345976489451205,
+    "peak_to_median_db": 29.892754551235676,
+    "spectral_entropy": 0.7360811465135244
+   }
+  },
+  {
+   "id": "clean-syn-bpsk-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "45f30ebd634259dbf42baaba7b606be357c725297f617f3b9e611fae58d66a5d",
+   "rms": 577.3489975855188,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9815612938958241,
+    "margin": 0.9631237822367991,
+    "scores": [
+     0.9815612938958241,
+     0.018437511659025057,
+     1.194441139455211e-06,
+     4.011344733915669e-12
+    ],
+    "logits": [
+     12.830062866210938,
+     8.855305671691895,
+     -0.7891584634780884,
+     -13.393220901489258
+    ],
+    "rms": 577.3489975855188
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9815612938958241,
+    "margin": 0.9631237822367991,
+    "scores": [
+     0.9815612938958241,
+     0.018437511659025057,
+     1.194441139455211e-06,
+     4.011344733915669e-12
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9999999999999968
+    },
+    "baseline_scores": [
+     0.9999999999999982,
+     1.4913876403871408e-15,
+     3.135104306814862e-16,
+     4.422058710117484e-22
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.02403883419777427,
+    "top5_frac": 0.08637487634101176,
+    "top9_frac": 0.13578496013459604,
+    "band_frac_3m": 0.8899149811228242,
+    "peak_to_median_db": 33.787069037108644,
+    "spectral_entropy": 0.6894116309520815
+   }
+  },
+  {
+   "id": "clean-syn-bpsk-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "7fd4e71b633c0635395b2e99fab52928a655e10791f80358734c98077e9104e8",
+   "rms": 162.70504791825473,
+   "gate_ok": true,
+   "before": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.992758977554558,
+    "margin": 0.9855181853611815,
+    "scores": [
+     0.992758977554558,
+     0.007240792193376481,
+     2.3025144943380316e-07,
+     6.161809673981412e-13
+    ],
+    "logits": [
+     13.973310470581055,
+     9.052553176879883,
+     -1.3035160303115845,
+     -14.134657859802246
+    ],
+    "rms": 162.70504791825473
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.992758977554558,
+    "margin": 0.9855181853611815,
+    "scores": [
+     0.992758977554558,
+     0.007240792193376481,
+     2.3025144943380316e-07,
+     6.161809673981412e-13
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "BPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.999999999999998
+    },
+    "baseline_scores": [
+     0.9999999999999989,
+     8.541144938019119e-16,
+     1.7134431923167302e-16,
+     8.242870242165046e-22
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.018969348089793815,
+    "top5_frac": 0.08834900735137356,
+    "top9_frac": 0.14466346636887412,
+    "band_frac_3m": 0.8843336741319073,
+    "peak_to_median_db": 32.87650628465371,
+    "spectral_entropy": 0.6959986567488784
+   }
+  },
+  {
+   "id": "clean-syn-qam16-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM16",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "92d2349826940d01ba1af198f9fa66eee817269367bbc1b0050dab97a60e06f0",
+   "rms": 636.3545633755554,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM16",
+    "reason": "",
+    "score": 0.6007338033484424,
+    "margin": 0.20146760669733987,
+    "scores": [
+     2.3696592749795383e-21,
+     4.551649862239452e-13,
+     0.6007338033484424,
+     0.3992661966511025
+    ],
+    "logits": [
+     -30.052749633789062,
+     -10.979325294494629,
+     16.929187774658203,
+     16.52066421508789
+    ],
+    "rms": 636.3545633755554
+   },
+   "after": {
+    "label": "QAM16",
+    "reason": "",
+    "score": 0.6007338033484424,
+    "margin": 0.20146760669733987,
+    "scores": [
+     2.3696592749795383e-21,
+     4.551649862239452e-13,
+     0.6007338033484424,
+     0.3992661966511025
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "QAM16",
+     "baseline_label": "QAM16",
+     "bpsk_minus_qpsk": 5.139096209425331e-09
+    },
+    "baseline_scores": [
+     1.2241315758966078e-07,
+     1.1727406138023545e-07,
+     0.999324796555953,
+     0.0006749637568282801
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "QAM16"
+   },
+   "spectral": {
+    "top1_frac": 0.023056672853267162,
+    "top5_frac": 0.09516041791139639,
+    "top9_frac": 0.14796205169910912,
+    "band_frac_3m": 0.8966581258939917,
+    "peak_to_median_db": 33.52076635034177,
+    "spectral_entropy": 0.6943604193905667
+   }
+  },
+  {
+   "id": "clean-syn-qam16-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM16",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "2cb087ee4bf6c821f5b443af5f67243a2068f6d6ca6ac2a86baf15ca033b6eb4",
+   "rms": 728.9655130198948,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM16",
+    "reason": "",
+    "score": 0.6609986028855701,
+    "margin": 0.3219972057711969,
+    "scores": [
+     2.0615692231442207e-21,
+     5.662206239718212e-14,
+     0.6609986028855701,
+     0.3390013971143732
+    ],
+    "logits": [
+     -30.001792907714844,
+     -12.873351097106934,
+     17.215023040771484,
+     16.54727554321289
+    ],
+    "rms": 728.9655130198948
+   },
+   "after": {
+    "label": "QAM16",
+    "reason": "",
+    "score": 0.6609986028855701,
+    "margin": 0.3219972057711969,
+    "scores": [
+     2.0615692231442207e-21,
+     5.662206239718212e-14,
+     0.6609986028855701,
+     0.3390013971143732
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "QAM16",
+     "baseline_label": "QAM16",
+     "bpsk_minus_qpsk": -1.5934710016191008e-06
+    },
+    "baseline_scores": [
+     5.582550240784975e-08,
+     1.6492965040269505e-06,
+     0.98251569714212,
+     0.01748259773587363
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "QAM16"
+   },
+   "spectral": {
+    "top1_frac": 0.020628203918302022,
+    "top5_frac": 0.08225990340253772,
+    "top9_frac": 0.13379730311084206,
+    "band_frac_3m": 0.9003547779335624,
+    "peak_to_median_db": 33.096535300569464,
+    "spectral_entropy": 0.6933659323967408
+   }
+  },
+  {
+   "id": "clean-syn-qam64-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM64",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "ba770d6b3eef41c2467f82955b220892f24d432016598c76aeefb8d97a925dc3",
+   "rms": 441.7519637286429,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.8574212620343084,
+    "margin": 0.7148425240686931,
+    "scores": [
+     7.190321841244127e-23,
+     7.632130947361066e-14,
+     0.14257873796561532,
+     0.8574212620343084
+    ],
+    "logits": [
+     -32.1416015625,
+     -11.358704566955566,
+     16.897258758544922,
+     18.691293716430664
+    ],
+    "rms": 441.7519637286429
+   },
+   "after": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.8574212620343084,
+    "margin": 0.7148425240686931,
+    "scores": [
+     7.190321841244127e-23,
+     7.632130947361066e-14,
+     0.14257873796561532,
+     0.8574212620343084
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "QAM64",
+     "baseline_label": "QAM16",
+     "bpsk_minus_qpsk": -0.015006730848463885
+    },
+    "baseline_scores": [
+     0.00025922245947086276,
+     0.015265953307934748,
+     0.6003404417669279,
+     0.3841343824656664
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "QAM64"
+   },
+   "spectral": {
+    "top1_frac": 0.02239388683108721,
+    "top5_frac": 0.09057761408966454,
+    "top9_frac": 0.14040706813056786,
+    "band_frac_3m": 0.8960303535374966,
+    "peak_to_median_db": 33.3097253697352,
+    "spectral_entropy": 0.6978895291090675
+   }
+  },
+  {
+   "id": "clean-syn-qam64-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM64",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "03526184ee16060efa27359b070e80056ab9dd9ee29dd1b2f2c5816b3a06c2f8",
+   "rms": 423.6525549077125,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.9060971470017912,
+    "margin": 0.8121942940036294,
+    "scores": [
+     1.9281883524879055e-23,
+     4.706754493299796e-14,
+     0.09390285299816178,
+     0.9060971470017912
+    ],
+    "logits": [
+     -32.888248443603516,
+     -11.272564888000488,
+     17.04913330078125,
+     19.31601905822754
+    ],
+    "rms": 423.6525549077125
+   },
+   "after": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.9060971470017912,
+    "margin": 0.8121942940036294,
+    "scores": [
+     1.9281883524879055e-23,
+     4.706754493299796e-14,
+     0.09390285299816178,
+     0.9060971470017912
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "QAM64",
+     "baseline_label": "QAM64",
+     "bpsk_minus_qpsk": 0.06947145408279208
+    },
+    "baseline_scores": [
+     0.06991878258868468,
+     0.00044732850589260465,
+     0.4541399465904567,
+     0.47549394231496617
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "QAM64"
+   },
+   "spectral": {
+    "top1_frac": 0.03921402704444398,
+    "top5_frac": 0.10594178329056138,
+    "top9_frac": 0.15995242888930722,
+    "band_frac_3m": 0.8949644559643375,
+    "peak_to_median_db": 35.94127043268764,
+    "spectral_entropy": 0.6861358089265112
+   }
+  },
+  {
+   "id": "clean-syn-qpsk-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "76b1c2cd039378235b7a74ea5c51e3597a55f040ec28c3b4d87f2b61d1334296",
+   "rms": 1067.8310451999032,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9847344961713121,
+    "margin": 0.9725416774762332,
+    "scores": [
+     0.0029152361250723642,
+     0.9847344961713121,
+     0.012192818695078933,
+     0.0001574490085364759
+    ],
+    "logits": [
+     0.21810801327228546,
+     6.040529251098633,
+     1.649004340171814,
+     -2.7004964351654053
+    ],
+    "rms": 1067.8310451999032
+   },
+   "after": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9847344961713121,
+    "margin": 0.9725416774762332,
+    "scores": [
+     0.0029152361250723642,
+     0.9847344961713121,
+     0.012192818695078933,
+     0.0001574490085364759
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "QPSK",
+     "bpsk_minus_qpsk": -0.9943138763361041
+    },
+    "baseline_scores": [
+     3.994121218066191e-12,
+     0.9943138763400983,
+     0.00568612254045323,
+     1.1154541889708816e-09
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "QPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.025842272446889178,
+    "top5_frac": 0.09331003588471859,
+    "top9_frac": 0.1388756924466381,
+    "band_frac_3m": 0.8900579652545472,
+    "peak_to_median_db": 33.91358857412742,
+    "spectral_entropy": 0.7002183633943334
+   }
+  },
+  {
+   "id": "clean-syn-qpsk-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "iq_sha256": "2becfff5b538a05bfb028528cc1b222d48eeb4e8f890af01c976d01e0452c7a4",
+   "rms": 174.40935598415925,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9867926230097926,
+    "margin": 0.9779867570600108,
+    "scores": [
+     0.008805865949781782,
+     0.9867926230097926,
+     0.004380377417792284,
+     2.1133622633114872e-05
+    ],
+    "logits": [
+     1.913194179534912,
+     6.632236003875732,
+     1.2149109840393066,
+     -4.119113922119141
+    ],
+    "rms": 174.40935598415925
+   },
+   "after": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9867926230097926,
+    "margin": 0.9779867570600108,
+    "scores": [
+     0.008805865949781782,
+     0.9867926230097926,
+     0.004380377417792284,
+     2.1133622633114872e-05
+    ],
+    "arbitration_applied": false,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "QPSK",
+     "bpsk_minus_qpsk": -0.9924385882322149
+    },
+    "baseline_scores": [
+     4.524998064537876e-14,
+     0.9924385882322602,
+     0.0075614110079621644,
+     7.597325833618256e-10
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "QPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.03548769533378256,
+    "top5_frac": 0.11148808538346196,
+    "top9_frac": 0.16705567137409597,
+    "band_frac_3m": 0.9021347786149378,
+    "peak_to_median_db": 35.92357916243482,
+    "spectral_entropy": 0.6803688381724968
+   }
+  },
+  {
+   "id": "gate-clip-01",
+   "group": "gate_clip",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "CLIP",
+    "note": "synthetic gate_test CLIP frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (CLIP)",
+   "iq_sha256": "f095d40fc6dc5bbc2e911f69989ec67526808a1f113421e9fa8c97a8759c1fbe",
+   "rms": 0.0,
+   "gate_ok": false,
+   "before": {
+    "label": "UNKNOWN",
+    "reason": "clipping",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "logits": null,
+    "rms": 0.0
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "clipping",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": null,
+    "pure_class_label": "UNKNOWN"
+   },
+   "spectral": null
+  },
+  {
+   "id": "gate-clip-02",
+   "group": "gate_clip",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "CLIP",
+    "note": "synthetic gate_test CLIP frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (CLIP)",
+   "iq_sha256": "a55ae437d7a592100838bf471da778f78e9edd4214ad45dd8d770a7abf76e819",
+   "rms": 0.0,
+   "gate_ok": false,
+   "before": {
+    "label": "UNKNOWN",
+    "reason": "clipping",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "logits": null,
+    "rms": 0.0
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "clipping",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": null,
+    "pure_class_label": "UNKNOWN"
+   },
+   "spectral": null
+  },
+  {
+   "id": "gate-clip-03",
+   "group": "gate_clip",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "CLIP",
+    "note": "synthetic gate_test CLIP frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (CLIP)",
+   "iq_sha256": "d12bbdc1f5442979f35d78d9885f4b3f79646861d313505c82d05aad1e087d2f",
+   "rms": 0.0,
+   "gate_ok": false,
+   "before": {
+    "label": "UNKNOWN",
+    "reason": "clipping",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "logits": null,
+    "rms": 0.0
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "clipping",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": null,
+    "pure_class_label": "UNKNOWN"
+   },
+   "spectral": null
+  },
+  {
+   "id": "gate-noise-01",
+   "group": "gate_noise",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "NOISE",
+    "note": "synthetic gate_test NOISE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (NOISE)",
+   "iq_sha256": "1d325dc31bf3f50a488a639deaa0b5a118db3d65ac221331620a1db8d5882365",
+   "rms": 361.1988018634605,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.6372420695773676,
+    "margin": 0.3333437059515025,
+    "scores": [
+     0.028643056636683782,
+     0.030216510160083532,
+     0.30389836362586514,
+     0.6372420695773676
+    ],
+    "logits": [
+     -1.7673113346099854,
+     -1.7138339281082153,
+     0.5944709181785583,
+     1.3349272012710571
+    ],
+    "rms": 361.1988018634605
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "noise_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.09414686569317518,
+    "pure_class_label": "QAM64"
+   },
+   "spectral": {
+    "top1_frac": 0.001724231190755964,
+    "top5_frac": 0.008127961053814347,
+    "top9_frac": 0.013955520932585496,
+    "band_frac_3m": 0.09414686569317518,
+    "peak_to_median_db": 9.973202959232028,
+    "spectral_entropy": 0.9509563335383237
+   }
+  },
+  {
+   "id": "gate-noise-02",
+   "group": "gate_noise",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "NOISE",
+    "note": "synthetic gate_test NOISE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (NOISE)",
+   "iq_sha256": "954cecd0d1375fff6165e3864a438c02064676d756552d73773f1018184b932c",
+   "rms": 668.8741955181988,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.7539151521899912,
+    "margin": 0.5135379197308364,
+    "scores": [
+     0.001832274051621448,
+     0.0038753412992326643,
+     0.24037723245915474,
+     0.7539151521899912
+    ],
+    "logits": [
+     -3.4946229457855225,
+     -2.74554705619812,
+     1.3820286989212036,
+     2.525099039077759
+    ],
+    "rms": 668.8741955181988
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "noise_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.1060071803387641,
+    "pure_class_label": "QAM64"
+   },
+   "spectral": {
+    "top1_frac": 0.002313164131366946,
+    "top5_frac": 0.010083339011952948,
+    "top9_frac": 0.016651796523758842,
+    "band_frac_3m": 0.1060071803387641,
+    "peak_to_median_db": 11.338698038137158,
+    "spectral_entropy": 0.9487624399747859
+   }
+  },
+  {
+   "id": "gate-noise-03",
+   "group": "gate_noise",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "NOISE",
+    "note": "synthetic gate_test NOISE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (NOISE)",
+   "iq_sha256": "bf49ee3a7b6b5215ca53b523b9df9b0e22e3eb22e446d0cf06e6cd1f72bd1669",
+   "rms": 471.5406382988966,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.876175612788152,
+    "margin": 0.8045674555420016,
+    "scores": [
+     0.018526825270266705,
+     0.03368940469543097,
+     0.07160815724615041,
+     0.876175612788152
+    ],
+    "logits": [
+     -1.7587344646453857,
+     -1.1607707738876343,
+     -0.40674516558647156,
+     2.0976123809814453
+    ],
+    "rms": 471.5406382988966
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "noise_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.08773634195722041,
+    "pure_class_label": "QAM64"
+   },
+   "spectral": {
+    "top1_frac": 0.0023184685620821492,
+    "top5_frac": 0.010527283730544176,
+    "top9_frac": 0.016835836534030407,
+    "band_frac_3m": 0.08773634195722041,
+    "peak_to_median_db": 11.288542325555458,
+    "spectral_entropy": 0.9494994606744293
+   }
+  },
+  {
+   "id": "gate-off-train-01",
+   "group": "gate_off",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "OFF",
+    "note": "physical OFF/background frame (no TX)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/off-01.iq",
+   "iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9",
+   "rms": 95.01747737378045,
+   "gate_ok": true,
+   "before": {
+    "label": "UNKNOWN",
+    "reason": "confidence",
+    "score": 0.43083862325414,
+    "margin": 0.06190185730976555,
+    "scores": [
+     0.002380243806171223,
+     0.19784436699531427,
+     0.43083862325414,
+     0.36893676594437447
+    ],
+    "logits": [
+     -3.4765841960906982,
+     0.9436935782432556,
+     1.7219464778900146,
+     1.5668381452560425
+    ],
+    "rms": 95.01747737378045
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "noise_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.23535752770544258,
+    "pure_class_label": "QAM16"
+   },
+   "spectral": {
+    "top1_frac": 0.0114692139801546,
+    "top5_frac": 0.03904322525074499,
+    "top9_frac": 0.05277728402721311,
+    "band_frac_3m": 0.23535752770544258,
+    "peak_to_median_db": 21.238136418654324,
+    "spectral_entropy": 0.8959755853308321
+   }
+  },
+  {
+   "id": "gate-off-train-02",
+   "group": "gate_off",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "OFF",
+    "note": "physical OFF/background frame (no TX)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/off-01.iq",
+   "iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d",
+   "rms": 94.64889614861576,
+   "gate_ok": true,
+   "before": {
+    "label": "UNKNOWN",
+    "reason": "confidence",
+    "score": 0.4056866653204933,
+    "margin": 0.020267961414171642,
+    "scores": [
+     0.0028777097630487774,
+     0.20601692101013624,
+     0.4056866653204933,
+     0.38541870390632166
+    ],
+    "logits": [
+     -3.3487777709960938,
+     0.9221857786178589,
+     1.5998085737228394,
+     1.5485577583312988
+    ],
+    "rms": 94.64889614861576
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "noise_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.2344400087683861,
+    "pure_class_label": "QAM16"
+   },
+   "spectral": {
+    "top1_frac": 0.007307962713107848,
+    "top5_frac": 0.030653763537227454,
+    "top9_frac": 0.04303274806062478,
+    "band_frac_3m": 0.2344400087683861,
+    "peak_to_median_db": 18.936836227705086,
+    "spectral_entropy": 0.9022574306634065
+   }
+  },
+  {
+   "id": "gate-off-val-01",
+   "group": "gate_off",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "OFF",
+    "note": "physical OFF/background frame (no TX)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/off-01.iq",
+   "iq_sha256": "a5abb394cc50b432684dc0907880d04137ede85eb7dc4854d3d5626bdcb9d108",
+   "rms": 93.42334046261576,
+   "gate_ok": true,
+   "before": {
+    "label": "UNKNOWN",
+    "reason": "confidence",
+    "score": 0.37200527785494564,
+    "margin": 0.05247925737949194,
+    "scores": [
+     0.008578042379966042,
+     0.3195260204754537,
+     0.37200527785494564,
+     0.29989065928963465
+    ],
+    "logits": [
+     -2.531421422958374,
+     1.0862115621566772,
+     1.2382808923721313,
+     1.022790789604187
+    ],
+    "rms": 93.42334046261576
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "noise_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.20922145968354286,
+    "pure_class_label": "QAM16"
+   },
+   "spectral": {
+    "top1_frac": 0.012391985063766998,
+    "top5_frac": 0.03279443558878167,
+    "top9_frac": 0.04314635382266857,
+    "band_frac_3m": 0.20922145968354286,
+    "peak_to_median_db": 21.04097915534478,
+    "spectral_entropy": 0.9050717807441746
+   }
+  },
+  {
+   "id": "gate-tone-01",
+   "group": "gate_tone",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "TONE",
+    "note": "synthetic gate_test TONE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (TONE)",
+   "iq_sha256": "b60f0f21b5e93c5f74094979fb59ac61ee169a4eb640e148abe9951dce3c9ffb",
+   "rms": 413.00623108822555,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM16",
+    "reason": "",
+    "score": 0.9999999999904621,
+    "margin": 0.9999999999809241,
+    "scores": [
+     1.2438938936605817e-97,
+     9.303812175301042e-95,
+     0.9999999999904621,
+     9.537973720685335e-12
+    ],
+    "logits": [
+     -130.44569396972656,
+     -123.8283462524414,
+     92.68681335449219,
+     67.31107330322266
+    ],
+    "rms": 413.00623108822555
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "tone_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.9454043527061655,
+    "pure_class_label": "QAM16"
+   },
+   "spectral": {
+    "top1_frac": 0.7273757248283127,
+    "top5_frac": 0.9454043527061655,
+    "top9_frac": 0.9697054757311624,
+    "band_frac_3m": 0.000596515491977154,
+    "peak_to_median_db": 69.49205893612,
+    "spectral_entropy": 0.1366796396452983
+   }
+  },
+  {
+   "id": "gate-tone-02",
+   "group": "gate_tone",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "TONE",
+    "note": "synthetic gate_test TONE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (TONE)",
+   "iq_sha256": "27377f647372d1746e9735f5998ddd6d5c890067535238faa1fc38a2edb32c11",
+   "rms": 862.9956900113201,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM64",
+    "reason": "",
+    "score": 0.9999995190759138,
+    "margin": 0.9999990381518277,
+    "scores": [
+     1.1281427341273217e-41,
+     4.3458785075694014e-18,
+     4.809240861318179e-07,
+     0.9999995190759138
+    ],
+    "logits": [
+     -57.07829284667969,
+     -2.7701804637908936,
+     22.65956687927246,
+     37.207122802734375
+    ],
+    "rms": 862.9956900113201
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "tone_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.958892836241376,
+    "pure_class_label": "QAM64"
+   },
+   "spectral": {
+    "top1_frac": 0.8066138231874158,
+    "top5_frac": 0.958892836241376,
+    "top9_frac": 0.9771223405855746,
+    "band_frac_3m": 0.9994639338670986,
+    "peak_to_median_db": 71.24372528064568,
+    "spectral_entropy": 0.1082785908260691
+   }
+  },
+  {
+   "id": "gate-tone-03",
+   "group": "gate_tone",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "TONE",
+    "note": "synthetic gate_test TONE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (TONE)",
+   "iq_sha256": "aca11d7700363489111575edf1a0df69ae5cfef64ac634f3f1be7d52a33e9059",
+   "rms": 1069.002769759576,
+   "gate_ok": true,
+   "before": {
+    "label": "QAM16",
+    "reason": "",
+    "score": 1.0,
+    "margin": 1.0,
+    "scores": [
+     9.653442936749885e-128,
+     6.933762640787901e-125,
+     1.0,
+     1.8087276528934334e-17
+    ],
+    "logits": [
+     -169.22482299804688,
+     -162.64797973632812,
+     123.23875427246094,
+     84.68743133544922
+    ],
+    "rms": 1069.002769759576
+   },
+   "after": {
+    "label": "UNKNOWN",
+    "reason": "tone_like",
+    "score": 0.0,
+    "margin": 0.0,
+    "scores": null,
+    "arbitration_applied": false,
+    "arbitration": null,
+    "baseline_scores": null,
+    "spectral_trigger": 0.9472939388133992,
+    "pure_class_label": "QAM16"
+   },
+   "spectral": {
+    "top1_frac": 0.7392713911312427,
+    "top5_frac": 0.9472939388133992,
+    "top9_frac": 0.9707328198176335,
+    "band_frac_3m": 0.0011470614844946974,
+    "peak_to_median_db": 69.7922420335117,
+    "spectral_entropy": 0.13281331419118858
+   }
+  },
+  {
+   "id": "stress-narrowband-01",
+   "group": "stress_narrowband",
+   "kind": "stress",
+   "truth": {
+    "class_underlying": "BPSK",
+    "note": "BPSK + injected 6 MHz tone; demod not synced; not clean data"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-01-narrowband.iq",
+   "iq_sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e",
+   "rms": 342.3486441929671,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9387921548488584,
+    "margin": 0.8781842807268769,
+    "scores": [
+     0.00016488967176774575,
+     0.9387921548488584,
+     0.0606078741219814,
+     0.0004350813573924745
+    ],
+    "logits": [
+     -2.506000518798828,
+     6.1410722732543945,
+     3.4009029865264893,
+     -1.535744071006775
+    ],
+    "rms": 342.3486441929671
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9387921548488584,
+    "margin": 0.8781842807268769,
+    "scores": [
+     0.00016488967176774575,
+     0.9387921548488584,
+     0.0606078741219814,
+     0.0004350813573924745
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9973234644872209
+    },
+    "baseline_scores": [
+     0.9973234644877049,
+     4.840376632042671e-13,
+     9.677650127207464e-05,
+     0.0025797590105390974
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.17793354931370248,
+    "top5_frac": 0.2984981034040106,
+    "top9_frac": 0.3289960243223602,
+    "band_frac_3m": 0.5590126679462982,
+    "peak_to_median_db": 42.59745525791898,
+    "spectral_entropy": 0.6345634197519316
+   }
+  },
+  {
+   "id": "stress-narrowband-02",
+   "group": "stress_narrowband",
+   "kind": "stress",
+   "truth": {
+    "class_underlying": "BPSK",
+    "note": "BPSK + injected 6 MHz tone; demod not synced; not clean data"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-02-narrowband.iq",
+   "iq_sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242",
+   "rms": 345.7650339235395,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.9355897680060253,
+    "margin": 0.8720040931082165,
+    "scores": [
+     0.0001275836291763293,
+     0.9355897680060253,
+     0.06358567489780889,
+     0.0006969734669897226
+    ],
+    "logits": [
+     -2.8504347801208496,
+     6.049725532531738,
+     3.3609366416931152,
+     -1.1524595022201538
+    ],
+    "rms": 345.7650339235395
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.9355897680060253,
+    "margin": 0.8720040931082165,
+    "scores": [
+     0.0001275836291763293,
+     0.9355897680060253,
+     0.06358567489780889,
+     0.0006969734669897226
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.9994501159487987
+    },
+    "baseline_scores": [
+     0.9994501159489364,
+     1.3762491123375287e-13,
+     1.484577839372716e-05,
+     0.0005350382725323281
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.18223658581039331,
+    "top5_frac": 0.3001685221485012,
+    "top9_frac": 0.3357260987775692,
+    "band_frac_3m": 0.5622069971611694,
+    "peak_to_median_db": 43.201261994283094,
+    "spectral_entropy": 0.6336418387806454
+   }
+  },
+  {
+   "id": "stress-narrowband-03",
+   "group": "stress_narrowband",
+   "kind": "stress",
+   "truth": {
+    "class_underlying": "BPSK",
+    "note": "BPSK + injected 6 MHz tone; demod not synced; not clean data"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-03-narrowband.iq",
+   "iq_sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e",
+   "rms": 345.3302769926804,
+   "gate_ok": true,
+   "before": {
+    "label": "QPSK",
+    "reason": "",
+    "score": 0.8591555389509459,
+    "margin": 0.7207823845474098,
+    "scores": [
+     3.216934331967207e-05,
+     0.8591555389509459,
+     0.13837315440353606,
+     0.002439137302198426
+    ],
+    "logits": [
+     -4.412796974182129,
+     5.7798943519592285,
+     3.9538984298706055,
+     -0.08441121131181717
+    ],
+    "rms": 345.3302769926804
+   },
+   "after": {
+    "label": "BPSK",
+    "reason": "",
+    "score": 0.8591555389509459,
+    "margin": 0.7207823845474098,
+    "scores": [
+     3.216934331967207e-05,
+     0.8591555389509459,
+     0.13837315440353606,
+     0.002439137302198426
+    ],
+    "arbitration_applied": true,
+    "arbitration": {
+     "cnn_label": "QPSK",
+     "baseline_label": "BPSK",
+     "bpsk_minus_qpsk": 0.999551556369935
+    },
+    "baseline_scores": [
+     0.9995515563700164,
+     8.137600294604744e-14,
+     1.2334715786103997e-05,
+     0.00043610891411588763
+    ],
+    "spectral_trigger": null,
+    "pure_class_label": "BPSK"
+   },
+   "spectral": {
+    "top1_frac": 0.18315985361924098,
+    "top5_frac": 0.2945938815970611,
+    "top9_frac": 0.3276654303803691,
+    "band_frac_3m": 0.5676057976623758,
+    "peak_to_median_db": 43.201592533715036,
+    "spectral_entropy": 0.6328436772660017
+   }
+  }
+ ],
+ "summary": {
+  "groups": {
+   "clean_failure_bpsk": {
+    "n": 10,
+    "kind": "clean",
+    "truth_classes": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "before_labels": [
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "before_correct": 0,
+    "after_correct": 10
+   },
+   "clean_real_bpsk": {
+    "n": 10,
+    "kind": "clean",
+    "truth_classes": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "before_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "before_correct": 6,
+    "after_correct": 10
+   },
+   "clean_synthetic_4class": {
+    "n": 8,
+    "kind": "clean",
+    "truth_classes": [
+     "BPSK",
+     "BPSK",
+     "QAM16",
+     "QAM16",
+     "QAM64",
+     "QAM64",
+     "QPSK",
+     "QPSK"
+    ],
+    "before_labels": [
+     "BPSK",
+     "BPSK",
+     "QAM16",
+     "QAM16",
+     "QAM64",
+     "QAM64",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "QAM16",
+     "QAM16",
+     "QAM64",
+     "QAM64",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "before_correct": 8,
+    "after_correct": 8
+   },
+   "gate_clip": {
+    "n": 3,
+    "kind": "gate",
+    "truth_classes": [],
+    "before_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_reasons": [
+     "clipping",
+     "clipping",
+     "clipping"
+    ],
+    "before_correct": 0,
+    "after_correct": 0
+   },
+   "gate_noise": {
+    "n": 3,
+    "kind": "gate",
+    "truth_classes": [],
+    "before_labels": [
+     "QAM64",
+     "QAM64",
+     "QAM64"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_reasons": [
+     "noise_like",
+     "noise_like",
+     "noise_like"
+    ],
+    "before_correct": 0,
+    "after_correct": 0
+   },
+   "gate_off": {
+    "n": 3,
+    "kind": "gate",
+    "truth_classes": [],
+    "before_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_reasons": [
+     "noise_like",
+     "noise_like",
+     "noise_like"
+    ],
+    "before_correct": 0,
+    "after_correct": 0
+   },
+   "gate_tone": {
+    "n": 3,
+    "kind": "gate",
+    "truth_classes": [],
+    "before_labels": [
+     "QAM16",
+     "QAM64",
+     "QAM16"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_reasons": [
+     "tone_like",
+     "tone_like",
+     "tone_like"
+    ],
+    "before_correct": 0,
+    "after_correct": 0
+   },
+   "stress_narrowband": {
+    "n": 3,
+    "kind": "stress",
+    "truth_classes": [],
+    "before_labels": [
+     "QPSK",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     ""
+    ],
+    "before_correct": 0,
+    "after_correct": 0
+   }
+  },
+  "clean": {
+   "clean_failure_bpsk": {
+    "n": 10,
+    "truth_classes": [
+     "BPSK"
+    ],
+    "before_labels": [
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "before_correct": 0,
+    "after_correct": 10,
+    "before_accuracy": 0.0,
+    "after_accuracy": 1.0
+   },
+   "clean_real_bpsk": {
+    "n": 10,
+    "truth_classes": [
+     "BPSK"
+    ],
+    "before_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "before_correct": 6,
+    "after_correct": 10,
+    "before_accuracy": 0.6,
+    "after_accuracy": 1.0
+   },
+   "clean_synthetic_4class": {
+    "n": 8,
+    "truth_classes": [
+     "BPSK",
+     "QAM16",
+     "QAM64",
+     "QPSK"
+    ],
+    "before_labels": [
+     "BPSK",
+     "BPSK",
+     "QAM16",
+     "QAM16",
+     "QAM64",
+     "QAM64",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "QAM16",
+     "QAM16",
+     "QAM64",
+     "QAM64",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "before_correct": 8,
+    "after_correct": 8,
+    "before_accuracy": 1.0,
+    "after_accuracy": 1.0
+   },
+   "__total__": {
+    "n": 28,
+    "before_correct": 14,
+    "after_correct": 28,
+    "before_accuracy": 0.5,
+    "after_accuracy": 1.0,
+    "note": "mixed real BPSK frames and synthetic 4-class frames; not a real-world accuracy estimate"
+   }
+  },
+  "gate": {
+   "gate_clip": {
+    "n": 3,
+    "rejected": 3,
+    "accepted": 0,
+    "reasons": {
+     "clipping": 3
+    },
+    "before_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ]
+   },
+   "gate_noise": {
+    "n": 3,
+    "rejected": 3,
+    "accepted": 0,
+    "reasons": {
+     "noise_like": 3
+    },
+    "before_labels": [
+     "QAM64",
+     "QAM64",
+     "QAM64"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ]
+   },
+   "gate_off": {
+    "n": 3,
+    "rejected": 3,
+    "accepted": 0,
+    "reasons": {
+     "noise_like": 3
+    },
+    "before_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ]
+   },
+   "gate_tone": {
+    "n": 3,
+    "rejected": 3,
+    "accepted": 0,
+    "reasons": {
+     "tone_like": 3
+    },
+    "before_labels": [
+     "QAM16",
+     "QAM64",
+     "QAM16"
+    ],
+    "after_labels": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ]
+   }
+  },
+  "stress": {
+   "stress_narrowband": {
+    "n": 3,
+    "before_labels": [
+     "QPSK",
+     "QPSK",
+     "QPSK"
+    ],
+    "after_labels": [
+     "BPSK",
+     "BPSK",
+     "BPSK"
+    ],
+    "after_reasons": [
+     "",
+     "",
+     ""
+    ],
+    "note": "interference stress only; not counted in clean 4-class accuracy"
+   }
+  }
+ }
+}

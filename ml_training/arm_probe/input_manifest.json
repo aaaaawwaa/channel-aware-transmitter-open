@@ -1,0 +1,702 @@
+{
+ "schema": "ml-modrec-arm-probe-input-v1",
+ "created_utc": "2026-10-21T10:00:34Z",
+ "purpose": "frozen round-2 offline pipeline replay for independent ARM qualification",
+ "frozen": {
+  "cnn_model": {
+   "path": "ml_training/artifacts/cnn/model.json",
+   "sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc",
+   "bytes": 48971
+  },
+  "baseline_model": {
+   "path": "ml_training/artifacts/baseline/model.json",
+   "sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014",
+   "bytes": 2187
+  },
+  "rule_config": {
+   "path": "ml_training/round2/artifacts/rule_config.json",
+   "sha256": "9aceebbdb6b9b9a54ad0dd09ebd61935ae8c8fd276ba18d8b9db69e7949619e0",
+   "bytes": 7513
+  }
+ },
+ "frames": [
+  {
+   "id": "clean-fail-train02-normal-01",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-01.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-01.iq",
+   "iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-02",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-02.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-02.iq",
+   "iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-03",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-03.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-03.iq",
+   "iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-04",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-04.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-04.iq",
+   "iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-05",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-05.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-05.iq",
+   "iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-06",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-06.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-06.iq",
+   "iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-07",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-07.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-07.iq",
+   "iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-08",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-08.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-08.iq",
+   "iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-09",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-09.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-09.iq",
+   "iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-fail-train02-normal-10",
+   "group": "clean_failure_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "previous round-1 CNN failure session (QPSK misclassification)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-10.iq",
+   "path": "frames/clean_failure_bpsk/clean-fail-train02-normal-10.iq",
+   "iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-bpsk-train-01-normal-01",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-01.iq",
+   "path": "frames/clean_real_bpsk/clean-real-bpsk-train-01-normal-01.iq",
+   "iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-bpsk-train-01-normal-02",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-02.iq",
+   "path": "frames/clean_real_bpsk/clean-real-bpsk-train-01-normal-02.iq",
+   "iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-bpsk-train-01-normal-03",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-03.iq",
+   "path": "frames/clean_real_bpsk/clean-real-bpsk-train-01-normal-03.iq",
+   "iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-bpsk-val-01-normal-01",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-01.iq",
+   "path": "frames/clean_real_bpsk/clean-real-bpsk-val-01-normal-01.iq",
+   "iq_sha256": "30b5e62a81b11f80ee7b71509504a25c3998b89cc8178b2c7e550e762de1dadb",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-bpsk-val-01-normal-02",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-02.iq",
+   "path": "frames/clean_real_bpsk/clean-real-bpsk-val-01-normal-02.iq",
+   "iq_sha256": "c7d77f0e9561c118b41d63545740ec4e4b3751a68e0acd97657428d4680b7595",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-bpsk-val-01-normal-03",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT",
+    "note": "physical loopback normal frame"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/normal-03.iq",
+   "path": "frames/clean_real_bpsk/clean-real-bpsk-val-01-normal-03.iq",
+   "iq_sha256": "65706320773e09994b7e182bb641c2afa16171fe52950a17a680cf0d0c2a1692",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-campaign3-normal-01",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "independent session TX config BPSK/3M/RECT",
+    "note": "independent physical session"
+   },
+   "source": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-01.iq",
+   "path": "frames/clean_real_bpsk/clean-real-campaign3-normal-01.iq",
+   "iq_sha256": "ec2d04281aa9c3dcc29a88ff2d2ccbf6fa36597b05f304ac2e60e4b387a6f25e",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-campaign3-normal-02",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "independent session TX config BPSK/3M/RECT",
+    "note": "independent physical session"
+   },
+   "source": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-02.iq",
+   "path": "frames/clean_real_bpsk/clean-real-campaign3-normal-02.iq",
+   "iq_sha256": "28e6c31639b61a873491d3276b7ff6dc8a1060fedab2b1a956ed75972cb8dbb6",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-campaign3-normal-03",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "independent session TX config BPSK/3M/RECT",
+    "note": "independent physical session"
+   },
+   "source": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-03.iq",
+   "path": "frames/clean_real_bpsk/clean-real-campaign3-normal-03.iq",
+   "iq_sha256": "8f2d368c657c0cab743a733f49dcb96a3a53a615f12e69d14549a377f02110e4",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-real-new-normal",
+   "group": "clean_real_bpsk",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "submitted TX config BPSK/3M/RECT; demod BER=0",
+    "note": "new 2026-10-21 normal frame"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-00-normal.iq",
+   "path": "frames/clean_real_bpsk/clean-real-new-normal.iq",
+   "iq_sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-bpsk-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-bpsk-snr20-01.iq",
+   "iq_sha256": "45f30ebd634259dbf42baaba7b606be357c725297f617f3b9e611fae58d66a5d",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-bpsk-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "BPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-bpsk-snr20-02.iq",
+   "iq_sha256": "7fd4e71b633c0635395b2e99fab52928a655e10791f80358734c98077e9104e8",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-qam16-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM16",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-qam16-snr20-01.iq",
+   "iq_sha256": "92d2349826940d01ba1af198f9fa66eee817269367bbc1b0050dab97a60e06f0",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-qam16-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM16",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-qam16-snr20-02.iq",
+   "iq_sha256": "2cb087ee4bf6c821f5b443af5f67243a2068f6d6ca6ac2a86baf15ca033b6eb4",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-qam64-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM64",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-qam64-snr20-01.iq",
+   "iq_sha256": "ba770d6b3eef41c2467f82955b220892f24d432016598c76aeefb8d97a925dc3",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-qam64-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QAM64",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-qam64-snr20-02.iq",
+   "iq_sha256": "03526184ee16060efa27359b070e80056ab9dd9ee29dd1b2f2c5816b3a06c2f8",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-qpsk-snr20-01",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-qpsk-snr20-01.iq",
+   "iq_sha256": "76b1c2cd039378235b7a74ea5c51e3597a55f040ec28c3b4d87f2b61d1334296",
+   "bytes": 16384
+  },
+  {
+   "id": "clean-syn-qpsk-snr20-02",
+   "group": "clean_synthetic_4class",
+   "kind": "clean",
+   "truth": {
+    "class": "QPSK",
+    "modulation_truth": "synthetic round-2 test, SNR 20 dB"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 test split (SNR 20 dB)",
+   "path": "frames/clean_synthetic_4class/clean-syn-qpsk-snr20-02.iq",
+   "iq_sha256": "2becfff5b538a05bfb028528cc1b222d48eeb4e8f890af01c976d01e0452c7a4",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-clip-01",
+   "group": "gate_clip",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "CLIP",
+    "note": "synthetic gate_test CLIP frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (CLIP)",
+   "path": "frames/gate_clip/gate-clip-01.iq",
+   "iq_sha256": "f095d40fc6dc5bbc2e911f69989ec67526808a1f113421e9fa8c97a8759c1fbe",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-clip-02",
+   "group": "gate_clip",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "CLIP",
+    "note": "synthetic gate_test CLIP frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (CLIP)",
+   "path": "frames/gate_clip/gate-clip-02.iq",
+   "iq_sha256": "a55ae437d7a592100838bf471da778f78e9edd4214ad45dd8d770a7abf76e819",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-clip-03",
+   "group": "gate_clip",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "CLIP",
+    "note": "synthetic gate_test CLIP frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (CLIP)",
+   "path": "frames/gate_clip/gate-clip-03.iq",
+   "iq_sha256": "d12bbdc1f5442979f35d78d9885f4b3f79646861d313505c82d05aad1e087d2f",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-noise-01",
+   "group": "gate_noise",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "NOISE",
+    "note": "synthetic gate_test NOISE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (NOISE)",
+   "path": "frames/gate_noise/gate-noise-01.iq",
+   "iq_sha256": "1d325dc31bf3f50a488a639deaa0b5a118db3d65ac221331620a1db8d5882365",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-noise-02",
+   "group": "gate_noise",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "NOISE",
+    "note": "synthetic gate_test NOISE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (NOISE)",
+   "path": "frames/gate_noise/gate-noise-02.iq",
+   "iq_sha256": "954cecd0d1375fff6165e3864a438c02064676d756552d73773f1018184b932c",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-noise-03",
+   "group": "gate_noise",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "NOISE",
+    "note": "synthetic gate_test NOISE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (NOISE)",
+   "path": "frames/gate_noise/gate-noise-03.iq",
+   "iq_sha256": "bf49ee3a7b6b5215ca53b523b9df9b0e22e3eb22e446d0cf06e6cd1f72bd1669",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-off-train-01",
+   "group": "gate_off",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "OFF",
+    "note": "physical OFF/background frame (no TX)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/off-01.iq",
+   "path": "frames/gate_off/gate-off-train-01.iq",
+   "iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-off-train-02",
+   "group": "gate_off",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "OFF",
+    "note": "physical OFF/background frame (no TX)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/off-01.iq",
+   "path": "frames/gate_off/gate-off-train-02.iq",
+   "iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-off-val-01",
+   "group": "gate_off",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "OFF",
+    "note": "physical OFF/background frame (no TX)"
+   },
+   "source": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/val-01/off-01.iq",
+   "path": "frames/gate_off/gate-off-val-01.iq",
+   "iq_sha256": "a5abb394cc50b432684dc0907880d04137ede85eb7dc4854d3d5626bdcb9d108",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-tone-01",
+   "group": "gate_tone",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "TONE",
+    "note": "synthetic gate_test TONE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (TONE)",
+   "path": "frames/gate_tone/gate-tone-01.iq",
+   "iq_sha256": "b60f0f21b5e93c5f74094979fb59ac61ee169a4eb640e148abe9951dce3c9ffb",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-tone-02",
+   "group": "gate_tone",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "TONE",
+    "note": "synthetic gate_test TONE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (TONE)",
+   "path": "frames/gate_tone/gate-tone-02.iq",
+   "iq_sha256": "27377f647372d1746e9735f5998ddd6d5c890067535238faa1fc38a2edb32c11",
+   "bytes": 16384
+  },
+  {
+   "id": "gate-tone-03",
+   "group": "gate_tone",
+   "kind": "gate",
+   "truth": {
+    "expected_behavior": "reject",
+    "gate_kind": "TONE",
+    "note": "synthetic gate_test TONE frame"
+   },
+   "source": "ml_training/round2/datasets/sim-r2 gate_test (TONE)",
+   "path": "frames/gate_tone/gate-tone-03.iq",
+   "iq_sha256": "aca11d7700363489111575edf1a0df69ae5cfef64ac634f3f1be7d52a33e9059",
+   "bytes": 16384
+  },
+  {
+   "id": "stress-narrowband-01",
+   "group": "stress_narrowband",
+   "kind": "stress",
+   "truth": {
+    "class_underlying": "BPSK",
+    "note": "BPSK + injected 6 MHz tone; demod not synced; not clean data"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-01-narrowband.iq",
+   "path": "frames/stress_narrowband/stress-narrowband-01.iq",
+   "iq_sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e",
+   "bytes": 16384
+  },
+  {
+   "id": "stress-narrowband-02",
+   "group": "stress_narrowband",
+   "kind": "stress",
+   "truth": {
+    "class_underlying": "BPSK",
+    "note": "BPSK + injected 6 MHz tone; demod not synced; not clean data"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-02-narrowband.iq",
+   "path": "frames/stress_narrowband/stress-narrowband-02.iq",
+   "iq_sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242",
+   "bytes": 16384
+  },
+  {
+   "id": "stress-narrowband-03",
+   "group": "stress_narrowband",
+   "kind": "stress",
+   "truth": {
+    "class_underlying": "BPSK",
+    "note": "BPSK + injected 6 MHz tone; demod not synced; not clean data"
+   },
+   "source": "evidence/rf-teaching/s2-46db-80mhz-narrowband-2026-10-21/raw/nf-03-narrowband.iq",
+   "path": "frames/stress_narrowband/stress-narrowband-03.iq",
+   "iq_sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e",
+   "bytes": 16384
+  }
+ ],
+ "groups": {
+  "clean_failure_bpsk": {
+   "n": 10,
+   "ids": [
+    "clean-fail-train02-normal-01",
+    "clean-fail-train02-normal-02",
+    "clean-fail-train02-normal-03",
+    "clean-fail-train02-normal-04",
+    "clean-fail-train02-normal-05",
+    "clean-fail-train02-normal-06",
+    "clean-fail-train02-normal-07",
+    "clean-fail-train02-normal-08",
+    "clean-fail-train02-normal-09",
+    "clean-fail-train02-normal-10"
+   ]
+  },
+  "clean_real_bpsk": {
+   "n": 10,
+   "ids": [
+    "clean-real-bpsk-train-01-normal-01",
+    "clean-real-bpsk-train-01-normal-02",
+    "clean-real-bpsk-train-01-normal-03",
+    "clean-real-bpsk-val-01-normal-01",
+    "clean-real-bpsk-val-01-normal-02",
+    "clean-real-bpsk-val-01-normal-03",
+    "clean-real-campaign3-normal-01",
+    "clean-real-campaign3-normal-02",
+    "clean-real-campaign3-normal-03",
+    "clean-real-new-normal"
+   ]
+  },
+  "clean_synthetic_4class": {
+   "n": 8,
+   "ids": [
+    "clean-syn-bpsk-snr20-01",
+    "clean-syn-bpsk-snr20-02",
+    "clean-syn-qam16-snr20-01",
+    "clean-syn-qam16-snr20-02",
+    "clean-syn-qam64-snr20-01",
+    "clean-syn-qam64-snr20-02",
+    "clean-syn-qpsk-snr20-01",
+    "clean-syn-qpsk-snr20-02"
+   ]
+  },
+  "gate_clip": {
+   "n": 3,
+   "ids": [
+    "gate-clip-01",
+    "gate-clip-02",
+    "gate-clip-03"
+   ]
+  },
+  "gate_noise": {
+   "n": 3,
+   "ids": [
+    "gate-noise-01",
+    "gate-noise-02",
+    "gate-noise-03"
+   ]
+  },
+  "gate_off": {
+   "n": 3,
+   "ids": [
+    "gate-off-train-01",
+    "gate-off-train-02",
+    "gate-off-val-01"
+   ]
+  },
+  "gate_tone": {
+   "n": 3,
+   "ids": [
+    "gate-tone-01",
+    "gate-tone-02",
+    "gate-tone-03"
+   ]
+  },
+  "stress_narrowband": {
+   "n": 3,
+   "ids": [
+    "stress-narrowband-01",
+    "stress-narrowband-02",
+    "stress-narrowband-03"
+   ]
+  }
+ },
+ "data_use_note": "clean groups are used for label/rejection replay only; stress/gate groups are reported separately and never counted in clean 4-class accuracy",
+ "no_device_note": "package only; no board connection, deployment or product change"
+}

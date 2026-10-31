@@ -1,0 +1,19 @@
+请接续当前DSH工作，优先把Pluto阶段0从“给用户命令”推进到“工具确实满足判据并有真实结果”。不要打断父证明审查189ef6b6或文档收尾3a7babd9，复用它们的最终结论，不另起全套审查。先读 docs/reports/2026-10-19-dsh-sdr-progress-and-stage0-fix.md。
+
+目前31项planner测试和self-test通过，但存在以下真实可复现问题，先做最小修复：
+1. board_integration.py的_check_pluto_post从错误位置读取gain：powerdown应取after.channels.altvoltage1_out，hardwaregain应取after.channels.voltage0_out。使用sdr_testbench/results/20261019-173154-376468-tx/result.json离线重放，当前函数会错误拒绝正常关断，不得改历史收据配合实现。
+2. _pluto_safe_off直接float('-89.750000 dB')会ValueError。统一严格解析合法数值/真实dB文本，拒绝错误单位、NaN/Inf、缺值及错值。新增真实格式与反例测试。
+3. --preflight有板卡poll后仍无条件passed=true，必须实际检查online、not stale、io_ok、TX source_selected=false、RX armed=false；不满足返回失败。区分纯Pluto预检与板卡预检。该入口会写Pluto关断，文案不得称全只读。
+4. 旧run.ps1 loopback只有一段ON，不含OFF对照、clipping指标或LO关闭时60dB目标衰减读回；无法满足你自己列出的阶段0条件。新增一个最小阶段0编排入口，别要求用户跑旧命令后提供它根本不生成的证据。
+
+实现范围限定为sdr_testbench/阶段0与共享读回/preflight及直接相关测试。指定单一写者，不覆盖父证明/观测点补丁；当前只做相关回归和一次适用增量审查，不做固定变异配额或重复全仓回归。
+
+阶段0要求：仅Pluto，零板卡动作、零COM11、零token/nonce；LO433.9MHz、Fs2.4MSPS、+100kHz、硬件衰减60dB、幅度0.1、RX手动0dB。顺序OFF_PRE→TONE→OFF_POST，一次TX启动、累计TX≤2秒，OFF窗口仅接收。发射前在LO关闭状态写入并读回-60dB，再按经核对的GNU Radio建图次序启用；停止/释放后读回TX最大衰减89.75dB及powerdown=1。保存三个窗口原始IQ、目标频带ON/OFF对比、频谱峰、削顶/满量程依据与停止状态；不能用“未出现CLIPPED字符串”代替计算。
+
+维持libiio与GNU Radio分阶段持有USB，不为了流内回读强开第二上下文。异常时关闭发射、保存失败/收尾结果，不自动重复TX；驱动挂死保留UNKNOWN/cleanup_required。
+
+先核对本会话最新操作者的真实接线确认与授权：若已明确Pluto TX→Pluto RX、示波器/板卡已断开且本次2秒自回环已授权，在修复、相关验证与一次适用审查后由你直接执行阶段0，自动收集和解释结果，不再让用户替agent运行PowerShell或寻找默认结果目录。若缺的是接线/权限，完成全部离线工作后只问这一项，不能自行填“checked now”。本指令不授权跨设备A/B或板端部署。
+
+阶段0通过后给阶段A换线图与精确命令；不提前执行A/B。保持原S2 pilot 8/9、passed=false、normal→CLEAR=NOT SATISFIED。父证明prepare的candidate==parent只是路线验证，不允许用同版本bundle安装。
+
+最终只汇报：修复与验证、阶段0真实结果目录、最终TX停止读回、下一条可执行命令或唯一缺失条件。缺少预期信号时先记录SNR和参数，不自动升功率或重复采集。

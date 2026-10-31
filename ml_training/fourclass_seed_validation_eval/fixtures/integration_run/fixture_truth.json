@@ -1,0 +1,56 @@
+{
+  "dataset_id": "synthetic_integration_fixture",
+  "real_capture": false,
+  "rows": [
+    {
+      "amplitude": 60,
+      "filter": "RECT",
+      "frame_index": 2,
+      "mode": "BPSK",
+      "reference_4096_sha256": "185892b15054a47f516cee2b8ee20f8ec6e7ea20d19d1a10f8e353a56e2a0330",
+      "rolloff": "0.35",
+      "sample_rate_hz": 60000000,
+      "seed": 2,
+      "symbol_rate_hz": 3000000,
+      "truth_class": "BPSK",
+      "truth_source": "actual build_tx_waveform payload; runner evidence",
+      "tx_bytes": 10160,
+      "tx_payload_sha256": "594f2b6ec1d1f4a87ed31fe63717714a7da57d83fd853022dc1bb8e4d1f0081a",
+      "tx_samples": 2540
+    },
+    {
+      "amplitude": 60,
+      "filter": "RECT",
+      "frame_index": 3,
+      "mode": "BPSK",
+      "reference_4096_sha256": "185892b15054a47f516cee2b8ee20f8ec6e7ea20d19d1a10f8e353a56e2a0330",
+      "rolloff": "0.35",
+      "sample_rate_hz": 60000000,
+      "seed": 2,
+      "symbol_rate_hz": 3000000,
+      "truth_class": "BPSK",
+      "truth_source": "actual build_tx_waveform payload; mismatch fixture",
+      "tx_bytes": 10160,
+      "tx_payload_sha256": "594f2b6ec1d1f4a87ed31fe63717714a7da57d83fd853022dc1bb8e4d1f0081a",
+      "tx_samples": 2540
+    },
+    {
+      "amplitude": 60,
+      "filter": "RECT",
+      "frame_index": 4,
+      "mode": "BPSK",
+      "reference_4096_sha256": "185892b15054a47f516cee2b8ee20f8ec6e7ea20d19d1a10f8e353a56e2a0330",
+      "rolloff": "0.35",
+      "sample_rate_hz": 60000000,
+      "seed": 2,
+      "symbol_rate_hz": 3000000,
+      "truth_class": "BPSK",
+      "truth_source": "actual build_tx_waveform payload; worker mismatch fixture",
+      "tx_bytes": 10160,
+      "tx_payload_sha256": "594f2b6ec1d1f4a87ed31fe63717714a7da57d83fd853022dc1bb8e4d1f0081a",
+      "tx_samples": 2540
+    }
+  ],
+  "schema": "SYNTHETIC_FIXTURE_integration_truth",
+  "training_use": false
+}

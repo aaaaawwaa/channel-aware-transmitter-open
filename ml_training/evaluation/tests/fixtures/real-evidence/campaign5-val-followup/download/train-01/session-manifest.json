@@ -1,0 +1,61 @@
+{
+  "schema": "rf-environment-session-manifest-v1",
+  "fixture": true,
+  "collected": true,
+  "physical": true,
+  "not_for_formal_acceptance": true,
+  "frame_count": 3,
+  "normal_count": 2,
+  "off_count": 1,
+  "session": {
+    "session_id": "train-01",
+    "split": "train",
+    "index": 1,
+    "seed": 1
+  },
+  "slots": [
+    {
+      "position": 0,
+      "tag": "normal-01",
+      "scenario": "normal",
+      "iq": "normal-01.iq",
+      "metadata": "normal-01.json",
+      "iq_sha256": "e8394cfccc6be770794c408a4050b33d56d71332e2a89aaac298a4b9b3c709a4",
+      "clipping_count": 0,
+      "label": "UNKNOWN",
+      "rail": false,
+      "physical": true
+    },
+    {
+      "position": 1,
+      "tag": "normal-02",
+      "scenario": "normal",
+      "iq": "normal-02.iq",
+      "metadata": "normal-02.json",
+      "iq_sha256": "7050700d9a0f227110e04f35852880ec10b4d28685f9cb311cbe7670a7b18793",
+      "clipping_count": 3,
+      "label": "CLEAR",
+      "rail": false,
+      "physical": true
+    },
+    {
+      "position": 2,
+      "tag": "off-01",
+      "scenario": "off",
+      "iq": "off-01.iq",
+      "metadata": "off-01.json",
+      "iq_sha256": "96ab7b83358b64c58975aeb21f5601c75b27fa50aabefeba8fb13a6124186452",
+      "clipping_count": 0,
+      "label": "CLEAR",
+      "rail": false,
+      "physical": false
+    }
+  ],
+  "release_id": "fixture-release",
+  "environment_version": "fixture-environment",
+  "domain": {
+    "lo_hz": 80000000,
+    "sample_rate_hz": 60000000,
+    "attenuation_mdB": 46000
+  }
+}

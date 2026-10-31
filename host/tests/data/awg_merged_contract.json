@@ -1,0 +1,28 @@
+{
+  "_comment": "Cell -> AXI base, extracted from the PRE-MERGE deployed overlay pynq_overlay/out_merged/awg_merged.hwh (2026-09-14). This is the frozen contract the AWG firmware and host software were built against; it is deliberately a separate file so that updating the deployed overlay (which the RF merge does) cannot move the baseline it is checked against.",
+  "source": "pynq_overlay/out_merged/awg_merged.hwh @ 2026-09-14 (pre-merger)",
+  "addresses": {
+    "axi_bram_ctrl_0": "0x40000000",
+    "axi_bram_ctrl_1": "0x42000000",
+    "axi_dma_0": "0x40400000",
+    "axi_gpio_0": "0x41200000",
+    "axi_gpio_1": "0x41210000",
+    "axi_gpio_10": "0x41220000",
+    "axi_gpio_11": "0x41230000",
+    "axi_gpio_12": "0x41240000",
+    "axi_gpio_2": "0x41250000",
+    "axi_gpio_3": "0x41260000",
+    "axi_gpio_4": "0x41270000",
+    "axi_gpio_5": "0x41280000",
+    "axi_gpio_6": "0x41290000",
+    "axi_gpio_7": "0x412A0000",
+    "axi_gpio_8": "0x412B0000",
+    "axi_gpio_9": "0x412C0000",
+    "axi_gpio_btn": "0x412D0000",
+    "axi_gpio_dbg": "0x412E0000",
+    "axi_gpio_dbg2": "0x412F0000",
+    "axi_gpio_fb": "0x41300000",
+    "axi_gpio_led": "0x41310000",
+    "ps7_0": "0x00000000"
+  }
+}

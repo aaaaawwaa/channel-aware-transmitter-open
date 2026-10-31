@@ -1,0 +1,65 @@
+options:
+  parameters:
+    id: tone_offline
+    title: External SDR finite IQ tone
+    author: Project SDR testbench
+    description: Offline 100 kHz IQ source, 262144 samples, no hardware access
+    generate_options: no_gui
+    output_language: python
+    run_options: run
+    catch_exceptions: 'True'
+  states:
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    value: '2400000'
+  states:
+    coordinate: [16, 88]
+    rotation: 0
+    state: enabled
+- name: tone
+  id: analog_sig_source_x
+  parameters:
+    type: complex
+    samp_rate: samp_rate
+    waveform: analog.GR_COS_WAVE
+    freq: '100000'
+    amp: '0.25'
+    offset: '0'
+    phase: '0'
+  states:
+    coordinate: [16, 200]
+    rotation: 0
+    state: enabled
+- name: finite_samples
+  id: blocks_head
+  parameters:
+    type: complex
+    num_items: '262144'
+    vlen: '1'
+  states:
+    coordinate: [256, 224]
+    rotation: 0
+    state: enabled
+- name: iq_file
+  id: blocks_file_sink
+  parameters:
+    type: complex
+    file: tone_offline.c64
+    append: 'False'
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    coordinate: [480, 224]
+    rotation: 0
+    state: enabled
+connections:
+- [tone, '0', finite_samples, '0']
+- [finite_samples, '0', iq_file, '0']
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0

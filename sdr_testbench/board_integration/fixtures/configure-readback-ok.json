@@ -1,0 +1,10 @@
+{
+  "lo_hz": 433900000,
+  "sample_rate_hz": 60000000,
+  "rx_bandwidth_hz": 30000000,
+  "tx_bandwidth_hz": 30000000,
+  "attenuation_mdb": 46000,
+  "phy_mode_1r1t": 0,
+  "product_id": 10,
+  "hardware_verified": true
+}

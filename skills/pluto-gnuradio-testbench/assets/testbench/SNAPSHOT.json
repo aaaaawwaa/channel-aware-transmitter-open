@@ -1,0 +1,38 @@
+{
+  "source": "sdr_testbench",
+  "snapshot_date": "2026-10-19",
+  "files": [
+    {
+      "path": "radio_test.py",
+      "sha256": "9e15d295cacc01d0f152b3ab818b093ec1795d1eee067251b9c54a1c7876de45"
+    },
+    {
+      "path": "scope_test.py",
+      "sha256": "0e7206c3eceac434bdc66c57a74459c4d1326e22a0a7709c8825e50127d26e7b"
+    },
+    {
+      "path": "run.ps1",
+      "sha256": "f89e7aa6c958f74cd0e876d48a159e48857e9b2997a2fb09a60b0e6333bc6ca5"
+    },
+    {
+      "path": "config/pluto.json",
+      "sha256": "a5cb201297bf432e3a20e28f867902abdc44ac4659f010184617b496b07d9219"
+    },
+    {
+      "path": "tone_offline.grc",
+      "sha256": "812208408fdac8df08c9cc5ee6ba2990820f53bf47c6329065bd4425b7c2760b"
+    },
+    {
+      "path": "test_radio_test.py",
+      "sha256": "f71d0efb31ecd54ec0425e181d75feb996f94d70075453aadeb4fb98e8d5367c"
+    },
+    {
+      "path": "index_results.py",
+      "sha256": "bb2d511626ea31d256db0b8492d698bc39998260b94468b68040ee1925094a9d"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "fc8e3e9278ec2c803e8a5652eb6503f05167cb3853c59a9339ef7ddf355c71d8"
+    }
+  ]
+}

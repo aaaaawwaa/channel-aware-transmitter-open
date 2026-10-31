@@ -1,0 +1,6 @@
+interface:
+  display_name: "final_prj射频平台开发"
+  short_description: "定位本项目构建与板载控制入口，推进接收联调、证据核对及交付收尾"
+  default_prompt: "使用 $final-prj-rf-development 核对最新工程证据，选择当前最小必要开发或联调步骤并完成相关验证。"
+policy:
+  allow_implicit_invocation: true

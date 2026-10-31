@@ -1,0 +1,4 @@
+interface:
+  display_name: "PlutoSDR 与 GNU Radio 测试"
+  short_description: "复用 PlutoSDR 收发测试、Keysight 示波器控制与 USB 排障经验"
+  default_prompt: "使用 $pluto-gnuradio-testbench 检查 SDR 环境并完成当前接线允许的基础测试，保存实测记录和停止状态。"

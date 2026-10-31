@@ -1,0 +1,36 @@
+[Unit]
+Description=AC820 AD9361 RF status sidecar (read-only, NDJSON over loopback)
+Documentation=file:/home/xilinx/overlays/awg_merged/current/merged_release_manifest.json
+# pynq-status.service is the ONLY Overlay() owner.  It resolves and verifies the
+# immutable release, loads the merged bit, publishes /run/pynq-status/active-release
+# and only then reports READY.  This sidecar maps that already-loaded PL read-only,
+# so it must neither start before the owner is ready nor outlive it:
+#   Requires=  starting it starts the owner; the owner failing fails this unit
+#   After=     the owner's READY (Type=notify) precedes this unit starting
+#   BindsTo=   the owner stopping (or restarting) stops this unit
+#   PartOf=    stopping/restarting the owner propagates to this unit
+Requires=pynq-status.service
+After=pynq-status.service
+BindsTo=pynq-status.service
+PartOf=pynq-status.service
+
+[Service]
+Type=simple
+User=root
+# This process is a C daemon: it does NOT import pynq, does NOT call Overlay(),
+# and does NOT load a second RF bitstream.  The overlay directory therefore
+# appears exactly once in this branch -- inside the active-release marker the
+# owner published after verifying the same immutable manifest identity -- and the
+# daemon is handed that marker, not a path it could re-derive differently.
+# There is deliberately no WorkingDirectory and no PYTHONPATH: neither is used.
+ExecStart=/home/xilinx/overlays/awg_merged/current/rf_daemon --active-release /run/pynq-status/active-release --port 5000 --max-samples 4096 --mode status-only
+# If the daemon cannot open the marker or the read-only PL mapping it exits; it
+# must not sit listening with RF silently unavailable.  Restart=always lets it
+# recover once the owner has re-published a new release, and REFUSED_EXIT-style
+# failures show up as the unit flapping rather than as a healthy-looking idle.
+Restart=always
+RestartSec=2
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

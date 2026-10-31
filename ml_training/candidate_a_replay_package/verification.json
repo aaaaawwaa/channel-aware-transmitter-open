@@ -1,0 +1,56 @@
+{
+  "schema": "ml-candidate-a-replay-verification-v1",
+  "package": "<LOCAL_PATH>",
+  "status": "PASS",
+  "frames": [
+    {
+      "frame_id": "01_syn_val_BPSK_to_QPSK",
+      "category": "A_BPSK_to_QPSK",
+      "synthetic": true,
+      "errors": [],
+      "status": "PASS"
+    },
+    {
+      "frame_id": "02_syn_test_BPSK_to_QAM64",
+      "category": "A_BPSK_to_QAM64",
+      "synthetic": true,
+      "errors": [],
+      "status": "PASS"
+    },
+    {
+      "frame_id": "03_syn_val_BPSK_confidence",
+      "category": "A_confidence_reject",
+      "synthetic": true,
+      "errors": [],
+      "status": "PASS"
+    },
+    {
+      "frame_id": "04_syn_test_high_snr_BPSK",
+      "category": "high_snr_correct_BPSK",
+      "synthetic": true,
+      "errors": [],
+      "status": "PASS"
+    },
+    {
+      "frame_id": "05_syn_test_correct_QPSK",
+      "category": "correct_QPSK",
+      "synthetic": true,
+      "errors": [],
+      "status": "PASS"
+    },
+    {
+      "frame_id": "06_real_task80_off_last",
+      "category": "task80_OFF_last",
+      "synthetic": false,
+      "errors": [],
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "boundaries": {
+    "host_only": true,
+    "arm_not_run": true,
+    "performance_acceptance": false,
+    "errors_unchanged": true
+  }
+}

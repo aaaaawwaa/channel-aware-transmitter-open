@@ -1,0 +1,288 @@
+options:
+  parameters:
+    id: bpsk_preview
+    title: BPSK TX BASEBAND PREVIEW - NO RF
+    author: AC820 external SDR demo
+    description: Software-only preview. Hardware sink is disabled. Use bounded TX
+      GUI for RF.
+    generate_options: qt_gui
+    output_language: python
+    run_options: prompt
+    catch_exceptions: 'True'
+  states:
+    coordinate:
+    - 20
+    - 210
+    rotation: 0
+    state: enabled
+blocks:
+- name: demo_imports
+  id: import
+  parameters:
+    imports: 'import sys, os
+
+      os.environ.setdefault("XDG_CACHE_HOME", ''<LOCAL_PATH>'')
+
+      sys.path.insert(0, ''<LOCAL_PATH>'')
+
+      from profile_contract import preview_symbols'
+  states:
+    coordinate:
+    - 20
+    - 140
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    value: '6000000'
+  states:
+    coordinate:
+    - 20
+    - 40
+    rotation: 0
+    state: enabled
+- name: symbol_rate
+  id: variable
+  parameters:
+    value: '3000000'
+  states:
+    coordinate:
+    - 200
+    - 40
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    value: int(samp_rate / symbol_rate)
+  states:
+    coordinate:
+    - 380
+    - 40
+    rotation: 0
+    state: enabled
+- name: prbs_seed
+  id: variable
+  parameters:
+    value: '1'
+  states:
+    coordinate:
+    - 600
+    - 40
+    rotation: 0
+    state: enabled
+- name: amplitude
+  id: variable
+  parameters:
+    value: '0.1'
+  states:
+    coordinate:
+    - 760
+    - 40
+    rotation: 0
+    state: enabled
+- name: center_hz
+  id: variable
+  parameters:
+    value: '433900000'
+  states:
+    coordinate:
+    - 900
+    - 40
+    rotation: 0
+    state: enabled
+- name: tx_attenuation_db
+  id: variable
+  parameters:
+    value: '60'
+  states:
+    coordinate:
+    - 1080
+    - 40
+    rotation: 0
+    state: enabled
+- name: prbs7_bpsk_symbols
+  id: blocks_vector_source_x
+  parameters:
+    type: complex
+    vector: preview_symbols(prbs_seed)
+    repeat: 'True'
+    vlen: '1'
+    tags: '[]'
+  states:
+    coordinate:
+    - 20
+    - 300
+    rotation: 0
+    state: enabled
+- name: rect_pulse_shaping
+  id: blocks_repeat
+  parameters:
+    type: complex
+    interp: sps
+    vlen: '1'
+  states:
+    coordinate:
+    - 300
+    - 320
+    rotation: 0
+    state: enabled
+- name: tx_amplitude
+  id: blocks_multiply_const_vxx
+  parameters:
+    type: complex
+    const: round(amplitude * 2047) / 2047.0
+    vlen: '1'
+  states:
+    coordinate:
+    - 500
+    - 320
+    rotation: 0
+    state: enabled
+- name: preview_rate
+  id: blocks_throttle2
+  parameters:
+    type: complex
+    samples_per_second: samp_rate
+    vlen: '1'
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+  states:
+    coordinate:
+    - 750
+    - 320
+    rotation: 0
+    state: enabled
+- name: iq_time
+  id: qtgui_time_sink_x
+  parameters:
+    type: complex
+    name: Local TX I/Q - no RF
+    size: '128'
+    srate: samp_rate
+    nconnections: '1'
+    ymin: '-0.14'
+    ymax: '0.14'
+    grid: 'True'
+    autoscale: 'False'
+    update_time: '0.15'
+    gui_hint: 0,0,1,1
+  states:
+    coordinate:
+    - 1020
+    - 250
+    rotation: 0
+    state: enabled
+- name: baseband_spectrum
+  id: qtgui_freq_sink_x
+  parameters:
+    type: complex
+    name: Local baseband spectrum - not RF measurement
+    fftsize: '4096'
+    wintype: window.WIN_HANN
+    fc: '0'
+    bw: samp_rate
+    nconnections: '1'
+    ymin: '-110'
+    ymax: '0'
+    grid: 'True'
+    autoscale: 'False'
+    update_time: '0.15'
+    gui_hint: 0,1,1,1
+  states:
+    coordinate:
+    - 1020
+    - 450
+    rotation: 0
+    state: enabled
+- name: bpsk_constellation
+  id: qtgui_const_sink_x
+  parameters:
+    type: complex
+    name: Generated BPSK constellation - not RX
+    size: '1024'
+    nconnections: '1'
+    xmin: '-0.14'
+    xmax: '0.14'
+    ymin: '-0.14'
+    ymax: '0.14'
+    grid: 'True'
+    autoscale: 'False'
+    update_time: '0.15'
+    gui_hint: 1,0,1,2
+  states:
+    coordinate:
+    - 1020
+    - 650
+    rotation: 0
+    state: enabled
+- name: pluto_tx_parameters_DISABLED
+  id: iio_pluto_sink
+  parameters:
+    type: fc32
+    uri: ''
+    frequency: center_hz
+    samplerate: samp_rate
+    buffer_size: '32768'
+    cyclic: 'False'
+    attenuation1: tx_attenuation_db
+    len_tag_key: ''
+    filter_source: '''Auto'''
+    filter: ''
+    fpass: '0'
+    fstop: '0'
+    bandwidth: '1500000'
+  states:
+    coordinate:
+    - 500
+    - 590
+    rotation: 0
+    state: disabled
+- name: photography_note
+  id: note
+  parameters:
+    note: 'LOCAL BASEBAND PREVIEW ONLY. Pluto Sink is disabled.
+
+      Use bpsk_tx_gui.py for explicit finite RF TX.
+
+      Board: pure RX, 60 MSPS, 3 MSym/s, RECT, same PRBS7 seed.'
+  states:
+    coordinate:
+    - 20
+    - 590
+    rotation: 0
+    state: enabled
+connections:
+- - prbs7_bpsk_symbols
+  - '0'
+  - rect_pulse_shaping
+  - '0'
+- - rect_pulse_shaping
+  - '0'
+  - tx_amplitude
+  - '0'
+- - tx_amplitude
+  - '0'
+  - preview_rate
+  - '0'
+- - preview_rate
+  - '0'
+  - iq_time
+  - '0'
+- - preview_rate
+  - '0'
+  - baseband_spectrum
+  - '0'
+- - preview_rate
+  - '0'
+  - bpsk_constellation
+  - '0'
+- - tx_amplitude
+  - '0'
+  - pluto_tx_parameters_DISABLED
+  - '0'
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0

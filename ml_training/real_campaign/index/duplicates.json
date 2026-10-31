@@ -1,0 +1,1075 @@
+{
+ "schema": "ml-real-campaign-duplicates-v1",
+ "duplicate_group_count": 23,
+ "leakage_group_count": 1,
+ "real_duplicate_group_count": 22,
+ "real_leakage_group_count": 0,
+ "duplicate_groups": [
+  {
+   "iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-01",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-01.iq",
+     "iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-01",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-01.iq",
+     "iq_sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-02",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-02.iq",
+     "iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-02",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-02.iq",
+     "iq_sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-03",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-03.iq",
+     "iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-03",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-03.iq",
+     "iq_sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "6a53871c06e3193d65ebec7a3dbfdd19fee47fe04451d84ec8e81985b1d84d60",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-04",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-04.iq",
+     "iq_sha256": "6a53871c06e3193d65ebec7a3dbfdd19fee47fe04451d84ec8e81985b1d84d60"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-04",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-04.iq",
+     "iq_sha256": "6a53871c06e3193d65ebec7a3dbfdd19fee47fe04451d84ec8e81985b1d84d60"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "aa0194e6f30b46e6420831b81835e58f1edc4317d01ece4b9f6cf4b47db4eb64",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-05",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-05.iq",
+     "iq_sha256": "aa0194e6f30b46e6420831b81835e58f1edc4317d01ece4b9f6cf4b47db4eb64"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-05",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-05.iq",
+     "iq_sha256": "aa0194e6f30b46e6420831b81835e58f1edc4317d01ece4b9f6cf4b47db4eb64"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "81dd54d690a29d5b49a0c3996178529e3c8c485cbc4acb5411a972e82c5ee11a",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-06",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-06.iq",
+     "iq_sha256": "81dd54d690a29d5b49a0c3996178529e3c8c485cbc4acb5411a972e82c5ee11a"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-06",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-06.iq",
+     "iq_sha256": "81dd54d690a29d5b49a0c3996178529e3c8c485cbc4acb5411a972e82c5ee11a"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "0bcc24ef1652346be62d6d4d90d63752d26e5b1c75ce2624648a3d1059848f8b",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-07",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-07.iq",
+     "iq_sha256": "0bcc24ef1652346be62d6d4d90d63752d26e5b1c75ce2624648a3d1059848f8b"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-07",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-07.iq",
+     "iq_sha256": "0bcc24ef1652346be62d6d4d90d63752d26e5b1c75ce2624648a3d1059848f8b"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "d6171f8191ff9647be729e390de921b4899ef3b2545ed8c5416aeacde78959cf",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-08",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-08.iq",
+     "iq_sha256": "d6171f8191ff9647be729e390de921b4899ef3b2545ed8c5416aeacde78959cf"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-08",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-08.iq",
+     "iq_sha256": "d6171f8191ff9647be729e390de921b4899ef3b2545ed8c5416aeacde78959cf"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "cd7d2fd93c4b79dec962a58b6de5620a56bf46413cf4f907cd7da57d05a28bf6",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-09",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-09.iq",
+     "iq_sha256": "cd7d2fd93c4b79dec962a58b6de5620a56bf46413cf4f907cd7da57d05a28bf6"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-09",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-09.iq",
+     "iq_sha256": "cd7d2fd93c4b79dec962a58b6de5620a56bf46413cf4f907cd7da57d05a28bf6"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "698a2e04d021cc9add35c7f6ea2b7ac6629a7a14ff3abeb3519c7423cbdcdc94",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/normal-10",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/normal-10.iq",
+     "iq_sha256": "698a2e04d021cc9add35c7f6ea2b7ac6629a7a14ff3abeb3519c7423cbdcdc94"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/normal-10",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/normal-10.iq",
+     "iq_sha256": "698a2e04d021cc9add35c7f6ea2b7ac6629a7a14ff3abeb3519c7423cbdcdc94"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-01",
+    "campaign5-2026-10-18/train-01"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-01/off-01",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "quality",
+     "truth_class": "OFF",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-01/off-01.iq",
+     "iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-01/off-01",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-01",
+     "split": "TRAIN",
+     "kind": "quality",
+     "truth_class": "OFF",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-01/off-01.iq",
+     "iq_sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-01",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-01.iq",
+     "iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-01",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-01.iq",
+     "iq_sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-02",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-02.iq",
+     "iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-02",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-02.iq",
+     "iq_sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-03",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-03.iq",
+     "iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-03",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-03.iq",
+     "iq_sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-04",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-04.iq",
+     "iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-04",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-04.iq",
+     "iq_sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-05",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-05.iq",
+     "iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-05",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-05.iq",
+     "iq_sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-06",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-06.iq",
+     "iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-06",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-06.iq",
+     "iq_sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-07",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-07.iq",
+     "iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-07",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-07.iq",
+     "iq_sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-08",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-08.iq",
+     "iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-08",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-08.iq",
+     "iq_sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-09",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-09.iq",
+     "iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-09",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-09.iq",
+     "iq_sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/normal-10",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/normal-10.iq",
+     "iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/normal-10",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/normal-10.iq",
+     "iq_sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d",
+   "count": 2,
+   "splits": [
+    "TRAIN"
+   ],
+   "sessions": [
+    "campaign4-2026-10-18/train-02",
+    "campaign5-2026-10-18/train-02"
+   ],
+   "cross_split": false,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "campaign4-2026-10-18/train-02/off-01",
+     "source_id": "campaign4-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "quality",
+     "truth_class": "OFF",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign4/download/train-02/off-01.iq",
+     "iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d"
+    },
+    {
+     "frame_id": "campaign5-2026-10-18/train-02/off-01",
+     "source_id": "campaign5-2026-10-18",
+     "session_id": "train-02",
+     "split": "TRAIN",
+     "kind": "quality",
+     "truth_class": "OFF",
+     "synthetic": false,
+     "status": "OK",
+     "iq_path": "evidence/rf-teaching/codex-s2-takeover-2026-10-18/campaign5-val-followup/download/train-02/off-01.iq",
+     "iq_sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d"
+    }
+   ]
+  },
+  {
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "count": 7,
+   "splits": [
+    "TEST",
+    "TRAIN",
+    "VAL"
+   ],
+   "sessions": [
+    "synthetic-fixtures/synthetic-leak-train",
+    "synthetic-fixtures/synthetic-leak-val",
+    "synthetic-fixtures/synthetic-sim-smoke-BPSK",
+    "synthetic-fixtures/synthetic-sim-smoke-test"
+   ],
+   "cross_split": true,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "synthetic-fixtures/duplicates/dup-session-b.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-BPSK",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/dup-session-b.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/duplicates/leak-train.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-leak-train",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-train.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/duplicates/leak-val.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-leak-val",
+     "split": "VAL",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-val.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/invalid/truth_from_environment.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-test",
+     "split": "TEST",
+     "kind": "quality",
+     "truth_class": "OFF",
+     "synthetic": true,
+     "status": "INVALID",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_environment.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/invalid/truth_from_model.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-test",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": null,
+     "synthetic": true,
+     "status": "INVALID",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_model.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/invalid/wrong_sample_rate.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-test",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "INVALID",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/wrong_sample_rate.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/valid/BPSK.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-BPSK",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/valid/BPSK.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    }
+   ]
+  }
+ ],
+ "leakage_groups": [
+  {
+   "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1",
+   "count": 7,
+   "splits": [
+    "TEST",
+    "TRAIN",
+    "VAL"
+   ],
+   "sessions": [
+    "synthetic-fixtures/synthetic-leak-train",
+    "synthetic-fixtures/synthetic-leak-val",
+    "synthetic-fixtures/synthetic-sim-smoke-BPSK",
+    "synthetic-fixtures/synthetic-sim-smoke-test"
+   ],
+   "cross_split": true,
+   "cross_session": true,
+   "records": [
+    {
+     "frame_id": "synthetic-fixtures/duplicates/dup-session-b.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-BPSK",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/dup-session-b.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/duplicates/leak-train.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-leak-train",
+     "split": "TRAIN",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-train.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/duplicates/leak-val.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-leak-val",
+     "split": "VAL",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/duplicates/leak-val.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/invalid/truth_from_environment.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-test",
+     "split": "TEST",
+     "kind": "quality",
+     "truth_class": "OFF",
+     "synthetic": true,
+     "status": "INVALID",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_environment.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/invalid/truth_from_model.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-test",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": null,
+     "synthetic": true,
+     "status": "INVALID",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/truth_from_model.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/invalid/wrong_sample_rate.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-test",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "INVALID",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/invalid/wrong_sample_rate.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    },
+    {
+     "frame_id": "synthetic-fixtures/valid/BPSK.json",
+     "source_id": "synthetic-fixtures",
+     "session_id": "synthetic-sim-smoke-BPSK",
+     "split": "TEST",
+     "kind": "clean",
+     "truth_class": "BPSK",
+     "synthetic": true,
+     "status": "OK",
+     "iq_path": "ml_training/real_campaign/fixtures/synthetic/valid/BPSK.iq",
+     "iq_sha256": "0b0ef5a6950e41a13c593ade81b62449bd16dd7210c8588ace763bc33b757fa1"
+    }
+   ]
+  }
+ ]
+}

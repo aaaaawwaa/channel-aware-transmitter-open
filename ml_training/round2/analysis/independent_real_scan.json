@@ -1,0 +1,20 @@
+{
+ "development_hashes": 34,
+ "candidates": [
+  {
+   "directory": "<LOCAL_PATH>",
+   "frames": 10,
+   "session_id": {
+    "session_id": "train-01",
+    "split": "train",
+    "seed": 1
+   },
+   "release_id": "1a30f4b7b9aebe27965fcdd6dcf7634e",
+   "origin": "board physical TRAIN/VAL session via the production worker/UiView; ten normal loopback frames then one off frame",
+   "iq_files": 11,
+   "development_overlap": 0,
+   "distinct_from_development": true,
+   "first_iq": "evidence/rf-teaching/s2/46db-trainval-campaign3-2026-10-18/download/train-01/normal-01.iq"
+  }
+ ]
+}

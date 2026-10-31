@@ -1,0 +1,400 @@
+{
+ "schema": "ml-modrec-arm-probe-manifest-v1",
+ "created_utc": "2026-10-21T10:00:38Z",
+ "package": "ml_training/arm_probe",
+ "purpose": "standalone frozen round-2 pipeline replay for independent ARM qualification",
+ "frozen": {
+  "cnn_model": {
+   "path": "ml_training/artifacts/cnn/model.json",
+   "sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc",
+   "bytes": 48971
+  },
+  "baseline_model": {
+   "path": "ml_training/artifacts/baseline/model.json",
+   "sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014",
+   "bytes": 2187
+  },
+  "rule_config": {
+   "path": "ml_training/round2/artifacts/rule_config.json",
+   "sha256": "9aceebbdb6b9b9a54ad0dd09ebd61935ae8c8fd276ba18d8b9db69e7949619e0",
+   "bytes": 7513
+  }
+ },
+ "frames": {
+  "total": 43,
+  "by_group": {
+   "clean_failure_bpsk": 10,
+   "clean_real_bpsk": 10,
+   "clean_synthetic_4class": 8,
+   "gate_clip": 3,
+   "gate_noise": 3,
+   "gate_off": 3,
+   "gate_tone": 3,
+   "stress_narrowband": 3
+  }
+ },
+ "host_expected_sha256": "8e6da1b5737d9adb140e8455b569fc803024577ba543e5708648ceca74416641",
+ "host_checks": {
+  "project_cross_check": {
+   "status": "PASS",
+   "mismatch_count": 0,
+   "max_abs_logit_delta": 0.0
+  },
+  "compatibility_check": {
+   "python_syntax_3_8_ok": true,
+   "pure_numpy_only": true,
+   "banned_imports_found": []
+  },
+  "clean_directory_run": {
+   "status": "PASS",
+   "returncode": 0,
+   "check_passed": true,
+   "problem_count": 0
+  }
+ },
+ "files": [
+  {
+   "path": "ml_training/arm_probe/arm/ARM-COMMANDS.md",
+   "bytes": 3252,
+   "sha256": "9c94d4f5269cd2acbd9443c65575c1787361eee8e98647dbe783aff57d44930f"
+  },
+  {
+   "path": "ml_training/arm_probe/arm/run_arm_probe.py",
+   "bytes": 7679,
+   "sha256": "e122d3c0111eca91bb808daab00062d08050f5004356276f5b3a0c06fec394d7"
+  },
+  {
+   "path": "ml_training/arm_probe/build_package.py",
+   "bytes": 22762,
+   "sha256": "50990f39e97ac3060d84d04d6fa67eae89ac393efdc4bb3860c83cf7ac011d0e"
+  },
+  {
+   "path": "ml_training/arm_probe/COMPATIBILITY.md",
+   "bytes": 3588,
+   "sha256": "1ac18b621c35bdf243d8aa31734b80ab4754a34af1e014931fbc96eb5d885032"
+  },
+  {
+   "path": "ml_training/arm_probe/expected/host_expected.json",
+   "bytes": 80855,
+   "sha256": "8e6da1b5737d9adb140e8455b569fc803024577ba543e5708648ceca74416641"
+  },
+  {
+   "path": "ml_training/arm_probe/expected/host_summary.md",
+   "bytes": 1402,
+   "sha256": "fd66820504913aeae8dc829673262f7d587a3a972db7623ff15521a7f6515ca6"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-01.iq",
+   "bytes": 16384,
+   "sha256": "13a61a64b4b04e273479a06ce69a4a71232e225b2066ea0a826bb42be5a3f75b"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-02.iq",
+   "bytes": 16384,
+   "sha256": "e8d169ea82eddee194b99843fe0fc59d432869322d987d73ab2ed64e69d6206d"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-03.iq",
+   "bytes": 16384,
+   "sha256": "13e216876e3b89fae6e7f6ce9a96584352fd2360d5dbde5ea1a6be5f90e1d49b"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-04.iq",
+   "bytes": 16384,
+   "sha256": "2e5cb894e82b33606bb9a7dfef7f359d430e90aa545078d526f03ffa35f93c17"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-05.iq",
+   "bytes": 16384,
+   "sha256": "4ea00fd2d3d12cb1fc95e67f5ada14fd79cc557750ff1c8102881fb6bbb96be8"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-06.iq",
+   "bytes": 16384,
+   "sha256": "38b66e07a2f67ce5baad33b00d363bfe40e3302b56ac735d3ba4e8d22170d0e3"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-07.iq",
+   "bytes": 16384,
+   "sha256": "86cc270d1af336c93932b34db617fa47e123e7906d34b2398d94c5c576763fd8"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-08.iq",
+   "bytes": 16384,
+   "sha256": "b8e69fa19329c3bdb4d521989ff50743ad81513b89faa752bc2c43f44b4f9562"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-09.iq",
+   "bytes": 16384,
+   "sha256": "dc6bc7cb3a51117585f74d7106197e4fdac3721178f3469a52ca88580583a772"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_failure_bpsk/clean-fail-train02-normal-10.iq",
+   "bytes": 16384,
+   "sha256": "810fd2bbf981237b14e470f31f48e30f9fee9fbc37c8036de6ad2340e05ba260"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-bpsk-train-01-normal-01.iq",
+   "bytes": 16384,
+   "sha256": "da7989ab63cd0f2cf4bfaf821406a48c992086e84c5c9bd5ef040d5fd3716826"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-bpsk-train-01-normal-02.iq",
+   "bytes": 16384,
+   "sha256": "63903735de176ce42c81886298b61019959e8042fa412e87fae9dcf2525b3dc0"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-bpsk-train-01-normal-03.iq",
+   "bytes": 16384,
+   "sha256": "9ebaba8c4c86da08c1f4a741fc5a4aebce41924174b84b76605a8ba43c571c84"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-bpsk-val-01-normal-01.iq",
+   "bytes": 16384,
+   "sha256": "30b5e62a81b11f80ee7b71509504a25c3998b89cc8178b2c7e550e762de1dadb"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-bpsk-val-01-normal-02.iq",
+   "bytes": 16384,
+   "sha256": "c7d77f0e9561c118b41d63545740ec4e4b3751a68e0acd97657428d4680b7595"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-bpsk-val-01-normal-03.iq",
+   "bytes": 16384,
+   "sha256": "65706320773e09994b7e182bb641c2afa16171fe52950a17a680cf0d0c2a1692"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-campaign3-normal-01.iq",
+   "bytes": 16384,
+   "sha256": "ec2d04281aa9c3dcc29a88ff2d2ccbf6fa36597b05f304ac2e60e4b387a6f25e"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-campaign3-normal-02.iq",
+   "bytes": 16384,
+   "sha256": "28e6c31639b61a873491d3276b7ff6dc8a1060fedab2b1a956ed75972cb8dbb6"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-campaign3-normal-03.iq",
+   "bytes": 16384,
+   "sha256": "8f2d368c657c0cab743a733f49dcb96a3a53a615f12e69d14549a377f02110e4"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_real_bpsk/clean-real-new-normal.iq",
+   "bytes": 16384,
+   "sha256": "b40cc8d74e0037169f34e3bc0ca25ee2a796438c50bc870a83dd987b308bbb3b"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-bpsk-snr20-01.iq",
+   "bytes": 16384,
+   "sha256": "45f30ebd634259dbf42baaba7b606be357c725297f617f3b9e611fae58d66a5d"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-bpsk-snr20-02.iq",
+   "bytes": 16384,
+   "sha256": "7fd4e71b633c0635395b2e99fab52928a655e10791f80358734c98077e9104e8"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-qam16-snr20-01.iq",
+   "bytes": 16384,
+   "sha256": "92d2349826940d01ba1af198f9fa66eee817269367bbc1b0050dab97a60e06f0"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-qam16-snr20-02.iq",
+   "bytes": 16384,
+   "sha256": "2cb087ee4bf6c821f5b443af5f67243a2068f6d6ca6ac2a86baf15ca033b6eb4"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-qam64-snr20-01.iq",
+   "bytes": 16384,
+   "sha256": "ba770d6b3eef41c2467f82955b220892f24d432016598c76aeefb8d97a925dc3"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-qam64-snr20-02.iq",
+   "bytes": 16384,
+   "sha256": "03526184ee16060efa27359b070e80056ab9dd9ee29dd1b2f2c5816b3a06c2f8"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-qpsk-snr20-01.iq",
+   "bytes": 16384,
+   "sha256": "76b1c2cd039378235b7a74ea5c51e3597a55f040ec28c3b4d87f2b61d1334296"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/clean_synthetic_4class/clean-syn-qpsk-snr20-02.iq",
+   "bytes": 16384,
+   "sha256": "2becfff5b538a05bfb028528cc1b222d48eeb4e8f890af01c976d01e0452c7a4"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_clip/gate-clip-01.iq",
+   "bytes": 16384,
+   "sha256": "f095d40fc6dc5bbc2e911f69989ec67526808a1f113421e9fa8c97a8759c1fbe"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_clip/gate-clip-02.iq",
+   "bytes": 16384,
+   "sha256": "a55ae437d7a592100838bf471da778f78e9edd4214ad45dd8d770a7abf76e819"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_clip/gate-clip-03.iq",
+   "bytes": 16384,
+   "sha256": "d12bbdc1f5442979f35d78d9885f4b3f79646861d313505c82d05aad1e087d2f"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_noise/gate-noise-01.iq",
+   "bytes": 16384,
+   "sha256": "1d325dc31bf3f50a488a639deaa0b5a118db3d65ac221331620a1db8d5882365"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_noise/gate-noise-02.iq",
+   "bytes": 16384,
+   "sha256": "954cecd0d1375fff6165e3864a438c02064676d756552d73773f1018184b932c"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_noise/gate-noise-03.iq",
+   "bytes": 16384,
+   "sha256": "bf49ee3a7b6b5215ca53b523b9df9b0e22e3eb22e446d0cf06e6cd1f72bd1669"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_off/gate-off-train-01.iq",
+   "bytes": 16384,
+   "sha256": "366091c71b9a66bceda7b644c9ba6a7a7f4832cda34bcd0fe8959e2cfffe65c9"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_off/gate-off-train-02.iq",
+   "bytes": 16384,
+   "sha256": "b5314840fd8fdbedf606ca134dac6e90f5b3a335f1168eeca9444aba0385635d"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_off/gate-off-val-01.iq",
+   "bytes": 16384,
+   "sha256": "a5abb394cc50b432684dc0907880d04137ede85eb7dc4854d3d5626bdcb9d108"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_tone/gate-tone-01.iq",
+   "bytes": 16384,
+   "sha256": "b60f0f21b5e93c5f74094979fb59ac61ee169a4eb640e148abe9951dce3c9ffb"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_tone/gate-tone-02.iq",
+   "bytes": 16384,
+   "sha256": "27377f647372d1746e9735f5998ddd6d5c890067535238faa1fc38a2edb32c11"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/gate_tone/gate-tone-03.iq",
+   "bytes": 16384,
+   "sha256": "aca11d7700363489111575edf1a0df69ae5cfef64ac634f3f1be7d52a33e9059"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/stress_narrowband/stress-narrowband-01.iq",
+   "bytes": 16384,
+   "sha256": "078504a6abb14ea8e0f4fe3def84ccefb7b4d7c200f75928b940a66b91d9834e"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/stress_narrowband/stress-narrowband-02.iq",
+   "bytes": 16384,
+   "sha256": "75286f67149a0d84bb98619b27377666089787b6ec6d9e168034087ad85de242"
+  },
+  {
+   "path": "ml_training/arm_probe/frames/stress_narrowband/stress-narrowband-03.iq",
+   "bytes": 16384,
+   "sha256": "e90b1cab07c0ae3ad2e70b345fc2c0c32d5fb5889d06607b74a8db6f5be33a2e"
+  },
+  {
+   "path": "ml_training/arm_probe/host/compatibility_check.json",
+   "bytes": 1666,
+   "sha256": "28adc634b957a2b4ae875c1e52ad13efe95071151f38b8cbd62f80e08bd2893b"
+  },
+  {
+   "path": "ml_training/arm_probe/host/host_clean_run.json",
+   "bytes": 184,
+   "sha256": "782d7e9e8cda9e9999b4f2f6748d9cb7eecccbeaa615912b631a4d14fdb8f66d"
+  },
+  {
+   "path": "ml_training/arm_probe/host/host_clean_run.log",
+   "bytes": 1557,
+   "sha256": "ddd54f4e0f1818623556ef56b72c9b5bf0ef54ec5e58b5835c683b1882322bd7"
+  },
+  {
+   "path": "ml_training/arm_probe/host/project_cross_check.json",
+   "bytes": 185,
+   "sha256": "b1c041acba08a82985215a792b76ba1f11b4e49904d3620e0346e2d5346977cd"
+  },
+  {
+   "path": "ml_training/arm_probe/input_manifest.json",
+   "bytes": 24943,
+   "sha256": "bf55bc1cdfebe8f1b691698f207099af918dea2e6e92346b893186fc9a20b5fa"
+  },
+  {
+   "path": "ml_training/arm_probe/model/baseline_model.json",
+   "bytes": 2187,
+   "sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014"
+  },
+  {
+   "path": "ml_training/arm_probe/model/cnn_model.json",
+   "bytes": 48971,
+   "sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc"
+  },
+  {
+   "path": "ml_training/arm_probe/model/rule_config.json",
+   "bytes": 7513,
+   "sha256": "9aceebbdb6b9b9a54ad0dd09ebd61935ae8c8fd276ba18d8b9db69e7949619e0"
+  },
+  {
+   "path": "ml_training/arm_probe/README.md",
+   "bytes": 4129,
+   "sha256": "bb75d23fa72be96f00ccd7c8ce30db90e69d40c64b9613e8217adf2c97b5a7b1"
+  },
+  {
+   "path": "ml_training/arm_probe/run_replay.py",
+   "bytes": 13058,
+   "sha256": "8aa491f8ea4e3b5bd092206d3bea00ac16523e478f35bdefa448ed58aabe6cd4"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/__init__.py",
+   "bytes": 557,
+   "sha256": "54a898924ce01a0ae1cd076005719325ce7869322d41f8d27e9d8c607fa52410"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/baseline.py",
+   "bytes": 6308,
+   "sha256": "3b4f939fa0a7b1d24db4049aca093c38a6c897d693185a6505ce09b61111d116"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/features.py",
+   "bytes": 3424,
+   "sha256": "b27c5e393e977707838075b16134cc4ebc61b2b12a56dbc894fea86e95bcbece"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/gate.py",
+   "bytes": 2340,
+   "sha256": "dccebcdc0f88a9ff03e0f4c1aa72c5449d7bf4bc8a2433eafdb937e5603bc885"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/iq.py",
+   "bytes": 1921,
+   "sha256": "a840cdc2b96e3ea629c9c964d5dcd8bbb174b1cdcf0f40ee2c50ed8e369c0c28"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/numpy_runtime.py",
+   "bytes": 8883,
+   "sha256": "70d90a72784ff18725b01b1d21f6eb2f04ee4de4e2ddc7041739a3fa7611e1b1"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/predictor.py",
+   "bytes": 8071,
+   "sha256": "75ee567b137c884bbe20dcd9f88dea73e26cf0bbb4d46247c35ec956bf29f581"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/preprocess.py",
+   "bytes": 2134,
+   "sha256": "574e521f8e91b3b40758cb157dccf32bd4ba5b76ae490f2205fb821b53deabde"
+  },
+  {
+   "path": "ml_training/arm_probe/runtime/spectral.py",
+   "bytes": 1972,
+   "sha256": "031be4323a0dd251b1cd7ed9f6470d91bed0e8b219f78bdc97defd7cd0d94403"
+  }
+ ],
+ "files_total": 68,
+ "bytes_total": 964053,
+ "no_device_note": "software package only; no board connection, deployment or product change"
+}

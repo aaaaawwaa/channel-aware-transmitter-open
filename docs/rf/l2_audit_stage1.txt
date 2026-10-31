@@ -1,0 +1,340 @@
+AD9361 post-init register read-back audit -- Stage 1 (1R1T), TX bring-up
+=======================================================================
+
+Provenance
+----------
+trace   : /home/xilinx/trace_init.txt, written by `board_app init` (always-on,
+          zero-timing-change trace; the read-back is a SEPARATE pass by design,
+          because inserting reads inside the VCO-calibration state machine would
+          perturb exactly what this round measures).
+board   : board_app audit <addr> -- a standalone process per address.  It calls
+          spi_init (PL SPI divider + PL STATUS probe only; nothing is sent to the
+          AD9361) then does a raw ad9361_spi_read through a zeroed struct
+          spi_device, so the part stays exactly as `init` left it.
+date    : 2026-09-18
+mode    : 205 CONFIRMED / 75 DECLARED-WEAK / 1 DECLARED-VOLATILE /
+          6 UNEXPLAINED / 0 READ-FAILED, over 287 distinct addresses.
+
+Board/PL state at audit time (all re-established in this session)
+----------------------------------------------------------------
+* pynq-status stopped; RF overlay loaded from
+  /home/xilinx/overlays/rf/rf_overlay.bit
+* SLCR divisors read directly: FCLK0 div0=5 div1=4 -> 50.000 MHz;
+  FCLK1 div0=5 div1=1 -> 200.000 MHz.  (PYNQ's Clocks.fclkX_mhz is NOT
+  authoritative on this board -- it scales by 1.5x.  Never WRITE fclk1_mhz.)
+* plcfg: phy_mode=1, idelay_en=0x7F, idelay_tap=15, phase_inc=128;
+  criterion 1.5 PASS (negative criterion), f_DATA_CLK = 0.269 MHz.
+* init: ad9361_init returned 0; ENSM 0x03 (FDD/RX); TX LO 80000000 Hz;
+  TX1 atten 0 mdB; RX/TX sampling rate 60000000 Hz -> MATCH.
+  f_DATA_CLK after init = 20001220 Hz (20.001 MHz).
+
+How to read the verdicts
+------------------------
+CONFIRMED         read-back byte equals the last byte the trace says we wrote.
+DECLARED-WEAK     the written byte was 0x00, so "read back 0" cannot distinguish
+                  a landed write from one that never happened.  This is the
+                  write-0 blind spot, reported rather than hidden.
+DECLARED-VOLATILE an EXEMPT entry the part legitimately changes on its own.
+UNEXPLAINED       differs, and is NOT covered by a declared exemption.  This is
+                  the audit's most valuable output -- see the analysis below.
+
+NOTE ON DISCIPLINE: the EXEMPT list was fixed BEFORE this measurement.  The six
+UNEXPLAINED below are reported against that frozen list and were NOT smoothed
+away.  Any exemption added afterwards is a separate, reviewed act recorded in
+docs/rf/l2_stage1_record.md, with the vendor-source evidence that justifies it.
+
+CONFIRMED          0x3DF  wrote 01, read 01
+CONFIRMED          0x2A6  wrote 0E, read 0E
+CONFIRMED          0x2A8  wrote 0E, read 0E
+CONFIRMED          0x292  wrote 08, read 08
+DECLARED-WEAK      0x294  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x293  wrote B9, read B9
+CONFIRMED          0x2AB  wrote 07, read 07
+CONFIRMED          0x2AC  wrote FF, read FF
+CONFIRMED          0x009  wrote 07, read 07
+CONFIRMED          0x046  wrote 03, read 03
+CONFIRMED          0x04A  wrote 35, read 35
+CONFIRMED          0x049  wrote 5B, read 5B
+CONFIRMED          0x048  wrote E8, read E8
+UNEXPLAINED        0x04B  wrote E0, read E1
+CONFIRMED          0x04E  wrote 10, read 10
+CONFIRMED          0x044  wrote 18, read 18
+DECLARED-WEAK      0x043  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x042  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x041  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x03F  wrote 01, read 01
+CONFIRMED          0x04C  wrote 86, read 86
+CONFIRMED          0x04D  wrote 05, read 05
+CONFIRMED          0x00A  wrote 09, read 09
+CONFIRMED          0x002  wrote 52, read 52
+CONFIRMED          0x003  wrote 5C, read 5C
+CONFIRMED          0x022  wrote 02, read 02
+CONFIRMED          0x0FE  wrote 27, read 27
+CONFIRMED          0x111  wrote CD, read CD
+CONFIRMED          0x15C  wrote 79, read 79
+CONFIRMED          0x128  wrote 03, read 03
+CONFIRMED          0x124  wrote 22, read 22
+CONFIRMED          0x125  wrote 75, read 75
+CONFIRMED          0x117  wrote 10, read 10
+CONFIRMED          0x150  wrote EE, read EE
+CONFIRMED          0x151  wrote DE, read DE
+CONFIRMED          0x152  wrote 49, read 49
+CONFIRMED          0x153  wrote 49, read 49
+CONFIRMED          0x154  wrote 49, read 49
+CONFIRMED          0x155  wrote 24, read 24
+CONFIRMED          0x156  wrote 07, read 07
+CONFIRMED          0x157  wrote 0F, read 0F
+CONFIRMED          0x158  wrote 0C, read 0C
+CONFIRMED          0x00B  wrote CE, read CE
+UNEXPLAINED        0x00C  wrote 00, read 0E
+CONFIRMED          0x00D  wrote 05, read 05
+DECLARED-WEAK      0x00F  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x01C  wrote 18, read 18
+DECLARED-WEAK      0x01D  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x004  wrote 03, read 03
+CONFIRMED          0x010  wrote C8, read C8
+DECLARED-WEAK      0x011  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x012  wrote 10, read 10
+CONFIRMED          0x006  wrote 04, read 04
+CONFIRMED          0x007  wrote 70, read 70
+CONFIRMED          0x03C  wrote 21, read 21
+CONFIRMED          0x03D  wrote FF, read FF
+CONFIRMED          0x03E  wrote 0F, read 0F
+CONFIRMED          0x023  wrote FF, read FF
+DECLARED-WEAK      0x018  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x01A  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x019  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x01B  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x026  wrote 80, read 80
+DECLARED-WEAK      0x030  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x031  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x032  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x033  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x035  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x036  wrote FF, read FF
+DECLARED-WEAK      0x020  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x027  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x028  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02C  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x029  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02D  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02A  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02E  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02B  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x02F  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x03A  wrote 27, read 27
+DECLARED-WEAK      0x12C  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x12D  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x24B  wrote 17, read 17
+DECLARED-WEAK      0x24D  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x261  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x248  wrote 0B, read 0B
+CONFIRMED          0x246  wrote 02, read 02
+CONFIRMED          0x23B  wrote 9E, read 9E
+CONFIRMED          0x23D  wrote 14, read 14
+CONFIRMED          0x249  wrote 8E, read 8E
+CONFIRMED          0x015  wrote 04, read 04
+CONFIRMED          0x014  wrote 29, read 29
+CONFIRMED          0x013  wrote 01, read 01
+CONFIRMED          0x28B  wrote 17, read 17
+DECLARED-WEAK      0x28D  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x2A1  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x288  wrote 0B, read 0B
+CONFIRMED          0x286  wrote 02, read 02
+CONFIRMED          0x27B  wrote 9E, read 9E
+CONFIRMED          0x27D  wrote 14, read 14
+CONFIRMED          0x289  wrote 8E, read 8E
+CONFIRMED          0x23A  wrote 4D, read 4D
+CONFIRMED          0x239  wrote 81, read 81
+CONFIRMED          0x242  wrote 16, read 16
+CONFIRMED          0x238  wrote 78, read 78
+CONFIRMED          0x251  wrote 0C, read 0C
+DECLARED-WEAK      0x245  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x250  wrote 70, read 70
+CONFIRMED          0x23E  wrote CF, read CF
+CONFIRMED          0x23F  wrote B4, read B4
+CONFIRMED          0x240  wrote 0C, read 0C
+DECLARED-WEAK      0x235  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x234  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x233  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x232  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x231  wrote 80, read 80
+CONFIRMED          0x005  wrote 66, read 66
+CONFIRMED          0x0FB  wrote 08, read 08
+CONFIRMED          0x0FD  wrote 4C, read 4C
+DECLARED-WEAK      0x137  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x130  wrote 4C, read 4C
+CONFIRMED          0x131  wrote 6F, read 6F
+CONFIRMED          0x132  wrote 38, read 38
+CONFIRMED          0x133  wrote 20, read 20
+UNEXPLAINED        0x134  wrote 00, read 6F
+UNEXPLAINED        0x109  wrote 4C, read 45
+CONFIRMED          0x10C  wrote 4C, read 4C
+CONFIRMED          0x27A  wrote 4D, read 4D
+CONFIRMED          0x279  wrote 81, read 81
+CONFIRMED          0x282  wrote 16, read 16
+CONFIRMED          0x278  wrote 78, read 78
+CONFIRMED          0x291  wrote 0C, read 0C
+DECLARED-WEAK      0x285  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x290  wrote 70, read 70
+CONFIRMED          0x27E  wrote CF, read CF
+CONFIRMED          0x27F  wrote B4, read B4
+CONFIRMED          0x280  wrote 0C, read 0C
+DECLARED-WEAK      0x275  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x274  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x273  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x272  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x271  wrote 80, read 80
+DECLARED-WEAK      0x050  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x057  wrote 3C, read 3C
+DECLARED-WEAK      0x051  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x13F  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x138  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x13A  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x139  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x13B  wrote 3E, read 3E
+DECLARED-WEAK      0x13C  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0FA  wrote EA, read EA
+CONFIRMED          0x0FC  wrote 23, read 23
+CONFIRMED          0x104  wrote 2F, read 2F
+CONFIRMED          0x105  wrote 3A, read 3A
+CONFIRMED          0x108  wrote 31, read 31
+CONFIRMED          0x107  wrote 2B, read 2B
+DECLARED-WEAK      0x10B  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x10E  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x114  wrote 30, read 30
+DECLARED-WEAK      0x081  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x101  wrote 0A, read 0A
+CONFIRMED          0x120  wrote 0C, read 0C
+CONFIRMED          0x129  wrote 56, read 56
+CONFIRMED          0x12A  wrote 22, read 22
+CONFIRMED          0x123  wrote 11, read 11
+CONFIRMED          0x122  wrote AA, read AA
+CONFIRMED          0x106  wrote 22, read 22
+CONFIRMED          0x121  wrote AA, read AA
+CONFIRMED          0x103  wrote 08, read 08
+CONFIRMED          0x110  wrote 40, read 40
+CONFIRMED          0x11B  wrote 05, read 05
+CONFIRMED          0x118  wrote 05, read 05
+CONFIRMED          0x112  wrote 4A, read 4A
+CONFIRMED          0x113  wrote 4A, read 4A
+CONFIRMED          0x116  wrote 65, read 65
+DECLARED-WEAK      0x115  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x119  wrote 08, read 08
+CONFIRMED          0x10A  wrote 58, read 58
+CONFIRMED          0x1F8  wrote 06, read 06
+CONFIRMED          0x1F9  wrote 1E, read 1E
+CONFIRMED          0x1FB  wrote 0F, read 0F
+DECLARED-WEAK      0x1FC  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x1D5  wrote 3F, read 3F
+CONFIRMED          0x1C0  wrote 03, read 03
+CONFIRMED          0x1E2  wrote 03, read 03
+CONFIRMED          0x1E3  wrote 03, read 03
+DECLARED-VOLATILE  0x016  REG_CALIBRATION_CTRL -- the cal bits self-clear when calibration completes; the driver polls this register back to 0 (vendor/ad9361.c:1305), so a non-zero write reading 0 is correct: read 00
+CONFIRMED          0x0D6  wrote 05, read 05
+CONFIRMED          0x0D7  wrote 1E, read 1E
+CONFIRMED          0x0CA  wrote 26, read 26
+CONFIRMED          0x1DB  wrote 20, read 20
+CONFIRMED          0x1DC  wrote 58, read 58
+DECLARED-WEAK      0x1DD  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x1DE  wrote 58, read 58
+DECLARED-WEAK      0x1DF  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0D0  wrote 57, read 57
+CONFIRMED          0x0D1  wrote 0C, read 0C
+CONFIRMED          0x0D2  wrote 09, read 09
+DECLARED-WEAK      0x200  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x201  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x202  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x203  wrote 24, read 24
+CONFIRMED          0x204  wrote 24, read 24
+DECLARED-WEAK      0x205  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x206  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x207  wrote 7B, read 7B
+CONFIRMED          0x208  wrote 2B, read 2B
+CONFIRMED          0x209  wrote 3B, read 3B
+CONFIRMED          0x20A  wrote 4A, read 4A
+CONFIRMED          0x20B  wrote 1A, read 1A
+CONFIRMED          0x20C  wrote 4D, read 4D
+CONFIRMED          0x20D  wrote 19, read 19
+DECLARED-WEAK      0x20E  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x20F  wrote 7E, read 7E
+CONFIRMED          0x210  wrote 7E, read 7E
+CONFIRMED          0x211  wrote 7E, read 7E
+CONFIRMED          0x212  wrote 48, read 48
+CONFIRMED          0x213  wrote 48, read 48
+CONFIRMED          0x214  wrote 48, read 48
+CONFIRMED          0x215  wrote 4B, read 4B
+CONFIRMED          0x216  wrote 4B, read 4B
+CONFIRMED          0x217  wrote 4B, read 4B
+CONFIRMED          0x218  wrote 2E, read 2E
+CONFIRMED          0x219  wrote AF, read AF
+CONFIRMED          0x21A  wrote 30, read 30
+CONFIRMED          0x21B  wrote 1B, read 1B
+CONFIRMED          0x21C  wrote AF, read AF
+CONFIRMED          0x21D  wrote 30, read 30
+CONFIRMED          0x21E  wrote 1B, read 1B
+CONFIRMED          0x21F  wrote AF, read AF
+CONFIRMED          0x220  wrote 30, read 30
+CONFIRMED          0x221  wrote 36, read 36
+CONFIRMED          0x222  wrote 37, read 37
+CONFIRMED          0x223  wrote 40, read 40
+CONFIRMED          0x224  wrote 40, read 40
+CONFIRMED          0x225  wrote 2C, read 2C
+DECLARED-WEAK      0x226  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x227  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x193  wrote 3F, read 3F
+CONFIRMED          0x190  wrote 0F, read 0F
+CONFIRMED          0x194  wrote 01, read 01
+CONFIRMED          0x185  wrote 20, read 20
+CONFIRMED          0x186  wrote 32, read 32
+CONFIRMED          0x187  wrote 24, read 24
+CONFIRMED          0x188  wrote 05, read 05
+CONFIRMED          0x18B  wrote AD, read AD
+CONFIRMED          0x189  wrote 30, read 30
+DECLARED-WEAK      0x0A3  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0A9  wrote FF, read FF
+CONFIRMED          0x0A2  wrote 7F, read 7F
+CONFIRMED          0x0A5  wrote 01, read 01
+CONFIRMED          0x0A6  wrote 01, read 01
+CONFIRMED          0x0AA  wrote 24, read 24
+CONFIRMED          0x0A4  wrote F0, read F0
+DECLARED-WEAK      0x0AE  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x0A0  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x0A1  wrote 7B, read 7B
+CONFIRMED          0x16A  wrote 75, read 75
+CONFIRMED          0x16B  wrote 95, read 95
+CONFIRMED          0x16F  wrote 18, read 18
+CONFIRMED          0x169  wrote CD, read CD
+DECLARED-WEAK      0x077  wrote 00, read 00 -- a zero write cannot be verified
+UNEXPLAINED        0x07C  wrote 40, read 17
+DECLARED-WEAK      0x074  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x073  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x076  wrote 01, read 01
+CONFIRMED          0x075  wrote 67, read 67
+CONFIRMED          0x06E  wrote 09, read 09
+CONFIRMED          0x069  wrote FF, read FF
+CONFIRMED          0x06A  wrote 01, read 01
+CONFIRMED          0x070  wrote C2, read C2
+CONFIRMED          0x071  wrote C2, read C2
+CONFIRMED          0x078  wrote 94, read 94
+CONFIRMED          0x068  wrote 18, read 18
+DECLARED-WEAK      0x067  wrote 00, read 00 -- a zero write cannot be verified
+CONFIRMED          0x065  wrote F8, read F8
+CONFIRMED          0x060  wrote 7F, read 7F
+CONFIRMED          0x061  wrote E9, read E9
+CONFIRMED          0x062  wrote FF, read FF
+UNEXPLAINED        0x064  wrote 00, read FF
+CONFIRMED          0x0F6  wrote 02, read 02
+CONFIRMED          0x0F5  wrote F8, read F8
+CONFIRMED          0x0F0  wrote 7F, read 7F
+DECLARED-WEAK      0x0F1  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x0F2  wrote 00, read 00 -- a zero write cannot be verified
+DECLARED-WEAK      0x0F4  wrote 00, read 00 -- a zero write cannot be verified
+
+=== audit summary ===
+  confirmed          : 205
+  declared volatile  : 1
+  declared weak      : 75
+  UNEXPLAINED        : 6
+  read failed        : 0
+  not read (offline) : 0

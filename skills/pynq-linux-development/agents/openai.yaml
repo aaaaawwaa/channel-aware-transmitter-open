@@ -1,0 +1,6 @@
+interface:
+  display_name: "PYNQ板载Linux开发"
+  short_description: "处理Overlay、AXI数据路径、Linux服务及触摸界面的集成与部署问题"
+  default_prompt: "使用 $pynq-linux-development 定位当前PYNQ工程入口，核对运行状态并完成最小必要改动与验证。"
+policy:
+  allow_implicit_invocation: true

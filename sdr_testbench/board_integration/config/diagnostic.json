@@ -1,0 +1,73 @@
+{
+  "schema": "pluto-board-integration-v1",
+  "board": {
+    "lo_hz": 433900000,
+    "sample_rate_hz": 60000000,
+    "rx_bandwidth_hz": 30000000,
+    "tx_bandwidth_hz": 30000000,
+    "attenuation_mdb": 46000,
+    "phy_mode_1r1t": 0,
+    "idelay_en": 1,
+    "idelay_tap": 29,
+    "amplitude": 60,
+    "bram_words": 4096,
+    "max_samples": 4096,
+    "tone_bins": [
+      7,
+      14
+    ],
+    "tone_nominal_hz": [
+      100000,
+      200000
+    ]
+  },
+  "pluto": {
+    "serial": "<DEVICE_SERIAL>",
+    "center_hz": 433900000,
+    "sample_rate": 2400000,
+    "bandwidth_hz": 1500000,
+    "tone_hz": [
+      100000,
+      200000
+    ],
+    "amplitude": 0.1,
+    "tx_attenuation_db": 60,
+    "tx_attenuation_ceiling_db": 89.75,
+    "rx_gain_db": 0,
+    "gain_mode": "manual",
+    "duration_s": 2,
+    "capture_samples": 262144
+  },
+  "bpsk": {
+    "symbol_rate_hz": 3000000,
+    "board_sample_rate_hz": 60000000,
+    "board_sps": 20,
+    "pluto_sample_rate_hz": 6000000,
+    "pluto_sps": 2,
+    "shaping": "RECT",
+    "differential_encoding": false,
+    "prbs7_seed": 1,
+    "alignment_bits": 63,
+    "max_cfo_hz": 100000,
+    "usable_without_board_change": true,
+    "usb2_throughput_verified": false
+  },
+  "budget": {
+    "smoke_windows": 4,
+    "max_sessions": 3,
+    "max_windows_total": 12,
+    "max_board_inits": 3,
+    "max_tx_starts_total": 6,
+    "includes_smoke_session_in_extension": true
+  },
+  "gates": {
+    "require_hardware_verified": true,
+    "require_pre_tx_readback": true,
+    "require_post_tx_readback": true,
+    "require_board_tx_off_in_b": true,
+    "require_no_headroom_ops": true,
+    "require_path_confirmed": true,
+    "stop_on_clipping": true,
+    "stop_on_any_readback_mismatch": true
+  }
+}

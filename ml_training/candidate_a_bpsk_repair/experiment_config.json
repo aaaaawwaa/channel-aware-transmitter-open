@@ -1,0 +1,60 @@
+{
+  "schema": "ml-candidate-a-bpsk-repair-config-v1",
+  "experiment": "candidate_a_bpsk_repair",
+  "status": "NEGATIVE_NO_ELIGIBLE_CHECKPOINT",
+  "frozen_A": {
+    "model_sha256": "b840f9dbaebc5db855ef1535d091e1f1583e12368ca62742f517a8d38123a28e",
+    "rules_sha256": "10a0bef4d237818eaa39dcd4e3048466de60017dbf0545c02bcbf405da2cdf64",
+    "model_pt_sha256": "2521f445f2a2ce8e681713a2d3653f43378bda9c9cd6428ce07f1409ae6bad0f"
+  },
+  "frozen_replay_package_manifest_sha256": "cb07a8f3d9446f75a65c037f34287073a8a78c8357c59e6ae9618d402f4137eb",
+  "data": {
+    "train": "ml_training/datasets/sim-v1 train only (4800; existing train-only conjugate copy -> 9600)",
+    "val": "ml_training/datasets/sim-v1 val only (1200) for checkpoint selection",
+    "test_used_for_training_or_selection": false,
+    "task80_used_for_training_or_selection": false,
+    "new_capture_used": false
+  },
+  "seed": 20261023,
+  "initialization": "candidate_A/model.pt (best checkpoint)",
+  "train_only_change": [
+    "initialize from A best checkpoint",
+    "reuse A's existing train-only conjugate copy",
+    "sample BPSK and QPSK with weight 2; QAM16/QAM64 with weight 1",
+    "low-learning-rate fine-tune (one candidate, one seed)"
+  ],
+  "settings": {
+    "architecture": "tiny-iq-cnn-v1",
+    "preprocessing": "dc-complex-rms-v1",
+    "classes": ["BPSK", "QPSK", "QAM16", "QAM64"],
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "batch_size": 64,
+    "max_epochs": 20,
+    "patience": 6,
+    "threads": 4,
+    "loss": "CrossEntropyLoss",
+    "sampler_weights": {"BPSK": 2.0, "QPSK": 2.0, "QAM16": 1.0, "QAM64": 1.0},
+    "train_frames": 9600,
+    "val_frames": 1200
+  },
+  "selection": {
+    "evaluated_on": "VAL raw CNN recall only",
+    "guard": {
+      "QPSK": ">= A_QPSK - 0.01 (0.94)",
+      "QAM16": ">= A_QAM16 - 0.02 (0.84)",
+      "QAM64": ">= A_QAM64 - 0.02 (0.8433333333333333)"
+    },
+    "maximize": "BPSK recall + 0.5 * QPSK recall",
+    "selected_epoch": null,
+    "selected_score": null,
+    "result": "no epoch met the guard"
+  },
+  "decision_thresholds": "copied unchanged from frozen round-2 rule config; no candidate exported",
+  "arbitration_changed": false,
+  "gate_changed": false,
+  "preprocessing_changed": false,
+  "test_used_for_tuning": false,
+  "note": "one bounded rescue attempt; negative result; no further training"
+}

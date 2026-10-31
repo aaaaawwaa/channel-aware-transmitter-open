@@ -1,0 +1,50 @@
+{
+  "capture_status": {
+    "state": "done",
+    "physical": true,
+    "capture_id": "fixture-capture-01"
+  },
+  "analysis": {
+    "clipping_count": 3,
+    "output_clipped": true,
+    "valid": true,
+    "complex_rms": 500.0,
+    "no_energy": false
+  },
+  "model_result": {
+    "quality": "UNKNOWN",
+    "label": "CLEAR",
+    "rejected": false,
+    "reason": "fixture_reason"
+  },
+  "demod_result": {
+    "submitted": {
+      "config": {
+        "mode": "BPSK",
+        "symbol_rate_hz": 3000000,
+        "shaping": "RECT",
+        "reference_prbs7_seed": 1
+      },
+      "revision": 1,
+      "decim": 1,
+      "rx_len": 4096,
+      "input_fs_hz": 60000000
+    },
+    "result": {
+      "label": "BPSK"
+    }
+  },
+  "iq_sha256": "7050700d9a0f227110e04f35852880ec10b4d28685f9cb311cbe7670a7b18793",
+  "trainval": {
+    "tag": "fixture",
+    "scenario": "normal",
+    "physical": true,
+    "label": "CLEAR",
+    "reason": "fixture_reason",
+    "rail": false,
+    "reference_sync": true,
+    "ber": 0.0,
+    "clipping_count": 3,
+    "truth": "normal"
+  }
+}

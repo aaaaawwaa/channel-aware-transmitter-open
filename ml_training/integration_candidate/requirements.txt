@@ -1,0 +1,4 @@
+# Host/test dependencies for the integration adapter prototype.
+# Board target: CPython 3.8.2 / NumPy 1.17.4 (ARMv7l).
+# No torch/scipy/sklearn/pandas; the prototype reuses the frozen pure-NumPy replay runtime.
+numpy>=1.17.4

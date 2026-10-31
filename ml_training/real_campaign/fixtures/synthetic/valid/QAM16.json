@@ -1,0 +1,44 @@
+{
+ "schema": "ml-real-campaign-fixture-v1",
+ "synthetic": true,
+ "purpose": "valid_synthetic_qam16",
+ "kind": "clean",
+ "scenario": "synthetic",
+ "session_id": "synthetic-sim-smoke-QAM16",
+ "split": "TEST",
+ "iq_file": "QAM16.iq",
+ "iq_sha256": "1152cd5c46b96fd4c0feccbe0f4d1972c49138087d7952ff7fa0720baa2b1f96",
+ "context": {
+  "format": "s16_iq_le",
+  "samples": 4096,
+  "sample_rate_hz": 60000000,
+  "decimation": 1,
+  "symbol_rate_hz": 3000000,
+  "shaping": "RECT"
+ },
+ "truth_source": "synthetic_generator",
+ "truth_class": "QAM16",
+ "truth_detail": "ml_training/datasets/sim-smoke (frozen generator output)",
+ "expected_import_status": "OK",
+ "expected_reason": null,
+ "non_truth_labels": {},
+ "dataset": {
+  "dataset_id": "sim-smoke",
+  "manifest_path": "ml_training/datasets/sim-smoke/manifest.json",
+  "manifest_sha256": "d932e887e18a8c68e2f58d4231b54785588350cdb675d20b83fc60a7ee88a6b7",
+  "reference_check_path": "ml_training/data/reports/reference-check-smoke.json",
+  "reference_check_sha256": "8d064de329adf04914d6ea4762b64e32ca82383fd4f2360adce39df0348b1001"
+ },
+ "not_a_real_capture": true,
+ "generator": {
+  "dataset_id": "sim-smoke",
+  "frame_id": "test-QAM16-snr+10-test-a-0000",
+  "npz_path": "ml_training/datasets/sim-smoke/frames/test-QAM16.npz",
+  "npz_sha256": "cae6b8276b4263fa39d92e9f733f0201276a1a099981024579b170826f07c3bc",
+  "snr_db": 10.0,
+  "symbol_seed": 17056247182837608200,
+  "noise_seed": 10778445447831722448,
+  "phase_rad": 0.878275454044342,
+  "cfo_hz": 8394.431640625
+ }
+}

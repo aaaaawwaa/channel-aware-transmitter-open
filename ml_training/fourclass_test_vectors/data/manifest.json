@@ -1,0 +1,293 @@
+{
+ "config_path": "config/vectors.json",
+ "config_sha256": "26277197bbea4ce1d0097cafd448a7f7f41077087e28c9544cdf66ea3d4f053b",
+ "constellation_mapping": {
+  "BPSK": "I=axis2[b0], Q=0",
+  "QAM16": "I=axis4[(b0<<1)|b1], Q=axis4[(b2<<1)|b3]",
+  "QAM64": "I=axis8[(b0<<2)|(b1<<1)|b2], Q=axis8[(b3<<2)|(b4<<1)|b5]",
+  "QPSK": "I=axis2[b0], Q=axis2[b1]",
+  "axis2": [
+   1,
+   -1
+  ],
+  "axis4": [
+   3,
+   1,
+   -3,
+   -1
+  ],
+  "axis8": [
+   7,
+   5,
+   1,
+   3,
+   -7,
+   -5,
+   -1,
+   -3
+  ],
+  "bit_order": "MSB-first per symbol; first serial bit maps to I, later bits to Q"
+ },
+ "counts_as_real_capture": false,
+ "product_qualification": false,
+ "rates": {
+  "note": "6 MSPS is the future Pluto/GNU Radio transmit representation; 60 MSPS is the frozen model offline domain. They are recorded separately and are not interchangeable.",
+  "rates_must_not_mix": true,
+  "six_msps": {
+   "bytes": 1016,
+   "duration_us": 42.3333333333,
+   "period_symbols": 127,
+   "sample_rate_hz": 6000000,
+   "samples": 254,
+   "samples_per_symbol": 2,
+   "sha": "computed at generation"
+  },
+  "sixty_msps": {
+   "bytes": 16384,
+   "duration_us": 68.2666666667,
+   "periods_available": 2,
+   "sample_rate_hz": 60000000,
+   "samples": 4096,
+   "samples_per_symbol": 20,
+   "six_msps_period_samples": 2540,
+   "upsample_factor_from_six_msps": 10,
+   "window_note": "first 4096 samples of two repeats of the 6 MSPS period upsampled by 10; a receiver window is not a separate symbol generator",
+   "window_offset_samples": 0
+  }
+ },
+ "real_accuracy_applicable": false,
+ "real_capture": false,
+ "schema": "ml-fourclass-test-vectors-manifest-v1",
+ "sha256_note": "all file SHA-256 are over the exact on-disk s16_iq_le bytes; the 60 MSPS hash is not the 6 MSPS hash",
+ "signal": {
+  "amplitude_codes": 1800,
+  "amplitude_normalisation": "component_peak",
+  "amplitude_note": "max(max|I|, max|Q|) == amplitude_codes, matching rf_iq_signal.generate_digital_frame; no code equals -2048 or 2047; the 60 MSPS representation is derived by holding each 6 MSPS sample for 10 samples, so both rates share one quantized baseband",
+  "differential_encoding": false,
+  "prbs_polynomial": "x^7 + x^6 + 1 (RTL bit6 output, bit6 XOR bit5 feedback)",
+  "prbs_seed_range": [
+   1,
+   127
+  ],
+  "prbs_symbols_per_period": 127,
+  "rolloff": "0.2",
+  "shaping": "RECT",
+  "symbol_rate_hz": 3000000
+ },
+ "source_generator_functions": [
+  "prbs7_bits",
+  "map_bits_to_symbol",
+  "generate_digital_frame",
+  "pack_iq"
+ ],
+ "source_generator_path": "pynq_overlay/sw/rf_iq_signal.py",
+ "source_generator_sha256": "17a5b3dc6c9b7fd4da8e76ffeab4038c2d9479aa908a875ccf47a339f0a5b8c3",
+ "synthetic": true,
+ "truth_source": {
+  "model_predictions_are_not_truth": true,
+  "source": "declared class in this config plus independent PRBS/constellation verification"
+ },
+ "vectors": [
+  {
+   "amplitude_codes": 1800,
+   "amplitude_normalisation": "component_peak",
+   "differential_encoding": false,
+   "id": "synthetic-bpsk",
+   "prbs_seed": 1,
+   "prbs_symbols_per_period": 127,
+   "rates": {
+    "six_msps": {
+     "bytes": 1016,
+     "complex_sample_bytes": 4,
+     "duration_us": 42.333333333,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_6msps/BPSK.iq",
+     "prbs_period_symbols": 127,
+     "sample_rate_hz": 6000000,
+     "samples": 254,
+     "samples_per_symbol": 2,
+     "sha256": "ee20bc232dd3afd8f9bd5433f698fa3aee0ae213862ebc0c01a0590bf2c1d3fa",
+     "wraps_after_period": true
+    },
+    "sixty_msps": {
+     "bytes": 16384,
+     "complex_sample_bytes": 4,
+     "derivation": "10x sample-and-hold of the 6 MSPS period, repeated to cover 4096 samples; first 4096 retained",
+     "derived_from_6msps_sha256": "ee20bc232dd3afd8f9bd5433f698fa3aee0ae213862ebc0c01a0590bf2c1d3fa",
+     "duration_us": 68.266666667,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_60msps/BPSK.iq",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "samples_per_symbol": 20,
+     "sha256": "f2157f13a9279f9b5442b68f4804a5d29c4b4db2df7fadae2251fe780293b5b2",
+     "six_msps_period_samples": 2540,
+     "upsample_factor_from_six_msps": 10,
+     "window_offset_samples": 0
+    }
+   },
+   "real_capture": false,
+   "synthetic": true,
+   "truth_class": "BPSK"
+  },
+  {
+   "amplitude_codes": 1800,
+   "amplitude_normalisation": "component_peak",
+   "differential_encoding": false,
+   "id": "synthetic-qpsk",
+   "prbs_seed": 37,
+   "prbs_symbols_per_period": 127,
+   "rates": {
+    "six_msps": {
+     "bytes": 1016,
+     "complex_sample_bytes": 4,
+     "duration_us": 42.333333333,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_6msps/QPSK.iq",
+     "prbs_period_symbols": 127,
+     "sample_rate_hz": 6000000,
+     "samples": 254,
+     "samples_per_symbol": 2,
+     "sha256": "76c49b71ba4e57b2406ef99ade1f030d46c5957bb121b8487d27cf8befcd12d4",
+     "wraps_after_period": true
+    },
+    "sixty_msps": {
+     "bytes": 16384,
+     "complex_sample_bytes": 4,
+     "derivation": "10x sample-and-hold of the 6 MSPS period, repeated to cover 4096 samples; first 4096 retained",
+     "derived_from_6msps_sha256": "76c49b71ba4e57b2406ef99ade1f030d46c5957bb121b8487d27cf8befcd12d4",
+     "duration_us": 68.266666667,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_60msps/QPSK.iq",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "samples_per_symbol": 20,
+     "sha256": "80ad31dd8cd4802f411f8043648635059a0b6e47f443033b1e4000056499b5af",
+     "six_msps_period_samples": 2540,
+     "upsample_factor_from_six_msps": 10,
+     "window_offset_samples": 0
+    }
+   },
+   "real_capture": false,
+   "synthetic": true,
+   "truth_class": "QPSK"
+  },
+  {
+   "amplitude_codes": 1800,
+   "amplitude_normalisation": "component_peak",
+   "differential_encoding": false,
+   "id": "synthetic-qam16",
+   "prbs_seed": 73,
+   "prbs_symbols_per_period": 127,
+   "rates": {
+    "six_msps": {
+     "bytes": 1016,
+     "complex_sample_bytes": 4,
+     "duration_us": 42.333333333,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_6msps/QAM16.iq",
+     "prbs_period_symbols": 127,
+     "sample_rate_hz": 6000000,
+     "samples": 254,
+     "samples_per_symbol": 2,
+     "sha256": "528e7708414f1df2e8aa427e4e7c036e89181610a35fcee36c839da0eafadfb2",
+     "wraps_after_period": true
+    },
+    "sixty_msps": {
+     "bytes": 16384,
+     "complex_sample_bytes": 4,
+     "derivation": "10x sample-and-hold of the 6 MSPS period, repeated to cover 4096 samples; first 4096 retained",
+     "derived_from_6msps_sha256": "528e7708414f1df2e8aa427e4e7c036e89181610a35fcee36c839da0eafadfb2",
+     "duration_us": 68.266666667,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_60msps/QAM16.iq",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "samples_per_symbol": 20,
+     "sha256": "5aea8e201d4f20833ccd9f3d94997014307857649e132b6f5b3d57c871aad8d8",
+     "six_msps_period_samples": 2540,
+     "upsample_factor_from_six_msps": 10,
+     "window_offset_samples": 0
+    }
+   },
+   "real_capture": false,
+   "synthetic": true,
+   "truth_class": "QAM16"
+  },
+  {
+   "amplitude_codes": 1800,
+   "amplitude_normalisation": "component_peak",
+   "differential_encoding": false,
+   "id": "synthetic-qam64",
+   "prbs_seed": 127,
+   "prbs_symbols_per_period": 127,
+   "rates": {
+    "six_msps": {
+     "bytes": 1016,
+     "complex_sample_bytes": 4,
+     "duration_us": 42.333333333,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_6msps/QAM64.iq",
+     "prbs_period_symbols": 127,
+     "sample_rate_hz": 6000000,
+     "samples": 254,
+     "samples_per_symbol": 2,
+     "sha256": "271d061eaf0f95407daebd31ba785346ba4dbdaeb8cc402b85af0273d6d21d96",
+     "wraps_after_period": true
+    },
+    "sixty_msps": {
+     "bytes": 16384,
+     "complex_sample_bytes": 4,
+     "derivation": "10x sample-and-hold of the 6 MSPS period, repeated to cover 4096 samples; first 4096 retained",
+     "derived_from_6msps_sha256": "271d061eaf0f95407daebd31ba785346ba4dbdaeb8cc402b85af0273d6d21d96",
+     "duration_us": 68.266666667,
+     "format": "s16_iq_le",
+     "iq_order": "I,Q",
+     "max_abs_code": 1800,
+     "max_code": 1800,
+     "min_code": -1800,
+     "path": "synthetic_60msps/QAM64.iq",
+     "sample_rate_hz": 60000000,
+     "samples": 4096,
+     "samples_per_symbol": 20,
+     "sha256": "8ba766d32fa421b87521f7c323a845392b20f01751faa6015e335ba69f1cff57",
+     "six_msps_period_samples": 2540,
+     "upsample_factor_from_six_msps": 10,
+     "window_offset_samples": 0
+    }
+   },
+   "real_capture": false,
+   "synthetic": true,
+   "truth_class": "QAM64"
+  }
+ ],
+ "warning": "SYNTHETIC offline test vectors only. Do not count these frames as real captures, real accuracy, or product qualification."
+}

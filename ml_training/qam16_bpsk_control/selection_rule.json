@@ -1,0 +1,36 @@
+{
+  "schema": "ml-qam16-bpsk-control-selection-rule-v1",
+  "experiment": "qam16_bpsk_control",
+  "written_before_training": true,
+  "written_utc": "2026-10-22T10:45:00Z",
+  "purpose": "Test whether the BPSK regression in candidate A is caused by applying conjugate copies to BPSK, without changing class counts, seed, network, optimizer, preprocessing, thresholds, baseline arbitration or spectral rules.",
+  "candidates": {
+    "C0": "train = [raw, raw]; no augmentation; same total/per-class counts as C1",
+    "C1": "train = [raw, copy]; copy is conjugate only for QAM16/QAM64; BPSK/QPSK copy is raw; same total/per-class counts as C0"
+  },
+  "selection_split": "sim-v1/val",
+  "selection_pipeline": "final Round2 decision: candidate CNN + frozen baseline arbitration + frozen spectral gate + frozen max_softmax/margin/min_complex_rms",
+  "references": {
+    "frozen_original": "existing frozen Round2 model/rules",
+    "A_experimental_baseline": "prior candidate A (all-class conjugate augmentation); read-only comparison, not the selection reference"
+  },
+  "eligibility": {
+    "gate_quality": "val known accepted accuracy >= frozen baseline val accepted accuracy - 0.01 AND gate_test rejection for OFF/NOISE/TONE/CLIP each >= frozen baseline gate_test rejection - 0.01",
+    "bpsk_preservation": "val BPSK recall >= frozen baseline val BPSK recall - 0.01",
+    "qam16_improvement": "val QAM16 recall >= frozen baseline val QAM16 recall + 0.02",
+    "other_class_safety": "val QPSK and QAM64 recalls each >= frozen baseline val recall - 0.02",
+    "quality_gate_no_regression": "all gate_test rejection rates must remain within 0.01 of frozen baseline (baseline is 1.0 on all four kinds)"
+  },
+  "selection": {
+    "rule": "Eligible candidates first; among eligible choose highest val macro-F1; tie-break by higher val QAM16 recall; if still tied, choose C1 (targeted augmentation) only if its BPSK recall is not lower; otherwise no candidate.",
+    "no_eligible": "NO_QUALIFIED_CANDIDATE"
+  },
+  "data_boundaries": {
+    "sim_v1_test": "known comparison set only; never used for checkpoint or candidate selection",
+    "real_14_frames": "development diagnosis only; not TRAIN, not independent acceptance; never used for candidate selection",
+    "transforms": "diagnostic only; not new real frames"
+  },
+  "no_architecture_search": true,
+  "max_candidates": 2,
+  "training_budget_seconds_total": 1800
+}

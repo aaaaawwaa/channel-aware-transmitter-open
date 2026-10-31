@@ -1,0 +1,79 @@
+{
+  "schema": "ml-fourclass-hardware-amp60-config-v1",
+  "offline_generated_tx_payload": true,
+  "real_capture": false,
+  "counts_as_real_capture": false,
+  "training_use": false,
+  "vectors": [
+    {"mode": "BPSK", "seed": 1},
+    {"mode": "QPSK", "seed": 37},
+    {"mode": "QAM16", "seed": 73},
+    {"mode": "QAM64", "seed": 127}
+  ],
+  "signal": {
+    "sample_rate_hz": 60000000,
+    "symbol_rate_hz": 3000000,
+    "samples_per_symbol": 20,
+    "shaping": "RECT",
+    "differential_encoding": false,
+    "rolloff": "0.35",
+    "rolloff_note": "RECT ignores rolloff for waveform generation, but 0.35 is the final runner/UI setting and is recorded so the config matches scripts/rf_bpsk_ui_board_session.py:310 and pynq_overlay/sw/rf_teaching_profile.py:53",
+    "amplitude": 60,
+    "amplitude_normalisation": "component_peak",
+    "amplitude_note": "max(max|I|, max|Q|) == 60, matching the product TX generator's component peak semantics; this is the same amplitude used by the final board runner (rf_teaching_profile tx_amplitude=60)",
+    "prbs_seed_range": [1, 127],
+    "prbs_symbols_per_period": 127,
+    "format": "s16_iq_le",
+    "iq_order": "I,Q",
+    "complex_sample_bytes": 4
+  },
+  "tx_payload": {
+    "samples": 2540,
+    "bytes": 10160,
+    "duration_us": 42.333333333,
+    "note": "127 PRBS symbols x 20 samples/symbol = 2540 complex samples at 60 MSPS; this is the finite TX payload/period."
+  },
+  "reference_window": {
+    "samples": 4096,
+    "bytes": 16384,
+    "duration_us": 68.266666667,
+    "construction": "tile(tx_payload_period, 2)[:4096]",
+    "prefix_samples": 1556,
+    "periods_in_window": 1.6125984252,
+    "note": "4096-sample software/model reference window: one full 2540-sample period plus the first 1556 samples of the next period; no resampling."
+  },
+  "runner_config_evidence": {
+    "runner": "scripts/rf_bpsk_ui_board_session.py:310",
+    "profile": "pynq_overlay/sw/rf_teaching_profile.py:53",
+    "tx_amplitude": 60,
+    "rolloff": "0.35",
+    "shaping": "RECT"
+  },
+  "source_generator": "pynq_overlay/sw/rf_iq_signal.py",
+  "source_generator_functions": [
+    "prbs7_bits",
+    "map_bits_to_symbol",
+    "generate_digital_frame",
+    "pack_iq"
+  ],
+  "mapping": {
+    "bit_order": "MSB-first; first serial bit maps to I, later bits to Q",
+    "axis2": [1, -1],
+    "axis4": [3, 1, -3, -1],
+    "axis8": [7, 5, 1, 3, -7, -5, -1, -3],
+    "BPSK": "I=axis2[b0], Q=0",
+    "QPSK": "I=axis2[b0], Q=axis2[b1]",
+    "QAM16": "I=axis4[(b0<<1)|b1], Q=axis4[(b2<<1)|b3]",
+    "QAM64": "I=axis8[(b0<<2)|(b1<<1)|b2], Q=axis8[(b3<<2)|(b4<<1)|b5]"
+  },
+  "truth": {
+    "source": "independent PRBS7 + frozen constellation mapping reconstruction; configuration seeds, not model predictions",
+    "model_predictions_are_not_truth": true
+  },
+  "limits": [
+    "These are offline-generated TX payload candidates, not real RF captures.",
+    "Amplitude 60 payloads are not byte-identical to the existing amplitude-1800 vectors; byte equality is not claimed.",
+    "A real RF received IQ is not expected to equal the ideal payload byte-for-byte.",
+    "Frozen-model results are reported as-is; amplitude/model/threshold are not tuned to force acceptance."
+  ]
+}

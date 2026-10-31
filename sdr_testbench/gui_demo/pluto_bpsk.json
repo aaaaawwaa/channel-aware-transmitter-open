@@ -1,0 +1,14 @@
+{
+  "serial": "<DEVICE_SERIAL>",
+  "center_hz": 433900000,
+  "sample_rate": 6000000,
+  "symbol_rate_hz": 3000000,
+  "bandwidth_hz": 1500000,
+  "tone_hz": 0,
+  "amplitude": 0.1,
+  "tx_attenuation_db": 60.0,
+  "rx_gain_db": 0,
+  "duration_s": 2.0,
+  "capture_samples": 4096,
+  "prbs7_seed": 1
+}

@@ -1,0 +1,7 @@
+{
+  "SYNTHETIC_FIXTURE": true,
+  "invalid_frames": 1,
+  "not_real_rf": true,
+  "purpose": "small interface validation only",
+  "valid_frames": 2
+}

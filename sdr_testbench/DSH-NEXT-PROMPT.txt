@@ -1,0 +1,29 @@
+请接续 final_prj 当前工作，并准备外接PlutoSDR与板卡的联调。先读取最新会话/工作树，若现有复核已完成则直接采用其真实结论，不重复派发。
+
+【最新现场约束，优先于下文外置衰减器路线】用户仅有同轴连接线，没有外置衰减器。不要把采购外置衰减器作为硬阻塞。先读取BOARD-INTEGRATION-PLAN.md的“最新现场约束修订”，评估内部TX硬件衰减受控的直连：优先Pluto自回环确认参考SDR，再板卡TX→Pluto RX和反向RX-only。建议Pluto初始60dB衰减/幅度≤0.25/固定低RX增益/2秒；板卡沿用46dB。离线核对启动/校准/重新初始化，以及GR块创建、滤波、调频是否会重置衰减；补齐实际衰减读回、RF启用次序和最终关断读回。使用实际设备规格计算输入裕量，不能将+8dBm参考值当成测量结果。准备和未接RX时的必要读回完成后，一次给出具体换线端口；不要先让用户直连后再查初始化是否会恢复高功率。没有新接线确认不运行。下文外置衰减器作为可选路线保留，不是必需器材。
+
+一、收尾当前观测点planfix，不打断正在运行的有效任务
+当前主会话17:18报告planfix完成，复核子任务cde6b572仍在核查父安装证明。复用已通过的主要C行为审查、479/0 daemon、113/0 core和直接相关测试；让现有复核者就新增差分与具名阻塞收尾，不另开全套审查、不固定变异数量、不重复全仓回归。
+特别核对父证明的对象与目录：
+- 03b9b883自己的安装材料在 evidence/rf-teaching/s2-46db-baseline-deploy-2026-10-18/，包括 trial/trial.json、readback/board-download/{acceptance-report,trial-state,post-state,pre-state}.json、post-02原始读回及部署日志。
+- 该包prepare时的codex-s2-takeover recovery证明针对当时父1c0894bf，不是新安装的03b9b883；不能混用。
+- 当前probe的“根目录trial.json缺失”“00-candidate-pins缺失”只是布局不匹配；不要据此认定部署不存在。以实际原始材料做最小布局适配/派生验证，保留原件并重算真实摘要；若真缺字节则只列具体缺件，不造installed=true、不改名伪造旧收据、不为补证明重新安装。
+保持父n=20基线字节和canonical dd794f0c…，不要回到工作树bootstrap。现有授权范围内可连续推进；没有覆盖的新板端构建/安装/采集则先完成全部离线准备，再集中列出差额。
+
+二、使用新技能与现成工具，独立准备SDR联调
+读 skills/pluto-gnuradio-testbench/SKILL.md、sdr_testbench/{README,TEST-REPORT,GNU-RADIO-DEVELOPMENT,BOARD-INTEGRATION-PLAN}.md。维护源码优先于技能模板；DSH若不支持$skill语法，直接读取文件即可。
+已知：Pluto序列号<DEVICE_SERIAL>；GNU Radio3.10.12在<LOCAL_PATH>；PyVISA在<LOCAL_PATH>；COM11是FPGA，不能当SDR/示波器。Pluto已完成真实RX与2秒TX数据流及TX关断读回，但RF尚未验收；回环模式未实测。
+当前实际接线只确认Pluto TX→Keysight CH1，用户没有外置衰减器；尚未确认板卡↔Pluto接线。不要据旧接线或本指令自动发射、切换LO、部署或消耗nonce。
+
+三、联调方案与写范围
+只在 sdr_testbench/board_integration/ 下新增工具、配置、相关测试和runbook；不并发修改现有观测点作者/复核者文件，不覆盖原结果。无需为了工具准备重综合FPGA。
+1. 先离线核对当前daemon是否允许独立诊断工作点433.9MHz LO、+100/+200kHz单音。原S2是80MHz，而标准Pluto只保证325–3800MHz；434MHz诊断是新域，不能修改原80MHz冻结合同、基线或阈值，也不能用结果宣布原S2通过。若现有门拒绝，给最小独立入口补丁方案和相关反例，不直接改冻结常量或Pluto固件。
+2. 优先A：板卡TX→适用频段的50Ω衰减器→Pluto RX；Pluto固定手动gain，参考接收机跨板卡会话保持同一上下文。固定OFF→tone1→tone2→OFF，以频谱峰跟随验证信号来源，再观察跨会话相对功率差。
+3. 再B：Pluto TX→衰减器→板卡RX-only；板卡TX必须关闭，不调用会启用板卡TX的回环入口。先单音，再BPSK。BPSK要统一Fs/sps/PRBS/差分编码/RECT或滤波；模板2.4MSPS不能直接发送现有3MSym/s信号。
+4. 保存两端原始IQ、配对ID、真实LO/Fs/增益/衰减、波形摘要、参考接收机噪声/饱和检查和停止读回；跨设备时间戳不假设同步。没有绝对校准只报告相对dB，不写dBm。
+5. 接收/发射有时限、finally停止与读回；按串号发现，不硬编码USB URI，Python libiio与GNU Radio分阶段持有USB。执行板卡动作时沿用项目既有控制/授权入口，不用直接寄存器写绕过状态机。
+
+四、本轮完成标准
+交付能 --help、--dry-run、离线重放/模拟通过的工具与配置、相关测试、两方向接线图、实际电平预算和精确运行命令。dry-run不得连接硬件。不要虚构尚不存在的CLI已可用。
+物理方案先定义“1会话/4窗口”冒烟；若扩为3会话/12窗口，明确第一会话是否计入总预算，并分别统计板端初始化、板端帧、SDR窗口与TX次数。后续授权请求一次列出实际需要的方向、频率、接线、衰减器、预算、停止条件和恢复方式；本轮无新物理授权/接线条件就不运行，只交付待执行runbook。
+保持pilot known_correct=8/9、passed=false、normal→CLEAR=NOT SATISFIED；不放宽crest、不用VAL/pilot/诊断帧重拟合、不把单点gain恒定当成全程或TX因果已证。结尾只汇报：当前阶段、已完成产物、真实阻塞、下一条可执行命令。按项目一次适用增量审查规则执行，不叠加重复审查。

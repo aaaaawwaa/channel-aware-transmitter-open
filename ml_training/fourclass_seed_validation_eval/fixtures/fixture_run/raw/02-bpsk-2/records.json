@@ -1,0 +1,60 @@
+[
+  {
+    "capture_id": "fixture-02-bpsk-2",
+    "iq_file": "02-bpsk-2.iq",
+    "iq_sha256": "e20369e47f38e351b20aef91aeae91dae8c30ab0ed79a5f45a97bfcd973a24df",
+    "metadata_file": "02-bpsk-2.json",
+    "modrec4": {
+      "frame_identity": {
+        "capture_id": "fixture-02-bpsk-2",
+        "iq_sha256": "e20369e47f38e351b20aef91aeae91dae8c30ab0ed79a5f45a97bfcd973a24df",
+        "release_id": "4776ba0bf6cabac383934f0437358595",
+        "request_id": 1
+      },
+      "input_domain": {
+        "observed": {
+          "decimation": 1,
+          "format": "s16_iq_le",
+          "sample_rate_hz": 60000000,
+          "samples": 4096,
+          "shaping": "RECT",
+          "symbol_rate_hz": 3000000
+        },
+        "status": "VALID"
+      },
+      "modulation": {
+        "accepted": false,
+        "final_label": "UNKNOWN",
+        "reason": "fixture_board_result_not_truth"
+      },
+      "status": "OK"
+    },
+    "off_tx_ok": false,
+    "post_tx_source_selected": false,
+    "pre_tx_source_selected": false,
+    "release_id": "4776ba0bf6cabac383934f0437358595",
+    "request_id": 1,
+    "tx_load_evidence": {
+      "load_ok": true,
+      "payload_length": 10160,
+      "payload_sha256": "38b3f36ae20b6fe232d68d677b9e5e00c0b246c3617d0ff27239e89d0c3ef7f6",
+      "tx_load_metadata": {
+        "bytes": 10160,
+        "direction": "tx",
+        "format": "s16_iq_le",
+        "samples": 2540,
+        "wrap": true
+      },
+      "worker_args": {
+        "amplitude": 60,
+        "filter": "RECT",
+        "mode": "BPSK",
+        "rolloff": "0.35",
+        "sample_rate_hz": 60000000,
+        "seed": 1,
+        "symbol_rate_hz": 3000000,
+        "waveform": "digital"
+      }
+    }
+  }
+]

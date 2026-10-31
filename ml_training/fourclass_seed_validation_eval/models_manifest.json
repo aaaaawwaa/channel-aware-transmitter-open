@@ -1,0 +1,45 @@
+{
+  "schema": "ml-fourclass-seed-validation-model-lock-v1",
+  "purpose": "Frozen diagnostic comparison only; not approved for release.",
+  "release_status": "DIAGNOSTIC_COMPARISON_ONLY_NOT_APPROVED_FOR_RELEASE",
+  "created": "2026-10-22",
+  "baseline": {
+    "path": "ml_training/artifacts/baseline/model.json",
+    "sha256": "caa8258916268892bad968e1240520da0c03ab825839fc2f39c5bb534c4e3014"
+  },
+  "models": {
+    "original": {
+      "display": "frozen original round-2",
+      "cnn_path": "ml_training/artifacts/cnn/model.json",
+      "cnn_sha256": "25a65fb1e6a7bb606d7611c473d166b8b633256b3a72dcadd434ed83a38c49cc",
+      "rules_path": "ml_training/round2/artifacts/rule_config.json",
+      "rules_sha256": "9aceebbdb6b9b9a54ad0dd09ebd61935ae8c8fd276ba18d8b9db69e7949619e0"
+    },
+    "A": {
+      "display": "candidate A experimental baseline",
+      "cnn_path": "ml_training/qam16_domain_repair/results/candidate_A/model.json",
+      "cnn_sha256": "b840f9dbaebc5db855ef1535d091e1f1583e12368ca62742f517a8d38123a28e",
+      "rules_path": "ml_training/qam16_domain_repair/results/candidate_A/rules.json",
+      "rules_sha256": "10a0bef4d237818eaa39dcd4e3048466de60017dbf0545c02bcbf405da2cdf64"
+    },
+    "C0": {
+      "display": "C0 no-augmentation control",
+      "cnn_path": "ml_training/qam16_bpsk_control/results/C0/model.json",
+      "cnn_sha256": "0847607d5edb6f3fde42fd5106622a54f0ed5294c5b6da88f62bc1252148cb04",
+      "rules_path": "ml_training/qam16_bpsk_control/results/C0/rules.json",
+      "rules_sha256": "fe59e166d4b22346ea1182efa8d79b5d7a74fc73be23f9fceb149a8ceacc8d53"
+    },
+    "C1": {
+      "display": "C1 QAM-only conjugate control",
+      "cnn_path": "ml_training/qam16_bpsk_control/results/C1/model.json",
+      "cnn_sha256": "1be11069e9a49ed989090ddbf304d3eefc721739412966a735edf7a4208b80bf",
+      "rules_path": "ml_training/qam16_bpsk_control/results/C1/rules.json",
+      "rules_sha256": "9f94900ff0482ded05edbf92822da26637f080a11bf151c2f7a8bcee404cc2e1"
+    }
+  },
+  "notes": [
+    "The four models are locked by path and SHA for diagnostic comparison.",
+    "They are not approved release candidates and must not be deployed.",
+    "No model, rule, threshold, product file or evidence file may be modified by the evaluator."
+  ]
+}

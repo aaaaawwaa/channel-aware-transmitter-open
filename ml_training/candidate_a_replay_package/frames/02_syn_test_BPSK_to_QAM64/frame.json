@@ -1,0 +1,103 @@
+{
+  "package": "candidate_a_replay_package",
+  "frame_id": "02_syn_test_BPSK_to_QAM64",
+  "category": "A_BPSK_to_QAM64",
+  "synthetic": true,
+  "real_capture": false,
+  "source": {
+    "dataset": "sim-v1",
+    "split": "test",
+    "index": 439,
+    "session_id": "test-BPSK-snr+12-test-c",
+    "seed_family": "test-c"
+  },
+  "conditions": {
+    "snr_db": 12.0,
+    "cfo_hz": -2199.50390625,
+    "amplitude_codes": 994,
+    "window_offset": 18,
+    "phase_rad": 1.1357393264770508,
+    "session_id": "test-BPSK-snr+12-test-c",
+    "seed_family": "test-c"
+  },
+  "truth_class": "BPSK",
+  "iq_sha256": "1d1790b75aae967fab560a6aaf838cb0ff61436587a1c35e08d897cc6d753d35",
+  "iq_bytes": 16384,
+  "iq_file": "frame.iq",
+  "original": {
+    "label": "BPSK",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      0.0002157058025830842,
+      0.9949915818519668,
+      0.004056751441650552,
+      0.00073596090379964
+    ],
+    "path": {
+      "stage": "arbitration",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 1005.509523693253
+      },
+      "scores": [
+        0.0002157058025830842,
+        0.9949915818519668,
+        0.004056751441650552,
+        0.00073596090379964
+      ],
+      "baseline_scores": [
+        1.0,
+        1.4559222985971688e-28,
+        3.703437506611999e-23,
+        6.527720104131384e-19
+      ],
+      "cnn_label": "QPSK",
+      "baseline_label": "BPSK",
+      "arbitration_margin_bpsk_minus_qpsk": 1.0,
+      "arbitration_applied": true,
+      "final": "BPSK"
+    }
+  },
+  "A": {
+    "label": "QAM64",
+    "reason": "",
+    "accepted": true,
+    "scores": [
+      0.3912563662787986,
+      1.7444596622972785e-05,
+      0.00011923270523777646,
+      0.6086069564193407
+    ],
+    "path": {
+      "stage": "cnn_top1",
+      "reason": "",
+      "gate": {
+        "ok": true,
+        "reason": "",
+        "rms": 1005.509523693253
+      },
+      "scores": [
+        0.3912563662787986,
+        1.7444596622972785e-05,
+        0.00011923270523777646,
+        0.6086069564193407
+      ],
+      "baseline_scores": [
+        1.0,
+        1.4559222985971688e-28,
+        3.703437506611999e-23,
+        6.527720104131384e-19
+      ],
+      "cnn_label": "QAM64",
+      "baseline_label": "BPSK",
+      "arbitration_margin_bpsk_minus_qpsk": 1.0,
+      "arbitration_applied": false,
+      "final": "QAM64"
+    }
+  },
+  "error_outputs_preserved": true,
+  "note": "existing synthetic frame; not generated here; not performance acceptance"
+}
